@@ -4,13 +4,19 @@
 
 @section('content')
     <section class="section" style="padding-top: 150px; min-height: 90vh; display: flex; align-items: center; justify-content: center; position: relative;">
+        <!-- Dynamic Backgrounds -->
+        <div id="auth-light-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center; opacity: 0; transition: opacity 0.8s ease; pointer-events: none;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(5px);"></div>
+        </div>
+        <div id="three-canvas-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 1; transition: opacity 0.8s ease; pointer-events: none;"></div>
+
         <!-- Glowing background particles and lights -->
         <div class="auth-blur-circle primary"></div>
         <div class="auth-blur-circle secondary"></div>
         
         <div class="container" style="max-width: 500px; margin: 0 auto; position: relative; z-index: 5;">
             
-            <div class="glass-card" id="auth-card" style="padding: 40px 30px; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);">
+            <div class="glass-card" id="auth-card" style="padding: 40px 30px; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden;">
                 
                 <div class="text-center" style="margin-bottom: 25px;">
                     <span class="section-badge" style="background: rgba(0, 242, 254, 0.1); border-color: rgba(0, 242, 254, 0.2); color: var(--primary); font-size: 11px;">PORTAL KEAMANAN AKUN</span>
@@ -57,8 +63,13 @@
                     </button>
                 </div>
 
-                <!-- Login Form -->
-                <form id="form-login" action="{{ route('login.post') }}" method="POST">
+                <!-- Slider Container -->
+                <div class="auth-slider-container" style="width: 100%; overflow: hidden; position: relative;">
+                    <div id="auth-forms-slider" style="display: flex; width: 200%; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); transform: translateX(0%); align-items: flex-start;">
+                        
+                        <!-- Login Form -->
+                        <div style="width: 50%; flex-shrink: 0; padding-right: 10px;">
+                            <form id="form-login" action="{{ route('login.post') }}" method="POST">
                     @csrf
                     <div style="margin-bottom: 20px; text-align: left;">
                         <label style="display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Alamat Email</label>
@@ -95,11 +106,13 @@
                         </svg>
                         <span style="color: #1f2937;">Masuk dengan Google</span>
                     </a>
-                </form>
+                            </form>
+                        </div>
 
-                <!-- Register Form -->
-                <form id="form-register" action="{{ route('register.post') }}" method="POST" style="display: none;">
-                    @csrf
+                        <!-- Register Form -->
+                        <div style="width: 50%; flex-shrink: 0; padding-left: 10px;">
+                            <form id="form-register" action="{{ route('register.post') }}" method="POST">
+                                @csrf
                     <div style="margin-bottom: 18px; text-align: left;">
                         <label style="display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Nama Lengkap</label>
                         <div style="position: relative;">
@@ -149,7 +162,10 @@
                         </svg>
                         <span style="color: #1f2937;">Daftar dengan Google</span>
                     </a>
-                </form>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -157,6 +173,21 @@
 
     <!-- Visual Page Styling and Interactive Tab Script -->
     <style>
+        /* Theme specific backgrounds */
+        html[data-theme="dark"] #three-canvas-container {
+            opacity: 1 !important;
+        }
+        html[data-theme="dark"] #auth-light-bg {
+            opacity: 0 !important;
+        }
+
+        html[data-theme="light"] #three-canvas-container {
+            opacity: 0 !important;
+        }
+        html[data-theme="light"] #auth-light-bg {
+            opacity: 1 !important;
+        }
+
         .auth-blur-circle {
             position: absolute;
             width: 350px;
@@ -200,19 +231,17 @@
 
     <script>
         function switchAuthTab(tab) {
-            const loginForm = document.getElementById('form-login');
-            const registerForm = document.getElementById('form-register');
             const tabLoginBtn = document.getElementById('tab-login');
             const tabRegisterBtn = document.getElementById('tab-register');
             const authCard = document.getElementById('auth-card');
             const authTitle = document.getElementById('auth-title');
             const authDesc = document.getElementById('auth-desc');
+            const slider = document.getElementById('auth-forms-slider');
 
-            if (!loginForm || !registerForm || !tabLoginBtn || !tabRegisterBtn || !authCard) return;
+            if (!tabLoginBtn || !tabRegisterBtn || !authCard || !slider) return;
 
             if (tab === 'login') {
-                loginForm.style.display = 'block';
-                registerForm.style.display = 'none';
+                slider.style.transform = 'translateX(0%)';
                 
                 tabLoginBtn.style.color = 'var(--primary)';
                 tabLoginBtn.style.borderBottom = '2px solid var(--primary)';
@@ -228,8 +257,7 @@
                 authTitle.innerText = "Selamat Datang";
                 authDesc.innerText = "Silakan masuk ke akun Anda atau daftarkan akun baru untuk menikmati mahakarya digital.";
             } else {
-                loginForm.style.display = 'none';
-                registerForm.style.display = 'block';
+                slider.style.transform = 'translateX(-50%)';
                 
                 tabLoginBtn.style.color = 'var(--text-dark)';
                 tabLoginBtn.style.borderBottom = '2px solid transparent';
