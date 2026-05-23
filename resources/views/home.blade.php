@@ -8,7 +8,7 @@
     <section class="hero-section" style="position: relative; overflow: hidden; z-index: 1;">
         <!-- Dynamic Hero Backgrounds -->
         <div id="hero-light-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center; opacity: 0; transition: opacity 0.8s ease; pointer-events: none;">
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(248, 250, 252, 0.85) 30%, rgba(248, 250, 252, 0.4) 100%);"></div>
+            <div class="hero-light-overlay"></div>
         </div>
         <!-- Three.js Canvas Element -->
         <div id="three-canvas-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: 1; transition: opacity 0.8s ease;"></div>
