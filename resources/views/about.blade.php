@@ -309,6 +309,57 @@
         color: var(--text-muted);
         letter-spacing: 0.5px;
     }
+
+    /* Mobile Responsive Optimizations to prevent text/layout clipping */
+    @media (max-width: 768px) {
+        .about-wrapper {
+            padding: 80px 0 60px 0;
+        }
+        .about-badge {
+            padding: 6px 14px;
+            font-size: 11px;
+            margin-bottom: 15px;
+        }
+        .about-title {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .about-desc {
+            font-size: 15px;
+        }
+        .about-glass-card {
+            padding: 20px !important;
+            border-radius: 20px !important;
+        }
+        .team-section {
+            padding: 20px !important;
+            border-radius: 24px !important;
+            margin-top: 20px !important;
+        }
+        .team-visual-container {
+            gap: 24px !important;
+        }
+        .team-stats {
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 8px !important;
+        }
+        .stat-box {
+            padding: 12px 6px !important;
+            border-radius: 12px !important;
+        }
+        .stat-number {
+            font-size: 18px !important;
+        }
+        .stat-label {
+            font-size: 8px !important;
+            letter-spacing: 0px !important;
+        }
+        .team-info-content h3 {
+            font-size: 20px !important;
+            margin-bottom: 12px !important;
+            line-height: 1.3 !important;
+        }
+    }
 </style>
 
 <div class="about-wrapper">

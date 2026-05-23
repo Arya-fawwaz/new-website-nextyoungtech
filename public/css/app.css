@@ -1559,7 +1559,7 @@ body {
         font-size: 12.5px !important;
         padding: 4px 0 !important;
     }
-    .btn-secondary, #pwa-install-btn, #theme-toggle-btn {
+    .header .btn-secondary, #pwa-install-btn, #theme-toggle-btn {
         width: 34px !important;
         height: 34px !important;
         padding: 6px !important;

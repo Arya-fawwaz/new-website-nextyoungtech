@@ -75,6 +75,14 @@
                         </div>
                     </div>
 
+                    <!-- Logout button for Mobile & Quick access -->
+                    <form action="{{ route('logout') }}" method="POST" style="width: 100%; margin-top: 20px;">
+                        @csrf
+                        <button type="submit" class="btn-secondary" style="width: 100%; justify-content: center; padding: 12px 16px; font-size: 13px; cursor: pointer; border-radius: 8px; background: rgba(255, 94, 98, 0.1); border: 1px solid rgba(255, 94, 98, 0.2); color: #ff5e62; display: flex; align-items: center; gap: 8px;" title="Keluar">
+                            <i class="fa-solid fa-right-from-bracket"></i> Keluar / Log Out
+                        </button>
+                    </form>
+
                     @if(auth()->user()->is_admin)
                         <hr style="width: 100%; border: 0; border-top: 1px dashed rgba(14, 165, 233, 0.2); margin: 20px 0;">
                         <div style="width: 100%; text-align: left; background: linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(79, 70, 229, 0.08) 100%); padding: 20px; border-radius: 12px; border: 1px solid rgba(14, 165, 233, 0.35); box-shadow: 0 0 15px rgba(14, 165, 233, 0.1);">

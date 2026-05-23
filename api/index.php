@@ -71,7 +71,24 @@ if (str_starts_with($_SERVER['REQUEST_URI'] ?? '', '/test-vercel')) {
     echo "\n===========================================\n";
     echo "End of Diagnostics\n";
     echo "===========================================\n";
-    exit;
+}
+
+// Ensure storage folders exist in /tmp for serverless runtime
+if (getenv('VERCEL') || isset($_ENV['VERCEL']) || isset($_SERVER['VERCEL'])) {
+    $storagePath = '/tmp/storage';
+    $dirs = [
+        $storagePath,
+        $storagePath . '/framework',
+        $storagePath . '/framework/views',
+        $storagePath . '/framework/cache',
+        $storagePath . '/framework/sessions',
+        $storagePath . '/logs',
+    ];
+    foreach ($dirs as $dir) {
+        if (!is_dir($dir)) {
+            @mkdir($dir, 0755, true);
+        }
+    }
 }
 
 // Forward all serverless requests to the Laravel bootstrap entrypoint

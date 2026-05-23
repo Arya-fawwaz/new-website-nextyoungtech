@@ -23,6 +23,61 @@
     
     <!-- Three.js untuk Efek 3D -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <style>
+        /* Fix logo text wrapping and scaling */
+        .logo {
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+        }
+        
+        /* Gracefully truncate long names in header navbar */
+        .profile-nav-name {
+            display: inline-block !important;
+            max-width: 110px !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            vertical-align: middle !important;
+        }
+
+        /* Prevent desktop nav layout clashing on various screen sizes */
+        @media (max-width: 1366px) {
+            .nav-menu {
+                gap: 20px !important;
+            }
+            .nav-link {
+                font-size: 13px !important;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .nav-menu {
+                gap: 12px !important;
+            }
+            .nav-link {
+                font-size: 12.5px !important;
+            }
+            .logout-text {
+                display: none !important;
+            }
+            .profile-nav-name {
+                max-width: 75px !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .nav-menu {
+                gap: 8px !important;
+            }
+            .nav-link {
+                font-size: 12px !important;
+            }
+            .profile-nav-name {
+                display: none !important; /* Hide name completely under 1024px to ensure no clashing */
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -290,6 +345,14 @@
             <button id="mobile-theme-toggle-btn" class="mobile-action-btn" title="Ganti Tema">
                 <i id="mobile-theme-toggle-icon" class="fa-solid fa-sun" style="color: #ffb703;"></i>
             </button>
+            @auth
+                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="mobile-action-btn" style="border: 1px solid rgba(255, 94, 98, 0.2); background: rgba(255, 94, 98, 0.1); color: #ff5e62; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer;" title="Keluar / Log Out">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+                </form>
+            @endauth
         </div>
     </div>
 
@@ -339,19 +402,19 @@
                 </button>
 
                 @auth
-                    <a href="{{ route('profile') }}" style="display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 13px; color: var(--text-main); font-weight: 500; transition: all 0.3s ease;" class="profile-nav-link">
+                    <a href="{{ route('profile') }}" style="display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 13px; color: var(--text-main); font-weight: 500; transition: all 0.3s ease; flex-shrink: 0;" class="profile-nav-link">
                         @if(auth()->user()->foto_profil)
-                            <img src="{{ '/' . ltrim(auth()->user()->foto_profil, '/') }}" alt="{{ auth()->user()->nama }}" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--primary); box-shadow: 0 0 8px var(--primary-glow);">
+                            <img src="{{ '/' . ltrim(auth()->user()->foto_profil, '/') }}" alt="{{ auth()->user()->nama }}" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--primary); box-shadow: 0 0 8px var(--primary-glow); flex-shrink: 0;">
                         @else
-                            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(128, 128, 128, 0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--dashed-border); box-shadow: 0 0 6px rgba(0,0,0,0.1);">
-                                <i class="fa-solid fa-user-astronaut" style="font-size: 14px; color: var(--primary); text-shadow: 0 0 6px var(--primary-glow);"></i>
+                            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(128, 128, 128, 0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--dashed-border); box-shadow: 0 0 6px rgba(0,0,0,0.1); flex-shrink: 0;">
+                                <i class="fa-solid fa-user-astronaut" style="font-size: 14px; color: var(--primary); text-shadow: 0 0 6px var(--primary-glow); flex-shrink: 0;"></i>
                             </div>
                         @endif
-                        <span class="profile-nav-name">{{ auth()->user()->nama }}</span>
+                        <span class="profile-nav-name" style="max-width: 100px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block; vertical-align: middle;">{{ auth()->user()->nama }}</span>
                     </a>
-                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    <form action="{{ route('logout') }}" method="POST" style="display: inline; flex-shrink: 0;">
                         @csrf
-                        <button type="submit" class="btn-secondary" style="padding: 8px 12px; font-size: 13px; cursor: pointer; border-radius: 8px; background: rgba(255, 94, 98, 0.1); border: 1px solid rgba(255, 94, 98, 0.2); color: #ff5e62;" title="Keluar">
+                        <button type="submit" class="btn-secondary" style="padding: 8px 12px; font-size: 13px; cursor: pointer; border-radius: 8px; background: rgba(255, 94, 98, 0.1); border: 1px solid rgba(255, 94, 98, 0.2); color: #ff5e62; display: flex; align-items: center; gap: 6px; flex-shrink: 0;" title="Keluar">
                             <i class="fa-solid fa-right-from-bracket"></i> <span class="logout-text">Keluar</span>
                         </button>
                     </form>
