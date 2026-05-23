@@ -5,9 +5,13 @@
 @section('content')
 
     <!-- 3D Interactive Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" style="position: relative; overflow: hidden; z-index: 1;">
+        <!-- Dynamic Hero Backgrounds -->
+        <div id="hero-light-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center; opacity: 0; transition: opacity 0.8s ease; pointer-events: none;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(5px);"></div>
+        </div>
         <!-- Three.js Canvas Element -->
-        <div id="three-canvas-container"></div>
+        <div id="three-canvas-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 1; transition: opacity 0.8s ease;"></div>
         
         <div class="container">
             <div class="hero-content">
@@ -162,6 +166,21 @@
         .star-rating .star-label:hover ~ .star-label {
             color: #ffb703 !important;
             text-shadow: 0 0 10px rgba(255, 183, 3, 0.8);
+        }
+
+        /* Theme specific hero backgrounds */
+        html[data-theme="dark"] #three-canvas-container {
+            opacity: 1 !important;
+        }
+        html[data-theme="dark"] #hero-light-bg {
+            opacity: 0 !important;
+        }
+
+        html[data-theme="light"] #three-canvas-container {
+            opacity: 0 !important;
+        }
+        html[data-theme="light"] #hero-light-bg {
+            opacity: 1 !important;
         }
     </style>
 
