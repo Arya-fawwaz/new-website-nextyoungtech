@@ -7,13 +7,13 @@
     <!-- 3D Interactive Hero Section -->
     <section class="hero-section" style="position: relative; overflow: hidden; z-index: 1;">
         <!-- Dynamic Hero Backgrounds -->
-        <div id="hero-light-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center; opacity: 0; transition: opacity 0.8s ease; pointer-events: none;">
+        <div id="hero-light-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center; opacity: 0; transition: opacity 0.8s ease; pointer-events: none;">
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(5px);"></div>
         </div>
         <!-- Three.js Canvas Element -->
-        <div id="three-canvas-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 1; transition: opacity 0.8s ease;"></div>
+        <div id="three-canvas-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: 1; transition: opacity 0.8s ease;"></div>
         
-        <div class="container">
+        <div class="container" style="position: relative; z-index: 2;">
             <div class="hero-content">
                 <div class="hero-badge">
                     <span></span> PENGALAMAN WEB 3D IMERSIF
