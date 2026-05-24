@@ -97,32 +97,120 @@
             }
         </script>
 
-        <!-- Premium Loading Screen with Luxurious Branded Geometric Hexagon -->
+        <!-- Premium Loading Screen with Luxurious Animated Cyber Astronaut -->
         <div id="loading-screen">
             <div class="loader-content">
-                <!-- Animated Branded 3D Hexagon Logo -->
-                <div class="loader-logo-wrapper">
-                    <!-- Glow behind logo -->
-                    <div class="loader-logo-glow"></div>
-                    <!-- Hexagonal Logo Mark -->
-                    <svg viewBox="0 0 32 32" class="loader-svg-logo">
+                <!-- Animated Floating Cyber Astronaut with Holographic concentric 3D orbits -->
+                <div class="loader-character-wrapper">
+                    <!-- Glow behind astronaut -->
+                    <div class="loader-character-glow"></div>
+                    
+                    <!-- SVG Character Mark (viewBox 0 0 200 200) -->
+                    <svg viewBox="0 0 200 200" class="loader-svg-character" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <linearGradient id="loader-logo-grad" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="var(--primary)" />
-                                <stop offset="0.5" stop-color="var(--secondary)" />
-                                <stop offset="1" stop-color="var(--accent)" />
+                            <!-- Visor Horizon Gradient -->
+                            <linearGradient id="astro-visor-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color: var(--visor-grad-1);" />
+                                <stop offset="50%" style="stop-color: var(--visor-grad-2);" />
+                                <stop offset="100%" style="stop-color: var(--visor-grad-3);" />
                             </linearGradient>
-                            <linearGradient id="loader-logo-grad-fill" x1="7" y1="7" x2="25" y2="25" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="var(--primary)" stop-opacity="0.18" />
-                                <stop offset="1" stop-color="var(--secondary)" stop-opacity="0.18" />
+                            
+                            <!-- Jetpack Thruster Flame Gradients -->
+                            <linearGradient id="astro-flame-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color: var(--flame-grad-1);" />
+                                <stop offset="100%" style="stop-color: var(--flame-grad-2); stop-opacity: 0;" />
+                            </linearGradient>
+                            
+                            <linearGradient id="astro-flame-grad-inner" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color: var(--flame-grad-inner-1);" />
+                                <stop offset="100%" style="stop-color: var(--flame-grad-inner-2); stop-opacity: 0;" />
+                            </linearGradient>
+
+                            <!-- Chest Reactor Gradient -->
+                            <linearGradient id="astro-reactor-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color: var(--reactor-grad-1);" />
+                                <stop offset="100%" style="stop-color: var(--reactor-grad-2);" />
+                            </linearGradient>
+
+                            <!-- Concentric 3D Orbit Gradients -->
+                            <linearGradient id="astro-orbit-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color: var(--orbit-grad-1a);" />
+                                <stop offset="100%" style="stop-color: var(--orbit-grad-1b);" />
+                            </linearGradient>
+                            <linearGradient id="astro-orbit-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color: var(--orbit-grad-2a);" />
+                                <stop offset="100%" style="stop-color: var(--orbit-grad-2b);" />
                             </linearGradient>
                         </defs>
-                        <!-- Outer Wireframe Hexagon (Slow rotation) -->
-                        <path d="M16 2L2 9.5V22.5L16 30L30 22.5V9.5L16 2Z" stroke="url(#loader-logo-grad)" stroke-width="2.2" stroke-linejoin="round" class="loader-logo-outer" />
-                        <!-- Inner Floating Hexagon (Reverse rotation) -->
-                        <path d="M16 7L7 12V20L16 25L25 20V12L16 7Z" fill="url(#loader-logo-grad-fill)" class="loader-logo-inner" />
-                        <!-- Central Core Prism (Pulses) -->
-                        <path d="M16 12L12 14.5V17.5L16 20L20 17.5V14.5L16 12Z" class="loader-logo-center" />
+
+                        <!-- ================= BACK GROUP (Orbits behind astronaut) ================= -->
+                        <g class="orbit-back-group">
+                            <!-- Outer Orbit (Back Half) -->
+                            <path d="M 15 100 A 85 24 0 0 1 185 100" fill="none" stroke="url(#astro-orbit-grad-1)" stroke-width="2.2" stroke-linecap="round" class="orbit-path orbit-1" />
+                            <!-- Inner Orbit (Back Half) -->
+                            <path d="M 35 100 A 65 18 0 0 1 165 100" fill="none" stroke="url(#astro-orbit-grad-2)" stroke-width="1.6" stroke-linecap="round" class="orbit-path orbit-2" />
+                        </g>
+
+                        <!-- ================= ASTRONAUT BODY (Floats) ================= -->
+                        <g class="astronaut-body">
+                            <!-- Jetpack Booster Backing -->
+                            <rect x="73" y="86" width="12" height="32" rx="3" fill="var(--suit-dark)" stroke="var(--suit-stroke)" stroke-width="2.5" />
+                            <rect x="115" y="86" width="12" height="32" rx="3" fill="var(--suit-dark)" stroke="var(--suit-stroke)" stroke-width="2.5" />
+                            <!-- Nozzles -->
+                            <path d="M 74 118 L 71 124 L 84 124 L 81 118 Z" fill="#475569" stroke="var(--suit-stroke)" stroke-width="2" />
+                            <path d="M 116 118 L 113 124 L 126 124 L 123 118 Z" fill="#475569" stroke="var(--suit-stroke)" stroke-width="2" />
+                            
+                            <!-- Jetpack Flames (Outer and Inner) -->
+                            <path d="M 71 124 C 64 142, 77 158, 77 158 C 77 158, 90 142, 83 124 Z" class="thruster-flame" fill="url(#astro-flame-grad)" />
+                            <path d="M 113 124 C 106 142, 119 158, 119 158 C 119 158, 132 142, 125 124 Z" class="thruster-flame" fill="url(#astro-flame-grad)" />
+                            <path d="M 74 124 C 71 133, 77 143, 77 143 C 77 143, 83 133, 80 124 Z" class="thruster-flame-inner" fill="url(#astro-flame-grad-inner)" />
+                            <path d="M 116 124 C 113 133, 119 143, 119 143 C 119 143, 125 133, 122 124 Z" class="thruster-flame-inner" fill="url(#astro-flame-grad-inner)" />
+
+                            <!-- Legs -->
+                            <!-- Left Leg -->
+                            <path d="M 84 133 C 79 146, 73 152, 76 166 L 86 166 C 84 156, 91 146, 92 133 Z" fill="var(--suit-main)" stroke="var(--suit-stroke)" stroke-width="2.5" stroke-linejoin="round" />
+                            <path d="M 76 166 C 76 166, 70 170, 72 174 L 89 174 C 91 170, 86 166, 86 166 Z" fill="var(--suit-dark)" stroke="var(--suit-stroke)" stroke-width="2.5" stroke-linejoin="round" />
+                            <!-- Right Leg (Asymmetric float angle) -->
+                            <path d="M 108 133 C 113 143, 118 147, 114 159 L 104 159 C 107 151, 102 143, 100 133 Z" fill="var(--suit-main)" stroke="var(--suit-stroke)" stroke-width="2.5" stroke-linejoin="round" />
+                            <path d="M 114 159 C 114 159, 116 163, 112 167 L 96 167 C 96 163, 104 159, 104 159 Z" fill="var(--suit-dark)" stroke="var(--suit-stroke)" stroke-width="2.5" stroke-linejoin="round" />
+
+                            <!-- Suit Torso -->
+                            <path d="M 80 95 C 80 95, 68 113, 84 133 L 116 133 C 132 113, 120 95, 120 95 Z" fill="var(--suit-main)" stroke="var(--suit-stroke)" stroke-width="2.5" stroke-linejoin="round" />
+                            <!-- Chest Control Panel -->
+                            <rect x="88" y="100" width="24" height="19" rx="3" fill="var(--suit-dark)" stroke="var(--suit-stroke)" stroke-width="1.8" />
+                            <!-- Buttons on suit chest panel -->
+                            <circle cx="94" cy="105" r="1.5" fill="#ef4444" />
+                            <circle cx="100" cy="105" r="1.5" fill="#10b981" />
+                            <circle cx="106" cy="105" r="1.5" fill="#3b82f6" />
+                            <!-- Glowing Chest Reactor Core -->
+                            <polygon points="100,109 106,113 106,120 100,124 94,120 94,113" class="reactor-core" fill="url(#astro-reactor-grad)" />
+
+                            <!-- Left Arm (Waving elegantly) -->
+                            <path d="M 80 97 C 64 97, 54 87, 57 74 C 59 69, 67 69, 65 75 C 63 84, 69 89, 80 89 Z" fill="var(--suit-main)" stroke="var(--suit-stroke)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M 57 74 C 56 72, 61 66, 65 69" stroke="var(--suit-stroke)" stroke-width="2.5" stroke-linecap="round" />
+                            
+                            <!-- Right Arm (Floating down) -->
+                            <path d="M 120 97 C 135 101, 142 109, 138 121 C 136 127, 128 125, 130 119 C 132 111, 128 105, 120 101 Z" fill="var(--suit-main)" stroke="var(--suit-stroke)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M 138 121 C 139 123, 133 128, 130 125" stroke="var(--suit-stroke)" stroke-width="2.5" stroke-linecap="round" />
+
+                            <!-- Helmet -->
+                            <circle cx="100" cy="71" r="26" fill="var(--suit-main)" stroke="var(--suit-stroke)" stroke-width="2.5" />
+                            <!-- Visor (Luxurious Horizon Gradient) -->
+                            <path d="M 81 71 C 81 57, 119 57, 119 71 C 119 83, 81 83, 81 71 Z" fill="url(#astro-visor-grad)" stroke="var(--suit-stroke)" stroke-width="2.5" />
+                            <!-- Visor Reflection Shine -->
+                            <path d="M 85 67 C 91 59, 109 59, 115 67" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.65" />
+                            <!-- Glow decals on helmet sides -->
+                            <path d="M 74 71 L 78 71" stroke="var(--suit-glow)" stroke-width="2" stroke-linecap="round" />
+                            <path d="M 122 71 L 126 71" stroke="var(--suit-glow)" stroke-width="2" stroke-linecap="round" />
+                        </g>
+
+                        <!-- ================= FRONT GROUP (Orbits in front of astronaut) ================= -->
+                        <g class="orbit-front-group">
+                            <!-- Outer Orbit (Front Half) -->
+                            <path d="M 185 100 A 85 24 0 0 1 15 100" fill="none" stroke="url(#astro-orbit-grad-1)" stroke-width="2.2" stroke-linecap="round" class="orbit-path orbit-1" />
+                            <!-- Inner Orbit (Front Half) -->
+                            <path d="M 165 100 A 65 18 0 0 1 35 100" fill="none" stroke="url(#astro-orbit-grad-2)" stroke-width="1.6" stroke-linecap="round" class="orbit-path orbit-2" />
+                        </g>
                     </svg>
                 </div>
                 
@@ -145,14 +233,69 @@
 
         <!-- Inline Loader Styling and Transition Logic -->
         <style>
+            :root {
+                --loader-bg-dark: linear-gradient(180deg, #06060c 0%, #0c0c1b 100%);
+                --loader-bg-light: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+                
+                /* Spacesuit cyber colors - Dark mode standard */
+                --suit-main: #ffffff;
+                --suit-dark: #0f172a;
+                --suit-stroke: #1e293b;
+                --suit-glow: #0ea5e9;
+                
+                --visor-grad-1: #0ea5e9;
+                --visor-grad-2: #4f46e5;
+                --visor-grad-3: #00f2fe;
+                
+                --flame-grad-1: #00f2fe;
+                --flame-grad-2: rgba(0, 242, 254, 0.4);
+                
+                --flame-grad-inner-1: #ffffff;
+                --flame-grad-inner-2: rgba(0, 242, 254, 0.8);
+                
+                --reactor-grad-1: #00f2fe;
+                --reactor-grad-2: #0ea5e9;
+                
+                --orbit-grad-1a: #0ea5e9;
+                --orbit-grad-1b: #4f46e5;
+                --orbit-grad-2a: #00f2fe;
+                --orbit-grad-2b: #0ea5e9;
+            }
+
+            html[data-theme="light"] {
+                /* Spacesuit luxury metallic/rose-gold colors - Light mode overrides */
+                --suit-main: #f8fafc;
+                --suit-dark: #e2e8f0;
+                --suit-stroke: #0f172a;
+                --suit-glow: #4f46e5;
+                
+                --visor-grad-1: #ffb703;
+                --visor-grad-2: #ff5e62;
+                --visor-grad-3: #ff9f43;
+                
+                --flame-grad-1: #ff5e62;
+                --flame-grad-2: rgba(255, 183, 3, 0.4);
+                
+                --flame-grad-inner-1: #ffffff;
+                --flame-grad-inner-2: rgba(255, 183, 3, 0.8);
+                
+                --reactor-grad-1: #ffb703;
+                --reactor-grad-2: #ff5e62;
+                
+                --orbit-grad-1a: #ff5e62;
+                --orbit-grad-1b: #ffb703;
+                --orbit-grad-2a: #4f46e5;
+                --orbit-grad-2b: #0ea5e9;
+            }
+
             #loading-screen {
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100vw;
                 height: 100vh;
-                background-color: var(--bg-dark);
-                background-image: var(--gradient-dark);
+                background-color: #06060c;
+                background-image: var(--loader-bg-dark);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -160,6 +303,11 @@
                 transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             }
             
+            html[data-theme="light"] #loading-screen {
+                background-color: #f8fafc;
+                background-image: var(--loader-bg-light);
+            }
+
             html.no-loader #loading-screen {
                 display: none !important;
             }
@@ -175,25 +323,25 @@
                 padding: 20px;
             }
 
-            /* Branded Geometric Hexagon Animations */
-            .loader-logo-wrapper {
+            /* Branded Character Animations */
+            .loader-character-wrapper {
                 position: relative;
-                width: 120px;
-                height: 120px;
+                width: 170px;
+                height: 170px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 margin-bottom: 5px;
             }
 
-            .loader-logo-glow {
+            .loader-character-glow {
                 position: absolute;
-                width: 150px;
-                height: 150px;
+                width: 180px;
+                height: 180px;
                 background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
                 border-radius: 50%;
                 z-index: -1;
-                filter: blur(15px);
+                filter: blur(20px);
                 animation: pulseGlow 3s ease-in-out infinite alternate;
             }
 
@@ -202,43 +350,65 @@
                 100% { opacity: 0.85; transform: scale(1.1); }
             }
 
-            .loader-svg-logo {
-                width: 110px;
-                height: 110px;
+            .loader-svg-character {
+                width: 160px;
+                height: 160px;
                 overflow: visible;
             }
 
-            .loader-logo-outer {
-                transform-origin: 16px 16px;
-                animation: rotateOuter 12s linear infinite;
-                transition: stroke 0.3s ease;
+            /* Astronaut Floating Animation */
+            .astronaut-body {
+                transform-origin: 100px 100px;
+                animation: floatAstronaut 3s ease-in-out infinite alternate;
             }
 
-            .loader-logo-inner {
-                transform-origin: 16px 16px;
-                animation: rotateInner 8s linear infinite;
+            @keyframes floatAstronaut {
+                0% { transform: translateY(-4px) rotate(-1deg); }
+                100% { transform: translateY(6px) rotate(1deg); }
             }
 
-            .loader-logo-center {
-                transform-origin: 16px 16px;
-                fill: var(--text-main);
-                animation: pulseCenter 2.2s ease-in-out infinite alternate;
-                transition: fill 0.3s ease;
+            /* Flame Flickering Animation */
+            .thruster-flame {
+                transform-origin: center top;
+                animation: thrusterFire 0.15s ease-in-out infinite alternate;
+            }
+            .thruster-flame-inner {
+                transform-origin: center top;
+                animation: thrusterFireInner 0.1s ease-in-out infinite alternate;
+            }
+            @keyframes thrusterFire {
+                0% { transform: scaleY(0.9) scaleX(0.95); opacity: 0.85; }
+                100% { transform: scaleY(1.15) scaleX(1.05); opacity: 1; }
+            }
+            @keyframes thrusterFireInner {
+                0% { transform: scaleY(0.85) scaleX(0.9); opacity: 0.9; }
+                100% { transform: scaleY(1.2) scaleX(1.1); opacity: 1; }
             }
 
-            @keyframes rotateOuter {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
+            /* Chest Reactor Pulsing Glow */
+            .reactor-core {
+                transform-origin: 100px 116px;
+                animation: reactorPulse 1.5s ease-in-out infinite alternate;
             }
-
-            @keyframes rotateInner {
-                0% { transform: rotate(360deg); }
-                100% { transform: rotate(0deg); }
-            }
-
-            @keyframes pulseCenter {
-                0% { transform: scale(0.9); opacity: 0.8; }
+            @keyframes reactorPulse {
+                0% { transform: scale(0.85); opacity: 0.7; }
                 100% { transform: scale(1.15); opacity: 1; }
+            }
+
+            /* Orbit dashboard sliding dash animation (creates the illusion of rotation) */
+            .orbit-1 {
+                stroke-dasharray: 24 16;
+                animation: slideDash1 5s linear infinite;
+            }
+            .orbit-2 {
+                stroke-dasharray: 18 12;
+                animation: slideDash2 3.8s linear infinite;
+            }
+            @keyframes slideDash1 {
+                to { stroke-dashoffset: -80; }
+            }
+            @keyframes slideDash2 {
+                to { stroke-dashoffset: 60; }
             }
 
             .loader-logo-container {
