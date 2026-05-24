@@ -24,6 +24,14 @@
     <!-- Three.js untuk Efek 3D -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     
+    <!-- Blocking Script to Initialize Theme Immediately (Avoids Flash & Themes Loading Screen) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    
     <style>
         /* Fix logo text wrapping and scaling */
         .logo {
@@ -96,15 +104,15 @@
                 <div class="astronaut-character">
                     <svg viewBox="0 0 120 120" class="astronaut-svg" style="width: 130px; height: 130px; filter: drop-shadow(0 0 15px var(--primary-glow));">
                         <!-- Space Suit Body -->
-                        <path d="M40 70 C40 50, 80 50, 80 70 C80 85, 40 85, 40 70 Z" fill="rgba(255,255,255,0.9)" />
+                        <path d="M40 70 C40 50, 80 50, 80 70 C80 85, 40 85, 40 70 Z" class="astro-suit-body" />
                         <!-- Legs -->
-                        <rect x="44" y="80" width="10" height="15" rx="3" fill="rgba(255,255,255,0.95)" />
-                        <rect x="66" y="80" width="10" height="15" rx="3" fill="rgba(255,255,255,0.95)" />
+                        <rect x="44" y="80" width="10" height="15" rx="3" class="astro-suit-limb" />
+                        <rect x="66" y="80" width="10" height="15" rx="3" class="astro-suit-limb" />
                         <!-- Arms -->
-                        <path d="M30 65 Q20 70, 42 74" stroke="rgba(255,255,255,0.95)" stroke-width="8" stroke-linecap="round" fill="none" />
-                        <path d="M90 65 Q100 70, 78 74" stroke="rgba(255,255,255,0.95)" stroke-width="8" stroke-linecap="round" fill="none" />
+                        <path d="M30 65 Q20 70, 42 74" fill="none" class="astro-suit-arm" />
+                        <path d="M90 65 Q100 70, 78 74" fill="none" class="astro-suit-arm" />
                         <!-- Helmet Visor -->
-                        <circle cx="60" cy="58" r="18" fill="rgba(6, 6, 12, 0.95)" stroke="rgba(255,255,255,0.9)" stroke-width="2" />
+                        <circle cx="60" cy="58" r="18" class="astro-helmet-back" />
                         <path d="M46 56 C46 48, 74 48, 74 56 C74 64, 46 64, 46 56 Z" fill="url(#visor-grad)" />
                         <!-- Details/Control Pack -->
                         <rect x="50" y="70" width="20" height="10" rx="2" fill="var(--secondary)" />
@@ -147,7 +155,8 @@
                 left: 0;
                 width: 100vw;
                 height: 100vh;
-                background: #06060c;
+                background-color: var(--bg-dark);
+                background-image: var(--gradient-dark);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -178,10 +187,64 @@
                 justify-content: center;
             }
 
+            .astronaut-character::before {
+                content: '';
+                position: absolute;
+                width: 150px;
+                height: 150px;
+                background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+                border-radius: 50%;
+                z-index: -1;
+                filter: blur(15px);
+                opacity: 0.8;
+            }
+
             @keyframes floatAstronaut {
                 0% { transform: translateY(0px) rotate(0deg); }
                 50% { transform: translateY(-12px) rotate(2deg); }
                 100% { transform: translateY(0px) rotate(0deg); }
+            }
+
+            /* Astronaut Suit Theme Variants */
+            .astro-suit-body {
+                fill: rgba(255, 255, 255, 0.9);
+                transition: all 0.3s ease;
+            }
+            .astro-suit-limb {
+                fill: rgba(255, 255, 255, 0.95);
+                transition: all 0.3s ease;
+            }
+            .astro-suit-arm {
+                stroke: rgba(255, 255, 255, 0.95);
+                stroke-width: 8px;
+                stroke-linecap: round;
+                transition: all 0.3s ease;
+            }
+            .astro-helmet-back {
+                fill: rgba(6, 6, 12, 0.95);
+                stroke: rgba(255, 255, 255, 0.9);
+                stroke-width: 2px;
+                transition: all 0.3s ease;
+            }
+
+            html[data-theme="light"] .astro-suit-body {
+                fill: rgba(255, 255, 255, 0.95);
+                stroke: rgba(15, 23, 42, 0.65);
+                stroke-width: 2px;
+            }
+            html[data-theme="light"] .astro-suit-limb {
+                fill: rgba(255, 255, 255, 0.95);
+                stroke: rgba(15, 23, 42, 0.65);
+                stroke-width: 2px;
+            }
+            html[data-theme="light"] .astro-suit-arm {
+                stroke: rgba(15, 23, 42, 0.65);
+                stroke-width: 8px;
+            }
+            html[data-theme="light"] .astro-helmet-back {
+                fill: rgba(248, 250, 252, 0.95);
+                stroke: rgba(15, 23, 42, 0.65);
+                stroke-width: 2px;
             }
 
             .scanning-beam {
@@ -237,12 +300,15 @@
 
             .progress-bar {
                 width: 100%;
-                height: 4px;
+                height: 6px;
                 background: rgba(255, 255, 255, 0.05);
                 border-radius: 10px;
                 overflow: hidden;
-                border: 1px solid rgba(255, 255, 255, 0.02);
                 position: relative;
+            }
+
+            html[data-theme="light"] .progress-bar {
+                background: rgba(15, 23, 42, 0.06);
             }
 
             .progress-fill {
@@ -273,6 +339,11 @@
                 font-family: var(--font-heading);
                 color: var(--primary);
                 text-shadow: 0 0 5px var(--primary-glow);
+            }
+
+            html[data-theme="light"] .percentage-num {
+                text-shadow: none;
+                font-weight: 800;
             }
         </style>
 
