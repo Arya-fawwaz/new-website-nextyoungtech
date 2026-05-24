@@ -97,42 +97,38 @@
             }
         </script>
 
-        <!-- Premium Loading Screen with Animated Astronaut Character -->
+        <!-- Premium Loading Screen with Luxurious Branded Geometric Hexagon -->
         <div id="loading-screen">
             <div class="loader-content">
-                <!-- Animated SVG Astronaut Character -->
-                <div class="astronaut-character">
-                    <svg viewBox="0 0 120 120" class="astronaut-svg" style="width: 130px; height: 130px; filter: drop-shadow(0 0 15px var(--primary-glow));">
-                        <!-- Space Suit Body -->
-                        <path d="M40 70 C40 50, 80 50, 80 70 C80 85, 40 85, 40 70 Z" class="astro-suit-body" />
-                        <!-- Legs -->
-                        <rect x="44" y="80" width="10" height="15" rx="3" class="astro-suit-limb" />
-                        <rect x="66" y="80" width="10" height="15" rx="3" class="astro-suit-limb" />
-                        <!-- Arms -->
-                        <path d="M30 65 Q20 70, 42 74" fill="none" class="astro-suit-arm" />
-                        <path d="M90 65 Q100 70, 78 74" fill="none" class="astro-suit-arm" />
-                        <!-- Helmet Visor -->
-                        <circle cx="60" cy="58" r="18" class="astro-helmet-back" />
-                        <path d="M46 56 C46 48, 74 48, 74 56 C74 64, 46 64, 46 56 Z" fill="url(#visor-grad)" />
-                        <!-- Details/Control Pack -->
-                        <rect x="50" y="70" width="20" height="10" rx="2" fill="var(--secondary)" />
-                        <circle cx="55" cy="75" r="1.5" fill="var(--primary)" />
-                        <circle cx="65" cy="75" r="1.5" fill="var(--accent)" />
+                <!-- Animated Branded 3D Hexagon Logo -->
+                <div class="loader-logo-wrapper">
+                    <!-- Glow behind logo -->
+                    <div class="loader-logo-glow"></div>
+                    <!-- Hexagonal Logo Mark -->
+                    <svg viewBox="0 0 32 32" class="loader-svg-logo">
                         <defs>
-                            <linearGradient id="visor-grad" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="var(--primary)" />
-                                <stop offset="50%" stop-color="var(--secondary)" />
-                                <stop offset="100%" stop-color="var(--accent)" />
+                            <linearGradient id="loader-logo-grad" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="var(--primary)" />
+                                <stop offset="0.5" stop-color="var(--secondary)" />
+                                <stop offset="1" stop-color="var(--accent)" />
+                            </linearGradient>
+                            <linearGradient id="loader-logo-grad-fill" x1="7" y1="7" x2="25" y2="25" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="var(--primary)" stop-opacity="0.18" />
+                                <stop offset="1" stop-color="var(--secondary)" stop-opacity="0.18" />
                             </linearGradient>
                         </defs>
+                        <!-- Outer Wireframe Hexagon (Slow rotation) -->
+                        <path d="M16 2L2 9.5V22.5L16 30L30 22.5V9.5L16 2Z" stroke="url(#loader-logo-grad)" stroke-width="2.2" stroke-linejoin="round" class="loader-logo-outer" />
+                        <!-- Inner Floating Hexagon (Reverse rotation) -->
+                        <path d="M16 7L7 12V20L16 25L25 20V12L16 7Z" fill="url(#loader-logo-grad-fill)" class="loader-logo-inner" />
+                        <!-- Central Core Prism (Pulses) -->
+                        <path d="M16 12L12 14.5V17.5L16 20L20 17.5V14.5L16 12Z" class="loader-logo-center" />
                     </svg>
-                    <!-- Glowing digital scanning line -->
-                    <div class="scanning-beam"></div>
                 </div>
                 
                 <div class="loader-logo-container">
                     <h2 class="loader-logo">NEXT YOUNG <span>TECH</span></h2>
-                    <div class="loader-sub">SYSTEM LOADING</div>
+                    <div class="loader-sub">3D DEVELOPMENT AGENCY</div>
                 </div>
                 
                 <div class="progress-container">
@@ -140,7 +136,7 @@
                         <div class="progress-fill" id="loader-progress-fill"></div>
                     </div>
                     <div class="progress-text">
-                        <span class="status-msg"><i class="fa-solid fa-satellite fa-spin"></i> MEMULAI PORTAL WEB 3D...</span>
+                        <span class="status-msg"><i class="fa-solid fa-circle-notch fa-spin"></i> MENGINSTASIASI PORTAL 3D...</span>
                         <span id="loader-percentage" class="percentage-num">0%</span>
                     </div>
                 </div>
@@ -173,22 +169,24 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 30px;
+                gap: 25px;
                 max-width: 400px;
                 width: 100%;
                 padding: 20px;
             }
 
-            .astronaut-character {
+            /* Branded Geometric Hexagon Animations */
+            .loader-logo-wrapper {
                 position: relative;
-                animation: floatAstronaut 3s ease-in-out infinite;
+                width: 120px;
+                height: 120px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                margin-bottom: 5px;
             }
 
-            .astronaut-character::before {
-                content: '';
+            .loader-logo-glow {
                 position: absolute;
                 width: 150px;
                 height: 150px;
@@ -196,111 +194,94 @@
                 border-radius: 50%;
                 z-index: -1;
                 filter: blur(15px);
-                opacity: 0.8;
+                animation: pulseGlow 3s ease-in-out infinite alternate;
             }
 
-            @keyframes floatAstronaut {
-                0% { transform: translateY(0px) rotate(0deg); }
-                50% { transform: translateY(-12px) rotate(2deg); }
-                100% { transform: translateY(0px) rotate(0deg); }
+            @keyframes pulseGlow {
+                0% { opacity: 0.45; transform: scale(0.9); }
+                100% { opacity: 0.85; transform: scale(1.1); }
             }
 
-            /* Astronaut Suit Theme Variants */
-            .astro-suit-body {
-                fill: rgba(255, 255, 255, 0.9);
-                transition: all 0.3s ease;
-            }
-            .astro-suit-limb {
-                fill: rgba(255, 255, 255, 0.95);
-                transition: all 0.3s ease;
-            }
-            .astro-suit-arm {
-                stroke: rgba(255, 255, 255, 0.95);
-                stroke-width: 8px;
-                stroke-linecap: round;
-                transition: all 0.3s ease;
-            }
-            .astro-helmet-back {
-                fill: rgba(6, 6, 12, 0.95);
-                stroke: rgba(255, 255, 255, 0.9);
-                stroke-width: 2px;
-                transition: all 0.3s ease;
+            .loader-svg-logo {
+                width: 110px;
+                height: 110px;
+                overflow: visible;
             }
 
-            html[data-theme="light"] .astro-suit-body {
-                fill: rgba(255, 255, 255, 0.95);
-                stroke: rgba(15, 23, 42, 0.65);
-                stroke-width: 2px;
-            }
-            html[data-theme="light"] .astro-suit-limb {
-                fill: rgba(255, 255, 255, 0.95);
-                stroke: rgba(15, 23, 42, 0.65);
-                stroke-width: 2px;
-            }
-            html[data-theme="light"] .astro-suit-arm {
-                stroke: rgba(15, 23, 42, 0.65);
-                stroke-width: 8px;
-            }
-            html[data-theme="light"] .astro-helmet-back {
-                fill: rgba(248, 250, 252, 0.95);
-                stroke: rgba(15, 23, 42, 0.65);
-                stroke-width: 2px;
+            .loader-logo-outer {
+                transform-origin: 16px 16px;
+                animation: rotateOuter 12s linear infinite;
+                transition: stroke 0.3s ease;
             }
 
-            .scanning-beam {
-                position: absolute;
-                width: 140px;
-                height: 2px;
-                background: linear-gradient(90deg, transparent, var(--primary), transparent);
-                box-shadow: 0 0 10px var(--primary);
-                animation: scanBeam 2.5s ease-in-out infinite;
-                pointer-events: none;
+            .loader-logo-inner {
+                transform-origin: 16px 16px;
+                animation: rotateInner 8s linear infinite;
             }
 
-            @keyframes scanBeam {
-                0% { top: 10%; opacity: 0; }
-                10% { opacity: 1; }
-                90% { opacity: 1; }
-                100% { top: 90%; opacity: 0; }
+            .loader-logo-center {
+                transform-origin: 16px 16px;
+                fill: var(--text-main);
+                animation: pulseCenter 2.2s ease-in-out infinite alternate;
+                transition: fill 0.3s ease;
+            }
+
+            @keyframes rotateOuter {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+
+            @keyframes rotateInner {
+                0% { transform: rotate(360deg); }
+                100% { transform: rotate(0deg); }
+            }
+
+            @keyframes pulseCenter {
+                0% { transform: scale(0.9); opacity: 0.8; }
+                100% { transform: scale(1.15); opacity: 1; }
             }
 
             .loader-logo-container {
-                margin-top: 10px;
+                margin-top: 5px;
             }
 
             .loader-logo {
                 font-family: var(--font-heading);
                 font-size: 24px;
                 font-weight: 900;
-                letter-spacing: 2px;
-                background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                margin-bottom: 4px;
+                letter-spacing: 3px;
+                color: var(--text-main);
+                margin-bottom: 6px;
+                text-transform: uppercase;
+                transition: color 0.3s ease;
             }
 
             .loader-logo span {
-                color: var(--text-main);
-                -webkit-text-fill-color: var(--text-main);
+                background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
 
             .loader-sub {
-                font-family: var(--font-heading);
-                font-size: 10px;
+                font-family: var(--font-body);
+                font-size: 11px;
                 color: var(--text-muted);
-                letter-spacing: 4px;
+                letter-spacing: 5px;
                 text-transform: uppercase;
-                opacity: 0.7;
+                opacity: 0.65;
+                font-weight: 600;
+                transition: color 0.3s ease;
             }
 
             .progress-container {
                 width: 100%;
-                margin-top: 10px;
+                max-width: 300px;
+                margin-top: 15px;
             }
 
             .progress-bar {
                 width: 100%;
-                height: 6px;
+                height: 3px;
                 background: rgba(255, 255, 255, 0.05);
                 border-radius: 10px;
                 overflow: hidden;
@@ -314,8 +295,8 @@
             .progress-fill {
                 height: 100%;
                 width: 0%;
-                background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-                box-shadow: 0 0 10px var(--primary-glow);
+                background: linear-gradient(90deg, var(--primary), var(--secondary));
+                box-shadow: 0 0 8px var(--primary-glow);
                 border-radius: 10px;
                 transition: width 0.1s linear;
             }
@@ -324,21 +305,26 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-top: 10px;
+                margin-top: 12px;
                 font-size: 11px;
-                font-weight: 600;
+                font-weight: 500;
+                font-family: var(--font-body);
             }
 
             .status-msg {
                 color: var(--text-muted);
                 letter-spacing: 0.5px;
                 text-transform: uppercase;
+                opacity: 0.85;
+                transition: color 0.3s ease;
             }
 
             .percentage-num {
                 font-family: var(--font-heading);
                 color: var(--primary);
                 text-shadow: 0 0 5px var(--primary-glow);
+                font-weight: 700;
+                transition: color 0.3s ease;
             }
 
             html[data-theme="light"] .percentage-num {
