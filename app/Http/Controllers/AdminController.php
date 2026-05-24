@@ -352,7 +352,7 @@ class AdminController extends Controller
                     
                     $isEven = false;
                     foreach ($data as $row) {
-                        $projectLayanan = Layanan::find($row->tipe_proyek);
+                        $projectLayanan = is_numeric($row->tipe_proyek) ? Layanan::find($row->tipe_proyek) : null;
                         $tipeProyekText = $projectLayanan ? $projectLayanan->nama_paket : strtoupper(str_replace('_', ' ', $row->tipe_proyek));
                         
                         $statusClass = 'badge-pending';

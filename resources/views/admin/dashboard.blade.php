@@ -808,7 +808,7 @@
                                             </td>
                                             <td>
                                                 @php
-                                                    $projectLayanan = \App\Models\Layanan::find($quote->tipe_proyek);
+                                                    $projectLayanan = is_numeric($quote->tipe_proyek) ? \App\Models\Layanan::find($quote->tipe_proyek) : null;
                                                 @endphp
                                                 <span class="badge-status badge-primary">
                                                     {{ $projectLayanan ? $projectLayanan->nama_paket : strtoupper(str_replace('_', ' ', $quote->tipe_proyek)) }}

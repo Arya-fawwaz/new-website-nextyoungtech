@@ -29,6 +29,13 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true,
         ]);
 
+        \App\Models\User::create([
+            'nama' => 'Cyntia',
+            'email' => 'thia@nextyoungtech.com',
+            'kata_sandi' => \Illuminate\Support\Facades\Hash::make('nextyoungtech2026'),
+            'is_admin' => false,
+        ]);
+
         \App\Models\Layanan::create([
             'nama_layanan' => 'Web Development',
             'nama_paket' => 'Web Design Aja',

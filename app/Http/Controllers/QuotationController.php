@@ -48,7 +48,7 @@ class QuotationController extends Controller
         ]);
 
         // Map internal values to readable Indonesian labels dynamically from DB
-        $lay = \App\Models\Layanan::find($request->project_type);
+        $lay = is_numeric($request->project_type) ? \App\Models\Layanan::find($request->project_type) : null;
         if ($lay) {
             $projectType = $lay->nama_paket . ' (Mulai Rp ' . number_format($lay->harga, 0, ',', '.') . ')';
         } else {
