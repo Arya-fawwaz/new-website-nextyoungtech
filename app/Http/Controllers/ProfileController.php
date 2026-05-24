@@ -60,26 +60,39 @@ class ProfileController extends Controller
 
         if ($request->hasFile('foto_profil')) {
             $file = $request->file('foto_profil');
-            $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
             
-            // Ensure destination directory exists
-            $destinationPath = public_path('uploads/avatars');
-            if (!file_exists($destinationPath)) {
-                mkdir($destinationPath, 0755, true);
+            try {
+                $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+                $destinationPath = public_path('uploads/avatars');
+                
+                // Ensure destination directory exists
+                if (!file_exists($destinationPath)) {
+                    @mkdir($destinationPath, 0755, true);
+                }
+
+                // Move the file
+                $file->move($destinationPath, $filename);
+
+                // Delete old avatar file if it exists and is a local file
+                if ($user->foto_profil && !str_starts_with($user->foto_profil, 'data:image') && file_exists(public_path($user->foto_profil))) {
+                    @unlink(public_path($user->foto_profil));
+                }
+
+                // Save new path
+                $user->update([
+                    'foto_profil' => 'uploads/avatars/' . $filename
+                ]);
+            } catch (\Exception $e) {
+                // Read-only serverless filesystem fallback (e.g. Vercel)
+                // Convert image directly to Base64 data URI
+                $imageData = file_get_contents($file->getRealPath());
+                $mimeType = $file->getMimeType();
+                $base64 = 'data:' . $mimeType . ';base64,' . base64_encode($imageData);
+
+                $user->update([
+                    'foto_profil' => $base64
+                ]);
             }
-
-            // Move the file
-            $file->move($destinationPath, $filename);
-
-            // Delete old avatar file if it exists
-            if ($user->foto_profil && file_exists(public_path($user->foto_profil))) {
-                @unlink(public_path($user->foto_profil));
-            }
-
-            // Save new path
-            $user->update([
-                'foto_profil' => 'uploads/avatars/' . $filename
-            ]);
         }
 
         return redirect()->back()->with('success', 'Foto profil Anda berhasil diperbarui.');

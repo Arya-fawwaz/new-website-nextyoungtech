@@ -70,4 +70,17 @@ class User extends Authenticatable
     {
         return $this->hasOne(Ulasan::class, 'pengguna_id');
     }
+
+    /**
+     * Get the resolved profile photo URL or base64 data.
+     */
+    public function getFotoProfilUrlAttribute()
+    {
+        if (!$this->foto_profil) {
+            return null;
+        }
+        return str_starts_with($this->foto_profil, 'data:image') 
+            ? $this->foto_profil 
+            : '/' . ltrim($this->foto_profil, '/');
+    }
 }

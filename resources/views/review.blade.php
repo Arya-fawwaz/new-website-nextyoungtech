@@ -36,7 +36,7 @@
                 
                 <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px;">
                     @if(auth()->user()->foto_profil)
-                        <img src="{{ '/' . ltrim(auth()->user()->foto_profil, '/') }}" alt="{{ auth()->user()->nama }}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2.5px solid var(--primary); box-shadow: 0 0 15px var(--primary-glow);">
+                        <img src="{{ auth()->user()->foto_profil_url }}" alt="{{ auth()->user()->nama }}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2.5px solid var(--primary); box-shadow: 0 0 15px var(--primary-glow);">
                     @else
                         <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(128, 128, 128, 0.05); display: flex; align-items: center; justify-content: center; border: 2px dashed var(--dashed-border);">
                             <i class="fa-solid fa-user-astronaut" style="font-size: 24px; color: var(--primary); text-shadow: 0 0 8px var(--primary-glow);"></i>

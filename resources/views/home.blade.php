@@ -96,13 +96,13 @@
                             <!-- Footer: User Info -->
                             <div style="display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--border-color); padding-top: 15px;">
                                 @php
-                                    $userAvatar = $review->pengguna && $review->pengguna->foto_profil ? $review->pengguna->foto_profil : $review->foto_profil;
+                                    $userAvatarUrl = $review->pengguna ? $review->pengguna->foto_profil_url : $review->foto_profil_url;
                                     $userName = $review->pengguna && $review->pengguna->nama ? $review->pengguna->nama : $review->nama;
-                                    $hasAvatar = !empty($userAvatar);
+                                    $hasAvatar = !empty($userAvatarUrl);
                                 @endphp
                                 
                                 @if($hasAvatar)
-                                    <img src="{{ '/' . ltrim($userAvatar, '/') }}" alt="{{ $userName }}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--primary); box-shadow: 0 0 8px var(--primary-glow);">
+                                    <img src="{{ $userAvatarUrl }}" alt="{{ $userName }}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--primary); box-shadow: 0 0 8px var(--primary-glow);">
                                 @else
                                     <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(128, 128, 128, 0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--dashed-border);">
                                         <i class="fa-solid fa-user-astronaut" style="font-size: 18px; color: var(--primary); text-shadow: 0 0 6px var(--primary-glow);"></i>

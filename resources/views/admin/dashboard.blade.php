@@ -504,7 +504,7 @@
         <div style="padding: 0 25px 20px 25px; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid var(--border-color); margin-bottom: 20px;">
             <div style="position: relative;">
                 @if(auth()->check() && auth()->user()->foto_profil)
-                    <img src="{{ asset(auth()->user()->foto_profil) }}" alt="Profil" style="width:48px; height:48px; border-radius:12px; object-fit:cover; border:2px solid var(--primary);">
+                    <img src="{{ auth()->user()->foto_profil_url }}" alt="Profil" style="width:48px; height:48px; border-radius:12px; object-fit:cover; border:2px solid var(--primary);">
                 @else
                     <div style="width:48px; height:48px; border-radius:12px; background: var(--hover-bg); display: flex; align-items: center; justify-content: center; border: 2px solid var(--primary);">
                         <i class="fa-solid fa-user-tie" style="color: var(--primary); font-size:18px;"></i>
@@ -581,7 +581,7 @@
                 <!-- Quick User Profile Dropdown Button -->
                 <button class="theme-toggle-btn" onclick="toggleQuickProfileDropdown(event)" style="cursor: pointer; overflow: hidden; padding: 0;" title="Kelola Akun">
                     @if(auth()->check() && auth()->user()->foto_profil)
-                        <img src="{{ asset(auth()->user()->foto_profil) }}" alt="Profil" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="{{ auth()->user()->foto_profil_url }}" alt="Profil" style="width:100%; height:100%; object-fit:cover;">
                     @else
                         <i class="fa-solid fa-user-tie" style="font-size: 15px;"></i>
                     @endif
