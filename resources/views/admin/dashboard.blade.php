@@ -73,7 +73,7 @@
         background-image: none !important; /* Menghilangkan pola titik-titik statis lama */
         transition: all 0.4s ease;
         position: relative;
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     .admin-content-wrapper {
@@ -357,7 +357,7 @@
         /* Adjust main panel to take full screen width */
         .admin-main-panel {
             margin-left: 0 !important;
-            padding-bottom: 96px !important; /* Spacious spacing for Admin Bottom Navigation */
+            padding-bottom: calc(108px + env(safe-area-inset-bottom)) !important; /* Spacious spacing for Admin Bottom Navigation */
         }
         
         .admin-mobile-header {
@@ -405,7 +405,7 @@
         .admin-mobile-nav {
             display: flex !important;
             position: fixed;
-            bottom: 12px;
+            bottom: calc(12px + env(safe-area-inset-bottom));
             left: 12px;
             right: 12px;
             width: calc(100% - 24px);
@@ -484,6 +484,28 @@
         }
         [data-theme="light"] .admin-mobile-nav-item.active i {
             color: var(--primary) !important;
+        }
+
+        /* Scaled down navigation icons/labels for very small/cramped devices */
+        @media (max-width: 380px) {
+            .admin-mobile-nav {
+                height: 56px;
+                bottom: calc(8px + env(safe-area-inset-bottom));
+                left: 8px;
+                right: 8px;
+                width: calc(100% - 16px);
+            }
+            .admin-mobile-nav-item {
+                font-size: 8px !important;
+                gap: 2px;
+            }
+            .admin-mobile-icon-wrapper {
+                width: 36px !important;
+                height: 22px !important;
+            }
+            .admin-mobile-nav-item i {
+                font-size: 13px !important;
+            }
         }
     }
 </style>
