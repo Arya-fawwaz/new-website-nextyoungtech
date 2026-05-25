@@ -46,7 +46,12 @@ if (str_starts_with($_SERVER['REQUEST_URI'] ?? '', '/test-vercel')) {
     } else {
         try {
             echo "  Connecting to $host:$port...\n";
-            $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4";
+            $driver = getenv('DB_CONNECTION') ?: 'mysql';
+            if ($driver === 'pgsql') {
+                $dsn = "pgsql:host=$host;port=$port;dbname=$db";
+            } else {
+                $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4";
+            }
             $options = [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_TIMEOUT => 5
@@ -59,7 +64,7 @@ if (str_starts_with($_SERVER['REQUEST_URI'] ?? '', '/test-vercel')) {
     }
 
     echo "\n3. PHP EXTENSIONS CHECK:\n";
-    $extensions = ['pdo_mysql', 'mbstring', 'openssl', 'curl', 'json'];
+    $extensions = ['pdo_mysql', 'pdo_pgsql', 'mbstring', 'openssl', 'curl', 'json'];
     foreach ($extensions as $ext) {
         if (extension_loaded($ext)) {
             echo "  [v] Extension '$ext': LOADED\n";
