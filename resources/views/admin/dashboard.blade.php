@@ -352,8 +352,9 @@
         }
         
         /* Adjust main panel to take full screen width */
-        .admin-main-panel {
+        main, .admin-main-panel {
             margin-left: 0 !important;
+            padding-top: 0 !important;
             padding-bottom: calc(108px + env(safe-area-inset-bottom)) !important; /* Spacious spacing for Admin Bottom Navigation */
         }
         
