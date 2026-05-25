@@ -55,6 +55,7 @@
     /* Reset Dasar */
     body, .admin-dashboard-layout {
         background-color: var(--bg-body) !important;
+        background-image: none !important;
         color: var(--text-main);
         transition: background-color 0.4s ease, color 0.4s ease;
         font-family: 'Inter', 'Segoe UI', sans-serif;
@@ -73,7 +74,6 @@
         background-image: none !important; /* Menghilangkan pola titik-titik statis lama */
         transition: all 0.4s ease;
         position: relative;
-        overflow-x: hidden;
     }
 
     .admin-content-wrapper {
@@ -81,10 +81,7 @@
         z-index: 10;
     }
 
-    .admin-mobile-header {
-        position: relative;
-        z-index: 15;
-    }
+    /* Mobile header styled directly in mobile media query */
 
     /* Floating Glow Orbs for Futuristic Sci-Fi Ambient */
     .glow-orb {
@@ -361,7 +358,14 @@
         }
         
         .admin-mobile-header {
-            padding: 12px 20px !important;
+            display: flex !important;
+            padding: 16px 20px !important;
+            background: var(--bg-panel) !important;
+            border-bottom: 1px solid var(--border-color) !important;
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 1000 !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .admin-content-wrapper {
@@ -401,32 +405,33 @@
             font-size: 13px !important;
         }
         
-        /* Floating Admin Mobile Bottom Navigation Bar */
+        /* Fixed Full-Width Admin Mobile Bottom Navigation Bar */
         .admin-mobile-nav {
             display: flex !important;
             position: fixed;
-            bottom: calc(12px + env(safe-area-inset-bottom));
-            left: 12px;
-            right: 12px;
-            width: calc(100% - 24px);
-            height: 64px;
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            z-index: 999;
-            padding: 0 4px;
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            height: calc(64px + env(safe-area-inset-bottom)) !important;
+            background: var(--bg-panel) !important;
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+            border: none !important;
+            border-top: 1px solid var(--border-color) !important;
+            border-radius: 0 !important;
+            z-index: 999 !important;
+            padding: 0 4px calc(env(safe-area-inset-bottom)) 4px !important;
             align-items: center;
             justify-content: space-around;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25) !important;
             transition: all 0.3s ease;
         }
         
         [data-theme="light"] .admin-mobile-nav {
-            background: rgba(255, 255, 255, 0.88) !important;
-            border-color: rgba(0, 0, 0, 0.08) !important;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.8) !important;
+            background: var(--bg-panel) !important;
+            border-color: var(--border-color) !important;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05) !important;
         }
         
         .admin-mobile-nav-item {
@@ -489,11 +494,8 @@
         /* Scaled down navigation icons/labels for very small/cramped devices */
         @media (max-width: 380px) {
             .admin-mobile-nav {
-                height: 56px;
-                bottom: calc(8px + env(safe-area-inset-bottom));
-                left: 8px;
-                right: 8px;
-                width: calc(100% - 16px);
+                height: calc(56px + env(safe-area-inset-bottom)) !important;
+                padding-bottom: calc(env(safe-area-inset-bottom)) !important;
             }
             .admin-mobile-nav-item {
                 font-size: 8px !important;
