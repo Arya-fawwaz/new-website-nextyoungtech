@@ -88,15 +88,32 @@ class AdminController extends Controller
         }
 
         $inquiries = Inquiry::latest()->get();
-        $totalInquiries = Inquiry::count();
+        // Count only active/non-completed inquiries
+        $totalInquiries = Inquiry::where('status', '!=', 'completed')->count();
         $newInquiriesCount = Inquiry::where('status', 'new')->count();
+
+        // Generate WA notification URL of the latest inquiry
+        $latestInquiry = Inquiry::where('status', 'new')->latest()->first() ?: Inquiry::latest()->first();
+        $waUrl = null;
+        if ($latestInquiry) {
+            $whatsappMessage = "📩 *PESAN KLIEN MASUK*\n\n" .
+                               "👤 Nama: " . $latestInquiry->nama . "\n" .
+                               "📧 Email: " . $latestInquiry->email . "\n" .
+                               "📱 Telp: " . ($latestInquiry->telepon ?? '-') . "\n" .
+                               "📋 Subjek: " . $latestInquiry->subjek . "\n" .
+                               "💬 Pesan: " . $latestInquiry->pesan . "\n\n" .
+                               "---" . "\n" .
+                               "Notifikasi otomatis dari Panel Admin Next Young Tech";
+            $waUrl = 'https://wa.me/628881023038?text=' . urlencode($whatsappMessage);
+        }
 
         $html = view('admin.partials.inquiries_list', compact('inquiries'))->render();
 
         return response()->json([
             'html' => $html,
             'total' => $totalInquiries,
-            'new_count' => $newInquiriesCount
+            'new_count' => $newInquiriesCount,
+            'wa_url' => $waUrl
         ]);
     }
 

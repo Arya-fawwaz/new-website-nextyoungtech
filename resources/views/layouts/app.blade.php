@@ -1154,7 +1154,7 @@
         <script>
             window.addEventListener('load', () => {
                 setTimeout(() => {
-                    window.open("{{ session('whatsapp_redirect') }}", '_blank');
+                    window.location.href = "{{ session('whatsapp_redirect') }}";
                 }, 800);
             });
         </script>

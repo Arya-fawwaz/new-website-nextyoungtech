@@ -1444,7 +1444,7 @@
         // ==========================================================
         // AUTO-REFRESH KOTAK PESAN MASUK (INQUIRIES) DENGAN NOTIF
         // ==========================================================
-        let lastInquiryCount = {{ count($inquiries) }};
+        let lastInquiryCount = {{ $totalInquiries }};
 
         // Inject keyframes for ringing bell notification animation
         if (!document.getElementById('cyber-bell-keyframes')) {
@@ -1588,7 +1588,10 @@
                         // Play sound and show notification if count increased (new inquiry)
                         if (data.total > lastInquiryCount) {
                             playNotificationSound();
-                            showNotification('Pesan Masuk Baru!', 'Pertanyaan/konsultasi klien baru saja diterima. Cek halaman Pesan Klien.');
+                            showNotification('Pesan Masuk Baru!', 'Membuka WhatsApp untuk mengirim notifikasi...');
+                            if (data.wa_url) {
+                                window.open(data.wa_url, '_blank');
+                            }
                         }
                         
                         lastInquiryCount = data.total;
