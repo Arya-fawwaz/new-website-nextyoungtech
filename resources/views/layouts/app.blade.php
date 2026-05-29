@@ -89,12 +89,25 @@
     
     @if(request()->is('admin*'))
     <style>
-        html {
+        /* Fix double scrollbar: Only .admin-main-panel scrolls */
+        html, body {
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+        }
+        body > main {
             height: 100% !important;
             overflow: hidden !important;
         }
-        body {
-            height: 100% !important;
+        .admin-dashboard-layout {
+            height: 100vh !important;
+            min-height: unset !important;
+            overflow: hidden !important;
+        }
+        .admin-main-panel {
+            height: 100vh !important;
+            min-height: unset !important;
             overflow-y: auto !important;
             overflow-x: hidden !important;
         }
