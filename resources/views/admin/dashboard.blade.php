@@ -871,7 +871,6 @@
                     <div id="inquiries-container">
                         @include('admin.partials.inquiries_list')
                     </div>
-                    @endif
                 </div>
             </div>
 
