@@ -17,6 +17,10 @@ class QuotationRequest extends Model
         'estimasi_harga',
         'catatan',
         'status',
+        'nama_proyek',
+        'warna_utama',
+        'target_pengguna',
+        'deskripsi_proyek',
     ];
 
     protected $casts = [

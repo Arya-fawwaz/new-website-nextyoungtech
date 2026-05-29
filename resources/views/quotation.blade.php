@@ -160,12 +160,19 @@
 
                         <hr style="border: none; border-top: 1px solid var(--border-color); margin: 24px 0;">
 
-                        <h3 class="receipt-title" style="font-size: 16px; margin-bottom: 16px; border: none; padding: 0;">Kontak Pengirim</h3>
+                        <h3 class="receipt-title" style="font-size: 16px; margin-bottom: 16px; border: none; padding: 0;">Rencana Proyek & PRD</h3>
+                        
+                        <input type="text" name="project_name" class="input-glass" placeholder="Nama Proyek / Brand Website" required value="{{ old('project_name') }}">
+                        <input type="text" name="color_theme" class="input-glass" placeholder="Pilihan Warna Utama (e.g. Cyber Neon, Biru Profesional)" required value="{{ old('color_theme') }}">
+                        <input type="text" name="target_audience" class="input-glass" placeholder="Target Pembaca / Pemakai Website" required value="{{ old('target_audience') }}">
+                        <textarea name="project_description" class="input-glass textarea-glass" placeholder="Deskripsikan secara detail fitur, alur kerja, & tujuan utama website ini (PRD)..." required style="height: 100px;">{{ old('project_description') }}</textarea>
+
+                        <h3 class="receipt-title" style="font-size: 16px; margin-top: 20px; margin-bottom: 16px; border: none; padding: 0;">Kontak Pengirim</h3>
                         
                         <input type="text" name="client_name" class="input-glass" placeholder="Nama Lengkap Klien" required value="{{ old('client_name') }}">
                         <input type="email" name="client_email" class="input-glass" placeholder="Alamat Email Klien" required value="{{ old('client_email') }}">
                         <input type="text" name="client_phone" class="input-glass" placeholder="Nomor Telepon / WA" required value="{{ old('client_phone') }}">
-                        <textarea name="notes" class="input-glass textarea-glass" placeholder="Catatan opsional mengenai fungsionalitas khusus proyek Anda..." style="height: 80px;">{{ old('notes') }}</textarea>
+                        <textarea name="notes" class="input-glass textarea-glass" placeholder="Catatan opsional tambahan..." style="height: 80px;">{{ old('notes') }}</textarea>
 
                         <button type="submit" class="btn-primary btn-submit-quotation">
                             <i class="fa-solid fa-rocket"></i> Ajukan Pemesanan

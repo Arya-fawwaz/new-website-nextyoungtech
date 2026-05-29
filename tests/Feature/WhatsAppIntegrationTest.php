@@ -80,7 +80,7 @@ class WhatsAppIntegrationTest extends TestCase
 
         // 2. Post invalid data
         $response = $this->post(route('quotation.store'), []);
-        $response->assertSessionHasErrors(['client_name', 'client_email', 'client_phone', 'project_type', 'features', 'estimated_price']);
+        $response->assertSessionHasErrors(['client_name', 'client_email', 'client_phone', 'project_type', 'features', 'estimated_price', 'project_name', 'color_theme', 'target_audience', 'project_description']);
 
         // 3. Post valid data
         $formData = [
@@ -92,6 +92,10 @@ class WhatsAppIntegrationTest extends TestCase
             'estimated_price' => 950000,
             'pages' => 5,
             'notes' => 'Tolong buatkan website berkecepatan tinggi.',
+            'project_name' => 'Next Young Tech Shop',
+            'color_theme' => 'Dark Purple & Silver',
+            'target_audience' => 'Generasi Muda & Pebisnis Retail',
+            'project_description' => 'Website e-commerce canggih dengan dynamic checkout, AI search, dan fast loading page.',
         ];
 
         $response = $this->post(route('quotation.store'), $formData);
@@ -109,6 +113,10 @@ class WhatsAppIntegrationTest extends TestCase
         $this->assertEquals(['multilingual', 'seo_opt'], $request->fitur);
         $this->assertEquals(950000, $request->estimasi_harga);
         $this->assertEquals('Tolong buatkan website berkecepatan tinggi.', $request->catatan);
+        $this->assertEquals('Next Young Tech Shop', $request->nama_proyek);
+        $this->assertEquals('Dark Purple & Silver', $request->warna_utama);
+        $this->assertEquals('Generasi Muda & Pebisnis Retail', $request->target_pengguna);
+        $this->assertEquals('Website e-commerce canggih dengan dynamic checkout, AI search, dan fast loading page.', $request->deskripsi_proyek);
 
         // Assert success message and WhatsApp redirect session exist
         $response->assertSessionHas('success');

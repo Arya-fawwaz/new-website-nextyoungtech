@@ -813,10 +813,10 @@
                                 <thead>
                                     <tr>
                                         <th>Nama Klien</th>
-                                        <th>Kontak WA</th>
-                                        <th>ID/Tipe Proyek</th>
-                                        <th>Nilai Proyek</th>
-                                        <th>Progress</th>
+                                        <th>Spesifikasi Proyek & PRD</th>
+                                        <th>Fitur & Estimasi Biaya</th>
+                                        <th>Status Progress</th>
+                                        <th>Tindakan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -824,22 +824,32 @@
                                         <tr>
                                             <td>
                                                 <strong style="font-size: 15px;">{{ $quote->nama_klien }}</strong><br>
-                                                <span style="font-size: 13px; color: var(--text-muted);">{{ $quote->email_klien }}</span>
-                                            </td>
-                                            <td>
-                                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $quote->telepon_klien) }}" target="_blank" style="color: var(--success); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(16, 185, 129, 0.1); border-radius: 8px;">
-                                                    <i class="fa-brands fa-whatsapp" style="font-size: 16px;"></i> WhatsApp
+                                                <span style="font-size: 13px; color: var(--text-muted); display: block; margin-bottom: 4px;">{{ $quote->email_klien }}</span>
+                                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $quote->telepon_klien) }}" target="_blank" style="color: var(--success); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; background: rgba(16, 185, 129, 0.1); border-radius: 6px; font-size: 12px; transition: 0.2s;" onmouseover="this.style.background='rgba(16, 185, 129, 0.2)'" onmouseout="this.style.background='rgba(16, 185, 129, 0.1)'">
+                                                    <i class="fa-brands fa-whatsapp" style="font-size: 14px;"></i> WhatsApp
                                                 </a>
                                             </td>
-                                            <td>
+                                            <td style="max-width: 350px;">
+                                                <strong style="color: var(--text-main); font-size: 14.5px;">{{ $quote->nama_proyek ?? 'Belum ada nama' }}</strong><br>
                                                 @php
                                                     $projectLayanan = is_numeric($quote->tipe_proyek) ? \App\Models\Layanan::find($quote->tipe_proyek) : null;
                                                 @endphp
-                                                <span class="badge-status badge-primary">
-                                                    {{ $projectLayanan ? $projectLayanan->nama_paket : strtoupper(str_replace('_', ' ', $quote->tipe_proyek)) }}
+                                                <span style="font-size: 11.5px; color: var(--secondary); font-weight: 700; display: inline-block; margin: 4px 0 6px 0;">
+                                                    Tipe: {{ $projectLayanan ? $projectLayanan->nama_paket : strtoupper(str_replace('_', ' ', $quote->tipe_proyek)) }}
+                                                </span><br>
+                                                <div style="font-size: 12.5px; color: var(--text-muted); line-height: 1.5; background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+                                                    <strong>Warna:</strong> {{ $quote->warna_utama ?? '-' }}<br>
+                                                    <strong>Target:</strong> {{ $quote->target_pengguna ?? '-' }}<br>
+                                                    <strong>Deskripsi:</strong> {{ \Illuminate\Support\Str::limit($quote->deskripsi_proyek ?? $quote->catatan ?? '-', 100) }}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <strong style="color: var(--text-main); font-size: 16px; display: block; margin-bottom: 6px;">Rp {{ number_format($quote->estimasi_harga, 0, ',', '.') }}</strong>
+                                                <span style="font-size: 11.5px; color: var(--text-muted); display: block; line-height: 1.4;">
+                                                    <strong>Fitur Premium:</strong><br>
+                                                    {{ is_array($quote->fitur) ? implode(', ', $quote->fitur) : $quote->fitur }}
                                                 </span>
                                             </td>
-                                            <td style="font-weight: 800; font-size: 15px;">Rp {{ number_format($quote->estimasi_harga, 0, ',', '.') }}</td>
                                             <td>
                                                 <form action="{{ route('admin.quotation.status', $quote->id) }}" method="POST">
                                                     @csrf
@@ -849,6 +859,11 @@
                                                         <option value="approved" {{ $quote->status === 'approved' ? 'selected' : '' }}>Disetujui</option>
                                                     </select>
                                                 </form>
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('admin.quotation.prd-download', $quote->id) }}" style="background: var(--primary); color: white; padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px var(--primary-glow); transition: 0.2s; white-space: nowrap;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                                                    <i class="fa-solid fa-file-word"></i> Unduh PRD (Word)
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach

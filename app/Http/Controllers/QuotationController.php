@@ -27,6 +27,10 @@ class QuotationController extends Controller
             'features' => 'required|array',
             'estimated_price' => 'required|numeric|min:0',
             'notes' => 'nullable|string',
+            'project_name' => 'required|string|max:255',
+            'color_theme' => 'required|string|max:255',
+            'target_audience' => 'required|string|max:255',
+            'project_description' => 'required|string',
         ], [
             'client_name.required' => 'Nama lengkap klien wajib diisi.',
             'client_email.required' => 'Alamat email klien wajib diisi.',
@@ -35,6 +39,10 @@ class QuotationController extends Controller
             'project_type.required' => 'Tipe proyek wajib dipilih.',
             'features.required' => 'Fitur wajib dipilih.',
             'estimated_price.required' => 'Estimasi harga wajib ditentukan.',
+            'project_name.required' => 'Nama Proyek / Brand website wajib diisi.',
+            'color_theme.required' => 'Pilihan warna utama wajib diisi.',
+            'target_audience.required' => 'Target pengguna website wajib diisi.',
+            'project_description.required' => 'Deskripsi kebutuhan PRD wajib diisi.',
         ]);
 
         QuotationRequest::create([
@@ -45,6 +53,10 @@ class QuotationController extends Controller
             'fitur' => $validated['features'],
             'estimasi_harga' => $validated['estimated_price'],
             'catatan' => $validated['notes'] ?? null,
+            'nama_proyek' => $validated['project_name'],
+            'warna_utama' => $validated['color_theme'],
+            'target_pengguna' => $validated['target_audience'],
+            'deskripsi_proyek' => $validated['project_description'],
         ]);
 
         // Map internal values to readable Indonesian labels dynamically from DB
@@ -79,24 +91,24 @@ class QuotationController extends Controller
         $featuresStr = count($selectedFeatures) > 0 ? implode(', ', $selectedFeatures) : 'Tidak ada';
 
         $formattedPrice = 'Rp ' . number_format($request->estimated_price, 0, ',', '.');
-        $notes = $request->notes ?: 'Tidak ada catatan tambahan';
 
-        // Format a professional WhatsApp message URL
-        $whatsappMessage = "Halo Next Young Tech,\n\nSaya ingin berkonsultasi mengenai estimasi biaya / pemesanan website custom:\n\n" .
+        // Format a professional WhatsApp message URL including complete PRD details
+        $whatsappMessage = "Halo Next Young Tech,\n\nSaya ingin berkonsultasi mengenai estimasi biaya & PRD Website:\n\n" .
                            "- Nama Klien: " . $request->client_name . "\n" .
-                           "- Email Klien: " . $request->client_email . "\n" .
-                           "- Telepon/WA: " . $request->client_phone . "\n" .
+                           "- Nama Proyek/Brand: " . $request->project_name . "\n" .
                            "- Tipe Website: " . $projectType . "\n" .
-                           "- Estimasi Jumlah Halaman: " . $pages . " Halaman\n" .
+                           "- Warna Utama: " . $request->color_theme . "\n" .
+                           "- Target Pengguna: " . $request->target_audience . "\n" .
                            "- Fitur Tambahan: " . $featuresStr . "\n" .
+                           "- Estimasi Jumlah Halaman: " . $pages . " Halaman\n" .
                            "- Estimasi Total Biaya: " . $formattedPrice . "\n" .
-                           "- Catatan Klien: " . $notes . "\n\n" .
-                           "Mohon diproses untuk konsultasi lebih lanjut. Terima kasih.";
+                           "- Deskripsi Singkat PRD: " . $request->project_description . "\n\n" .
+                           "Mohon diproses untuk konsultasi PRD lebih lanjut. Terima kasih.";
 
         $whatsappUrl = 'https://wa.me/628881023038?text=' . urlencode($whatsappMessage);
 
         return redirect()->back()
-            ->with('success', 'Permintaan penawaran proyek Anda telah diterima! Tim Next Young Tech akan menganalisis kebutuhan Anda dan mengirimkan proposal resmi dalam 24 jam. Silakan lanjutkan konsultasi via WhatsApp.')
+            ->with('success', 'Formulir PRD & permintaan penawaran proyek Anda telah diterima! Tim Next Young Tech akan menganalisis kebutuhan Anda dan mengirimkan proposal resmi dalam 24 jam. Silakan lanjutkan konsultasi via WhatsApp.')
             ->with('whatsapp_redirect', $whatsappUrl);
     }
 }

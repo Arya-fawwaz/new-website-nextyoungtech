@@ -149,6 +149,201 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Status penawaran berhasil diperbarui.');
     }
 
+    public function downloadPrd($id)
+    {
+        if (!session('admin_logged_in')) {
+            return redirect()->route('admin.login');
+        }
+
+        $quote = QuotationRequest::findOrFail($id);
+
+        $projectLayanan = is_numeric($quote->tipe_proyek) ? Layanan::find($quote->tipe_proyek) : null;
+        $projectType = $projectLayanan ? $projectLayanan->nama_paket : strtoupper(str_replace('_', ' ', $quote->tipe_proyek));
+
+        $featureLabels = [
+            'multilingual' => 'Multi-Bahasa (+ Rp 100rb)',
+            'seo_opt' => 'Super SEO (+ Rp 150rb)',
+            'high_anim' => 'GSAP Animasi (+ Rp 200rb)',
+            'secure_core' => 'Secure Shield (+ Rp 150rb)',
+            'payment_gateway' => 'Payment Gateway (+ Rp 300rb)',
+            'cms_integrated' => 'CMS Terintegrasi (+ Rp 250rb)',
+        ];
+
+        $selectedFeatures = [];
+        if (is_array($quote->fitur)) {
+            foreach ($quote->fitur as $feat) {
+                $selectedFeatures[] = $featureLabels[$feat] ?? $feat;
+            }
+        }
+        $featuresStr = count($selectedFeatures) > 0 ? implode(', ', $selectedFeatures) : 'Tidak ada';
+
+        $filename = "PRD_" . str_replace(' ', '_', $quote->nama_proyek ?? 'Project') . "_" . date('Ymd') . ".doc";
+
+        $headers = [
+            "Content-type"        => "application/vnd.ms-word; charset=utf-8",
+            "Content-Disposition" => "attachment; filename=" . $filename,
+            "Pragma"              => "no-cache",
+            "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+            "Expires"             => "0"
+        ];
+
+        $callback = function() use ($quote, $projectType, $featuresStr) {
+            $file = fopen('php://output', 'w');
+            fwrite($file, "\xEF\xBB\xBF");
+
+            $html = '
+            <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                <title>Product Requirements Document (PRD)</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        line-height: 1.6;
+                        color: #333333;
+                    }
+                    .header-table {
+                        width: 100%;
+                        border-bottom: 3px double #4f46e5;
+                        margin-bottom: 30px;
+                        padding-bottom: 10px;
+                    }
+                    .title {
+                        font-size: 26px;
+                        font-weight: bold;
+                        color: #1e1b4b;
+                        margin: 0;
+                    }
+                    .subtitle {
+                        font-size: 14px;
+                        color: #4f46e5;
+                        font-weight: bold;
+                        margin: 5px 0 0 0;
+                    }
+                    h2 {
+                        color: #4f46e5;
+                        border-bottom: 1px solid #cbd5e1;
+                        padding-bottom: 5px;
+                        margin-top: 30px;
+                        font-size: 18px;
+                    }
+                    table.info-table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin-bottom: 20px;
+                    }
+                    table.info-table td {
+                        padding: 8px 10px;
+                        border: 1px solid #cbd5e1;
+                        font-size: 13px;
+                    }
+                    table.info-table td.label {
+                        font-weight: bold;
+                        background-color: #f8fafc;
+                        width: 200px;
+                    }
+                    .content-box {
+                        background-color: #f8fafc;
+                        border-left: 4px solid #4f46e5;
+                        padding: 15px;
+                        margin-bottom: 20px;
+                        font-size: 13px;
+                    }
+                    .footer {
+                        margin-top: 50px;
+                        font-size: 11px;
+                        color: #64748b;
+                        border-top: 1px solid #e2e8f0;
+                        padding-top: 10px;
+                        text-align: center;
+                    }
+                </style>
+            </head>
+            <body>
+                <table class="header-table">
+                    <tr>
+                        <td>
+                            <div class="title">PRODUCT REQUIREMENTS DOCUMENT (PRD)</div>
+                            <div class="subtitle">Next Young Tech - Dokumen Spesifikasi Proyek</div>
+                        </td>
+                        <td align="right" style="font-size: 12px; color: #64748b;">
+                            Tanggal Dibuat: ' . $quote->created_at->format('d F Y') . '
+                        </td>
+                    </tr>
+                </table>
+
+                <h2>1. Informasi Klien & Proyek</h2>
+                <table class="info-table">
+                    <tr>
+                        <td class="label">Nama Lengkap Klien</td>
+                        <td>' . htmlspecialchars($quote->nama_klien) . '</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Alamat Email</td>
+                        <td>' . htmlspecialchars($quote->email_klien) . '</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Nomor Telepon / WA</td>
+                        <td>' . htmlspecialchars($quote->telepon_klien) . '</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Nama Proyek / Brand</td>
+                        <td><strong>' . htmlspecialchars($quote->nama_proyek ?? 'Belum Ditentukan') . '</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Status Progress</td>
+                        <td>' . strtoupper($quote->status) . '</td>
+                    </tr>
+                </table>
+
+                <h2>2. Spesifikasi Teknis & Desain Website</h2>
+                <table class="info-table">
+                    <tr>
+                        <td class="label">Tipe / Jenis Website</td>
+                        <td>' . htmlspecialchars($projectType) . '</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Tema Warna Utama</td>
+                        <td>' . htmlspecialchars($quote->warna_utama ?? 'Belum Ditentukan') . '</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Target Pengguna (Audience)</td>
+                        <td>' . htmlspecialchars($quote->target_pengguna ?? 'Belum Ditentukan') . '</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Fitur-fitur Premium</td>
+                        <td>' . htmlspecialchars($featuresStr) . '</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Estimasi Nilai Proyek</td>
+                        <td style="font-weight: bold; color: #4f46e5;">Rp ' . number_format($quote->estimasi_harga, 0, ',', '.') . '</td>
+                    </tr>
+                </table>
+
+                <h2>3. Deskripsi Kebutuhan & Alur Utama (PRD)</h2>
+                <div class="content-box">
+                    ' . nl2br(htmlspecialchars($quote->deskripsi_proyek ?? 'Tidak ada deskripsi PRD khusus yang disediakan.')) . '
+                </div>
+
+                <h2>4. Catatan Khusus Tambahan</h2>
+                <div class="content-box" style="border-left-color: #64748b;">
+                    ' . nl2br(htmlspecialchars($quote->catatan ?? 'Tidak ada catatan tambahan.')) . '
+                </div>
+
+                <div class="footer">
+                    Dokumen ini dibuat secara otomatis oleh sistem administrasi Next Young Tech. Seluruh isi dokumen bersifat rahasia dan merupakan hak cipta Next Young Tech & Klien.
+                </div>
+            </body>
+            </html>
+            ';
+
+            fwrite($file, $html);
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
+
     // ==========================================
     // CRUD LAYANAN DENGAN METODE DINAMIS
     // ==========================================

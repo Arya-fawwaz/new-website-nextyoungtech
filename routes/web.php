@@ -46,6 +46,7 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('adm
 Route::get('/admin/inquiries-html', [AdminController::class, 'getInquiriesHtml'])->name('admin.inquiries.html');
 Route::post('/admin/inquiry/{id}/status', [AdminController::class, 'updateInquiryStatus'])->name('admin.inquiry.status');
 Route::post('/admin/quotation/{id}/status', [AdminController::class, 'updateQuotationStatus'])->name('admin.quotation.status');
+Route::get('/admin/quotation/{id}/prd-download', [AdminController::class, 'downloadPrd'])->name('admin.quotation.prd-download');
 
 // CRUD Layanan Admin
 Route::post('/admin/layanan', [AdminController::class, 'storeService'])->name('admin.service.store');
