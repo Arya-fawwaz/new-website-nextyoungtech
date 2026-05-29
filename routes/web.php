@@ -43,6 +43,7 @@ Route::get('/admin/login', [AdminController::class, 'showLogin'])->name('admin.l
 Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login.post');
 Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+Route::get('/admin/inquiries-html', [AdminController::class, 'getInquiriesHtml'])->name('admin.inquiries.html');
 Route::post('/admin/inquiry/{id}/status', [AdminController::class, 'updateInquiryStatus'])->name('admin.inquiry.status');
 Route::post('/admin/quotation/{id}/status', [AdminController::class, 'updateQuotationStatus'])->name('admin.quotation.status');
 

@@ -81,6 +81,25 @@ class AdminController extends Controller
         ));
     }
 
+    public function getInquiriesHtml()
+    {
+        if (!session('admin_logged_in')) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+
+        $inquiries = Inquiry::latest()->get();
+        $totalInquiries = Inquiry::count();
+        $newInquiriesCount = Inquiry::where('status', 'new')->count();
+
+        $html = view('admin.partials.inquiries_list', compact('inquiries'))->render();
+
+        return response()->json([
+            'html' => $html,
+            'total' => $totalInquiries,
+            'new_count' => $newInquiriesCount
+        ]);
+    }
+
     public function updateInquiryStatus($id, Request $request)
     {
         if (!session('admin_logged_in')) {

@@ -675,7 +675,7 @@
                     <div class="stat-card-premium bg-grad-3">
                         <i class="fa-solid fa-inbox stat-icon"></i>
                         <span style="font-size: 13px; font-weight: 700; opacity: 0.9; letter-spacing: 1px;">PESAN KLIEN</span>
-                        <div style="font-size: 36px; font-weight: 900; margin: 15px 0 5px 0;">{{ $totalInquiries ?? 0 }} <span style="font-size: 18px; font-weight: 600;">Pesan</span></div>
+                        <div style="font-size: 36px; font-weight: 900; margin: 15px 0 5px 0;" id="overview-inquiries-count">{{ $totalInquiries ?? 0 }} <span style="font-size: 18px; font-weight: 600;">Pesan</span></div>
                         <span style="font-size: 13px; opacity: 0.9; font-weight: 500;"><i class="fa-solid fa-circle-exclamation" style="color: #fef08a;"></i> Menunggu balasan</span>
                     </div>
                 </div>
@@ -868,58 +868,9 @@
                             <i class="fa-solid fa-file-excel"></i> Unduh Laporan (CSV)
                         </a>
                     </div>
-                    @if(empty($inquiries) || count($inquiries) === 0)
-                        <div style="text-align: center; padding: 60px 0; color: var(--text-muted); background: var(--bg-body); border-radius: 16px; border: 2px dashed var(--border-color);">
-                            <i class="fa-solid fa-envelope-open" style="font-size: 48px; margin-bottom: 15px; opacity: 0.5;"></i>
-                            <p style="font-size: 15px; font-weight: 600;">Tidak ada pertanyaan dari klien.</p>
-                        </div>
-                    @else
-                        <div style="overflow-x: auto;">
-                            <table class="admin-table">
-                                <thead>
-                                    <tr>
-                                        <th>Pengirim</th>
-                                        <th>Subjek</th>
-                                        <th>Isi Pesan</th>
-                                        <th>Tindakan</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($inquiries as $inq)
-                                        <tr>
-                                            <td>
-                                                <strong style="font-size: 15px;">{{ $inq->nama }}</strong><br>
-                                                <span style="font-size: 13px; color: var(--text-muted); display: block; margin-bottom: 4px;">{{ $inq->email }}</span>
-                                                @if($inq->telepon)
-                                                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $inq->telepon) }}" target="_blank" style="color: var(--success); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; background: rgba(16, 185, 129, 0.1); border-radius: 6px; font-size: 12px; transition: 0.2s;" onmouseover="this.style.background='rgba(16, 185, 129, 0.2)'" onmouseout="this.style.background='rgba(16, 185, 129, 0.1)'">
-                                                        <i class="fa-brands fa-whatsapp" style="font-size: 14px;"></i> {{ $inq->telepon }}
-                                                    </a>
-                                                @else
-                                                    <span style="font-size: 11px; color: var(--text-muted); font-style: italic;">Tidak ada telepon</span>
-                                                @endif
-                                            </td>
-                                            <td><strong style="color: var(--text-main);">{{ $inq->subjek }}</strong></td>
-                                            <td style="max-width: 350px; font-size: 14px; line-height: 1.6; color: var(--text-muted);">{{ $inq->pesan }}</td>
-                                            <td>
-                                                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-                                                    <form action="{{ route('admin.inquiry.status', $inq->id) }}" method="POST">
-                                                        @csrf
-                                                        <select name="status" class="form-control-glass" style="margin: 0; padding: 8px 12px; width: auto; font-weight: 700; cursor: pointer;" onchange="this.form.submit()">
-                                                            <option value="new" {{ $inq->status === 'new' ? 'selected' : '' }}>Baru</option>
-                                                            <option value="contacted" {{ $inq->status === 'contacted' ? 'selected' : '' }}>Dihubungi</option>
-                                                            <option value="completed" {{ $inq->status === 'completed' ? 'selected' : '' }}>Selesai</option>
-                                                        </select>
-                                                    </form>
-                                                    <a href="https://wa.me/628881023038?text={{ urlencode('📩 *PESAN KLIEN MASUK*' . chr(10) . chr(10) . '👤 Nama: ' . $inq->nama . chr(10) . '📧 Email: ' . $inq->email . chr(10) . '📱 Telp: ' . ($inq->telepon ?? '-') . chr(10) . '📋 Subjek: ' . $inq->subjek . chr(10) . '💬 Pesan: ' . $inq->pesan . chr(10) . chr(10) . '---' . chr(10) . 'Notifikasi otomatis dari Panel Admin Next Young Tech') }}" target="_blank" style="background: #25d366; color: #fff; padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; transition: 0.2s; box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(37, 211, 102, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(37, 211, 102, 0.3)'">
-                                                        <i class="fa-brands fa-whatsapp" style="font-size: 14px;"></i> Notif WA
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                    <div id="inquiries-container">
+                        @include('admin.partials.inquiries_list')
+                    </div>
                     @endif
                 </div>
             </div>
@@ -997,7 +948,7 @@
                         </div>
                         <div class="stat-card-premium bg-grad-3" style="padding: 20px;">
                             <span style="font-size: 11px; font-weight: 700; opacity: 0.9; letter-spacing: 0.5px;">TOTAL PESAN MASUK</span>
-                            <div style="font-size: 24px; font-weight: 900; margin: 10px 0 5px 0;">{{ count($inquiries) }} Pesan</div>
+                            <div style="font-size: 24px; font-weight: 900; margin: 10px 0 5px 0;" id="pembukuan-inquiries-count">{{ count($inquiries) }} Pesan</div>
                             <span style="font-size: 11px; opacity: 0.9; font-weight: 500;">Pertanyaan klien di form kontak</span>
                         </div>
                     </div>
@@ -1490,6 +1441,165 @@
         if (savedTab && ['overview', 'quotes', 'inquiries', 'users', 'services', 'pembukuan'].includes(savedTab)) {
             switchAdminTab(savedTab);
         }
+
+        // ==========================================================
+        // AUTO-REFRESH KOTAK PESAN MASUK (INQUIRIES) DENGAN NOTIF
+        // ==========================================================
+        let lastInquiryCount = {{ count($inquiries) }};
+
+        // Inject keyframes for ringing bell notification animation
+        if (!document.getElementById('cyber-bell-keyframes')) {
+            const style = document.createElement('style');
+            style.id = 'cyber-bell-keyframes';
+            style.innerHTML = `
+                @keyframes ring {
+                    0% { transform: rotate(0); }
+                    10% { transform: rotate(15deg); }
+                    20% { transform: rotate(-15deg); }
+                    30% { transform: rotate(10deg); }
+                    40% { transform: rotate(-10deg); }
+                    50% { transform: rotate(0); }
+                    100% { transform: rotate(0); }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        function playNotificationSound() {
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                
+                // Synth high-pitch cute chime
+                const osc1 = audioCtx.createOscillator();
+                const gain1 = audioCtx.createGain();
+                osc1.type = 'sine';
+                osc1.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
+                osc1.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.15); // A5
+                gain1.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                gain1.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                
+                osc1.connect(gain1);
+                gain1.connect(audioCtx.destination);
+                osc1.start();
+                osc1.stop(audioCtx.currentTime + 0.3);
+
+                setTimeout(() => {
+                    const osc2 = audioCtx.createOscillator();
+                    const gain2 = audioCtx.createGain();
+                    osc2.type = 'sine';
+                    osc2.frequency.setValueAtTime(880, audioCtx.currentTime); // A5
+                    osc2.frequency.exponentialRampToValueAtTime(1174.66, audioCtx.currentTime + 0.2); // D6
+                    gain2.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                    gain2.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+                    
+                    osc2.connect(gain2);
+                    gain2.connect(audioCtx.destination);
+                    osc2.start();
+                    osc2.stop(audioCtx.currentTime + 0.4);
+                }, 120);
+            } catch (err) {
+                console.log('Audio Context error or not allowed yet:', err);
+            }
+        }
+
+        function showNotification(title, message) {
+            const containerId = 'cyber-notification-container';
+            let container = document.getElementById(containerId);
+            if (!container) {
+                container = document.createElement('div');
+                container.id = containerId;
+                container.style.position = 'fixed';
+                container.style.top = '25px';
+                container.style.right = '25px';
+                container.style.zIndex = '99999';
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.gap = '12px';
+                document.body.appendChild(container);
+            }
+            
+            const toast = document.createElement('div');
+            toast.className = 'glass-card';
+            toast.style.padding = '16px 20px';
+            toast.style.borderRadius = '14px';
+            toast.style.border = '1px solid rgba(16, 185, 129, 0.3)';
+            toast.style.background = 'rgba(10, 10, 15, 0.85)';
+            toast.style.backdropFilter = 'blur(10px)';
+            toast.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(16, 185, 129, 0.15)';
+            toast.style.display = 'flex';
+            toast.style.alignItems = 'center';
+            toast.style.gap = '15px';
+            toast.style.minWidth = '320px';
+            toast.style.maxWidth = '400px';
+            toast.style.transform = 'translateX(120%)';
+            toast.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            
+            toast.innerHTML = `
+                <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(16, 185, 129, 0.15); display: flex; align-items: center; justify-content: center; border: 1px solid var(--success); flex-shrink: 0;">
+                    <i class="fa-solid fa-bell" style="color: var(--success); font-size: 18px; animation: ring 1.5s ease infinite;"></i>
+                </div>
+                <div style="flex: 1;">
+                    <strong style="color: var(--text-main); font-size: 14.5px; display: block; margin-bottom: 2px;">${title}</strong>
+                    <span style="color: var(--text-muted); font-size: 12.5px; line-height: 1.4; display: block;">${message}</span>
+                </div>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Trigger animation in
+            setTimeout(() => {
+                toast.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Auto dismiss
+            setTimeout(() => {
+                toast.style.transform = 'translateX(120%)';
+                toast.style.opacity = '0';
+                setTimeout(() => {
+                    toast.remove();
+                }, 400);
+            }, 6000);
+        }
+
+        function pollInquiries() {
+            fetch("{{ route('admin.inquiries.html') }}")
+                .then(res => res.json())
+                .then(data => {
+                    if (data && data.html) {
+                        const container = document.getElementById('inquiries-container');
+                        if (container) {
+                            // Check if content is actually different to avoid unnecessary rerendering
+                            // But since forms have CSRF tokens, it's fine to only replace if total count differs
+                            if (data.total !== lastInquiryCount) {
+                                container.innerHTML = data.html;
+                            }
+                        }
+                        
+                        // Update counts dynamically in dashboard stats
+                        const overviewCount = document.getElementById('overview-inquiries-count');
+                        if (overviewCount) {
+                            overviewCount.innerHTML = data.total + ' <span style="font-size: 18px; font-weight: 600;">Pesan</span>';
+                        }
+                        
+                        const pembukuanCount = document.getElementById('pembukuan-inquiries-count');
+                        if (pembukuanCount) {
+                            pembukuanCount.innerHTML = data.total + ' Pesan';
+                        }
+                        
+                        // Play sound and show notification if count increased (new inquiry)
+                        if (data.total > lastInquiryCount) {
+                            playNotificationSound();
+                            showNotification('Pesan Masuk Baru!', 'Pertanyaan/konsultasi klien baru saja diterima. Cek halaman Pesan Klien.');
+                        }
+                        
+                        lastInquiryCount = data.total;
+                    }
+                })
+                .catch(err => console.error('Error polling inquiries:', err));
+        }
+
+        // Poll every 5 seconds
+        setInterval(pollInquiries, 5000);
     });
 
     // ==========================================================
