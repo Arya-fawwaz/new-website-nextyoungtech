@@ -86,6 +86,20 @@
             }
         }
     </style>
+    
+    @if(request()->is('admin*'))
+    <style>
+        html {
+            height: 100% !important;
+            overflow: hidden !important;
+        }
+        body {
+            height: 100% !important;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+        }
+    </style>
+    @endif
 </head>
 <body>
 
