@@ -1588,10 +1588,7 @@
                         // Play sound and show notification if count increased (new inquiry)
                         if (data.total > lastInquiryCount) {
                             playNotificationSound();
-                            showNotification('Pesan Masuk Baru!', 'Membuka WhatsApp untuk mengirim notifikasi...');
-                            if (data.wa_url) {
-                                window.open(data.wa_url, '_blank');
-                            }
+                            showNotification('Pesan Masuk Baru!', 'Pertanyaan/konsultasi klien baru saja diterima.');
                         }
                         
                         lastInquiryCount = data.total;

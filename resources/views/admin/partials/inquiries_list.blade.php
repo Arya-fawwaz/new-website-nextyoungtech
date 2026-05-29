@@ -40,9 +40,11 @@
                                         <option value="completed" {{ $inq->status === 'completed' ? 'selected' : '' }}>Selesai</option>
                                     </select>
                                 </form>
-                                <a href="https://wa.me/628881023038?text={{ urlencode('📩 *PESAN KLIEN MASUK*' . chr(10) . chr(10) . '👤 Nama: ' . $inq->nama . chr(10) . '📧 Email: ' . $inq->email . chr(10) . '📱 Telp: ' . ($inq->telepon ?? '-') . chr(10) . '📋 Subjek: ' . $inq->subjek . chr(10) . '💬 Pesan: ' . $inq->pesan . chr(10) . chr(10) . '---' . chr(10) . 'Notifikasi otomatis dari Panel Admin Next Young Tech') }}" target="_blank" style="background: #25d366; color: #fff; padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; transition: 0.2s; box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(37, 211, 102, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(37, 211, 102, 0.3)'">
-                                    <i class="fa-brands fa-whatsapp" style="font-size: 14px;"></i> Notif WA
-                                </a>
+                                @if($inq->telepon)
+                                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $inq->telepon) }}?text={{ urlencode('Halo ' . $inq->nama . ', terima kasih telah menghubungi Next Young Tech. Kami telah menerima pesan Anda mengenai "' . $inq->subjek . '".') }}" target="_blank" style="background: #25d366; color: #fff; padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; transition: 0.2s; box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(37, 211, 102, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(37, 211, 102, 0.3)'">
+                                        <i class="fa-brands fa-whatsapp" style="font-size: 14px;"></i> Balas WA
+                                    </a>
+                                @endif
                             </div>
                         </td>
                     </tr>
