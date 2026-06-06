@@ -20,11 +20,11 @@
             <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 40px;">
                 
                 <!-- Project 1: UG Force -->
-                <div class="glass-card portfolio-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%; border: 1px solid var(--border-color); border-radius: 20px; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);">
-                    <div style="width: 100%; height: 220px; overflow: hidden; position: relative; border-bottom: 1px solid var(--border-color);">
+                <div class="glass-card portfolio-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%; border-radius: 20px; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);">
+                    <div class="portfolio-img-container">
                         <img src="/images/portfolio_ugforce.png" alt="UG Force Classroom Booking" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="portfolio-img">
                         <div class="portfolio-overlay" style="position: absolute; top: 12px; right: 12px; z-index: 3;">
-                            <span class="badge" style="background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); color: #c084fc; padding: 6px 12px; border-radius: 50px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Pemesanan Kelas & Kampus</span>
+                            <span class="badge-ugforce">Pemesanan Kelas & Kampus</span>
                         </div>
                     </div>
                     <div style="padding: 30px; display: flex; flex-direction: column; flex-grow: 1;">
@@ -51,11 +51,11 @@
                 </div>
 
                 <!-- Project 2: ParkSmart GPS -->
-                <div class="glass-card portfolio-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%; border: 1px solid var(--border-color); border-radius: 20px; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);">
-                    <div style="width: 100%; height: 220px; overflow: hidden; position: relative; border-bottom: 1px solid var(--border-color);">
+                <div class="glass-card portfolio-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%; border-radius: 20px; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);">
+                    <div class="portfolio-img-container">
                         <img src="/images/portfolio_parksmart.png" alt="ParkSmart GPS AI Parking" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" class="portfolio-img">
                         <div class="portfolio-overlay" style="position: absolute; top: 12px; right: 12px; z-index: 3;">
-                            <span class="badge" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); color: #34d399; padding: 6px 12px; border-radius: 50px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">AI Computer Vision</span>
+                            <span class="badge-parksmart">AI Computer Vision</span>
                         </div>
                     </div>
                     <div style="padding: 30px; display: flex; flex-direction: column; flex-grow: 1;">
@@ -87,6 +87,10 @@
 
     <!-- Custom CSS styles injected specifically for Portfolio Page interactions -->
     <style>
+        .portfolio-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
         .portfolio-card:hover {
             transform: translateY(-8px) scale(1.01);
             border-color: rgba(14, 165, 233, 0.4) !important;
@@ -95,6 +99,43 @@
         .portfolio-card:hover .portfolio-img {
             transform: scale(1.08);
         }
+        
+        /* Image Container & Border Styling */
+        .portfolio-img-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        /* Badges styling */
+        .badge-ugforce {
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #c084fc;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+        
+        .badge-parksmart {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
         .tech-tag {
             font-size: 11px;
             padding: 5px 12px;
@@ -105,13 +146,54 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        html[data-theme="light"] .tech-tag {
-            background: rgba(15, 23, 42, 0.04);
-            color: var(--text-muted);
+        
+        /* Light Theme Overrides - Bright & Clear from the Start without Hover */
+        html[data-theme="light"] .portfolio-card {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
         }
+        html[data-theme="light"] .portfolio-img-container {
+            border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+        }
+        html[data-theme="light"] .portfolio-card h3 {
+            color: #0f172a !important;
+        }
+        html[data-theme="light"] .portfolio-card p {
+            color: #334155 !important;
+        }
+        html[data-theme="light"] .tech-tag {
+            background: #f1f5f9 !important;
+            border-color: #e2e8f0 !important;
+            color: #475569 !important;
+        }
+        html[data-theme="light"] .badge-ugforce {
+            background: rgba(168, 85, 247, 0.1) !important;
+            border-color: rgba(168, 85, 247, 0.2) !important;
+            color: #7e22ce !important;
+        }
+        html[data-theme="light"] .badge-parksmart {
+            background: rgba(16, 185, 129, 0.1) !important;
+            border-color: rgba(16, 185, 129, 0.2) !important;
+            color: #047857 !important;
+        }
+        
+        /* Hover behaviors for light/dark themes */
         .portfolio-card:hover .tech-tag {
             border-color: rgba(14, 165, 233, 0.3) !important;
             background: rgba(14, 165, 233, 0.08) !important;
+            color: var(--primary) !important;
+        }
+        
+        html[data-theme="light"] .portfolio-card:hover {
+            background: #ffffff !important;
+            border-color: rgba(0, 150, 199, 0.4) !important;
+            box-shadow: 0 15px 35px rgba(0, 150, 199, 0.15) !important;
+        }
+        
+        html[data-theme="light"] .portfolio-card:hover .tech-tag {
+            border-color: rgba(0, 150, 199, 0.3) !important;
+            background: rgba(0, 150, 199, 0.08) !important;
             color: var(--primary) !important;
         }
     </style>
