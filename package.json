@@ -3,7 +3,6 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "npm run vite-build",
         "vite-build": "vite build",
         "dev": "vite"
     },
