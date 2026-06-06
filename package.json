@@ -3,6 +3,7 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "build": "npm run vite-build && php artisan route:cache && php artisan view:cache",
         "vite-build": "vite build",
         "dev": "vite"
     },
