@@ -26,11 +26,6 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-        // On Vercel, read pre-compiled views directly from the build output
-        if (!$this->app->runningInConsole() && (isset($_ENV['VERCEL']) || isset($_SERVER['VERCEL']) || env('VERCEL') == '1')) {
-            config(['view.compiled' => base_path('storage/framework/views')]);
-        }
-
         Connection::resolverFor('pgsql', function ($connection, $database, $prefix, $config) {
             return new PostgresConnection($connection, $database, $prefix, $config);
         });

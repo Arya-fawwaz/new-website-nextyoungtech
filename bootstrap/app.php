@@ -22,9 +22,9 @@ if (isset($_ENV['VERCEL']) || isset($_SERVER['VERCEL']) || env('VERCEL') == '1')
     $storagePath = '/tmp/storage';
     $app->useStoragePath($storagePath);
     
-    // Ensure framework folders exist in /tmp
+    $viewsDest = $storagePath . '/framework/views';
     $dirs = [
-        $storagePath . '/framework/views',
+        $viewsDest,
         $storagePath . '/framework/cache',
         $storagePath . '/framework/sessions',
         $storagePath . '/logs',
@@ -32,6 +32,17 @@ if (isset($_ENV['VERCEL']) || isset($_SERVER['VERCEL']) || env('VERCEL') == '1')
     foreach ($dirs as $dir) {
         if (!is_dir($dir)) {
             mkdir($dir, 0755, true);
+        }
+    }
+
+    // Warm up view cache by copying pre-compiled views from read-only base path to writable /tmp
+    $viewsSource = dirname(__DIR__) . '/storage/framework/views';
+    if (is_dir($viewsSource)) {
+        foreach (glob($viewsSource . '/*.php') as $viewFile) {
+            $destFile = $viewsDest . '/' . basename($viewFile);
+            if (!file_exists($destFile)) {
+                copy($viewFile, $destFile);
+            }
         }
     }
 }
