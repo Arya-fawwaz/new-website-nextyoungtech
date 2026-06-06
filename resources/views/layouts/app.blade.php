@@ -638,6 +638,7 @@
                 <li><a href="{{ route('about') }}" class="nav-link {{ Route::is('about') ? 'active' : '' }}">Profil Perusahaan</a></li>
                 <li><a href="{{ route('services') }}" class="nav-link {{ Route::is('services') ? 'active' : '' }}">Layanan</a></li>
                 <li><a href="{{ route('features') }}" class="nav-link {{ Route::is('features') ? 'active' : '' }}">Fitur Utama</a></li>
+                <li><a href="{{ route('portfolio') }}" class="nav-link {{ Route::is('portfolio') ? 'active' : '' }}">Portofolio</a></li>
                 @auth
                     <li><a href="{{ route('quotation.index') }}" class="nav-link {{ Route::is('quotation.index') ? 'active' : '' }}">Estimasi Biaya</a></li>
                     <li><a href="{{ route('review.create') }}" class="nav-link {{ Route::is('review.create') ? 'active' : '' }}">Tulis Ulasan</a></li>
@@ -747,6 +748,7 @@
                     <li><a href="{{ route('about') }}"><i class="fa-solid fa-chevron-right"></i> Tentang Kami</a></li>
                     <li><a href="{{ route('services') }}"><i class="fa-solid fa-chevron-right"></i> Portal Layanan</a></li>
                     <li><a href="{{ route('features') }}"><i class="fa-solid fa-chevron-right"></i> Fitur Andalan</a></li>
+                    <li><a href="{{ route('portfolio') }}"><i class="fa-solid fa-chevron-right"></i> Portofolio Kami</a></li>
                     @auth
                         <li><a href="{{ route('quotation.index') }}"><i class="fa-solid fa-chevron-right"></i> Kalkulator Estimasi</a></li>
                     @else
