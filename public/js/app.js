@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
 
     // 4. 3D Card Hover Tilt Effect
-    init3DTilt();
+    // init3DTilt(); // Disabled to prevent jittering when used inside Swiper
 
     // 5. Interactive Price Estimator (Quotation Calculator)
     initQuotationCalculator();

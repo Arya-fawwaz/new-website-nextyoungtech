@@ -3880,3 +3880,11 @@ body {
     color: #475569;
     font-weight: 500;
 }
+
+/* Fix Jittering: Disable CSS transforms on hover when inside Swiper to prevent conflicts with Swiper's internal 3D transforms */
+.swiper-slide .glass-card:hover,
+.swiper-slide .portfolio-case-card:hover,
+[data-theme="light"] .swiper-slide .glass-card:hover,
+[data-theme="light"] .swiper-slide .portfolio-case-card:hover {
+    transform: none !important;
+}
