@@ -52,7 +52,8 @@
         /* Prevent desktop nav layout clashing on various screen sizes */
         @media (max-width: 1366px) {
             .nav-menu {
-                gap: 20px !important;
+                column-gap: 16px !important;
+                row-gap: 6px !important;
             }
             .nav-link {
                 font-size: 13px !important;
@@ -61,7 +62,8 @@
 
         @media (max-width: 1200px) {
             .nav-menu {
-                gap: 12px !important;
+                column-gap: 10px !important;
+                row-gap: 6px !important;
             }
             .nav-link {
                 font-size: 12.5px !important;
@@ -76,7 +78,8 @@
 
         @media (max-width: 1024px) {
             .nav-menu {
-                gap: 8px !important;
+                column-gap: 8px !important;
+                row-gap: 6px !important;
             }
             .nav-link {
                 font-size: 12px !important;
@@ -635,17 +638,17 @@
             
             <ul class="nav-menu">
                 <li><a href="{{ route('home') }}" class="nav-link {{ Route::is('home') ? 'active' : '' }}">Beranda</a></li>
-                <li><a href="{{ route('about') }}" class="nav-link {{ Route::is('about') ? 'active' : '' }}">Profil Perusahaan</a></li>
+                <li><a href="{{ route('about') }}" class="nav-link {{ Route::is('about') ? 'active' : '' }}">Profil</a></li>
                 <li><a href="{{ route('services') }}" class="nav-link {{ Route::is('services') ? 'active' : '' }}">Layanan</a></li>
-                <li><a href="{{ route('features') }}" class="nav-link {{ Route::is('features') ? 'active' : '' }}">Fitur Utama</a></li>
+                <li><a href="{{ route('features') }}" class="nav-link {{ Route::is('features') ? 'active' : '' }}">Fitur</a></li>
                 <li><a href="{{ route('portfolio') }}" class="nav-link {{ Route::is('portfolio') ? 'active' : '' }}">Portofolio</a></li>
                 @auth
-                    <li><a href="{{ route('quotation.index') }}" class="nav-link {{ Route::is('quotation.index') ? 'active' : '' }}">Estimasi Biaya</a></li>
-                    <li><a href="{{ route('review.create') }}" class="nav-link {{ Route::is('review.create') ? 'active' : '' }}">Tulis Ulasan</a></li>
+                    <li><a href="{{ route('quotation.index') }}" class="nav-link {{ Route::is('quotation.index') ? 'active' : '' }}">Estimasi</a></li>
+                    <li><a href="{{ route('review.create') }}" class="nav-link {{ Route::is('review.create') ? 'active' : '' }}">Ulasan</a></li>
                 @endauth
             </ul>
 
-            <div style="display: flex; align-items: center; gap: 16px;">
+            <div class="nav-actions">
                 <!-- PWA Install Button (Hidden by default, pulses/glows when available) -->
                 <button id="pwa-install-btn" class="btn-secondary" style="display: none; padding: 8px 12px; border-radius: 50%; width: 38px; height: 38px; align-items: center; justify-content: center; background: rgba(0, 242, 254, 0.1); border: 1px solid rgba(0, 242, 254, 0.2); color: var(--accent); cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);" title="Unduh Aplikasi Mobile 🚀">
                     <i class="fa-solid fa-mobile-screen-button" style="animation: pwaPulseBtn 2s infinite alternate;"></i>
@@ -825,6 +828,12 @@
                 <i class="fa-solid fa-cubes"></i>
             </div>
             <span>Fitur</span>
+        </a>
+        <a href="{{ route('portfolio') }}" class="mobile-nav-item {{ Route::is('portfolio') ? 'active' : '' }}">
+            <div class="mobile-icon-wrapper">
+                <i class="fa-solid fa-folder-open"></i>
+            </div>
+            <span>Karya</span>
         </a>
         @auth
             <a href="{{ route('quotation.index') }}" class="mobile-nav-item {{ Route::is('quotation.index') ? 'active' : '' }} special">

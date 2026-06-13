@@ -179,58 +179,63 @@ function initThreeParticles() {
    2.1. Dark Mode & Light Mode Theme Switcher
    ========================================================================== */
 function initThemeSwitch() {
+    if (window.themeSwitchInitialized) return;
+    window.themeSwitchInitialized = true;
+
     const themeBtn = document.getElementById('theme-toggle-btn');
     const themeIcon = document.getElementById('theme-toggle-icon');
     const mobileThemeBtn = document.getElementById('mobile-theme-toggle-btn');
     const mobileThemeIcon = document.getElementById('mobile-theme-toggle-icon');
 
-    // Load initial state
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    applyThemeIcon(savedTheme);
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
 
-    const toggleAction = () => {
-        const theme = document.documentElement.getAttribute('data-theme') || 'dark';
-        const nextTheme = theme === 'dark' ? 'light' : 'dark';
+        const isLight = theme === 'light';
+        const iconClass = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        const iconColor = isLight ? '#7209b7' : '#ffb703';
+        const titleText = isLight ? 'Aktifkan Mode Gelap' : 'Aktifkan Mode Terang';
 
-        document.documentElement.setAttribute('data-theme', nextTheme);
-        localStorage.setItem('theme', nextTheme);
-        applyThemeIcon(nextTheme);
+        if (themeIcon) {
+            themeIcon.className = iconClass;
+            themeIcon.style.color = iconColor;
+        }
+        if (themeBtn) {
+            themeBtn.setAttribute('title', titleText);
+        }
+
+        if (mobileThemeIcon) {
+            mobileThemeIcon.className = iconClass;
+            mobileThemeIcon.style.color = iconColor;
+        }
+        if (mobileThemeBtn) {
+            mobileThemeBtn.setAttribute('title', titleText);
+        }
 
         if (typeof window.updateParticlesTheme === 'function') {
-            window.updateParticlesTheme(nextTheme);
+            window.updateParticlesTheme(theme);
         }
+    }
+
+    // Load initial theme state
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+
+    const toggleAction = (e) => {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(nextTheme);
     };
 
-    if (themeBtn) themeBtn.addEventListener('click', toggleAction);
-    if (mobileThemeBtn) mobileThemeBtn.addEventListener('click', toggleAction);
-
-    function applyThemeIcon(theme) {
-        if (theme === 'light') {
-            if (themeIcon) {
-                themeIcon.className = 'fa-solid fa-moon';
-                themeIcon.style.color = '#7209b7';
-            }
-            if (themeBtn) themeBtn.setAttribute('title', 'Aktifkan Mode Gelap');
-            
-            if (mobileThemeIcon) {
-                mobileThemeIcon.className = 'fa-solid fa-moon';
-                mobileThemeIcon.style.color = '#7209b7';
-            }
-            if (mobileThemeBtn) mobileThemeBtn.setAttribute('title', 'Aktifkan Mode Gelap');
-        } else {
-            if (themeIcon) {
-                themeIcon.className = 'fa-solid fa-sun';
-                themeIcon.style.color = '#ffb703';
-            }
-            if (themeBtn) themeBtn.setAttribute('title', 'Aktifkan Mode Terang');
-            
-            if (mobileThemeIcon) {
-                mobileThemeIcon.className = 'fa-solid fa-sun';
-                mobileThemeIcon.style.color = '#ffb703';
-            }
-            if (mobileThemeBtn) mobileThemeBtn.setAttribute('title', 'Aktifkan Mode Terang');
-        }
+    if (themeBtn) {
+        themeBtn.onclick = toggleAction;
+    }
+    if (mobileThemeBtn) {
+        mobileThemeBtn.onclick = toggleAction;
     }
 }
 
@@ -238,7 +243,7 @@ function initThemeSwitch() {
    3. Elegant Entrance Animations (Intersection Observer)
    ========================================================================== */
 function initScrollAnimations() {
-    const animElements = document.querySelectorAll('.glass-card, .section-header, .portfolio-card, .calculator-container, .contact-container');
+    const animElements = document.querySelectorAll('.glass-card, .section-header, .portfolio-case-card, .calculator-container, .contact-container');
     
     // Set initial styling
     animElements.forEach(el => {
@@ -269,7 +274,7 @@ function initScrollAnimations() {
    4. 3D Card Hover Tilt Effect
    ========================================================================== */
 function init3DTilt() {
-    const cards = document.querySelectorAll('.glass-card, .portfolio-card');
+    const cards = document.querySelectorAll('.glass-card, .portfolio-case-card');
     
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
