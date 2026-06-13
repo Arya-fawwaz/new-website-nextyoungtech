@@ -435,6 +435,10 @@ function initSwipers() {
                 spaceBetween: 30,
                 grabCursor: true,
                 loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
                 navigation: {
                     nextEl: '.features-next',
                     prevEl: '.features-prev',
@@ -454,6 +458,10 @@ function initSwipers() {
                 centeredSlides: true,
                 slidesPerView: 'auto',
                 loop: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
                 coverflowEffect: {
                     rotate: 15,
                     stretch: 0,
