@@ -59,118 +59,134 @@
                 <h2>Karya pilihan Next Young Tech</h2>
             </div>
 
-            <div class="portfolio-case-grid">
-                <article class="portfolio-case-card is-ugforce">
-                    <!-- Advanced Desktop Window Header -->
-                    <div class="portfolio-window-header">
-                        <div class="window-controls">
-                            <span class="control-dot dot-close" title="Close"></span>
-                            <span class="control-dot dot-minimize" title="Minimize"></span>
-                            <span class="control-dot dot-maximize" title="Maximize"></span>
-                        </div>
-                        <div class="window-address">
-                            <i class="fa-solid fa-shield-halved text-success"></i>
-                            <span class="address-text">showcase://ugforce.vercel.app</span>
-                        </div>
-                        <div class="window-meta">
-                            <span class="status-dot-pulse"></span>
-                            <span class="meta-label">LIVE_PREVIEW</span>
-                        </div>
+            <!-- Swiper Container -->
+            <div class="swiper portfolio-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Portfolio Case 1 -->
+                    <div class="swiper-slide">
+                        <article class="portfolio-case-card is-ugforce">
+                            <!-- Advanced Desktop Window Header -->
+                            <div class="portfolio-window-header">
+                                <div class="window-controls">
+                                    <span class="control-dot dot-close" title="Close"></span>
+                                    <span class="control-dot dot-minimize" title="Minimize"></span>
+                                    <span class="control-dot dot-maximize" title="Maximize"></span>
+                                </div>
+                                <div class="window-address">
+                                    <i class="fa-solid fa-shield-halved text-success"></i>
+                                    <span class="address-text">showcase://ugforce.vercel.app</span>
+                                </div>
+                                <div class="window-meta">
+                                    <span class="status-dot-pulse"></span>
+                                    <span class="meta-label">LIVE_PREVIEW</span>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-case-body">
+                                <a href="https://ugforce.vercel.app/" target="_blank" class="portfolio-media-link" aria-label="Buka UG Force Room Booking">
+                                    <img src="/images/portfolio_ugforce.png" alt="Tampilan UG Force Room Booking" class="portfolio-case-image">
+                                </a>
+                                <div class="portfolio-case-content">
+                                    <div class="portfolio-case-topline">
+                                        <span>Education Platform</span>
+                                        <small>v1.0</small>
+                                    </div>
+                                    <h3>UG Force Room Booking</h3>
+                                    <p>
+                                        Sistem pemesanan ruang kelas dan ruang rapat berbasis web untuk membantu civitas akademika
+                                        melihat ketersediaan, membuat jadwal, dan mengelola pemakaian ruangan secara real-time.
+                                    </p>
+                                    <div class="portfolio-meta-row">
+                                        <div>
+                                            <span>Fokus</span>
+                                            <strong>Operational Workflow</strong>
+                                        </div>
+                                        <div>
+                                            <span>Output</span>
+                                            <strong>Booking System</strong>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-tech-list">
+                                        <span>Laravel 11</span>
+                                        <span>PostgreSQL</span>
+                                        <span>Tailwind CSS</span>
+                                        <span>Interactive Map</span>
+                                    </div>
+                                    <a href="https://ugforce.vercel.app/" target="_blank" class="portfolio-visit-link">
+                                        <span>Kunjungi Website</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
                     </div>
 
-                    <div class="portfolio-case-body">
-                        <a href="https://ugforce.vercel.app/" target="_blank" class="portfolio-media-link" aria-label="Buka UG Force Room Booking">
-                            <img src="/images/portfolio_ugforce.png" alt="Tampilan UG Force Room Booking" class="portfolio-case-image">
-                        </a>
-                        <div class="portfolio-case-content">
-                            <div class="portfolio-case-topline">
-                                <span>Education Platform</span>
-                                <small>v1.0</small>
-                            </div>
-                            <h3>UG Force Room Booking</h3>
-                            <p>
-                                Sistem pemesanan ruang kelas dan ruang rapat berbasis web untuk membantu civitas akademika
-                                melihat ketersediaan, membuat jadwal, dan mengelola pemakaian ruangan secara real-time.
-                            </p>
-                            <div class="portfolio-meta-row">
-                                <div>
-                                    <span>Fokus</span>
-                                    <strong>Operational Workflow</strong>
+                    <!-- Portfolio Case 2 -->
+                    <div class="swiper-slide">
+                        <article class="portfolio-case-card is-parksmart">
+                            <!-- Advanced Desktop Window Header -->
+                            <div class="portfolio-window-header">
+                                <div class="window-controls">
+                                    <span class="control-dot dot-close" title="Close"></span>
+                                    <span class="control-dot dot-minimize" title="Minimize"></span>
+                                    <span class="control-dot dot-maximize" title="Maximize"></span>
                                 </div>
-                                <div>
-                                    <span>Output</span>
-                                    <strong>Booking System</strong>
+                                <div class="window-address">
+                                    <i class="fa-solid fa-shield-halved text-success"></i>
+                                    <span class="address-text">showcase://parksmart.vercel.app</span>
+                                </div>
+                                <div class="window-meta">
+                                    <span class="status-dot-pulse"></span>
+                                    <span class="meta-label">LIVE_PREVIEW</span>
                                 </div>
                             </div>
-                            <div class="portfolio-tech-list">
-                                <span>Laravel 11</span>
-                                <span>PostgreSQL</span>
-                                <span>Tailwind CSS</span>
-                                <span>Interactive Map</span>
-                            </div>
-                            <a href="https://ugforce.vercel.app/" target="_blank" class="portfolio-visit-link">
-                                <span>Kunjungi Website</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
 
-                <article class="portfolio-case-card is-parksmart">
-                    <!-- Advanced Desktop Window Header -->
-                    <div class="portfolio-window-header">
-                        <div class="window-controls">
-                            <span class="control-dot dot-close" title="Close"></span>
-                            <span class="control-dot dot-minimize" title="Minimize"></span>
-                            <span class="control-dot dot-maximize" title="Maximize"></span>
-                        </div>
-                        <div class="window-address">
-                            <i class="fa-solid fa-shield-halved text-success"></i>
-                            <span class="address-text">showcase://parksmart.vercel.app</span>
-                        </div>
-                        <div class="window-meta">
-                            <span class="status-dot-pulse"></span>
-                            <span class="meta-label">LIVE_PREVIEW</span>
-                        </div>
+                            <div class="portfolio-case-body">
+                                <a href="https://parksmart-gps.vercel.app/" target="_blank" class="portfolio-media-link" aria-label="Buka ParkSmart GPS AI">
+                                    <img src="/images/portfolio_parksmart.png" alt="Tampilan ParkSmart GPS AI Parking" class="portfolio-case-image">
+                                </a>
+                                <div class="portfolio-case-content">
+                                    <div class="portfolio-case-topline">
+                                        <span>Smart Mobility</span>
+                                        <small>v2.1</small>
+                                    </div>
+                                    <h3>ParkSmart GPS AI</h3>
+                                    <p>
+                                        Platform manajemen parkir pintar yang memanfaatkan Computer Vision AI untuk mendeteksi slot
+                                        parkir kosong secara real-time melalui kamera pengawas dan analitik operasional.
+                                    </p>
+                                    <div class="portfolio-meta-row">
+                                        <div>
+                                            <span>Fokus</span>
+                                            <strong>AI Monitoring</strong>
+                                        </div>
+                                        <div>
+                                            <span>Output</span>
+                                            <strong>Parking Dashboard</strong>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-tech-list">
+                                        <span>Vue.js</span>
+                                        <span>Python OpenCV</span>
+                                        <span>FastAPI</span>
+                                        <span>IoT Analytics</span>
+                                    </div>
+                                    <a href="https://parksmart-gps.vercel.app/" target="_blank" class="portfolio-visit-link">
+                                        <span>Kunjungi Website</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
                     </div>
+                </div>
 
-                    <div class="portfolio-case-body">
-                        <a href="https://parksmart-gps.vercel.app/" target="_blank" class="portfolio-media-link" aria-label="Buka ParkSmart GPS AI">
-                            <img src="/images/portfolio_parksmart.png" alt="Tampilan ParkSmart GPS AI Parking" class="portfolio-case-image">
-                        </a>
-                        <div class="portfolio-case-content">
-                            <div class="portfolio-case-topline">
-                                <span>Smart Mobility</span>
-                                <small>v2.1</small>
-                            </div>
-                            <h3>ParkSmart GPS AI</h3>
-                            <p>
-                                Platform manajemen parkir pintar yang memanfaatkan Computer Vision AI untuk mendeteksi slot
-                                parkir kosong secara real-time melalui kamera pengawas dan analitik operasional.
-                            </p>
-                            <div class="portfolio-meta-row">
-                                <div>
-                                    <span>Fokus</span>
-                                    <strong>AI Monitoring</strong>
-                                </div>
-                                <div>
-                                    <span>Output</span>
-                                    <strong>Parking Dashboard</strong>
-                                </div>
-                            </div>
-                            <div class="portfolio-tech-list">
-                                <span>Vue.js</span>
-                                <span>Python OpenCV</span>
-                                <span>FastAPI</span>
-                                <span>IoT Analytics</span>
-                            </div>
-                            <a href="https://parksmart-gps.vercel.app/" target="_blank" class="portfolio-visit-link">
-                                <span>Kunjungi Website</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
+                <!-- Custom Swiper Navigation -->
+                <div class="swiper-nav-container portfolio-nav-container">
+                    <div class="swiper-button-prev portfolio-prev"></div>
+                    <div class="swiper-pagination portfolio-pagination"></div>
+                    <div class="swiper-button-next portfolio-next"></div>
+                </div>
             </div>
 
             <div class="portfolio-cta-band">

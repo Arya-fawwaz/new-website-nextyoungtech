@@ -12,6 +12,8 @@
     
     <!-- Ikon & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/css/app.css?v={{ time() }}">
     
     <!-- PWA Configuration -->
@@ -1171,6 +1173,8 @@
         </script>
     @endif
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Main Javascript File -->
     <script src="/js/app.js?v={{ time() }}"></script>
 </body>

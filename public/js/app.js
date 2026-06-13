@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 6. Professional Dark Mode / Light Mode Theme Switching
     initThemeSwitch();
+
+    // 7. Initialize Swiper Carousels
+    initSwipers();
 });
 
 /* ==========================================================================
@@ -417,4 +420,58 @@ function initQuotationCalculator() {
 
     // Initial calculation
     calculate();
+}
+
+/* ==========================================================================
+   5. Swiper JS Initialization (Features & Portfolio)
+   ========================================================================== */
+function initSwipers() {
+    if (typeof Swiper !== 'undefined') {
+        const featuresSwiper = document.querySelector('.features-swiper');
+        if (featuresSwiper) {
+            new Swiper('.features-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                grabCursor: true,
+                navigation: {
+                    nextEl: '.features-next',
+                    prevEl: '.features-prev',
+                },
+                pagination: {
+                    el: '.features-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    }
+                }
+            });
+        }
+
+        const portfolioSwiper = document.querySelector('.portfolio-swiper');
+        if (portfolioSwiper) {
+            new Swiper('.portfolio-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 40,
+                grabCursor: true,
+                navigation: {
+                    nextEl: '.portfolio-next',
+                    prevEl: '.portfolio-prev',
+                },
+                pagination: {
+                    el: '.portfolio-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    992: {
+                        slidesPerView: 2,
+                    }
+                }
+            });
+        }
+    }
 }
