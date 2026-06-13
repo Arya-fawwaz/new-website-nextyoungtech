@@ -177,7 +177,7 @@
         }
 
         html[data-theme="light"] #three-canvas-container {
-            opacity: 1 !important;
+            opacity: 0 !important;
         }
         html[data-theme="light"] #hero-light-bg {
             opacity: 1 !important;
