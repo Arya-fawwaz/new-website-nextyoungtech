@@ -3865,6 +3865,17 @@ body {
     background: var(--primary);
 }
 
+/* Swiper Slide Auto Widths */
+.features-swiper .swiper-slide {
+    width: 350px;
+    max-width: 85vw;
+}
+
+.portfolio-swiper .swiper-slide {
+    width: 800px;
+    max-width: 85vw;
+}
+
 [data-theme="light"] .service-item {
     color: #475569;
     font-weight: 500;

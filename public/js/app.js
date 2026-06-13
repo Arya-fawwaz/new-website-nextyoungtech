@@ -430,9 +430,11 @@ function initSwipers() {
         const featuresSwiper = document.querySelector('.features-swiper');
         if (featuresSwiper) {
             new Swiper('.features-swiper', {
-                slidesPerView: 1,
+                slidesPerView: 'auto',
+                centeredSlides: true,
                 spaceBetween: 30,
                 grabCursor: true,
+                loop: true,
                 navigation: {
                     nextEl: '.features-next',
                     prevEl: '.features-prev',
@@ -440,14 +442,6 @@ function initSwipers() {
                 pagination: {
                     el: '.features-pagination',
                     clickable: true,
-                },
-                breakpoints: {
-                    768: {
-                        slidesPerView: 2,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                    }
                 }
             });
         }
@@ -455,9 +449,18 @@ function initSwipers() {
         const portfolioSwiper = document.querySelector('.portfolio-swiper');
         if (portfolioSwiper) {
             new Swiper('.portfolio-swiper', {
-                slidesPerView: 1,
-                spaceBetween: 40,
+                effect: 'coverflow',
                 grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                loop: true,
+                coverflowEffect: {
+                    rotate: 15,
+                    stretch: 0,
+                    depth: 250,
+                    modifier: 1,
+                    slideShadows: true,
+                },
                 navigation: {
                     nextEl: '.portfolio-next',
                     prevEl: '.portfolio-prev',
@@ -465,11 +468,6 @@ function initSwipers() {
                 pagination: {
                     el: '.portfolio-pagination',
                     clickable: true,
-                },
-                breakpoints: {
-                    992: {
-                        slidesPerView: 2,
-                    }
                 }
             });
         }
