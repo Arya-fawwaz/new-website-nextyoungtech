@@ -182,10 +182,12 @@
                 </div>
 
                 <!-- Custom Swiper Navigation -->
+                <div class="swiper-button-prev portfolio-prev"></div>
+                <div class="swiper-button-next portfolio-next"></div>
+
+                <!-- Pagination -->
                 <div class="swiper-nav-container portfolio-nav-container">
-                    <div class="swiper-button-prev portfolio-prev"></div>
                     <div class="swiper-pagination portfolio-pagination"></div>
-                    <div class="swiper-button-next portfolio-next"></div>
                 </div>
             </div>
 

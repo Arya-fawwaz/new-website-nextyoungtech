@@ -3796,7 +3796,9 @@ body {
 }
 
 .swiper-button-next, .swiper-button-prev {
-    position: static;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -3808,6 +3810,23 @@ body {
     justify-content: center;
     transition: all 0.3s ease;
     margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 20;
+}
+
+.swiper:hover .swiper-button-next,
+.swiper:hover .swiper-button-prev {
+    opacity: 1;
+    visibility: visible;
+}
+
+.swiper-button-prev {
+    left: 20px;
+}
+
+.swiper-button-next {
+    right: 20px;
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
