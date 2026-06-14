@@ -3907,3 +3907,9 @@ body {
 [data-theme="light"] .swiper-slide .portfolio-case-card:hover {
     transform: none !important;
 }
+
+/* Fix Severe Jittering: Exclude 'transform' from CSS transitions for cards inside Swiper */
+.swiper-slide .glass-card,
+.swiper-slide .portfolio-case-card {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.3s ease !important;
+}
