@@ -1804,9 +1804,6 @@ body {
     .logo {
         font-size: 16px !important;
     }
-    .profile-nav-name {
-        display: none !important;
-    }
 }
 
 /* ==========================================================================
@@ -1918,9 +1915,9 @@ body {
     .logo {
         font-size: 15px !important;
     }
-    .logo svg {
-        width: 24px;
-        height: 24px;
+    .logo svg, .logo img {
+        width: 28px !important;
+        height: auto !important;
     }
     
     /* Compact layout adjustments */

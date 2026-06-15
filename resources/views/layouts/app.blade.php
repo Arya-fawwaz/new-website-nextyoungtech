@@ -87,7 +87,7 @@
                 font-size: 12px !important;
             }
             .profile-nav-name {
-                display: none !important; /* Hide name completely under 1024px to ensure no clashing */
+                /* Let it be visible on mobile */
             }
         }
     </style>
@@ -650,10 +650,6 @@
                     <a href="{{ route('profile') }}" style="display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 13px; color: var(--text-main); font-weight: 500; transition: all 0.3s ease; flex-shrink: 0;" class="profile-nav-link">
                         @if(auth()->user()->foto_profil)
                             <img src="{{ auth()->user()->foto_profil_url }}" alt="{{ auth()->user()->nama }}" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--primary); box-shadow: 0 0 8px var(--primary-glow); flex-shrink: 0;">
-                        @else
-                            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(128, 128, 128, 0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--dashed-border); box-shadow: 0 0 6px rgba(0,0,0,0.1); flex-shrink: 0;">
-                                <i class="fa-solid fa-user-astronaut" style="font-size: 14px; color: var(--primary); text-shadow: 0 0 6px var(--primary-glow); flex-shrink: 0;"></i>
-                            </div>
                         @endif
                         <span class="profile-nav-name" style="max-width: 100px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block; vertical-align: middle;">{{ auth()->user()->nama }}</span>
                     </a>
