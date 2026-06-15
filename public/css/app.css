@@ -3915,27 +3915,59 @@ body {
    Light Mode Overrides - Clean & Elegant
    ========================================================================== */
 [data-theme="light"] .portfolio-showcase {
-    background: radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.035) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(79, 70, 229, 0.035) 0%, transparent 45%),
-        #ffffff;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.045) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(244, 63, 94, 0.03) 0%, transparent 35%),
+        #f8fafc;
 }
 
 [data-theme="light"] .portfolio-showcase::before {
     display: none;
 }
 
+/* Premium High-Contrast Title Gradients for Light Mode */
+[data-theme="light"] .portfolio-hero h1 {
+    background: linear-gradient(135deg, #090d16 0%, #152238 40%, #2e3d52 75%, #475569 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 20px rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="light"] .portfolio-hero p {
+    color: #334155;
+    opacity: 1;
+    font-weight: 500;
+}
+
+[data-theme="light"] .portfolio-secondary-link {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    color: #0f172a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .portfolio-secondary-link:hover {
+    background: #f8fafc;
+    border-color: rgba(15, 23, 42, 0.2);
+    color: #0f172a;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
 [data-theme="light"] .portfolio-hero-panel {
-    background: rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(15, 23, 42, 0.05);
-    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.03), inset 0 1px 2px rgba(255, 255, 255, 0.85);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.45) 100%);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 35px 70px rgba(15, 23, 42, 0.03), inset 0 1px 1px #ffffff;
 }
 
 [data-theme="light"] .portfolio-score {
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(14, 165, 233, 0.1);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.01);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+    border: 1px solid rgba(2, 132, 199, 0.12);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02), inset 0 1px 1px #ffffff;
 }
 
 [data-theme="light"] .portfolio-score span {
@@ -3945,8 +3977,9 @@ body {
 }
 
 [data-theme="light"] .portfolio-proof-grid div {
-    background: rgba(255, 255, 255, 0.7);
-    border-color: rgba(15, 23, 42, 0.04);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.45) 100%);
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.015), inset 0 1px 1px #ffffff;
 }
 
 [data-theme="light"] .portfolio-proof-grid div:hover {
@@ -3956,34 +3989,57 @@ body {
     transform: translateY(-2px);
 }
 
-[data-theme="light"] .portfolio-meta-row div {
-    background: rgba(255, 255, 255, 0.6);
-    border-color: rgba(15, 23, 42, 0.04);
+[data-theme="light"] .portfolio-proof-grid div strong {
+    color: #0f172a;
 }
 
-[data-theme="light"] .portfolio-case-card {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(15, 23, 42, 0.06);
-    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.02), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+[data-theme="light"] .portfolio-proof-grid div span {
+    color: #475569;
 }
 
-[data-theme="light"] .portfolio-case-card:hover {
-    background: rgba(255, 255, 255, 0.95);
-    border-color: var(--primary);
-    box-shadow: 0 35px 70px rgba(14, 165, 233, 0.08), inset 0 1px 2.5px rgba(255, 255, 255, 1);
+[data-theme="light"] .portfolio-section-heading h2 {
+    background: linear-gradient(135deg, #090d16 0%, #152238 50%, #334155 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .portfolio-case-content h3 {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .portfolio-case-topline span {
+    color: #0284c7;
+    font-weight: 800;
+}
+
+[data-theme="light"] .portfolio-case-topline small {
+    color: #64748b;
+    font-weight: 600;
+    background: rgba(15, 23, 42, 0.05);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+[data-theme="light"] .portfolio-meta-row strong {
+    color: #0f172a;
+}
+
+[data-theme="light"] .portfolio-meta-row span {
+    color: #64748b;
 }
 
 [data-theme="light"] .portfolio-window-header {
-    background: transparent;
-    border-bottom: none;
+    background: rgba(248, 250, 253, 0.8);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
 }
 
 [data-theme="light"] .portfolio-window-header .window-address {
-    background: rgba(255, 255, 255, 0.65);
-    border: 1px solid rgba(15, 23, 42, 0.04);
-    color: #475569;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    color: #334155;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
 }
 
 [data-theme="light"] .portfolio-window-header .window-meta {
@@ -3991,9 +4047,9 @@ body {
 }
 
 [data-theme="light"] .portfolio-tech-list span {
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(15, 23, 42, 0.06);
-    color: #475569;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    color: #334155;
     font-weight: 600;
     font-size: 11px;
 }
@@ -4004,14 +4060,34 @@ body {
     background: #ffffff;
 }
 
+[data-theme="light"] .portfolio-visit-link {
+    background: rgba(2, 132, 199, 0.08);
+    color: #0284c7;
+    border: 1px solid rgba(2, 132, 199, 0.15);
+    font-weight: 700;
+}
+
+[data-theme="light"] .portfolio-visit-link:hover {
+    background: #0284c7;
+    color: #ffffff !important;
+    border-color: #0284c7;
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.2);
+}
+
 [data-theme="light"] .portfolio-cta-band {
-    background: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 1);
+    background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.03), inset 0 1px 2px #ffffff;
 }
 
 [data-theme="light"] .portfolio-cta-band::before {
-    background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.15), transparent);
+}
+
+[data-theme="light"] .portfolio-cta-band h2 {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Mobile Adjustments */
@@ -4086,20 +4162,21 @@ body {
 /* Light mode elegance for cards to prevent rigidness (Luxury Office Style) */
 [data-theme="light"] .glass-card,
 [data-theme="light"] .portfolio-case-card {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 1);
-    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.04), 0 5px 15px rgba(0, 150, 199, 0.03);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.5) 100%);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-top: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.025), inset 0 1px 1.5px rgba(255, 255, 255, 0.8);
     border-radius: 28px;
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 [data-theme="light"] .glass-card:hover,
 [data-theme="light"] .portfolio-case-card:hover {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 25px 50px rgba(15, 23, 42, 0.08), 0 10px 20px rgba(0, 150, 199, 0.05);
-    border-color: rgba(0, 150, 199, 0.2);
+    background: #ffffff;
+    box-shadow: 0 35px 70px rgba(15, 23, 42, 0.06), 0 10px 20px rgba(0, 150, 199, 0.04), inset 0 1px 1.5px rgba(255, 255, 255, 1);
+    border-color: rgba(2, 132, 199, 0.25);
     transform: translateY(-8px);
 }
 
@@ -4111,7 +4188,8 @@ body {
 /* Fix text contrast in cards */
 [data-theme="light"] .feature-desc,
 [data-theme="light"] .portfolio-case-content p {
-    color: #475569;
+    color: #334155;
+    opacity: 1;
 }
 
 /* ==========================================================================
