@@ -14,7 +14,10 @@
         <div id="three-canvas-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: 1; transition: opacity 0.8s ease;"></div>
         
         <div class="container" style="position: relative; z-index: 2;">
-            <div class="hero-content">
+            <div class="hero-content" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <div class="hero-logo-container" style="margin-bottom: 25px; animation: floatLogo 6s ease-in-out infinite;">
+                    <img src="{{ asset('images/logo-n.png') }}?v={{ time() }}" alt="Next Young Tech Logo" style="width: 140px; height: auto; filter: drop-shadow(0 15px 25px rgba(0, 242, 254, 0.4));">
+                </div>
                 <div class="hero-badge">
                     <span></span> PENGALAMAN WEB 3D IMERSIF
                 </div>
