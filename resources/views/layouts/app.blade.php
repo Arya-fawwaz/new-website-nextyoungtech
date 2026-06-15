@@ -619,22 +619,7 @@
     <header class="header">
         <div class="container nav-container">
             <a href="{{ route('home') }}" class="logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 6px var(--primary-glow)); transition: transform 0.3s ease;">
-                    <path d="M16 2L2 9.5V22.5L16 30L30 22.5V9.5L16 2Z" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linejoin="round" />
-                    <path d="M16 7L7 12V20L16 25L25 20V12L16 7Z" fill="url(#logo-grad-fill)" opacity="0.8" />
-                    <path d="M16 12L12 14.5V17.5L16 20L20 17.5V14.5L16 12Z" fill="#ffffff" />
-                    <defs>
-                        <linearGradient id="logo-grad" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="var(--primary)" />
-                            <stop offset="0.5" stop-color="var(--secondary)" />
-                            <stop offset="1" stop-color="var(--accent)" />
-                        </linearGradient>
-                        <linearGradient id="logo-grad-fill" x1="7" y1="7" x2="25" y2="25" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="var(--primary)" stop-opacity="0.3" />
-                            <stop offset="1" stop-color="var(--secondary)" stop-opacity="0.3" />
-                        </linearGradient>
-                    </defs>
-                </svg>
+                <img src="{{ asset('images/logo-n-trans.png') }}?v={{ time() }}" alt="Next Young Tech Logo" style="height: 38px; width: auto; filter: drop-shadow(0 2px 8px rgba(0, 242, 254, 0.5)); transition: transform 0.3s ease; object-fit: contain;">
                 NEXT YOUNG <span>TECH</span>
             </a>
             

@@ -15,9 +15,6 @@
         
         <div class="container" style="position: relative; z-index: 2;">
             <div class="hero-content" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <div class="hero-logo-container" style="margin-bottom: 25px; animation: floatLogo 6s ease-in-out infinite;">
-                    <img src="{{ asset('images/logo-n.png') }}?v={{ time() }}" alt="Next Young Tech Logo" style="width: 140px; height: auto; filter: drop-shadow(0 15px 25px rgba(0, 242, 254, 0.4));">
-                </div>
                 <div class="hero-badge">
                     <span></span> PENGALAMAN WEB 3D IMERSIF
                 </div>
