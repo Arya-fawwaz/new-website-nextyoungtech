@@ -3443,8 +3443,8 @@ body {
 .portfolio-showcase {
     position: relative;
     overflow: hidden;
-    padding: 160px 0 120px;
-    background: #06060c;
+    padding: 180px 0 140px;
+    background: #020204; /* Deeper OLED black for extreme luxury */
 }
 
 .portfolio-showcase::before {
@@ -3453,8 +3453,9 @@ body {
     inset: 0;
     pointer-events: none;
     background:
-        radial-gradient(circle at 15% 15%, rgba(14, 165, 233, 0.15), transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(79, 70, 229, 0.12), transparent 40%);
+        radial-gradient(circle at 0% 0%, rgba(14, 165, 233, 0.08), transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(79, 70, 229, 0.08), transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02), transparent 60%);
     z-index: 1;
 }
 
@@ -3496,11 +3497,14 @@ body {
 .portfolio-hero h1 {
     margin: 0 0 24px;
     font-family: var(--font-heading);
-    font-size: clamp(40px, 6vw, 72px);
+    font-size: clamp(42px, 6.5vw, 80px);
     line-height: 1.05;
     font-weight: 900;
     color: var(--text-main);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    background: linear-gradient(to right, #ffffff, #a0a5b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .portfolio-hero p {
@@ -3555,13 +3559,14 @@ body {
 }
 
 .portfolio-hero-panel {
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    background: rgba(10, 15, 26, 0.5);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.05);
 }
 
 .portfolio-score {
@@ -3647,12 +3652,16 @@ body {
 .portfolio-case-card {
     display: flex;
     flex-direction: column;
-    background: rgba(15, 23, 42, 0.4);
-    border: 1px solid var(--border-color);
-    border-radius: 24px;
+    background: rgba(10, 15, 26, 0.6);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 28px;
     overflow: hidden;
     position: relative;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.6s ease, border-color 0.6s ease;
 }
 
 /* Moving Glass Reflection Sheen */
@@ -3685,9 +3694,9 @@ body {
 }
 
 .portfolio-case-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--primary);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+    transform: translateY(-12px);
+    border-color: rgba(14, 165, 233, 0.3);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8), 0 0 40px rgba(14, 165, 233, 0.1);
 }
 
 .portfolio-case-body {
@@ -3869,22 +3878,37 @@ body {
 }
 
 .portfolio-cta-band {
-    margin-top: 80px;
-    padding: 60px;
-    background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(79, 70, 229, 0.1));
-    border: 1px solid var(--border-color);
-    border-radius: 24px;
+    margin-top: 100px;
+    padding: 70px 60px;
+    background: #0a0a0f;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 40px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(14, 165, 233, 0.02);
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-cta-band::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.5), transparent);
 }
 
 .portfolio-cta-band h2 {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 800;
     color: var(--text-main);
     margin: 0;
+    letter-spacing: -0.02em;
 }
 
 /* ==========================================================================
@@ -3981,9 +4005,13 @@ body {
 }
 
 [data-theme="light"] .portfolio-cta-band {
-    background: linear-gradient(135deg, rgba(14, 165, 233, 0.04), rgba(79, 70, 229, 0.04));
+    background: #ffffff;
     border: 1px solid rgba(15, 23, 42, 0.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 1);
+}
+
+[data-theme="light"] .portfolio-cta-band::before {
+    background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.2), transparent);
 }
 
 /* Mobile Adjustments */
@@ -4003,7 +4031,15 @@ body {
 
 @media (max-width: 768px) {
     .portfolio-showcase {
-        padding: 120px 0 80px;
+        padding: 100px 0 60px;
+    }
+
+    .portfolio-hero h1 {
+        font-size: 38px;
+    }
+
+    .portfolio-hero p {
+        font-size: 16px;
     }
 
     .portfolio-hero-actions {
@@ -4011,13 +4047,35 @@ body {
     }
 
     .portfolio-case-content {
-        padding: 30px;
+        padding: 24px;
+    }
+
+    .portfolio-case-content h3 {
+        font-size: 24px;
+    }
+
+    .portfolio-case-content p {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .portfolio-tech-list {
+        margin-bottom: 30px;
+    }
+
+    .portfolio-slider-wrapper {
+        padding: 0 10px !important;
     }
 
     .portfolio-cta-band {
         flex-direction: column;
         text-align: center;
-        padding: 40px 20px;
+        padding: 40px 24px;
+        border-radius: 24px;
+    }
+
+    .portfolio-cta-band h2 {
+        font-size: 28px;
     }
 
     .portfolio-window-header .window-address {
