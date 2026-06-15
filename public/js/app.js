@@ -457,7 +457,7 @@ function initSwipers() {
                 grabCursor: true,
                 centeredSlides: true,
                 slidesPerView: 'auto',
-                loop: true,
+                loop: false,
                 autoplay: {
                     delay: 3500,
                     disableOnInteraction: false,

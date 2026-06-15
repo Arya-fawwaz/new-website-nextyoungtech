@@ -178,14 +178,14 @@
                                 </div>
                             </div>
                         </article>
-                    </div>
                 </div>
-
+                
                 <!-- Custom Swiper Navigation -->
                 <div class="swiper-button-prev portfolio-prev"></div>
                 <div class="swiper-button-next portfolio-next"></div>
+            </div>
 
-                <!-- Pagination -->
+            <!-- Pagination -->
                 <div class="swiper-nav-container portfolio-nav-container">
                     <div class="swiper-pagination portfolio-pagination"></div>
                 </div>

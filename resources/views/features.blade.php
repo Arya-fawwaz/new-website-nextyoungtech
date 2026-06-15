@@ -123,10 +123,11 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <!-- Custom Swiper Navigation -->
                 <div class="swiper-button-prev features-prev"></div>
                 <div class="swiper-button-next features-next"></div>
+            </div>
 
                 <!-- Pagination -->
                 <div class="swiper-nav-container">
