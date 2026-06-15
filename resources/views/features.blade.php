@@ -12,9 +12,10 @@
                 <p class="section-desc">Next Young Tech Technology menghadirkan standar fitur premium tercanggih untuk memastikan kesuksesan digital bisnis Anda tanpa batas.</p>
             </div>
 
-            <!-- Swiper Container -->
-            <div class="swiper features-swiper" style="margin-top: 50px; padding-bottom: 60px;">
-                <div class="swiper-wrapper">
+            <!-- Swiper Container Wrapper -->
+            <div class="features-slider-wrapper" style="position: relative; padding: 0 40px;">
+                <div class="swiper features-swiper" style="margin-top: 50px; padding-bottom: 60px;">
+                    <div class="swiper-wrapper">
                     <!-- Feature 1 -->
                     <div class="swiper-slide">
                         <div class="glass-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
@@ -125,9 +126,10 @@
                 </div>
                 
                 <!-- Custom Swiper Navigation -->
-                <div class="swiper-button-prev features-prev"></div>
-                <div class="swiper-button-next features-next"></div>
+                <div class="swiper-button-prev features-prev"><i class="fa-solid fa-chevron-left" style="font-size: 20px;"></i></div>
+                <div class="swiper-button-next features-next"><i class="fa-solid fa-chevron-right" style="font-size: 20px;"></i></div>
             </div>
+        </div>
 
                 <!-- Pagination -->
                 <div class="swiper-nav-container">
