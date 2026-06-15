@@ -3826,17 +3826,19 @@ body {
 }
 
 .swiper:hover .swiper-button-next,
-.swiper:hover .swiper-button-prev {
+.swiper:hover .swiper-button-prev,
+.swiper:active .swiper-button-next,
+.swiper:active .swiper-button-prev {
     opacity: 1;
     visibility: visible;
 }
 
 .swiper-button-prev {
-    left: 20px;
+    left: 15px;
 }
 
 .swiper-button-next {
-    right: 20px;
+    right: 15px;
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
@@ -3933,5 +3935,22 @@ body {
     }
     50% {
         transform: translateY(-15px);
+    }
+}
+
+/* Mobile adjustments for Swiper Navigation Buttons */
+@media (max-width: 768px) {
+    .swiper-button-next, .swiper-button-prev {
+        width: 38px;
+        height: 38px;
+    }
+    .swiper-button-prev {
+        left: 8px;
+    }
+    .swiper-button-next {
+        right: 8px;
+    }
+    .swiper-button-next::after, .swiper-button-prev::after {
+        font-size: 14px;
     }
 }
