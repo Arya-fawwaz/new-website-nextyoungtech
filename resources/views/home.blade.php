@@ -105,7 +105,7 @@
                                     <img src="{{ $userAvatarUrl }}" alt="{{ $userName }}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--primary); box-shadow: 0 0 8px var(--primary-glow);">
                                 @else
                                     <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(128, 128, 128, 0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--dashed-border);">
-                                        <i class="fa-solid fa-user-astronaut" style="font-size: 18px; color: var(--primary); text-shadow: 0 0 6px var(--primary-glow);"></i>
+                                        <i class="fa-solid fa-user-tie" style="font-size: 18px; color: var(--primary); text-shadow: 0 0 6px var(--primary-glow);"></i>
                                     </div>
                                 @endif
 

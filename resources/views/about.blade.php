@@ -316,8 +316,8 @@
     <div class="container about-container">
         <!-- Header Halaman -->
         <header class="about-header">
-            <span class="about-badge">COMPANY PROFILE</span>
-            <h1 class="about-title">Next Young Tech Technology</h1>
+            <span class="about-badge">PROFIL KOMUNITAS</span>
+            <h1 class="about-title">Next Young Tech</h1>
             <p class="about-desc">Pioneering digital landscape dengan keahlian engineering kelas dunia, estetika visual termewah, dan interaktivitas 3D tanpa batas.</p>
         </header>
 
@@ -328,7 +328,7 @@
                 <div class="card-icon-glow visi-icon">
                     <i class="fa-solid fa-eye"></i>
                 </div>
-                <h3 class="about-card-title">Visi Perusahaan</h3>
+                <h3 class="about-card-title">Visi Kami</h3>
                 <p class="about-card-text">
                     Menjadi akselerator teknologi terkemuka yang merevolusi lanskap digital global melalui pengembangan web 3D interaktif, kinerja performa ultra-cepat, dan estetika desain termewah kelas dunia yang memberdayakan perkembangan bisnis di era modern.
                 </p>
@@ -339,7 +339,7 @@
                 <div class="card-icon-glow misi-icon">
                     <i class="fa-solid fa-bullseye"></i>
                 </div>
-                <h3 class="about-card-title">Misi Perusahaan</h3>
+                <h3 class="about-card-title">Misi Kami</h3>
                 <ul class="misi-list">
                     <li class="misi-item">
                         <i class="fa-solid fa-circle-check"></i>
@@ -358,24 +358,23 @@
         </div>
 
         <!-- Section Tim & Foto Tim -->
-        <!-- Section Tim & Info (Removed Photo) -->
         <div class="about-glass-card team-section">
-            <div class="team-visual-container">
+            <div class="team-grid" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center;">
+                <div class="team-image-wrapper">
+                    <img src="{{ asset('images/team.jpg') }}" alt="Tim Next Young Tech" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); object-fit: cover;">
+                </div>
                 <!-- Informasi Tim (Centered) -->
-                <div class="team-info-content">
-                    <div style="font-size: 40px; color: var(--primary); margin-bottom: 20px;">
-                        <i class="fa-solid fa-people-group"></i>
-                    </div>
+                <div class="team-info-content" style="text-align: left;">
                     <span style="font-size: 11px; font-weight: 800; color: var(--secondary); letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 8px;">THE ARCHITECTS OF DIGITAL INNOVATION</span>
-                    <h3 style="font-size: 32px; font-weight: 900; color: var(--text-main); margin-bottom: 24px;">Kolaborasi Tim Terbaik Kami</h3>
+                    <h3 style="font-size: 32px; font-weight: 900; color: var(--text-main); margin-bottom: 24px;">Kolaborasi Komunitas Terbaik</h3>
                     <p style="font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
-                        Di balik setiap aplikasi web interaktif premium dan performa sistem ultra-cepat yang kami bangun, terdapat barisan talenta digital terbaik Next Young Tech. Kami adalah kolaborasi dari rekayasawan perangkat lunak (software engineers), desainer UI/UX kelas atas, dan arsitek sistem yang berdedikasi tinggi.
+                        Di balik setiap aplikasi web interaktif premium dan performa sistem ultra-cepat yang kami bangun, terdapat barisan talenta digital yang berdedikasi tinggi. Kami adalah komunitas teknologi profesional yang terdiri dari rekayasawan perangkat lunak, desainer UI/UX, dan arsitek sistem yang bersinergi bersama.
                     </p>
                     <p style="font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 30px;">
-                        Dipimpin secara langsung oleh <strong>Nazmi Dwiputra Effendi</strong> sebagai Chief Executive Officer & Lead Systems Architect, kami bersinergi menghasilkan karya digital terdepan yang mendefinisikan kembali standar kualitas, kecepatan, dan estetika untuk kesuksesan korporasi Anda.
+                        Dipimpin secara langsung oleh <strong>Nazmi Dwiputra Effendi</strong>, kami menghasilkan karya digital terdepan yang mendefinisikan kembali standar kualitas, kecepatan, dan estetika layaknya industri profesional kelas atas.
                     </p>
 
-                    <div class="team-stats" style="max-width: 600px; margin: 0 auto;">
+                    <div class="team-stats">
                         <div class="stat-box">
                             <span class="stat-number">100%</span>
                             <span class="stat-label">Kepuasan Klien</span>
@@ -386,11 +385,18 @@
                         </div>
                         <div class="stat-box">
                             <span class="stat-number">24/7</span>
-                            <span class="stat-label">Dukungan Konsultasi</span>
+                            <span class="stat-label">Dukungan Komunitas</span>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <style>
+                @media (max-width: 768px) {
+                    .team-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+                    .team-info-content { text-align: center !important; }
+                }
+            </style>
         </div>
     </div>
 </div>

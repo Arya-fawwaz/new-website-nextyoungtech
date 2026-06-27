@@ -44,7 +44,7 @@
                             <img src="{{ auth()->user()->foto_profil_url }}" alt="{{ auth()->user()->nama }}" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); box-shadow: 0 0 25px var(--primary-glow); transition: transform 0.3s ease;" id="avatar-preview">
                         @else
                             <div style="width: 150px; height: 150px; border-radius: 50%; background: rgba(128, 128, 128, 0.05); display: flex; align-items: center; justify-content: center; border: 2px dashed var(--dashed-border); box-shadow: inset 0 0 20px rgba(0,0,0,0.1);">
-                                <i class="fa-solid fa-user-astronaut" style="font-size: 64px; color: var(--primary); text-shadow: 0 0 15px var(--primary-glow);"></i>
+                                <i class="fa-solid fa-user-tie" style="font-size: 64px; color: var(--primary); text-shadow: 0 0 15px var(--primary-glow);"></i>
                             </div>
                         @endif
                     </div>

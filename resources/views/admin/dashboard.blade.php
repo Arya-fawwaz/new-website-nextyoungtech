@@ -1381,7 +1381,7 @@
             document.getElementById('modalInputRole').value = is_admin;
         } else {
             form.action = `{{ route('admin.user.store') }}`;
-            document.getElementById('modalTitle').innerHTML = '<i class="fa-solid fa-user-astronaut" style="color:var(--primary); margin-right:10px;"></i> Registrasi Identitas Baru';
+            document.getElementById('modalTitle').innerHTML = '<i class="fa-solid fa-user-plus" style="color:var(--primary); margin-right:10px;"></i> Registrasi Identitas Baru';
             document.getElementById('modalInputNama').value = '';
             document.getElementById('modalInputEmail').value = '';
             document.getElementById('modalInputPassword').placeholder = 'Masukkan password baru...';
