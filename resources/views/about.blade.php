@@ -5,268 +5,353 @@
 @section('content')
 <style>
     /* ==========================================================
-       ELEGANT CORPORATE PROFILE THEME
+       MODERN PREMIUM AGENCY THEME (Professional & Colorful but not tacky)
        ========================================================== */
-    .elegant-wrapper {
+    .premium-wrapper {
         min-height: 100vh;
-        background-color: #ffffff; /* Clean white background */
-        color: #111111;
+        background-color: var(--bg-body);
+        color: var(--text-main);
         font-family: var(--font-body);
-        padding: 120px 0 60px 0;
     }
 
-    /* Elegant Hero */
-    .elegant-hero {
+    /* Premium Hero Section - Dark Elegant */
+    .premium-hero {
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        padding: 160px 0 80px 0;
         text-align: center;
-        margin-bottom: 50px;
+        position: relative;
+        overflow: hidden;
     }
-    .elegant-badge {
+    
+    /* Subtle geometric accent (not glowing blob) */
+    .premium-hero::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: 
+            radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 85% 30%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .premium-badge {
         display: inline-block;
-        padding: 4px 12px;
-        background: #000000;
+        padding: 6px 16px;
+        background: rgba(255, 255, 255, 0.1);
         color: #ffffff;
         font-size: 11px;
         font-weight: 700;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
         text-transform: uppercase;
-        margin-bottom: 20px;
+        border-radius: 30px;
+        margin-bottom: 24px;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .elegant-hero-title {
+    .premium-hero-title {
         font-family: var(--font-heading);
-        font-size: 52px;
-        font-weight: 800;
+        font-size: 54px;
+        font-weight: 900;
         letter-spacing: -1px;
-        color: #111111;
-        max-width: 800px;
-        margin: 0 auto 16px auto;
-        line-height: 1.1;
+        color: #ffffff;
+        max-width: 850px;
+        margin: 0 auto 24px auto;
+        line-height: 1.15;
+        position: relative;
+        z-index: 2;
     }
-    .elegant-hero-desc {
+    .premium-hero-title span {
+        background: linear-gradient(to right, #818cf8, #f472b6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .premium-hero-desc {
         font-size: 18px;
-        color: #444444;
-        max-width: 700px;
+        color: #cbd5e1;
+        max-width: 650px;
         margin: 0 auto;
-        line-height: 1.5;
-        font-weight: 500;
+        line-height: 1.6;
+        position: relative;
+        z-index: 2;
     }
 
-    /* Core Section Grid */
-    .elegant-section {
-        background: #f8f9fa;
-        border: 1px solid #eeeeee;
-        border-radius: 8px;
-        padding: 40px;
-        margin-bottom: 40px;
+    /* Content Area */
+    .premium-content-area {
+        padding: 80px 0;
+        background: #ffffff;
     }
 
     /* Team Layout */
-    .elegant-team-grid {
+    .premium-team-grid {
         display: grid;
-        grid-template-columns: 1fr 1.2fr;
-        gap: 40px;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 60px;
         align-items: center;
+        margin-bottom: 80px;
     }
-    .elegant-image-wrapper {
-        border-radius: 4px;
+    .premium-image-wrapper {
+        position: relative;
+        border-radius: 16px;
         overflow: hidden;
-        border: 1px solid #dddddd;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     }
-    .elegant-image-wrapper img {
+    .premium-image-wrapper img {
         width: 100%;
         display: block;
-        filter: contrast(1.05); /* Slight contrast boost for professional look */
+        transition: transform 0.4s ease;
     }
-    .elegant-text-content h2 {
+    .premium-image-wrapper:hover img {
+        transform: scale(1.03);
+    }
+    
+    /* Elegant Solid Accent Behind Image */
+    .image-solid-accent {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 20px;
+        left: -20px;
+        background-color: var(--primary);
+        border-radius: 16px;
+        z-index: -1;
+        opacity: 0.1;
+    }
+
+    .premium-text-content h2 {
         font-family: var(--font-heading);
-        font-size: 32px;
+        font-size: 38px;
         font-weight: 800;
-        color: #111111;
-        margin-bottom: 16px;
+        color: #0f172a;
+        margin-bottom: 20px;
         line-height: 1.2;
     }
-    .elegant-text-content p {
+    .premium-text-content p {
         font-size: 16px;
-        color: #333333;
-        line-height: 1.6;
-        margin-bottom: 16px;
-        font-weight: 500;
+        color: #475569;
+        line-height: 1.7;
+        margin-bottom: 20px;
     }
-    .elegant-stats {
+    .premium-stats {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
-        margin-top: 24px;
-        padding-top: 24px;
-        border-top: 1px solid #dddddd;
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 2px solid #f1f5f9;
     }
-    .elegant-stat-item h4 {
-        font-size: 28px;
-        font-weight: 800;
-        color: #111111;
-        margin-bottom: 2px;
+    .premium-stat-item h4 {
+        font-size: 36px;
+        font-weight: 900;
+        color: var(--primary);
+        margin-bottom: 4px;
         font-family: var(--font-heading);
     }
-    .elegant-stat-item span {
-        font-size: 11px;
+    .premium-stat-item span {
+        font-size: 12px;
         font-weight: 700;
-        color: #666666;
+        color: #64748b;
         text-transform: uppercase;
         letter-spacing: 1px;
     }
 
-    /* Vision Mission Grid */
-    .elegant-vm-grid {
+    /* Vision Mission Cards */
+    .premium-vm-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        gap: 40px;
     }
-    .elegant-vm-card {
+    .premium-vm-card {
         background: #ffffff;
-        border: 1px solid #e0e0e0;
-        padding: 30px;
-        border-radius: 4px;
+        border: 1px solid #e2e8f0;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
     }
-    .elegant-vm-card h3 {
-        font-size: 20px;
-        font-weight: 800;
-        color: #111111;
-        margin-bottom: 12px;
+    
+    /* Top Border Color Line */
+    .premium-vm-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 4px;
+    }
+    .card-visi::before { background-color: var(--primary); }
+    .card-misi::before { background-color: var(--accent); }
+
+    .premium-vm-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .premium-icon-box {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
         display: flex;
         align-items: center;
-        gap: 10px;
+        justify-content: center;
+        font-size: 24px;
+        margin-bottom: 24px;
     }
-    .elegant-vm-card h3 i {
-        color: #000000;
+    .icon-visi {
+        background: #eff6ff;
+        color: var(--primary);
     }
-    .elegant-vm-card p {
+    .icon-misi {
+        background: #fff1f2;
+        color: var(--accent);
+    }
+
+    .premium-vm-card h3 {
+        font-size: 22px;
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 16px;
+    }
+    .premium-vm-card p {
         font-size: 15px;
-        color: #444444;
-        line-height: 1.6;
-        font-weight: 500;
-        margin-bottom: 12px;
+        color: #475569;
+        line-height: 1.7;
     }
-    .elegant-list {
+    .premium-list {
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 20px 0 0 0;
     }
-    .elegant-list li {
+    .premium-list li {
         position: relative;
-        padding-left: 24px;
-        margin-bottom: 12px;
+        padding-left: 30px;
+        margin-bottom: 16px;
         font-size: 15px;
-        color: #444444;
-        line-height: 1.5;
-        font-weight: 500;
+        color: #475569;
+        line-height: 1.6;
     }
-    .elegant-list li i {
+    .premium-list li i {
         position: absolute;
         left: 0;
         top: 4px;
-        color: #111111;
-        font-size: 13px;
+        font-size: 16px;
     }
-    .elegant-list li strong {
-        color: #111111;
+    .icon-check-misi i { color: var(--accent); }
+    
+    .premium-list li strong {
+        color: #0f172a;
         font-weight: 700;
     }
 
     @media (max-width: 992px) {
-        .elegant-team-grid {
+        .premium-team-grid {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+        .premium-vm-grid {
             grid-template-columns: 1fr;
             gap: 30px;
         }
-        .elegant-vm-grid {
+        .image-solid-accent { display: none; }
+    }
+    @media (max-width: 768px) {
+        .premium-hero-title {
+            font-size: 38px;
+        }
+        .premium-stats {
             grid-template-columns: 1fr;
             gap: 20px;
         }
     }
-    @media (max-width: 768px) {
-        .elegant-hero {
-            padding-top: 20px;
-        }
-        .elegant-hero-title {
-            font-size: 36px;
-        }
-        .elegant-stats {
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-    }
 </style>
 
-<div class="elegant-wrapper">
-    <div class="container">
-        
-        <!-- Hero Section -->
-        <div class="elegant-hero">
-            <span class="elegant-badge">Profil Perusahaan</span>
-            <h1 class="elegant-hero-title">Inovator Digital. Arsitek Masa Depan.</h1>
-            <p class="elegant-hero-desc">Membangun ekosistem teknologi premium dan solusi web tingkat lanjut untuk korporasi dan bisnis modern yang mengutamakan kecepatan, keamanan, dan presisi.</p>
+<div class="premium-wrapper">
+    
+    <!-- Hero Section -->
+    <div class="premium-hero">
+        <div class="container">
+            <span class="premium-badge">Tentang Kami</span>
+            <h1 class="premium-hero-title">Kami Adalah Next Young Tech. <span>Arsitek Masa Depan.</span></h1>
+            <p class="premium-hero-desc">Menghadirkan harmoni antara rekayasa perangkat lunak berkelas dunia dan antarmuka desain visual yang prestisius untuk memajukan bisnis Anda.</p>
         </div>
+    </div>
 
-        <!-- Main Team Showcase -->
-        <div class="elegant-section">
-            <div class="elegant-team-grid">
+    <!-- Content Area -->
+    <div class="premium-content-area">
+        <div class="container">
+            
+            <!-- Main Team Showcase -->
+            <div class="premium-team-grid">
                 
-                <div class="elegant-image-wrapper">
-                    <img src="{{ asset('images/team.jpg') }}" alt="Tim Profesional Next Young Tech">
+                <div style="position: relative;">
+                    <div class="image-solid-accent"></div>
+                    <div class="premium-image-wrapper">
+                        <img src="{{ asset('images/team.jpg') }}" alt="Tim Profesional Next Young Tech">
+                    </div>
                 </div>
 
-                <div class="elegant-text-content">
-                    <span style="font-size: 11px; font-weight: 800; color: #666666; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; display: block;">Struktur Tim Profesional</span>
-                    <h2>Kolaborasi Dedikasi Tinggi</h2>
-                    <p>Di balik setiap infrastruktur web yang andal dan antarmuka pengguna yang premium, terdapat barisan profesional yang berdedikasi tinggi. Kami beroperasi layaknya firma teknologi berstandar internasional, mengutamakan presisi kode dan arsitektur sistem yang solid.</p>
-                    <p>Dipimpin oleh <strong>Nazmi Dwiputra Effendi</strong>, struktur tim kami terdiri dari rekayasawan perangkat lunak, desainer produk, dan analis sistem yang berkolaborasi untuk memberikan hasil berkualitas tinggi secara konsisten.</p>
+                <div class="premium-text-content">
+                    <span style="font-size: 12px; font-weight: 800; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: block;">Kolaborasi Tingkat Tinggi</span>
+                    <h2>Kualitas Industri Profesional</h2>
+                    <p>Di balik sistem backend yang andal dan antarmuka pengguna yang premium, terdapat tim ahli yang berdedikasi. Kami menggabungkan keterampilan teknis tingkat lanjut dengan pemahaman estetika yang mendalam.</p>
+                    <p>Dipimpin langsung oleh <strong>Nazmi Dwiputra Effendi</strong>, komitmen kami adalah menghasilkan karya digital yang solid, terukur, dan mampu mengangkat kredibilitas institusi Anda di mata dunia.</p>
                     
-                    <div class="elegant-stats">
-                        <div class="elegant-stat-item">
+                    <div class="premium-stats">
+                        <div class="premium-stat-item">
                             <h4>100%</h4>
                             <span>Kepuasan Klien</span>
                         </div>
-                        <div class="elegant-stat-item">
+                        <div class="premium-stat-item">
                             <h4>24/7</h4>
-                            <span>Dukungan Teknis</span>
+                            <span>Dukungan Ahli</span>
                         </div>
-                        <div class="elegant-stat-item">
+                        <div class="premium-stat-item">
                             <h4>10+</h4>
-                            <span>Klien Enterprise</span>
+                            <span>Layanan Premium</span>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </div>
 
-        <!-- Vision & Mission -->
-        <div class="elegant-vm-grid">
-            
-            <div class="elegant-vm-card">
-                <h3><i class="fa-solid fa-eye"></i> Visi Strategis</h3>
-                <p>Menjadi penyedia solusi arsitektur web interaktif dan perangkat lunak terbaik di Indonesia, menetapkan standar tertinggi dalam desain UI/UX, performa sistem, dan keandalan skala enterprise.</p>
-                <p>Kami meyakini bahwa bisnis modern membutuhkan infrastruktur digital yang tidak hanya fungsional, tetapi memberikan pengalaman premium dan kredibilitas maksimal di mata pengguna.</p>
+            <!-- Vision & Mission -->
+            <div class="premium-vm-grid">
+                
+                <!-- Vision Card -->
+                <div class="premium-vm-card card-visi">
+                    <div class="premium-icon-box icon-visi">
+                        <i class="fa-regular fa-compass"></i>
+                    </div>
+                    <h3>Visi Eksekutif</h3>
+                    <p>Menjadi pemimpin arsitektur web modern di Indonesia dengan menetapkan standar baru pada kualitas desain UI/UX dan keandalan sistem berkinerja tinggi.</p>
+                    <p>Kami memastikan bahwa ekosistem digital yang kami rancang tidak hanya berfungsi sebagai alat, tetapi juga sebagai representasi elegan dan premium dari merek klien kami.</p>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="premium-vm-card card-misi">
+                    <div class="premium-icon-box icon-misi">
+                        <i class="fa-solid fa-flag-checkered"></i>
+                    </div>
+                    <h3>Misi Strategis</h3>
+                    <ul class="premium-list icon-check-misi">
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <strong>Desain Elegan:</strong> Mengutamakan estetika rapi dan interaktif yang profesional tanpa elemen berlebih.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <strong>Presisi Kode:</strong> Arsitektur sistem yang dioptimalkan untuk kecepatan dan keamanan tingkat lanjut.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <strong>Fokus Hasil:</strong> Bekerja erat dengan klien untuk memberikan pengembalian investasi teknologi yang maksimal.
+                        </li>
+                    </ul>
+                </div>
+
             </div>
 
-            <div class="elegant-vm-card">
-                <h3><i class="fa-solid fa-bullseye"></i> Misi Operasional</h3>
-                <ul class="elegant-list">
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        <strong>Inovasi Desain:</strong> Menghadirkan antarmuka elegan, bersih, dan profesional yang menunjang identitas korporat.
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        <strong>Rekayasa Berkualitas:</strong> Membangun infrastruktur berkinerja tinggi, aman, skalabel, dan teroptimasi secara presisi.
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        <strong>Kemitraan Jangka Panjang:</strong> Berkolaborasi erat dengan klien untuk menghasilkan nilai ekonomi nyata melalui teknologi.
-                    </li>
-                </ul>
-            </div>
-
         </div>
-
     </div>
+
 </div>
 @endsection
