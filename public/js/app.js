@@ -182,64 +182,7 @@ function initThreeParticles() {
    2.1. Dark Mode & Light Mode Theme Switcher
    ========================================================================== */
 function initThemeSwitch() {
-    if (window.themeSwitchInitialized) return;
-    window.themeSwitchInitialized = true;
-
-    const themeBtn = document.getElementById('theme-toggle-btn');
-    const themeIcon = document.getElementById('theme-toggle-icon');
-    const mobileThemeBtn = document.getElementById('mobile-theme-toggle-btn');
-    const mobileThemeIcon = document.getElementById('mobile-theme-toggle-icon');
-
-    function setTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-
-        const isLight = theme === 'light';
-        const iconClass = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
-        const iconColor = isLight ? '#7209b7' : '#ffb703';
-        const titleText = isLight ? 'Aktifkan Mode Gelap' : 'Aktifkan Mode Terang';
-
-        if (themeIcon) {
-            themeIcon.className = iconClass;
-            themeIcon.style.color = iconColor;
-        }
-        if (themeBtn) {
-            themeBtn.setAttribute('title', titleText);
-        }
-
-        if (mobileThemeIcon) {
-            mobileThemeIcon.className = iconClass;
-            mobileThemeIcon.style.color = iconColor;
-        }
-        if (mobileThemeBtn) {
-            mobileThemeBtn.setAttribute('title', titleText);
-        }
-
-        if (typeof window.updateParticlesTheme === 'function') {
-            window.updateParticlesTheme(theme);
-        }
-    }
-
-    // Load initial theme state
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-
-    const toggleAction = (e) => {
-        if (e) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(nextTheme);
-    };
-
-    if (themeBtn) {
-        themeBtn.onclick = toggleAction;
-    }
-    if (mobileThemeBtn) {
-        mobileThemeBtn.onclick = toggleAction;
-    }
+    // Theme switching is disabled. The site is locked to Light Mode.
 }
 
 /* ==========================================================================

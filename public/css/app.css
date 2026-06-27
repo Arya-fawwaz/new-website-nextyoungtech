@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
     --bg-dark: #06060c;
@@ -20,9 +20,9 @@
 
     --gradient-hero: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
     --gradient-dark: linear-gradient(180deg, #06060c 0%, #0c0c1b 100%);
-    --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --font-special: 'Orbitron', sans-serif;
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-special: 'Plus Jakarta Sans', sans-serif;
 
     --star-empty: rgba(255, 255, 255, 0.15);
     --dashed-border: rgba(255, 255, 255, 0.15);

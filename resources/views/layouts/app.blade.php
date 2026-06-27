@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,9 @@
     
     <!-- Ikon & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/css/app.css?v={{ time() }}">
@@ -26,13 +29,7 @@
     <!-- Three.js untuk Efek 3D -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     
-    <!-- Blocking Script to Initialize Theme Immediately (Avoids Flash & Themes Loading Screen) -->
-    <script>
-        (function() {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        })();
-    </script>
+
     
     <style>
         /* Fix logo text wrapping and scaling */
@@ -586,9 +583,7 @@
             <button id="mobile-pwa-install-btn" class="mobile-action-btn" style="display: none;" title="Unduh Aplikasi Mobile">
                 <i class="fa-solid fa-mobile-screen-button" style="color: var(--accent); animation: pwaPulseBtn 2s infinite alternate;"></i>
             </button>
-            <button id="mobile-theme-toggle-btn" class="mobile-action-btn" title="Ganti Tema">
-                <i id="mobile-theme-toggle-icon" class="fa-solid fa-sun" style="color: #ffb703;"></i>
-            </button>
+
             @auth
                 <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                     @csrf
@@ -626,10 +621,7 @@
                     <i class="fa-solid fa-mobile-screen-button" style="animation: pwaPulseBtn 2s infinite alternate;"></i>
                 </button>
 
-                <!-- Theme Toggle Button -->
-                <button id="theme-toggle-btn" class="btn-secondary" title="Ganti Tema">
-                    <i id="theme-toggle-icon" class="fa-solid fa-sun" style="color: #ffb703;"></i>
-                </button>
+
 
                 @auth
                     <a href="{{ route('profile') }}" style="display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 13px; color: var(--text-main); font-weight: 500; transition: all 0.3s ease; flex-shrink: 0;" class="profile-nav-link">

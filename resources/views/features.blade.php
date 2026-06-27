@@ -18,109 +18,79 @@
                     <div class="swiper-wrapper">
                     <!-- Feature 1 -->
                     <div class="swiper-slide">
-                        <div class="glass-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
-                            <div style="width: 100%; height: 160px; overflow: hidden; border-bottom: 1px solid var(--border-color);">
-                                <img src="/images/feature_3d_webgl.png" alt="Animasi 3D Imersif (WebGL)" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        <div class="glass-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; height: 100%; border: 1px solid rgba(14, 165, 233, 0.15);">
+                            <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--primary); box-shadow: 0 10px 25px var(--primary-glow); background: rgba(14, 165, 233, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                                <i class="fa-solid fa-cubes" style="font-size: 32px; color: var(--primary);"></i>
                             </div>
-                            <div style="padding: 24px; flex-grow: 1;">
-                                <div class="feature-icon" style="margin-top: -54px; position: relative; z-index: 2; border: 2px solid var(--primary); box-shadow: 0 0 15px var(--primary-glow); background: var(--bg-dark);">
-                                    <i class="fa-solid fa-cubes"></i>
-                                </div>
-                                <h3 class="feature-title" style="font-size: 18px; font-weight: 700; margin-top: 10px; margin-bottom: 12px; color: var(--text-main);">Animasi 3D Imersif (WebGL)</h3>
-                                <p class="feature-desc" style="font-size: 13px; color: var(--text-dark); opacity: 0.8; line-height: 1.6; margin: 0;">
-                                    Menggunakan Three.js & WebGL yang sangat dioptimalkan untuk merender elemen interaktif 3D di browser pada 60 FPS demi menarik atensi klien secara instan.
-                                </p>
-                            </div>
+                            <h3 class="feature-title" style="font-size: 20px; font-weight: 800; margin-bottom: 15px; color: var(--text-main);">Animasi 3D Imersif (WebGL)</h3>
+                            <p class="feature-desc" style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin: 0;">
+                                Menggunakan Three.js & WebGL yang sangat dioptimalkan untuk merender elemen interaktif 3D di browser pada 60 FPS demi menarik atensi klien secara instan.
+                            </p>
                         </div>
                     </div>
 
                     <!-- Feature 2 -->
                     <div class="swiper-slide">
-                        <div class="glass-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
-                            <div style="width: 100%; height: 160px; overflow: hidden; border-bottom: 1px solid var(--border-color);">
-                                <img src="/images/feature_speed.png" alt="Kinerja Kecepatan Tinggi (FPS Tinggi)" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        <div class="glass-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; height: 100%; border: 1px solid rgba(79, 70, 229, 0.15);">
+                            <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--secondary); box-shadow: 0 10px 25px var(--secondary-glow); background: rgba(79, 70, 229, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                                <i class="fa-solid fa-gauge-high" style="font-size: 32px; color: var(--secondary);"></i>
                             </div>
-                            <div style="padding: 24px; flex-grow: 1;">
-                                <div class="feature-icon" style="margin-top: -54px; position: relative; z-index: 2; border: 2px solid var(--secondary); box-shadow: 0 0 15px var(--secondary-glow); background: var(--bg-dark);">
-                                    <i class="fa-solid fa-gauge-high"></i>
-                                </div>
-                                <h3 class="feature-title" style="font-size: 18px; font-weight: 700; margin-top: 10px; margin-bottom: 12px; color: var(--text-main);">Kinerja Kecepatan Tinggi (FPS Tinggi)</h3>
-                                <p class="feature-desc" style="font-size: 13px; color: var(--text-dark); opacity: 0.8; line-height: 1.6; margin: 0;">
-                                    Optimasi kompresi kode, lazy-loading cerdas, dan visual rendering asinkron untuk memastikan waktu pemuatan web yang super cepat kurang dari satu detik.
-                                </p>
-                            </div>
+                            <h3 class="feature-title" style="font-size: 20px; font-weight: 800; margin-bottom: 15px; color: var(--text-main);">Kinerja Kecepatan Tinggi (FPS Tinggi)</h3>
+                            <p class="feature-desc" style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin: 0;">
+                                Optimasi kompresi kode, lazy-loading cerdas, dan visual rendering asinkron untuk memastikan waktu pemuatan web yang super cepat kurang dari satu detik.
+                            </p>
                         </div>
                     </div>
 
                     <!-- Feature 3 -->
                     <div class="swiper-slide">
-                        <div class="glass-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
-                            <div style="width: 100%; height: 160px; overflow: hidden; border-bottom: 1px solid var(--border-color);">
-                                <img src="/images/feature_secure.png" alt="Sistem Keamanan Laravel Core" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        <div class="glass-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; height: 100%; border: 1px solid rgba(0, 242, 254, 0.15);">
+                            <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--accent); box-shadow: 0 10px 25px var(--accent-glow); background: rgba(0, 242, 254, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                                <i class="fa-solid fa-shield-halved" style="font-size: 32px; color: var(--accent);"></i>
                             </div>
-                            <div style="padding: 24px; flex-grow: 1;">
-                                <div class="feature-icon" style="margin-top: -54px; position: relative; z-index: 2; border: 2px solid var(--accent); box-shadow: 0 0 15px var(--accent-glow); background: var(--bg-dark);">
-                                    <i class="fa-solid fa-shield-halved"></i>
-                                </div>
-                                <h3 class="feature-title" style="font-size: 18px; font-weight: 700; margin-top: 10px; margin-bottom: 12px; color: var(--text-main);">Sistem Keamanan Laravel Core</h3>
-                                <p class="feature-desc" style="font-size: 13px; color: var(--text-dark); opacity: 0.8; line-height: 1.6; margin: 0;">
-                                    Proteksi data berlapis dari serangan injeksi SQL, Cross-Site Scripting (XSS), dan pemalsuan CSRF menggunakan standar arsitektur terbaik framework Laravel 11.
-                                </p>
-                            </div>
+                            <h3 class="feature-title" style="font-size: 20px; font-weight: 800; margin-bottom: 15px; color: var(--text-main);">Sistem Keamanan Laravel Core</h3>
+                            <p class="feature-desc" style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin: 0;">
+                                Proteksi data berlapis dari serangan injeksi SQL, Cross-Site Scripting (XSS), dan pemalsuan CSRF menggunakan standar arsitektur terbaik framework Laravel 11.
+                            </p>
                         </div>
                     </div>
 
                     <!-- Feature 4 -->
                     <div class="swiper-slide">
-                        <div class="glass-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
-                            <div style="width: 100%; height: 160px; overflow: hidden; border-bottom: 1px solid var(--border-color);">
-                                <img src="/images/feature_seo.png" alt="Optimasi SEO & Ramah Google" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        <div class="glass-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; height: 100%; border: 1px solid rgba(14, 165, 233, 0.15);">
+                            <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--primary); box-shadow: 0 10px 25px var(--primary-glow); background: rgba(14, 165, 233, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                                <i class="fa-solid fa-magnifying-glass-chart" style="font-size: 32px; color: var(--primary);"></i>
                             </div>
-                            <div style="padding: 24px; flex-grow: 1;">
-                                <div class="feature-icon" style="margin-top: -54px; position: relative; z-index: 2; border: 2px solid var(--primary); box-shadow: 0 0 15px var(--primary-glow); background: var(--bg-dark);">
-                                    <i class="fa-solid fa-magnifying-glass-chart"></i>
-                                </div>
-                                <h3 class="feature-title" style="font-size: 18px; font-weight: 700; margin-top: 10px; margin-bottom: 12px; color: var(--text-main);">Optimasi SEO & Ramah Google</h3>
-                                <p class="feature-desc" style="font-size: 13px; color: var(--text-dark); opacity: 0.8; line-height: 1.6; margin: 0;">
-                                    Struktur markup HTML5 semantik dan integrasi metadata dinamis untuk mendongkrak peringkat visibilitas pencarian website Anda di mesin pencari Google secara organik.
-                                </p>
-                            </div>
+                            <h3 class="feature-title" style="font-size: 20px; font-weight: 800; margin-bottom: 15px; color: var(--text-main);">Optimasi SEO & Ramah Google</h3>
+                            <p class="feature-desc" style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin: 0;">
+                                Struktur markup HTML5 semantik dan integrasi metadata dinamis untuk mendongkrak peringkat visibilitas pencarian website Anda di mesin pencari Google secara organik.
+                            </p>
                         </div>
                     </div>
 
                     <!-- Feature 5 -->
                     <div class="swiper-slide">
-                        <div class="glass-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
-                            <div style="width: 100%; height: 160px; overflow: hidden; border-bottom: 1px solid var(--border-color);">
-                                <img src="/images/feature_responsive.png" alt="Desain Responsif & Adaptif" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        <div class="glass-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; height: 100%; border: 1px solid rgba(79, 70, 229, 0.15);">
+                            <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--secondary); box-shadow: 0 10px 25px var(--secondary-glow); background: rgba(79, 70, 229, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                                <i class="fa-solid fa-mobile-screen-button" style="font-size: 32px; color: var(--secondary);"></i>
                             </div>
-                            <div style="padding: 24px; flex-grow: 1;">
-                                <div class="feature-icon" style="margin-top: -54px; position: relative; z-index: 2; border: 2px solid var(--secondary); box-shadow: 0 0 15px var(--secondary-glow); background: var(--bg-dark);">
-                                    <i class="fa-solid fa-mobile-screen-button"></i>
-                                </div>
-                                <h3 class="feature-title" style="font-size: 18px; font-weight: 700; margin-top: 10px; margin-bottom: 12px; color: var(--text-main);">Desain Responsif & Adaptif</h3>
-                                <p class="feature-desc" style="font-size: 13px; color: var(--text-dark); opacity: 0.8; line-height: 1.6; margin: 0;">
-                                    Layout fluid elastis yang dirancang khusus agar tampil memukau dengan transisi proporsional di semua resolusi, mulai dari smartphone seluler hingga layar desktop 4K.
-                                </p>
-                            </div>
+                            <h3 class="feature-title" style="font-size: 20px; font-weight: 800; margin-bottom: 15px; color: var(--text-main);">Desain Responsif & Adaptif</h3>
+                            <p class="feature-desc" style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin: 0;">
+                                Arsitektur antarmuka yang cair memastikan tampilan yang sempurna di seluruh perangkat, dari layar lebar desktop 4K hingga ponsel cerdas berukuran kecil.
+                            </p>
                         </div>
                     </div>
 
                     <!-- Feature 6 -->
                     <div class="swiper-slide">
-                        <div class="glass-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
-                            <div style="width: 100%; height: 160px; overflow: hidden; border-bottom: 1px solid var(--border-color);">
-                                <img src="/images/feature_whatsapp.png" alt="Integrasi WhatsApp Consultation" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        <div class="glass-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; height: 100%; border: 1px solid rgba(0, 242, 254, 0.15);">
+                            <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--accent); box-shadow: 0 10px 25px var(--accent-glow); background: rgba(0, 242, 254, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                                <i class="fa-brands fa-whatsapp" style="font-size: 32px; color: var(--accent);"></i>
                             </div>
-                            <div style="padding: 24px; flex-grow: 1;">
-                                <div class="feature-icon" style="margin-top: -54px; position: relative; z-index: 2; border: 2px solid var(--accent); box-shadow: 0 0 15px var(--accent-glow); background: var(--bg-dark);">
-                                    <i class="fa-solid fa-comments"></i>
-                                </div>
-                                <h3 class="feature-title" style="font-size: 18px; font-weight: 700; margin-top: 10px; margin-bottom: 12px; color: var(--text-main);">Integrasi WhatsApp Consultation</h3>
-                                <p class="feature-desc" style="font-size: 13px; color: var(--text-dark); opacity: 0.8; line-height: 1.6; margin: 0;">
-                                    Tanggapan instan terpadu yang memformat isian formulir estimasi biaya dan mengirimkannya langsung ke panel konsultasi WhatsApp admin dalam hitungan detik.
-                                </p>
-                            </div>
+                            <h3 class="feature-title" style="font-size: 20px; font-weight: 800; margin-bottom: 15px; color: var(--text-main);">Integrasi WhatsApp Consultation</h3>
+                            <p class="feature-desc" style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin: 0;">
+                                Hubungkan prospek klien langsung ke tim penjualan atau dukungan Anda melalui tombol obrolan WhatsApp terintegrasi dengan kustomisasi pesan otomatis.
+                            </p>
                         </div>
                     </div>
                 </div>

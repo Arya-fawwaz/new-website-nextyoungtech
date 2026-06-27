@@ -22,13 +22,10 @@
         position: absolute;
         border-radius: 50%;
         filter: blur(120px);
-        opacity: 0.08;
+        opacity: 0.15;
         pointer-events: none;
         z-index: 1;
         animation: floatOrb 25s infinite alternate ease-in-out;
-    }
-    [data-theme="dark"] .about-glow {
-        opacity: 0.18;
     }
     .about-glow-1 {
         width: 500px;
@@ -121,21 +118,16 @@
 
     /* Glassmorphism Cards */
     .about-glass-card {
-        background: rgba(255, 255, 255, 0.02);
+        background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.06);
         border-radius: 28px;
         padding: 40px;
-        box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 15px 35px -10px rgba(79, 70, 229, 0.06);
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         position: relative;
         overflow: hidden;
-    }
-    [data-theme="light"] .about-glass-card {
-        background: rgba(255, 255, 255, 0.7);
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        box-shadow: 0 15px 35px -10px rgba(79, 70, 229, 0.06);
     }
     .about-glass-card:hover {
         transform: translateY(-8px);
@@ -208,60 +200,17 @@
 
     /* Team Section */
     .team-section {
-        background: rgba(255, 255, 255, 0.01);
-        border: 1px solid rgba(255, 255, 255, 0.03);
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(0, 0, 0, 0.04);
         border-radius: 32px;
         padding: 50px;
         margin-top: 40px;
     }
-    [data-theme="light"] .team-section {
-        background: rgba(255, 255, 255, 0.4);
-        border: 1px solid rgba(0, 0, 0, 0.04);
-    }
     .team-visual-container {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 50px;
-        align-items: center;
-    }
-    @media (max-width: 992px) {
-        .team-visual-container {
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-    }
-
-    /* Team Photo Glass Frame */
-    .team-photo-frame {
-        position: relative;
-        border-radius: 24px;
-        padding: 12px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.07);
-        box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
-        overflow: hidden;
-        transition: all 0.4s ease;
-    }
-    [data-theme="light"] .team-photo-frame {
-        background: rgba(255, 255, 255, 0.8);
-        border: 1px solid rgba(0,0,0,0.08);
-        box-shadow: 0 30px 60px -15px rgba(79, 70, 229, 0.1);
-    }
-    .team-photo-frame:hover {
-        transform: scale(1.02);
-        border-color: rgba(99, 102, 241, 0.4);
-        box-shadow: 0 40px 80px -20px var(--primary-glow);
-    }
-    .team-photo {
-        width: 100%;
-        height: auto;
-        border-radius: 16px;
         display: block;
-        object-fit: cover;
-        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .team-photo-frame:hover .team-photo {
-        transform: scale(1.015);
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
     }
 
     /* Team Bio details */
@@ -285,15 +234,11 @@
         margin-top: 30px;
     }
     .stat-box {
-        background: rgba(255,255,255,0.02);
-        border: 1px solid rgba(255,255,255,0.05);
+        background: rgba(255,255,255,0.6);
+        border: 1px solid rgba(0,0,0,0.06);
         border-radius: 16px;
         padding: 20px 15px;
         text-align: center;
-    }
-    [data-theme="light"] .stat-box {
-        background: rgba(255,255,255,0.6);
-        border: 1px solid rgba(0,0,0,0.06);
     }
     .stat-number {
         font-size: 26px;
@@ -413,31 +358,30 @@
         </div>
 
         <!-- Section Tim & Foto Tim -->
+        <!-- Section Tim & Info (Removed Photo) -->
         <div class="about-glass-card team-section">
             <div class="team-visual-container">
-                <!-- Foto Frame -->
-                <div class="team-photo-frame">
-                    <img src="/images/team.jpg" alt="Tim Next Young Tech" class="team-photo">
-                </div>
-
-                <!-- Informasi Tim -->
+                <!-- Informasi Tim (Centered) -->
                 <div class="team-info-content">
+                    <div style="font-size: 40px; color: var(--primary); margin-bottom: 20px;">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
                     <span style="font-size: 11px; font-weight: 800; color: var(--secondary); letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 8px;">THE ARCHITECTS OF DIGITAL INNOVATION</span>
-                    <h3>Kolaborasi Tim Terbaik Kami</h3>
-                    <p>
-                        Di balik setiap aplikasi web interaktif premium dan performa sistem ultra-cepat yang kami bangun, terdapat barisan talenta digital terbaik Next Young Tech. Kami adalah kolaborasi dari rekayasawan perangkat lunak (software engineers), desainer UI/UX kelas atas, dan perancang model 3D interaktif yang berdedikasi tinggi.
+                    <h3 style="font-size: 32px; font-weight: 900; color: var(--text-main); margin-bottom: 24px;">Kolaborasi Tim Terbaik Kami</h3>
+                    <p style="font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
+                        Di balik setiap aplikasi web interaktif premium dan performa sistem ultra-cepat yang kami bangun, terdapat barisan talenta digital terbaik Next Young Tech. Kami adalah kolaborasi dari rekayasawan perangkat lunak (software engineers), desainer UI/UX kelas atas, dan arsitek sistem yang berdedikasi tinggi.
                     </p>
-                    <p>
+                    <p style="font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 30px;">
                         Dipimpin secara langsung oleh <strong>Nazmi Dwiputra Effendi</strong> sebagai Chief Executive Officer & Lead Systems Architect, kami bersinergi menghasilkan karya digital terdepan yang mendefinisikan kembali standar kualitas, kecepatan, dan estetika untuk kesuksesan korporasi Anda.
                     </p>
 
-                    <div class="team-stats">
+                    <div class="team-stats" style="max-width: 600px; margin: 0 auto;">
                         <div class="stat-box">
                             <span class="stat-number">100%</span>
                             <span class="stat-label">Kepuasan Klien</span>
                         </div>
                         <div class="stat-box">
-                            <span class="stat-number">5+</span>
+                            <span class="stat-number">10+</span>
                             <span class="stat-label">Layanan Premium</span>
                         </div>
                         <div class="stat-box">
