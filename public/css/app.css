@@ -2651,6 +2651,10 @@ body {
         gap: 8px;
         letter-spacing: 0.5px;
     }
+    
+    .mobile-app-logo img {
+        filter: brightness(0.1) drop-shadow(0 2px 2px rgba(0,0,0,0.1)) !important; /* Force logo to be dark for light mode */
+    }
 
     .mobile-app-actions {
         display: flex;
@@ -4233,10 +4237,23 @@ body {
 .features-slider-wrapper:hover .swiper-button-prev,
 .portfolio-slider-wrapper:hover .swiper-button-next,
 .portfolio-slider-wrapper:hover .swiper-button-prev,
+.features-slider-wrapper:active .swiper-button-next,
+.features-slider-wrapper:active .swiper-button-prev,
+.portfolio-slider-wrapper:active .swiper-button-next,
+.portfolio-slider-wrapper:active .swiper-button-prev,
 .swiper:active .swiper-button-next,
 .swiper:active .swiper-button-prev {
     opacity: 1;
     visibility: visible;
+}
+
+/* Ensure hit area is large enough on mobile for touch */
+@media (hover: none) and (pointer: coarse) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        opacity: 0.4; /* Slightly visible on mobile so users know they can swipe/tap */
+        visibility: visible;
+    }
 }
 
 .swiper-button-prev {
@@ -4349,23 +4366,29 @@ body {
 
 /* Mobile adjustments for Swiper Navigation Buttons */
 @media (max-width: 768px) {
-
     .swiper-button-next,
     .swiper-button-prev {
-        width: 38px;
-        height: 38px;
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     }
-
+    
     .swiper-button-prev {
-        left: 8px;
+        left: 0px;
     }
 
     .swiper-button-next {
-        right: 8px;
+        right: 0px;
     }
 
     .swiper-button-next::after,
     .swiper-button-prev::after {
         font-size: 14px;
+    }
+    
+    /* Remove padding on wrappers for mobile to give more space, arrows will overlap */
+    .portfolio-slider-wrapper, .features-slider-wrapper {
+        padding: 0 10px !important;
     }
 }
