@@ -237,15 +237,21 @@
         .bw-image-accent { display: none; }
     }
     @media (max-width: 768px) {
+        .bw-hero {
+            padding: 100px 0 40px 0;
+        }
         .bw-hero-title {
-            font-size: 40px;
+            font-size: 32px;
+        }
+        .bw-content-area {
+            padding: 40px 0 60px 0;
         }
         .bw-stats {
             grid-template-columns: 1fr;
             gap: 20px;
         }
         .bw-vm-card {
-            padding: 30px;
+            padding: 24px;
         }
     }
 </style>
