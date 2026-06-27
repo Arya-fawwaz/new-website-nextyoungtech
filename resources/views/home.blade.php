@@ -50,7 +50,7 @@
     <section class="section testimonials-section" style="background: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); overflow: hidden; padding: 60px 0;">
         <div class="container">
             <div class="section-header" style="margin-bottom: 40px;">
-                <span class="section-badge" style="background: rgba(14, 165, 233, 0.1); border-color: rgba(14, 165, 233, 0.2); color: var(--primary); font-weight: 800;">TESTIMONI KLIEN</span>
+                <span class="section-badge" style="background: #0f172a; border-color: #0f172a; color: #ffffff; font-weight: 800; padding: 6px 14px; border-radius: 6px; letter-spacing: 1px;">TESTIMONI KLIEN</span>
                 <h2 class="section-title">Apa Kata Mereka Tentang Kami?</h2>
                 <p class="section-desc">Kepuasan klien adalah kebanggaan terbesar kami. Berikut ulasan bintang 5 dan komentar nyata dari klien kami.</p>
                 @auth

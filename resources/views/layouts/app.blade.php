@@ -466,7 +466,7 @@
     <!-- Mobile App Bar (Only visible on screens <= 820px) -->
     <div class="mobile-app-bar">
         <a href="{{ route('home') }}" class="mobile-app-logo">
-            <img src="{{ asset('images/logo-n-trans.png') }}?v={{ time() }}" alt="Next Young Tech Logo" style="height: 28px; width: auto; filter: drop-shadow(0 2px 5px rgba(0, 242, 254, 0.4)); object-fit: contain;">
+            <img src="{{ asset('images/logo-n-trans.png') }}?v={{ time() }}" alt="Next Young Tech Logo" style="height: 28px; width: auto; object-fit: contain;">
             NEXT YOUNG <span style="color: var(--primary); font-weight: 800;">TECH</span>
         </a>
         <div class="mobile-app-actions">
