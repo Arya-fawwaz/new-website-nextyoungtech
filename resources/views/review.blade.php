@@ -38,8 +38,8 @@
                     @if(auth()->user()->foto_profil)
                         <img src="{{ auth()->user()->foto_profil_url }}" alt="{{ auth()->user()->nama }}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2.5px solid var(--primary); box-shadow: 0 0 15px var(--primary-glow);">
                     @else
-                        <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(128, 128, 128, 0.05); display: flex; align-items: center; justify-content: center; border: 2px dashed var(--dashed-border);">
-                            <i class="fa-solid fa-user-tie" style="font-size: 24px; color: var(--primary); text-shadow: 0 0 8px var(--primary-glow);"></i>
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--bg-card); display: flex; align-items: center; justify-content: center; border: 2px dashed var(--dashed-border); padding: 8px;">
+                            <img src="{{ asset('images/logo-n-trans.png') }}" alt="Default Avatar" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">
                         </div>
                     @endif
                     <div>

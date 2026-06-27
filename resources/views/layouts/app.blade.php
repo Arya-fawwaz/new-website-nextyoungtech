@@ -714,8 +714,8 @@
         <!-- Chat Bubble Trigger -->
         <button id="nova-chat-trigger" class="nova-chat-bubble" title="Tanya Nova AI">
             <span class="nova-avatar-pulse"></span>
-            <i class="fa-solid fa-robot"></i>
-            <span class="nova-chat-tooltip">Tanya Nova AI 🚀</span>
+            <i class="fa-solid fa-user-tie"></i>
+            <span class="nova-chat-tooltip">Tanya Nova AI</span>
         </button>
 
         <!-- Chat Window -->
@@ -724,12 +724,12 @@
             <div class="nova-chat-header">
                 <div class="nova-chat-header-info">
                     <div class="nova-chat-avatar">
-                        <i class="fa-solid fa-robot"></i>
+                        <i class="fa-solid fa-user-tie"></i>
                         <span class="nova-status-dot"></span>
                     </div>
                     <div>
                         <h4 class="nova-bot-name">Nova AI</h4>
-                        <span class="nova-bot-status">Online • Virtual Astronaut</span>
+                        <span class="nova-bot-status">Online • Virtual Assistant</span>
                     </div>
                 </div>
                 <button id="nova-chat-close" class="nova-chat-close-btn" title="Tutup">
@@ -742,7 +742,7 @@
                 <!-- Welcome Message -->
                 <div class="nova-msg-row bot">
                     <div class="nova-msg-bubble">
-                        Halo! 🚀 Saya **Nova**, asisten virtual astronot Anda di **Next Young Tech**! Senang sekali bisa menyapa Anda. Saya di sini untuk membantu mendiskusikan ide proyek website luar biasa Anda secara santai tapi profesional. Ada proyek seru apa nih yang ingin kita luncurkan bersama hari ini? 😊
+                        Halo! Saya **Nova**, asisten virtual Anda di **Next Young Tech**. Saya hadir untuk membantu mendiskusikan kebutuhan digital dan pengembangan website Anda secara profesional. Ada hal yang bisa saya bantu hari ini?
                     </div>
                 </div>
                 <!-- Quick Options -->
@@ -834,7 +834,7 @@
                 if (text === 'Masuk / Daftar Akun') {
                     setTimeout(() => {
                         typingIndicator.style.display = 'none';
-                        appendBotMessage("Siap kosmik! 🚀 Saya sedang membuka portal login...");
+                        appendBotMessage("Baik, saya sedang mengarahkan Anda ke portal login...");
                         window.location.href = "{{ route('login') }}";
                     }, 800);
                     return;
@@ -845,7 +845,7 @@
                     if (!userIsLoggedIn) {
                         setTimeout(() => {
                             typingIndicator.style.display = 'none';
-                            appendBotMessage("Waduh! Untuk melakukan pemesanan proyek digital atau kalkulasi biaya di **Next Young Tech**, **Anda harus masuk (login) atau mendaftar akun terlebih dahulu** ya! 😊\n\nSilakan klik tautan di bawah ini untuk masuk ke portal akun Anda. Setelah masuk, Anda bisa bebas menggunakan fitur estimasi biaya dan berkonsultasi langsung secara resmi.\n\n👉 **[Masuk ke Portal / Daftar Akun]({{ route('login') }})**", [
+                            appendBotMessage("Mohon maaf, untuk melakukan pemesanan proyek digital atau kalkulasi biaya, Anda perlu masuk (login) atau mendaftar akun terlebih dahulu.\n\nSilakan klik tautan di bawah ini untuk masuk ke portal akun Anda. Setelah masuk, Anda dapat menggunakan fitur estimasi biaya dan berkonsultasi secara resmi.\n\n👉 **[Masuk ke Portal / Daftar Akun]({{ route('login') }})**", [
                                 "Masuk / Daftar Akun",
                                 "Tanya Layanan Web",
                                 "Teknologi yang Dipakai"
@@ -859,14 +859,14 @@
                 if (text === 'Hubungkan ke WA Sekarang' || text === 'Hubungi Sales WA') {
                     setTimeout(() => {
                         typingIndicator.style.display = 'none';
-                        appendBotMessage("Siap kosmik! 🚀 Saya sedang membuka WhatsApp sales kami. Jika tab baru tidak terbuka otomatis, silakan klik tautan berikut:\n\n👉 **[WhatsApp Sales Tim Ahli](https://wa.me/628881023038?text=Halo%20Next%20Young%20Tech,%20saya%20tertarik%20konsultasi%20pembuatan%20website%20premium.)**");
+                        appendBotMessage("Baik, saya sedang mengarahkan Anda ke WhatsApp tim sales kami. Jika tab baru tidak terbuka otomatis, silakan klik tautan berikut:\n\n👉 **[WhatsApp Sales Tim Ahli](https://wa.me/628881023038?text=Halo%20Next%20Young%20Tech,%20saya%20tertarik%20konsultasi%20pembuatan%20website%20premium.)**");
                         window.open("https://wa.me/628881023038?text=Halo%20Next%20Young%20Tech,%20saya%20tertarik%20konsultasi%20pembuatan%20website%20premium.", '_blank');
                     }, 1000);
                     return;
                 } else if (text === 'Buka Kalkulator Biaya' || text === 'Estimasi Biaya Proyek') {
                     setTimeout(() => {
                         typingIndicator.style.display = 'none';
-                        appendBotMessage("Tentu saja! 💰 Halaman Kalkulator Estimasi Biaya kami sangat canggih dan interaktif. Silakan klik tautan di bawah ini untuk menuju ke sana:\n\n👉 **[Kalkulator Estimasi Biaya]({{ route('quotation.index') }})**");
+                        appendBotMessage("Tentu. Silakan akses Halaman Kalkulator Estimasi Biaya kami melalui tautan di bawah ini:\n\n👉 **[Kalkulator Estimasi Biaya]({{ route('quotation.index') }})**");
                     }, 1000);
                     return;
                 }
