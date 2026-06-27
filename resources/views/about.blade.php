@@ -1,403 +1,350 @@
 @extends('layouts.app')
 
-@section('title', 'Profil Perusahaan | Next Young Tech')
+@section('title', 'Profil Komunitas | Next Young Tech')
 
 @section('content')
 <style>
     /* ==========================================================
-       TEMA PREMIUM PROFIL PERUSAHAAN (FUTURISTIK & LUXURY)
+       MODERN CORPORATE PROFILE THEME
        ========================================================== */
-    .about-wrapper {
+    .corporate-wrapper {
         min-height: 100vh;
-        background: var(--bg-body);
+        background-color: var(--bg-body);
         color: var(--text-main);
-        position: relative;
+        font-family: var(--font-body);
         overflow: hidden;
-        padding: 120px 0 80px 0;
-        transition: background 0.4s ease;
     }
 
-    /* Floating Ambient Glowing Orbs */
-    .about-glow {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(120px);
-        opacity: 0.15;
-        pointer-events: none;
-        z-index: 1;
-        animation: floatOrb 25s infinite alternate ease-in-out;
-    }
-    .about-glow-1 {
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, var(--primary) 0%, transparent 80%);
-        top: -100px;
-        left: -100px;
-        animation-duration: 28s;
-    }
-    .about-glow-2 {
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, var(--secondary) 0%, transparent 80%);
-        bottom: 10%;
-        right: -150px;
-        animation-duration: 35s;
-        animation-delay: -7s;
-    }
-    .about-glow-3 {
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, var(--accent) 0%, transparent 80%);
-        top: 35%;
-        left: 55%;
-        animation-duration: 22s;
-        animation-delay: -12s;
-    }
-
-    @keyframes floatOrb {
-        0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-        50% { transform: translate(60px, 80px) scale(1.15) rotate(180deg); }
-        100% { transform: translate(-40px, -60px) scale(0.9) rotate(360deg); }
-    }
-
-    .about-container {
-        position: relative;
-        z-index: 10;
-    }
-
-    /* Premium Header */
-    .about-header {
+    /* Hero Section */
+    .corp-hero {
+        padding: 160px 0 80px 0;
         text-align: center;
-        margin-bottom: 70px;
+        background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
     }
-    .about-badge {
+    .corp-badge {
         display: inline-block;
-        padding: 8px 18px;
-        background: var(--primary-glow);
-        border: 1px solid rgba(99, 102, 241, 0.25);
+        padding: 6px 16px;
+        background: rgba(99, 102, 241, 0.1);
         color: var(--primary);
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 800;
         letter-spacing: 2px;
-        border-radius: 30px;
         text-transform: uppercase;
-        margin-bottom: 20px;
-        box-shadow: 0 0 15px var(--primary-glow);
+        border-radius: 4px;
+        margin-bottom: 24px;
+        border-left: 3px solid var(--primary);
     }
-    .about-title {
+    .corp-hero-title {
         font-family: var(--font-heading);
-        font-size: 48px;
+        font-size: 56px;
         font-weight: 900;
-        letter-spacing: -1px;
-        background: linear-gradient(90deg, var(--text-main) 0%, var(--primary) 50%, var(--secondary) 100%);
+        letter-spacing: -1.5px;
+        color: var(--text-main);
+        max-width: 900px;
+        margin: 0 auto 24px auto;
+        line-height: 1.1;
+    }
+    .corp-hero-title span {
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin-bottom: 20px;
     }
-    .about-desc {
+    .corp-hero-desc {
+        font-size: 18px;
         color: var(--text-muted);
-        font-size: 17px;
-        max-width: 700px;
+        max-width: 650px;
         margin: 0 auto;
         line-height: 1.6;
     }
 
-    /* Grid Layouts */
-    .about-grid-2 {
+    /* Main Team Showcase */
+    .corp-showcase {
+        padding: 40px 0 100px 0;
+        position: relative;
+    }
+    .corp-showcase-inner {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        padding: 60px;
+        border-radius: 16px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+    }
+    .corp-image-col {
+        flex: 1;
+        position: relative;
+    }
+    .corp-image-wrapper {
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+    }
+    .corp-image-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transform: scale(1.02);
+        transition: transform 0.5s ease;
+    }
+    .corp-image-wrapper:hover img {
+        transform: scale(1.05);
+    }
+    .corp-image-accent {
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: 100px;
+        height: 100px;
+        border-top: 4px solid var(--primary);
+        border-left: 4px solid var(--primary);
+        z-index: -1;
+    }
+    .corp-image-accent-bottom {
+        position: absolute;
+        bottom: -15px;
+        right: -15px;
+        width: 100px;
+        height: 100px;
+        border-bottom: 4px solid var(--secondary);
+        border-right: 4px solid var(--secondary);
+        z-index: -1;
+    }
+    
+    .corp-text-col {
+        flex: 1;
+    }
+    .corp-section-subtitle {
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--text-muted);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        display: block;
+    }
+    .corp-section-title {
+        font-family: var(--font-heading);
+        font-size: 36px;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 24px;
+        line-height: 1.2;
+    }
+    .corp-text-col p {
+        font-size: 15px;
+        color: var(--text-muted);
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+    .corp-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid var(--border-color);
+    }
+    .corp-stat-item h4 {
+        font-size: 32px;
+        font-weight: 900;
+        color: var(--text-main);
+        margin-bottom: 4px;
+        font-family: var(--font-heading);
+    }
+    .corp-stat-item span {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Vision & Mission Grid */
+    .corp-vm-section {
+        padding: 60px 0 100px 0;
+        background: rgba(0,0,0,0.01);
+        border-top: 1px solid var(--border-color);
+    }
+    .corp-vm-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
-        margin-bottom: 80px;
-        align-items: stretch;
     }
-    @media (max-width: 768px) {
-        .about-grid-2 {
-            grid-template-columns: 1fr;
-        }
+    .corp-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        padding: 50px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
     }
-
-    /* Glassmorphism Cards */
-    .about-glass-card {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        border-radius: 28px;
-        padding: 40px;
-        box-shadow: 0 15px 35px -10px rgba(79, 70, 229, 0.06);
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        position: relative;
-        overflow: hidden;
-    }
-    .about-glass-card:hover {
-        transform: translateY(-8px);
+    .corp-card:hover {
+        box-shadow: 0 15px 30px rgba(0,0,0,0.04);
         border-color: rgba(99, 102, 241, 0.3);
-        box-shadow: 0 25px 50px -12px var(--primary-glow);
     }
-
-    /* Visi & Misi UI elements */
-    .card-icon-glow {
-        width: 60px;
-        height: 60px;
-        border-radius: 18px;
+    .corp-icon-box {
+        width: 50px;
+        height: 50px;
+        background: rgba(99, 102, 241, 0.1);
+        color: var(--primary);
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 25px;
+        border-radius: 8px;
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+    .corp-card h3 {
         font-size: 24px;
-        transition: transform 0.3s ease;
-    }
-    .about-glass-card:hover .card-icon-glow {
-        transform: scale(1.1) rotate(5deg);
-    }
-    .visi-icon {
-        background: rgba(14, 165, 233, 0.15);
-        color: var(--secondary);
-        border: 1px solid rgba(14, 165, 233, 0.3);
-    }
-    .misi-icon {
-        background: rgba(244, 63, 94, 0.15);
-        color: var(--accent);
-        border: 1px solid rgba(244, 63, 94, 0.3);
-    }
-
-    .about-card-title {
-        font-size: 22px;
         font-weight: 800;
-        margin-bottom: 15px;
         color: var(--text-main);
+        margin-bottom: 16px;
     }
-    .about-card-text {
-        color: var(--text-muted);
+    .corp-card p {
         font-size: 15px;
+        color: var(--text-muted);
         line-height: 1.7;
     }
-
-    .misi-list {
+    .corp-list {
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 20px 0 0 0;
     }
-    .misi-item {
+    .corp-list li {
         position: relative;
-        padding-left: 30px;
-        margin-bottom: 15px;
+        padding-left: 28px;
+        margin-bottom: 16px;
         font-size: 14.5px;
-        line-height: 1.6;
         color: var(--text-muted);
+        line-height: 1.6;
     }
-    .misi-item i {
+    .corp-list li i {
         position: absolute;
         left: 0;
         top: 4px;
-        color: var(--accent);
-        font-size: 16px;
+        color: var(--secondary);
+        font-size: 14px;
     }
-    .misi-item strong {
+    .corp-list li strong {
         color: var(--text-main);
         font-weight: 700;
     }
 
-    /* Team Section */
-    .team-section {
-        background: rgba(255, 255, 255, 0.4);
-        border: 1px solid rgba(0, 0, 0, 0.04);
-        border-radius: 32px;
-        padding: 50px;
-        margin-top: 40px;
+    @media (max-width: 992px) {
+        .corp-showcase-inner {
+            flex-direction: column;
+            padding: 40px 20px;
+        }
+        .corp-hero-title {
+            font-size: 42px;
+        }
+        .corp-vm-grid {
+            grid-template-columns: 1fr;
+        }
     }
-    .team-visual-container {
-        display: block;
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    /* Team Bio details */
-    .team-info-content h3 {
-        font-size: 28px;
-        font-weight: 850;
-        margin-bottom: 20px;
-        color: var(--text-main);
-    }
-    .team-info-content p {
-        color: var(--text-muted);
-        font-size: 15px;
-        line-height: 1.7;
-        margin-bottom: 25px;
-    }
-
-    .team-stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        margin-top: 30px;
-    }
-    .stat-box {
-        background: rgba(255,255,255,0.6);
-        border: 1px solid rgba(0,0,0,0.06);
-        border-radius: 16px;
-        padding: 20px 15px;
-        text-align: center;
-    }
-    .stat-number {
-        font-size: 26px;
-        font-weight: 900;
-        color: var(--primary);
-        display: block;
-        margin-bottom: 5px;
-    }
-    .stat-label {
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: var(--text-muted);
-        letter-spacing: 0.5px;
-    }
-
-    /* Mobile Responsive Optimizations to prevent text/layout clipping */
     @media (max-width: 768px) {
-        .about-wrapper {
-            padding: 80px 0 60px 0;
+        .corp-stats {
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
-        .about-badge {
-            padding: 6px 14px;
-            font-size: 11px;
-            margin-bottom: 15px;
-        }
-        .about-title {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-        .about-desc {
-            font-size: 15px;
-        }
-        .about-glass-card {
-            padding: 20px !important;
-            border-radius: 20px !important;
-        }
-        .team-section {
-            padding: 20px !important;
-            border-radius: 24px !important;
-            margin-top: 20px !important;
-        }
-        .team-visual-container {
-            gap: 24px !important;
-        }
-        .team-stats {
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 8px !important;
-        }
-        .stat-box {
-            padding: 12px 6px !important;
-            border-radius: 12px !important;
-        }
-        .stat-number {
-            font-size: 18px !important;
-        }
-        .stat-label {
-            font-size: 8px !important;
-            letter-spacing: 0px !important;
-        }
-        .team-info-content h3 {
-            font-size: 20px !important;
-            margin-bottom: 12px !important;
-            line-height: 1.3 !important;
+        .corp-card {
+            padding: 30px 20px;
         }
     }
 </style>
 
-<div class="about-wrapper">
-    <!-- Background Glow Orbs -->
-    <div class="about-glow about-glow-1"></div>
-    <div class="about-glow about-glow-2"></div>
-    <div class="about-glow about-glow-3"></div>
-
-    <div class="container about-container">
-        <!-- Header Halaman -->
-        <header class="about-header">
-            <span class="about-badge">PROFIL KOMUNITAS</span>
-            <h1 class="about-title">Next Young Tech</h1>
-            <p class="about-desc">Pioneering digital landscape dengan keahlian engineering kelas dunia, estetika visual termewah, dan interaktivitas 3D tanpa batas.</p>
-        </header>
-
-        <!-- Grid Visi & Misi -->
-        <div class="about-grid-2">
-            <!-- Kartu VISI -->
-            <div class="about-glass-card">
-                <div class="card-icon-glow visi-icon">
-                    <i class="fa-solid fa-eye"></i>
-                </div>
-                <h3 class="about-card-title">Visi Kami</h3>
-                <p class="about-card-text">
-                    Menjadi akselerator teknologi terkemuka yang merevolusi lanskap digital global melalui pengembangan web 3D interaktif, kinerja performa ultra-cepat, dan estetika desain termewah kelas dunia yang memberdayakan perkembangan bisnis di era modern.
-                </p>
-            </div>
-
-            <!-- Kartu MISI -->
-            <div class="about-glass-card">
-                <div class="card-icon-glow misi-icon">
-                    <i class="fa-solid fa-bullseye"></i>
-                </div>
-                <h3 class="about-card-title">Misi Kami</h3>
-                <ul class="misi-list">
-                    <li class="misi-item">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <strong>Inovasi Visual 3D:</strong> Menghadirkan teknologi visual interaktif mutakhir yang memukau dan meningkatkan interaksi pengguna secara masif.
-                    </li>
-                    <li class="misi-item">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <strong>Kualitas Rekayasa Tinggi:</strong> Membangun infrastruktur web berkinerja luar biasa cepat, aman, scalable, dan teroptimasi SEO kelas dunia.
-                    </li>
-                    <li class="misi-item">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <strong>Kemitraan Strategis:</strong> Berkolaborasi erat dengan mitra bisnis untuk mewujudkan visi digital mereka menjadi kenyataan yang bernilai ekonomi tinggi.
-                    </li>
-                </ul>
-            </div>
+<div class="corporate-wrapper">
+    
+    <!-- Hero Section -->
+    <section class="corp-hero">
+        <div class="container">
+            <span class="corp-badge">Profil Perusahaan</span>
+            <h1 class="corp-hero-title">Inovator Digital. <span>Arsitek Masa Depan.</span></h1>
+            <p class="corp-hero-desc">Membangun ekosistem teknologi premium dan solusi web tingkat lanjut untuk korporasi dan bisnis modern yang mengutamakan kecepatan, keamanan, dan estetika visual.</p>
         </div>
+    </section>
 
-        <!-- Section Tim & Foto Tim -->
-        <div class="about-glass-card team-section">
-            <div class="team-grid" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center;">
-                <div class="team-image-wrapper">
-                    <img src="{{ asset('images/team.jpg') }}" alt="Tim Next Young Tech" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); object-fit: cover;">
+    <!-- Main Showcase / Team -->
+    <section class="corp-showcase">
+        <div class="container">
+            <div class="corp-showcase-inner">
+                
+                <div class="corp-image-col">
+                    <div class="corp-image-accent"></div>
+                    <div class="corp-image-wrapper">
+                        <img src="{{ asset('images/team.jpg') }}" alt="Tim Profesional Next Young Tech">
+                    </div>
+                    <div class="corp-image-accent-bottom"></div>
                 </div>
-                <!-- Informasi Tim (Centered) -->
-                <div class="team-info-content" style="text-align: left;">
-                    <span style="font-size: 11px; font-weight: 800; color: var(--secondary); letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 8px;">THE ARCHITECTS OF DIGITAL INNOVATION</span>
-                    <h3 style="font-size: 32px; font-weight: 900; color: var(--text-main); margin-bottom: 24px;">Kolaborasi Komunitas Terbaik</h3>
-                    <p style="font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px;">
-                        Di balik setiap aplikasi web interaktif premium dan performa sistem ultra-cepat yang kami bangun, terdapat barisan talenta digital yang berdedikasi tinggi. Kami adalah komunitas teknologi profesional yang terdiri dari rekayasawan perangkat lunak, desainer UI/UX, dan arsitek sistem yang bersinergi bersama.
-                    </p>
-                    <p style="font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 30px;">
-                        Dipimpin secara langsung oleh <strong>Nazmi Dwiputra Effendi</strong>, kami menghasilkan karya digital terdepan yang mendefinisikan kembali standar kualitas, kecepatan, dan estetika layaknya industri profesional kelas atas.
-                    </p>
 
-                    <div class="team-stats">
-                        <div class="stat-box">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Kepuasan Klien</span>
+                <div class="corp-text-col">
+                    <span class="corp-section-subtitle">Struktur Tim Profesional</span>
+                    <h2 class="corp-section-title">Kolaborasi Dedikasi Tinggi</h2>
+                    <p>Di balik setiap infrastruktur web yang andal dan antarmuka pengguna yang imersif, terdapat barisan profesional yang berdedikasi tinggi. Kami beroperasi layaknya firma teknologi modern, mengutamakan presisi kode dan arsitektur sistem yang solid.</p>
+                    <p>Dipimpin oleh <strong>Nazmi Dwiputra Effendi</strong>, struktur tim kami terdiri dari rekayasawan perangkat lunak, desainer produk, dan analis sistem yang berkolaborasi untuk memberikan hasil di luar ekspektasi industri standar.</p>
+                    
+                    <div class="corp-stats">
+                        <div class="corp-stat-item">
+                            <h4>100%</h4>
+                            <span>Rasio Kepuasan</span>
                         </div>
-                        <div class="stat-box">
-                            <span class="stat-number">10+</span>
-                            <span class="stat-label">Layanan Premium</span>
+                        <div class="corp-stat-item">
+                            <h4>24/7</h4>
+                            <span>Dukungan Teknis</span>
                         </div>
-                        <div class="stat-box">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Dukungan Komunitas</span>
+                        <div class="corp-stat-item">
+                            <h4>10+</h4>
+                            <span>Klien Enterprise</span>
                         </div>
                     </div>
                 </div>
+
             </div>
-            
-            <style>
-                @media (max-width: 768px) {
-                    .team-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
-                    .team-info-content { text-align: center !important; }
-                }
-            </style>
         </div>
-    </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="corp-vm-section">
+        <div class="container">
+            <div class="corp-vm-grid">
+                
+                <!-- Vision Card -->
+                <div class="corp-card">
+                    <div class="corp-icon-box">
+                        <i class="fa-regular fa-eye"></i>
+                    </div>
+                    <h3>Visi Strategis</h3>
+                    <p>Menjadi pionir penyedia solusi perangkat lunak dan arsitektur web interaktif terbaik di Indonesia, menetapkan standar baru dalam hal desain UI/UX premium, performa ultra-cepat, dan keandalan sistem berskala enterprise.</p>
+                    <p style="margin-top: 15px;">Kami percaya bahwa setiap bisnis modern berhak mendapatkan infrastruktur digital yang tidak hanya fungsional, tetapi juga memberikan pengalaman mewah (premium experience) bagi setiap penggunanya.</p>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="corp-card">
+                    <div class="corp-icon-box" style="background: rgba(244, 63, 94, 0.1); color: var(--accent);">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3>Misi Operasional</h3>
+                    <ul class="corp-list">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <strong>Inovasi Desain:</strong> Menghadirkan antarmuka (UI) mewah berbasis WebGL dan animasi interaktif tingkat lanjut.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <strong>Kualitas Rekayasa Tinggi:</strong> Membangun infrastruktur web berkinerja luar biasa cepat, aman, scalable, dan teroptimasi penuh.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <strong>Kemitraan Strategis:</strong> Berkolaborasi erat dengan mitra bisnis untuk mentransformasikan visi digital mereka menjadi kenyataan yang memiliki nilai ekonomi tinggi.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 </div>
 @endsection
