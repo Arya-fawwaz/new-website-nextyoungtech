@@ -63,86 +63,95 @@
             </div>
         </div>
 
-        <!-- Infinite Scrolling Track Container -->
-        <div class="marquee-wrapper">
+        <!-- Testimonials Swiper -->
+        <div class="testimonials-slider-wrapper" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 40px;">
             @if(isset($ulasan) && count($ulasan) > 0)
-                @php
-                    $shouldScroll = count($ulasan) >= 3;
-                    $reviewsToDisplay = $shouldScroll ? $ulasan->concat($ulasan) : $ulasan;
-                @endphp
-                <div class="marquee-track" style="{{ !$shouldScroll ? 'animation: none; justify-content: center; margin: 0 auto; width: auto;' : '' }}">
-                    @foreach($reviewsToDisplay as $review)
-                        <div class="glass-card testimonial-card" style="width: 380px; flex-shrink: 0; padding: 25px; margin: 0 15px; border-radius: 12px; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between; text-align: left; transition: transform 0.3s ease, border-color 0.3s ease; background: var(--bg-card); backdrop-filter: blur(10px);">
-                            
-                            <!-- Header: Stars and Comment -->
-                            <div>
-                                <!-- Star Rating -->
-                                <div style="display: flex; gap: 4px; margin-bottom: 12px; color: #ffb703; filter: drop-shadow(0 0 4px rgba(255, 183, 3, 0.6));">
-                                    @for($i = 1; $i <= 5; $i++)
-                                        @if($i <= $review->bintang)
-                                            <i class="fa-solid fa-star" style="font-size: 14px;"></i>
-                                        @else
-                                            <i class="fa-regular fa-star" style="font-size: 14px;"></i>
-                                        @endif
-                                    @endfor
-                                </div>
-                                
-                                <!-- Comment Text -->
-                                <p style="font-size: 13px; line-height: 1.6; color: var(--text-main); opacity: 0.85; font-style: italic; margin-bottom: 20px;">
-                                    "{{ $review->komentar }}"
-                                </p>
-                            </div>
-
-                            <!-- Footer: User Info -->
-                            <div style="display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--border-color); padding-top: 15px;">
-                                @php
-                                    $userAvatarUrl = $review->pengguna ? $review->pengguna->foto_profil_url : $review->foto_profil_url;
-                                    $userName = $review->pengguna && $review->pengguna->nama ? $review->pengguna->nama : $review->nama;
-                                    $hasAvatar = !empty($userAvatarUrl);
-                                @endphp
-                                
-                                @if($hasAvatar)
-                                    <img src="{{ $userAvatarUrl }}" alt="{{ $userName }}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--primary); box-shadow: 0 0 8px var(--primary-glow);">
-                                @else
-                                    <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(128, 128, 128, 0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--dashed-border);">
-                                        <i class="fa-solid fa-user-tie" style="font-size: 18px; color: var(--primary); text-shadow: 0 0 6px var(--primary-glow);"></i>
+                <div class="swiper testimonials-swiper" style="padding-bottom: 50px;">
+                    <div class="swiper-wrapper">
+                        @foreach($ulasan as $review)
+                            <div class="swiper-slide" style="display: flex; justify-content: center; height: auto;">
+                                <div class="glass-card testimonial-card" style="width: 100%; max-width: 380px; padding: 25px; border-radius: 12px; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between; text-align: left; transition: transform 0.3s ease, border-color 0.3s ease; background: var(--bg-card); backdrop-filter: blur(10px); height: 100%;">
+                                    
+                                    <!-- Header: Stars and Comment -->
+                                    <div>
+                                        <!-- Star Rating -->
+                                        <div style="display: flex; gap: 4px; margin-bottom: 12px; color: #ffb703; filter: drop-shadow(0 0 4px rgba(255, 183, 3, 0.6));">
+                                            @for($i = 1; $i <= 5; $i++)
+                                                @if($i <= $review->bintang)
+                                                    <i class="fa-solid fa-star" style="font-size: 14px;"></i>
+                                                @else
+                                                    <i class="fa-regular fa-star" style="font-size: 14px;"></i>
+                                                @endif
+                                            @endfor
+                                        </div>
+                                        
+                                        <!-- Comment Text -->
+                                        <p style="font-size: 13px; line-height: 1.6; color: var(--text-main); opacity: 0.85; font-style: italic; margin-bottom: 20px;">
+                                            "{{ $review->komentar }}"
+                                        </p>
                                     </div>
-                                @endif
 
-                                <div>
-                                    <h4 style="font-size: 13px; font-weight: 700; color: var(--text-main); margin: 0;">{{ $userName }}</h4>
-                                    <span style="font-size: 11px; color: var(--text-dark); opacity: 0.6;"><i class="fa-solid fa-shield-halved"></i> Klien Terverifikasi</span>
+                                    <!-- Footer: User Info -->
+                                    <div style="display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: auto;">
+                                        @php
+                                            $userAvatarUrl = $review->pengguna ? $review->pengguna->foto_profil_url : $review->foto_profil_url;
+                                            $userName = $review->pengguna && $review->pengguna->nama ? $review->pengguna->nama : $review->nama;
+                                            $hasAvatar = !empty($userAvatarUrl);
+                                        @endphp
+                                        
+                                        @if($hasAvatar)
+                                            <img src="{{ $userAvatarUrl }}" alt="{{ $userName }}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--primary); box-shadow: 0 0 8px var(--primary-glow);">
+                                        @else
+                                            <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(128, 128, 128, 0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--dashed-border);">
+                                                <i class="fa-solid fa-user-tie" style="font-size: 18px; color: var(--primary); text-shadow: 0 0 6px var(--primary-glow);"></i>
+                                            </div>
+                                        @endif
+
+                                        <div>
+                                            <h4 style="font-size: 13px; font-weight: 700; color: var(--text-main); margin: 0;">{{ $userName }}</h4>
+                                            <span style="font-size: 11px; color: var(--text-dark); opacity: 0.6;"><i class="fa-solid fa-shield-halved"></i> Klien Terverifikasi</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
+
+                <!-- Custom Swiper Navigation -->
+                <div class="swiper-button-prev testimonials-prev desktop-nav-arrow"><i class="fa-solid fa-chevron-left" style="font-size: 20px;"></i></div>
+                <div class="swiper-button-next testimonials-next desktop-nav-arrow"><i class="fa-solid fa-chevron-right" style="font-size: 20px;"></i></div>
             @else
                 <div style="color: var(--text-dark); text-align: center; width: 100%; padding: 20px;">Belum ada ulasan klien.</div>
             @endif
         </div>
     </section>
 
-    <!-- Custom CSS for Infinite Marquee -->
+    <!-- Custom CSS for Testimonials Slider -->
     <style>
-        .marquee-wrapper {
-            position: relative;
-            width: 100%;
-            overflow-x: hidden;
-            display: flex;
-            padding: 10px 0;
-            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        .testimonials-slider-wrapper .swiper-button-next,
+        .testimonials-slider-wrapper .swiper-button-prev {
+            width: 45px;
+            height: 45px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            color: var(--text-main);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
         }
 
-        .marquee-track {
-            display: flex;
-            width: max-content;
-            animation: marquee 35s linear infinite;
+        .testimonials-slider-wrapper .swiper-button-next:hover,
+        .testimonials-slider-wrapper .swiper-button-prev:hover {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 8px 20px var(--primary-glow);
         }
 
-        .marquee-track:hover {
-            animation-play-state: paused;
+        .testimonials-slider-wrapper .swiper-button-next::after,
+        .testimonials-slider-wrapper .swiper-button-prev::after {
+            display: none;
         }
 
         .testimonial-card:hover {
@@ -151,12 +160,12 @@
             box-shadow: 0 5px 15px var(--primary-glow);
         }
 
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
+        @media (max-width: 768px) {
+            .testimonials-slider-wrapper {
+                padding: 0 15px !important;
             }
-            100% {
-                transform: translateX(-50%);
+            .desktop-nav-arrow {
+                display: none !important;
             }
         }
 
@@ -316,4 +325,28 @@
         </section>
     </div>
 
+    <!-- Initialize Testimonials Swiper -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if(typeof Swiper !== 'undefined') {
+                new Swiper('.testimonials-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    loop: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
+                    navigation: {
+                        nextEl: '.testimonials-next',
+                        prevEl: '.testimonials-prev',
+                    },
+                    breakpoints: {
+                        768: { slidesPerView: 2, spaceBetween: 30 },
+                        1024: { slidesPerView: 3, spaceBetween: 30 }
+                    }
+                });
+            }
+        });
+    </script>
 @endsection

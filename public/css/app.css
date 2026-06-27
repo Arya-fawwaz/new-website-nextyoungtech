@@ -1978,6 +1978,10 @@ body {
    Android & iOS Ultra-Premium Mobile Optimization Overrides
    ========================================================================== */
 @media (max-width: 768px) {
+    .desktop-nav-arrow {
+        display: none !important;
+    }
+
     .hero-title {
         font-size: 32px !important;
         line-height: 1.25 !important;

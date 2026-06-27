@@ -247,8 +247,16 @@
             padding: 40px 0 60px 0;
         }
         .bw-stats {
-            grid-template-columns: 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 25px;
+            padding-top: 20px;
+        }
+        .bw-stat-item h4 {
+            font-size: 24px;
+        }
+        .bw-stat-item span {
+            font-size: 10px;
         }
         .bw-vm-card {
             padding: 24px;
