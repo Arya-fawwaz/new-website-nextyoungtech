@@ -4,27 +4,29 @@
 
 @section('content')
 
-    <section class="section" style="padding-top: 150px; min-height: 90vh;">
-        <div class="container">
+    <section class="section" style="padding-top: 130px; min-height: 90vh; background: var(--bg-body);">
+        <div class="container" style="max-width: 1100px;">
             
-            <div class="section-header">
-                <span class="section-badge">AKUN SAYA</span>
-                <h2 class="section-title">Pengaturan Profil Pengguna</h2>
-                <p class="section-desc">Kelola informasi identitas akun Anda, unggah foto profil kustom, dan perbarui kata sandi Anda demi keamanan maksimal.</p>
+            <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                <h2 class="section-title" style="font-size: 32px; margin-bottom: 8px;">Pengaturan Akun</h2>
+                <p class="section-desc" style="max-width: 100%; font-size: 15px;">Kelola informasi profil dan pengaturan keamanan akun Anda.</p>
             </div>
 
             <!-- Alerts -->
             @if(session('success'))
-                <div class="alert-glass" style="max-width: 800px; margin: 20px auto; border-color: rgba(56, 176, 0, 0.4); background: rgba(56, 176, 0, 0.05);">
-                    <i class="fa-solid fa-circle-check" style="color: #38b000; text-shadow: 0 0 10px rgba(56, 176, 0, 0.5);"></i>
-                    <span style="color: var(--text-main); font-weight: 500;">{{ session('success') }}</span>
+                <div class="alert-glass" style="margin-bottom: 25px; border-left: 4px solid #38b000; background: rgba(56, 176, 0, 0.05); padding: 16px 20px; border-radius: 8px; display: flex; align-items: center; gap: 12px;">
+                    <i class="fa-solid fa-circle-check" style="color: #38b000; font-size: 18px;"></i>
+                    <span style="color: var(--text-main); font-weight: 500; font-size: 14px;">{{ session('success') }}</span>
                 </div>
             @endif
 
             @if($errors->any())
-                <div class="alert-glass" style="max-width: 800px; margin: 20px auto; border-color: rgba(255, 94, 98, 0.4); background: rgba(255, 94, 98, 0.05);">
-                    <i class="fa-solid fa-circle-xmark" style="color: #ff5e62; text-shadow: 0 0 10px rgba(255, 94, 98, 0.5);"></i>
-                    <ul style="margin: 0; padding-left: 20px; color: var(--text-main); font-size: 13px;">
+                <div class="alert-glass" style="margin-bottom: 25px; border-left: 4px solid #ff5e62; background: rgba(255, 94, 98, 0.05); padding: 16px 20px; border-radius: 8px;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                        <i class="fa-solid fa-circle-xmark" style="color: #ff5e62; font-size: 18px;"></i>
+                        <span style="color: #ff5e62; font-weight: 600; font-size: 14px;">Terjadi Kesalahan</span>
+                    </div>
+                    <ul style="margin: 0; padding-left: 30px; color: var(--text-main); font-size: 13.5px;">
                         @foreach($errors->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
@@ -32,139 +34,150 @@
                 </div>
             @endif
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+            <div class="profile-dashboard-layout" style="display: grid; grid-template-columns: 320px 1fr; gap: 30px; align-items: start;">
                 
-                <!-- Panel 1: Avatar Upload & Details -->
-                <div class="glass-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 40px 30px;">
-                    <h3 style="font-family: var(--font-heading); font-size: 18px; margin-bottom: 24px; color: var(--primary);">Foto Profil</h3>
+                <!-- Left Sidebar: Profile Summary -->
+                <div class="glass-card" style="padding: 30px 25px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
                     
-                    <!-- Avatar Display -->
-                    <div style="position: relative; margin-bottom: 24px;">
-                        @if(auth()->user()->foto_profil)
-                            <img src="{{ auth()->user()->foto_profil_url }}" alt="{{ auth()->user()->nama }}" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); box-shadow: 0 0 25px var(--primary-glow); transition: transform 0.3s ease;" id="avatar-preview">
-                        @else
-                            <div style="width: 150px; height: 150px; border-radius: 50%; background: var(--bg-card); display: flex; align-items: center; justify-content: center; border: 2px dashed var(--dashed-border); box-shadow: inset 0 0 20px rgba(0,0,0,0.1); padding: 25px;">
-                                <img src="{{ asset('images/logo-n-trans.png') }}" alt="Default Avatar" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));" id="default-avatar-img">
-                            </div>
-                        @endif
+                    <div style="text-align: center; margin-bottom: 25px;">
+                        <!-- Avatar Display -->
+                        <div style="position: relative; width: 120px; height: 120px; margin: 0 auto 20px auto;">
+                            @if(auth()->user()->foto_profil)
+                                <img src="{{ auth()->user()->foto_profil_url }}" alt="{{ auth()->user()->nama }}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); box-shadow: 0 8px 20px var(--primary-glow);" id="avatar-preview">
+                            @else
+                                <div style="width: 100%; height: 100%; border-radius: 50%; background: rgba(128, 128, 128, 0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--dashed-border); box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);">
+                                    <i class="fa-solid fa-user-tie" style="font-size: 48px; color: var(--primary);"></i>
+                                </div>
+                            @endif
+                        </div>
+
+                        <h3 style="font-family: var(--font-heading); font-size: 20px; font-weight: 800; color: var(--text-main); margin-bottom: 4px;">{{ auth()->user()->nama }}</h3>
+                        <p style="font-size: 13px; color: var(--text-muted);">{{ auth()->user()->email }}</p>
                     </div>
 
                     <!-- Upload Form -->
-                    <form action="{{ route('profile.avatar') }}" method="POST" enctype="multipart/form-data" style="width: 100%;" id="avatar-form">
+                    <form action="{{ route('profile.avatar') }}" method="POST" enctype="multipart/form-data" id="avatar-form">
                         @csrf
-                        <div style="margin-bottom: 20px;">
-                            <label for="foto_profil" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; padding: 10px 20px; font-size: 13px;">
-                                <i class="fa-solid fa-camera"></i> Pilih Foto Baru
-                            </label>
-                            <input type="file" name="foto_profil" id="foto_profil" style="display: none;" onchange="document.getElementById('avatar-form').submit()">
-                        </div>
-                        <p style="font-size: 11px; color: var(--text-dark); opacity: 0.6; line-height: 1.5; margin: 0;">Mendukung format JPG, PNG, atau GIF. Ukuran maksimum file adalah 2MB.</p>
+                        <label for="foto_profil" class="btn-secondary" style="display: flex; width: 100%; justify-content: center; align-items: center; gap: 8px; cursor: pointer; padding: 10px; font-size: 13px; border-radius: 8px; margin-bottom: 12px; background: rgba(14, 165, 233, 0.05); border: 1px solid rgba(14, 165, 233, 0.2); color: var(--primary);">
+                            <i class="fa-solid fa-camera"></i> Ubah Foto Profil
+                        </label>
+                        <input type="file" name="foto_profil" id="foto_profil" style="display: none;" onchange="document.getElementById('avatar-form').submit()">
                     </form>
 
-                    <hr style="width: 100%; border: 0; border-top: 1px solid var(--border-color); margin: 30px 0;">
+                    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 24px 0;">
 
                     <!-- Account Metadata -->
-                    <div style="width: 100%; text-align: left; background: rgba(128, 128, 128, 0.03); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color);">
-                        <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 8px;">
-                            <span style="color: var(--text-dark); opacity: 0.7;">Terdaftar Sejak:</span>
+                    <div style="font-size: 13px; margin-bottom: 24px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                            <span style="color: var(--text-muted);"><i class="fa-regular fa-calendar" style="width: 18px;"></i> Bergabung</span>
                             <span style="font-weight: 600; color: var(--text-main);">{{ auth()->user()->created_at->format('d M Y') }}</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; font-size: 12px;">
-                            <span style="color: var(--text-dark); opacity: 0.7;">Status Akun:</span>
-                            <span style="font-weight: 600; color: var(--primary);"><i class="fa-solid fa-circle-check"></i> Aktif</span>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-muted);"><i class="fa-solid fa-shield-halved" style="width: 18px;"></i> Status</span>
+                            <span style="font-weight: 600; color: #10b981;">Aktif Terverifikasi</span>
                         </div>
                     </div>
 
-                    <!-- Logout button for Mobile & Quick access -->
-                    <form action="{{ route('logout') }}" method="POST" style="width: 100%; margin-top: 20px;">
-                        @csrf
-                        <button type="submit" class="btn-secondary" style="width: 100%; justify-content: center; padding: 12px 16px; font-size: 13px; cursor: pointer; border-radius: 8px; background: rgba(255, 94, 98, 0.1); border: 1px solid rgba(255, 94, 98, 0.2); color: #ff5e62; display: flex; align-items: center; gap: 8px;" title="Keluar">
-                            <i class="fa-solid fa-right-from-bracket"></i> Keluar / Log Out
-                        </button>
-                    </form>
-
                     @if(auth()->user()->is_admin)
-                        <hr style="width: 100%; border: 0; border-top: 1px dashed rgba(14, 165, 233, 0.2); margin: 20px 0;">
-                        <div style="width: 100%; text-align: left; background: linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(79, 70, 229, 0.08) 100%); padding: 20px; border-radius: 12px; border: 1px solid rgba(14, 165, 233, 0.35); box-shadow: 0 0 15px rgba(14, 165, 233, 0.1);">
-                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                                <i class="fa-solid fa-user-shield" style="font-size: 18px; color: var(--primary); text-shadow: 0 0 8px var(--primary-glow);"></i>
-                                <span style="font-family: var(--font-heading); font-size: 13px; font-weight: 700; color: var(--text-main); letter-spacing: 0.5px;">PORTAL ADMIN</span>
+                        <div style="background: rgba(14, 165, 233, 0.05); border-left: 3px solid var(--primary); padding: 15px; border-radius: 4px 8px 8px 4px; margin-bottom: 24px;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fa-solid fa-user-shield" style="color: var(--primary);"></i>
+                                <span style="font-weight: 700; font-size: 13px; color: var(--text-main);">Hak Akses Admin</span>
                             </div>
-                            <p style="font-size: 11px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">Anda memiliki hak akses administrator sistem. Masuk ke panel manajemen untuk meninjau penawaran proyek dan memproses pertanyaan masuk.</p>
-                            <a href="{{ route('admin.dashboard') }}" class="btn-primary" style="width: 100%; justify-content: center; padding: 10px 16px; font-size: 12px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); box-shadow: 0 0 10px var(--primary-glow); text-decoration: none;">
-                                <i class="fa-solid fa-gauge-high"></i> Buka Panel Admin
+                            <a href="{{ route('admin.dashboard') }}" class="btn-primary" style="display: flex; width: 100%; justify-content: center; padding: 8px; font-size: 12px; border-radius: 6px; text-decoration: none; margin-top: 10px;">
+                                <i class="fa-solid fa-gauge-high"></i> Panel Admin
                             </a>
                         </div>
                     @endif
-                </div>
 
-                <!-- Panel 2: Profile Form -->
-                <div class="glass-card" style="padding: 40px 30px;">
-                    <h3 style="font-family: var(--font-heading); font-size: 18px; margin-bottom: 24px; color: var(--secondary);"><i class="fa-solid fa-user-gear"></i> Informasi Pribadi</h3>
-                    
-                    <form action="{{ route('profile.update') }}" method="POST">
+                    <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        
-                        <div class="form-group" style="margin-bottom: 20px;">
-                            <label for="nama" class="form-label" style="display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--text-dark); margin-bottom: 8px;">Nama Lengkap</label>
-                            <div class="input-wrapper" style="position: relative;">
-                                <span class="input-icon" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--secondary); opacity: 0.8;"><i class="fa-solid fa-id-card"></i></span>
-                                <input type="text" name="nama" id="nama" class="input-glass" style="padding: 12px 16px 12px 48px; border-radius: 8px; margin-bottom: 0;" value="{{ old('nama', auth()->user()->nama) }}" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group" style="margin-bottom: 30px;">
-                            <label for="email" class="form-label" style="display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--text-dark); margin-bottom: 8px;">Alamat Email</label>
-                            <div class="input-wrapper" style="position: relative;">
-                                <span class="input-icon" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--secondary); opacity: 0.8;"><i class="fa-solid fa-envelope"></i></span>
-                                <input type="email" name="email" id="email" class="input-glass" style="padding: 12px 16px 12px 48px; border-radius: 8px; margin-bottom: 0;" value="{{ old('email', auth()->user()->email) }}" required>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%); box-shadow: 0 0 15px var(--secondary-glow);">
-                            <i class="fa-solid fa-floppy-disk"></i> Simpan Detail Profil
+                        <button type="submit" style="width: 100%; padding: 10px; font-size: 13px; cursor: pointer; border-radius: 8px; background: transparent; border: 1px solid rgba(255, 94, 98, 0.3); color: #ff5e62; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,94,98,0.1)'" onmouseout="this.style.background='transparent'">
+                            <i class="fa-solid fa-right-from-bracket"></i> Keluar
                         </button>
                     </form>
                 </div>
 
-                <!-- Panel 3: Change Password -->
-                <div class="glass-card" style="padding: 40px 30px;">
-                    <h3 style="font-family: var(--font-heading); font-size: 18px; margin-bottom: 24px; color: var(--accent);"><i class="fa-solid fa-shield-halved"></i> Keamanan Sandi</h3>
+                <!-- Right Area: Settings Forms -->
+                <div style="display: flex; flex-direction: column; gap: 30px;">
                     
-                    <form action="{{ route('profile.password') }}" method="POST">
-                        @csrf
+                    <!-- Panel: Informasi Pribadi -->
+                    <div class="glass-card" style="padding: 35px 40px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+                            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(14, 165, 233, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 18px;">
+                                <i class="fa-solid fa-user-pen"></i>
+                            </div>
+                            <h3 style="font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--text-main); margin: 0;">Informasi Dasar</h3>
+                        </div>
                         
-                        <div class="form-group" style="margin-bottom: 16px;">
-                            <label for="current_password" class="form-label" style="display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--text-dark); margin-bottom: 8px;">Password Saat Ini</label>
-                            <div class="input-wrapper" style="position: relative;">
-                                <span class="input-icon" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--accent); opacity: 0.8;"><i class="fa-solid fa-lock-open"></i></span>
-                                <input type="password" name="current_password" id="current_password" class="input-glass" style="padding: 12px 16px 12px 48px; border-radius: 8px; margin-bottom: 0;" placeholder="Masukkan sandi lama" required>
+                        <form action="{{ route('profile.update') }}" method="POST">
+                            @csrf
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px;">
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label for="nama" style="display: block; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">Nama Lengkap</label>
+                                    <input type="text" name="nama" id="nama" class="input-glass" style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-body); color: var(--text-main);" value="{{ old('nama', auth()->user()->nama) }}" required>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label for="email" style="display: block; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">Alamat Email</label>
+                                    <input type="email" name="email" id="email" class="input-glass" style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-body); color: var(--text-main);" value="{{ old('email', auth()->user()->email) }}" required>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group" style="margin-bottom: 16px;">
-                            <label for="password" class="form-label" style="display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--text-dark); margin-bottom: 8px;">Password Baru</label>
-                            <div class="input-wrapper" style="position: relative;">
-                                <span class="input-icon" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--accent); opacity: 0.8;"><i class="fa-solid fa-lock"></i></span>
-                                <input type="password" name="password" id="password" class="input-glass" style="padding: 12px 16px 12px 48px; border-radius: 8px; margin-bottom: 0;" placeholder="Minimal 6 karakter" required>
+                            <div style="text-align: right;">
+                                <button type="submit" class="btn-primary" style="padding: 10px 24px; font-size: 13.5px; border-radius: 8px;">
+                                    Simpan Perubahan
+                                </button>
                             </div>
-                        </div>
+                        </form>
+                    </div>
 
-                        <div class="form-group" style="margin-bottom: 24px;">
-                            <label for="password_confirmation" class="form-label" style="display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--text-dark); margin-bottom: 8px;">Konfirmasi Password Baru</label>
-                            <div class="input-wrapper" style="position: relative;">
-                                <span class="input-icon" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--accent); opacity: 0.8;"><i class="fa-solid fa-circle-check"></i></span>
-                                <input type="password" name="password_confirmation" id="password_confirmation" class="input-glass" style="padding: 12px 16px 12px 48px; border-radius: 8px; margin-bottom: 0;" placeholder="Ulangi password baru" required>
+                    <!-- Panel: Ganti Password -->
+                    <div class="glass-card" style="padding: 35px 40px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+                            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(79, 70, 229, 0.1); color: var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 18px;">
+                                <i class="fa-solid fa-lock"></i>
                             </div>
+                            <h3 style="font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--text-main); margin: 0;">Keamanan & Kata Sandi</h3>
                         </div>
+                        
+                        <form action="{{ route('profile.password') }}" method="POST">
+                            @csrf
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                <label for="current_password" style="display: block; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">Kata Sandi Saat Ini</label>
+                                <input type="password" name="current_password" id="current_password" class="input-glass" style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-body); color: var(--text-main); max-width: 400px;" placeholder="Masukkan sandi saat ini" required>
+                            </div>
 
-                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); box-shadow: 0 0 15px var(--primary-glow);">
-                            <i class="fa-solid fa-key"></i> Perbarui Kata Sandi
-                        </button>
-                    </form>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px;">
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label for="password" style="display: block; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">Kata Sandi Baru</label>
+                                    <input type="password" name="password" id="password" class="input-glass" style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-body); color: var(--text-main);" placeholder="Minimal 6 karakter" required>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label for="password_confirmation" style="display: block; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">Konfirmasi Sandi Baru</label>
+                                    <input type="password" name="password_confirmation" id="password_confirmation" class="input-glass" style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-body); color: var(--text-main);" placeholder="Ulangi sandi baru" required>
+                                </div>
+                            </div>
+
+                            <div style="text-align: right;">
+                                <button type="submit" class="btn-primary" style="padding: 10px 24px; font-size: 13.5px; border-radius: 8px; background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);">
+                                    Perbarui Kata Sandi
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
-
             </div>
+            
+            <style>
+                @media (max-width: 768px) {
+                    .profile-dashboard-layout {
+                        grid-template-columns: 1fr !important;
+                    }
+                    .profile-dashboard-layout form > div[style*="grid-template-columns"] {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            </style>
 
         </div>
     </section>

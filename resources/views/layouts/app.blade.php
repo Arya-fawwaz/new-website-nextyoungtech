@@ -553,22 +553,7 @@
             <!-- Column 1: Brand Info -->
             <div class="footer-col brand-col">
                 <a href="{{ route('home') }}" class="footer-logo" style="text-decoration: none;">
-                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 4px var(--primary-glow));">
-                        <path d="M16 2L2 9.5V22.5L16 30L30 22.5V9.5L16 2Z" stroke="url(#logo-grad-foot)" stroke-width="2.5" stroke-linejoin="round" />
-                        <path d="M16 7L7 12V20L16 25L25 20V12L16 7Z" fill="url(#logo-grad-fill-foot)" opacity="0.8" />
-                        <path d="M16 12L12 14.5V17.5L16 20L20 17.5V14.5L16 12Z" fill="#ffffff" />
-                        <defs>
-                            <linearGradient id="logo-grad-foot" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="var(--primary)" />
-                                <stop offset="0.5" stop-color="var(--secondary)" />
-                                <stop offset="1" stop-color="var(--accent)" />
-                            </linearGradient>
-                            <linearGradient id="logo-grad-fill-foot" x1="7" y1="7" x2="25" y2="25" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="var(--primary)" stop-opacity="0.3" />
-                                <stop offset="1" stop-color="var(--secondary)" stop-opacity="0.3" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                    <img src="{{ asset('images/logo-n-trans.png') }}" alt="Next Young Tech Logo" style="width: 28px; height: 28px; object-fit: contain; filter: drop-shadow(0 0 4px var(--primary-glow));">
                     NEXT YOUNG <span style="font-weight: 900;">TECH</span>
                 </a>
                 <p class="footer-brand-desc">
