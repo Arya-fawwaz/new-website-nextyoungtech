@@ -331,16 +331,18 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 16px;
-    background: rgba(14, 165, 233, 0.1);
-    border: 1px solid rgba(14, 165, 233, 0.2);
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 800;
-    letter-spacing: 1.5px;
-    color: var(--primary);
+    letter-spacing: 2px;
+    color: #ffffff;
     text-transform: uppercase;
     margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title {
@@ -1233,11 +1235,14 @@ body {
     letter-spacing: -0.02em;
 }
 
-[data-theme="light"] .hero-description {
-    color: rgba(255, 255, 255, 0.85);
-    font-weight: 400;
-    font-size: 1.15rem;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+[data-theme="light"] .hero-description,
+[data-theme="light"] .hero-desc {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8), 0 4px 20px rgba(0, 0, 0, 0.6);
+    max-width: 700px;
+    letter-spacing: 0.2px;
 }
 
 [data-theme="light"] .hero-title span.glow-text {
@@ -1245,13 +1250,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: none;
-}
-
-[data-theme="light"] .hero-desc {
-    color: rgba(255, 255, 255, 0.85);
-    font-weight: 400;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    max-width: 700px;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
 }
 
 [data-theme="light"] .logo span {
@@ -1264,11 +1263,11 @@ body {
 }
 
 [data-theme="light"] .hero-badge {
-    background: rgba(0, 150, 199, 0.05) padding-box,
-        linear-gradient(135deg, rgba(0, 150, 199, 0.2), rgba(114, 9, 183, 0.12)) border-box;
-    border: 1px solid transparent;
-    color: var(--primary);
-    box-shadow: 0 4px 12px rgba(0, 150, 199, 0.04);
+    background: rgba(255, 255, 255, 0.15) padding-box;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 [data-theme="light"] .btn-secondary {
