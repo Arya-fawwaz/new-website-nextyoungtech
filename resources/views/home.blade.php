@@ -204,7 +204,7 @@
 
                 <div class="features-grid">
                     <!-- Feature 1 -->
-                    <div class="glass-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; border: 1px solid rgba(14, 165, 233, 0.15);">
+                    <div class="glass-card premium-feature-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; border: 1px solid transparent;">
                         <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--primary); box-shadow: 0 10px 25px var(--primary-glow); background: rgba(14, 165, 233, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
                             <i class="fa-solid fa-cubes" style="font-size: 32px; color: var(--primary);"></i>
                         </div>
@@ -215,7 +215,7 @@
                     </div>
 
                     <!-- Feature 2 -->
-                    <div class="glass-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; border: 1px solid rgba(79, 70, 229, 0.15);">
+                    <div class="glass-card premium-feature-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; border: 1px solid transparent;">
                         <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--secondary); box-shadow: 0 10px 25px var(--secondary-glow); background: rgba(79, 70, 229, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
                             <i class="fa-solid fa-gauge-high" style="font-size: 32px; color: var(--secondary);"></i>
                         </div>
@@ -226,7 +226,7 @@
                     </div>
 
                     <!-- Feature 3 -->
-                    <div class="glass-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; border: 1px solid rgba(0, 242, 254, 0.15);">
+                    <div class="glass-card premium-feature-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; border: 1px solid transparent;">
                         <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--accent); box-shadow: 0 10px 25px var(--accent-glow); background: rgba(0, 242, 254, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
                             <i class="fa-solid fa-shield-halved" style="font-size: 32px; color: var(--accent);"></i>
                         </div>
