@@ -200,27 +200,32 @@
                 font-family: var(--font-heading);
                 font-size: 8vw;
                 font-weight: 900;
-                color: #ffffff;
+                background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, var(--primary) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
                 letter-spacing: -2px;
                 line-height: 1;
-                margin-bottom: 20px;
-                text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+                margin-bottom: 25px;
+                filter: drop-shadow(0 0 25px rgba(255,255,255,0.4));
             }
 
             @media (max-width: 768px) {
                 .cinematic-number {
-                    font-size: 70px;
+                    font-size: 85px;
                 }
             }
 
             .cinematic-text {
-                font-family: var(--font-body);
-                font-size: 14px;
-                font-weight: 700;
-                color: #a0a0a0;
-                letter-spacing: 12px;
+                font-family: var(--font-heading);
+                font-size: 16px;
+                font-weight: 900;
+                background: linear-gradient(to right, #b0b0b0, #ffffff, #b0b0b0);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                letter-spacing: 20px;
                 text-transform: uppercase;
-                margin-left: 12px; /* Balance letter spacing */
+                margin-left: 20px; /* Balance letter spacing */
+                filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
             }
 
             .cinematic-sub {
