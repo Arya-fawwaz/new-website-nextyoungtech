@@ -126,300 +126,126 @@
             }
         </script>
 
-        <!-- Premium Loading Screen with Luxurious Animated Cyber Astronaut -->
-        <div id="loading-screen">
-            <div class="loader-content">
-                <!-- Animated Floating Cyber Astronaut with Holographic concentric 3D orbits -->
-                <!-- Minimalist Professional Spinner -->
-                <div class="loader-character-wrapper" style="width: 60px; height: 60px; margin: 0 auto 30px auto; border: 3px solid rgba(0,0,0,0.05); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s ease-in-out infinite;">
-                </div>
-                
-                <div class="loader-logo-container">
-                    <h2 class="loader-logo">NEXT YOUNG <span>TECH</span></h2>
-                    <div class="loader-sub">DIGITAL SOLUTIONS</div>
-                </div>
-                
-                <div class="progress-container">
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="loader-progress-fill"></div>
-                    </div>
-                    <div class="progress-text">
-                        <span class="status-msg"><i class="fa-solid fa-circle-notch fa-spin"></i> MENGINSTASIASI PORTAL...</span>
-                        <span id="loader-percentage" class="percentage-num">0%</span>
-                    </div>
-                </div>
+        <!-- Cinematic Movie Intro Loading Screen -->
+        <div id="loading-screen" class="cinematic-loader">
+            <div class="cinematic-bg">
+                <div class="cinematic-bar top" id="cine-bar-top"></div>
+                <div class="cinematic-bar bottom" id="cine-bar-bottom"></div>
+            </div>
+            
+            <div class="cinematic-content">
+                <div class="cinematic-number" id="loader-percentage">0%</div>
+                <div class="cinematic-text">NEXT YOUNG TECH STUDIOS</div>
+                <div class="cinematic-sub">DIGITAL EXCELLENCE</div>
             </div>
         </div>
 
-        <!-- Inline Loader Styling and Transition Logic -->
         <style>
-            :root {
-                --loader-bg-dark: linear-gradient(180deg, #06060c 0%, #0c0c1b 100%);
-                --loader-bg-light: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
-                
-                /* Spacesuit cyber colors - Dark mode standard */
-                --suit-main: #ffffff;
-                --suit-dark: #0f172a;
-                --suit-stroke: #1e293b;
-                --suit-glow: #0ea5e9;
-                
-                --visor-grad-1: #0ea5e9;
-                --visor-grad-2: #4f46e5;
-                --visor-grad-3: #00f2fe;
-                
-                --flame-grad-1: #00f2fe;
-                --flame-grad-2: rgba(0, 242, 254, 0.4);
-                
-                --flame-grad-inner-1: #ffffff;
-                --flame-grad-inner-2: rgba(0, 242, 254, 0.8);
-                
-                --reactor-grad-1: #00f2fe;
-                --reactor-grad-2: #0ea5e9;
-                
-                --orbit-grad-1a: #0ea5e9;
-                --orbit-grad-1b: #4f46e5;
-                --orbit-grad-2a: #00f2fe;
-                --orbit-grad-2b: #0ea5e9;
-            }
-
-            html[data-theme="light"] {
-                /* Spacesuit luxury metallic/rose-gold colors - Light mode overrides */
-                --suit-main: #f8fafc;
-                --suit-dark: #e2e8f0;
-                --suit-stroke: #0f172a;
-                --suit-glow: #4f46e5;
-                
-                --visor-grad-1: #ffb703;
-                --visor-grad-2: #ff5e62;
-                --visor-grad-3: #ff9f43;
-                
-                --flame-grad-1: #ff5e62;
-                --flame-grad-2: rgba(255, 183, 3, 0.4);
-                
-                --flame-grad-inner-1: #ffffff;
-                --flame-grad-inner-2: rgba(255, 183, 3, 0.8);
-                
-                --reactor-grad-1: #ffb703;
-                --reactor-grad-2: #ff5e62;
-                
-                --orbit-grad-1a: #ff5e62;
-                --orbit-grad-1b: #ffb703;
-                --orbit-grad-2a: #4f46e5;
-                --orbit-grad-2b: #0ea5e9;
-            }
-
-            #loading-screen {
+            .cinematic-loader {
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100vw;
                 height: 100vh;
-                background-color: #06060c;
-                background-image: var(--loader-bg-dark);
+                z-index: 99999;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                z-index: 99999;
-                transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            }
-            
-            html[data-theme="light"] #loading-screen {
-                background-color: #f8fafc;
-                background-image: var(--loader-bg-light);
+                pointer-events: none; /* Let clicks pass through when fading out */
             }
 
             html.no-loader #loading-screen {
                 display: none !important;
             }
 
-            .loader-content {
+            .cinematic-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                z-index: 1;
+                pointer-events: auto;
+            }
+
+            .cinematic-bar {
+                width: 100%;
+                height: 50vh;
+                background-color: #030305; /* Pitch black for movie feel */
+                transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+            }
+
+            .cinematic-bar.top {
+                transform-origin: top;
+            }
+
+            .cinematic-bar.bottom {
+                transform-origin: bottom;
+            }
+
+            .cinematic-content {
+                position: relative;
+                z-index: 2;
                 text-align: center;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 25px;
-                max-width: 400px;
-                width: 100%;
-                padding: 20px;
-            }
-
-            /* Branded Character Animations */
-            .loader-character-wrapper {
-                position: relative;
-                width: 170px;
-                height: 170px;
-                display: flex;
-                align-items: center;
                 justify-content: center;
-                margin-bottom: 5px;
+                transition: opacity 0.6s ease, transform 0.6s ease;
             }
 
-            .loader-character-glow {
-                position: absolute;
-                width: 180px;
-                height: 180px;
-                background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
-                border-radius: 50%;
-                z-index: -1;
-                filter: blur(20px);
-                animation: pulseGlow 3s ease-in-out infinite alternate;
-            }
-
-            @keyframes pulseGlow {
-                0% { opacity: 0.45; transform: scale(0.9); }
-                100% { opacity: 0.85; transform: scale(1.1); }
-            }
-
-            .loader-svg-character {
-                width: 160px;
-                height: 160px;
-                overflow: visible;
-            }
-
-            /* Astronaut Floating Animation */
-            .astronaut-body {
-                transform-origin: 100px 100px;
-                animation: floatAstronaut 3s ease-in-out infinite alternate;
-            }
-
-            @keyframes floatAstronaut {
-                0% { transform: translateY(-4px) rotate(-1deg); }
-                100% { transform: translateY(6px) rotate(1deg); }
-            }
-
-            /* Flame Flickering Animation */
-            .thruster-flame {
-                transform-origin: center top;
-                animation: thrusterFire 0.15s ease-in-out infinite alternate;
-            }
-            .thruster-flame-inner {
-                transform-origin: center top;
-                animation: thrusterFireInner 0.1s ease-in-out infinite alternate;
-            }
-            @keyframes thrusterFire {
-                0% { transform: scaleY(0.9) scaleX(0.95); opacity: 0.85; }
-                100% { transform: scaleY(1.15) scaleX(1.05); opacity: 1; }
-            }
-            @keyframes thrusterFireInner {
-                0% { transform: scaleY(0.85) scaleX(0.9); opacity: 0.9; }
-                100% { transform: scaleY(1.2) scaleX(1.1); opacity: 1; }
-            }
-
-            /* Chest Reactor Pulsing Glow */
-            .reactor-core {
-                transform-origin: 100px 116px;
-                animation: reactorPulse 1.5s ease-in-out infinite alternate;
-            }
-            @keyframes reactorPulse {
-                0% { transform: scale(0.85); opacity: 0.7; }
-                100% { transform: scale(1.15); opacity: 1; }
-            }
-
-            /* Orbit dashboard sliding dash animation (creates the illusion of rotation) */
-            .orbit-1 {
-                stroke-dasharray: 24 16;
-                animation: slideDash1 5s linear infinite;
-            }
-            .orbit-2 {
-                stroke-dasharray: 18 12;
-                animation: slideDash2 3.8s linear infinite;
-            }
-            @keyframes slideDash1 {
-                to { stroke-dashoffset: -80; }
-            }
-            @keyframes slideDash2 {
-                to { stroke-dashoffset: 60; }
-            }
-
-            .loader-logo-container {
-                margin-top: 5px;
-            }
-
-            .loader-logo {
+            .cinematic-number {
                 font-family: var(--font-heading);
-                font-size: 24px;
+                font-size: 8vw;
                 font-weight: 900;
-                letter-spacing: 3px;
-                color: var(--text-main);
-                margin-bottom: 6px;
-                text-transform: uppercase;
-                transition: color 0.3s ease;
+                color: #ffffff;
+                letter-spacing: -2px;
+                line-height: 1;
+                margin-bottom: 20px;
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
             }
 
-            .loader-logo span {
-                background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+            @media (max-width: 768px) {
+                .cinematic-number {
+                    font-size: 70px;
+                }
             }
 
-            .loader-sub {
+            .cinematic-text {
                 font-family: var(--font-body);
-                font-size: 11px;
-                color: var(--text-muted);
-                letter-spacing: 5px;
-                text-transform: uppercase;
-                opacity: 0.65;
-                font-weight: 600;
-                transition: color 0.3s ease;
-            }
-
-            .progress-container {
-                width: 100%;
-                max-width: 300px;
-                margin-top: 15px;
-            }
-
-            .progress-bar {
-                width: 100%;
-                height: 3px;
-                background: rgba(255, 255, 255, 0.05);
-                border-radius: 10px;
-                overflow: hidden;
-                position: relative;
-            }
-
-            html[data-theme="light"] .progress-bar {
-                background: rgba(15, 23, 42, 0.06);
-            }
-
-            .progress-fill {
-                height: 100%;
-                width: 0%;
-                background: linear-gradient(90deg, var(--primary), var(--secondary));
-                box-shadow: 0 0 8px var(--primary-glow);
-                border-radius: 10px;
-                transition: width 0.1s linear;
-            }
-
-            .progress-text {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-top: 12px;
-                font-size: 11px;
-                font-weight: 500;
-                font-family: var(--font-body);
-            }
-
-            .status-msg {
-                color: var(--text-muted);
-                letter-spacing: 0.5px;
-                text-transform: uppercase;
-                opacity: 0.85;
-                transition: color 0.3s ease;
-            }
-
-            .percentage-num {
-                font-family: var(--font-heading);
-                color: var(--primary);
-                text-shadow: 0 0 5px var(--primary-glow);
+                font-size: 14px;
                 font-weight: 700;
-                transition: color 0.3s ease;
+                color: #a0a0a0;
+                letter-spacing: 12px;
+                text-transform: uppercase;
+                margin-left: 12px; /* Balance letter spacing */
             }
 
-            html[data-theme="light"] .percentage-num {
-                text-shadow: none;
-                font-weight: 800;
+            .cinematic-sub {
+                font-family: var(--font-body);
+                font-size: 9px;
+                font-weight: 500;
+                color: var(--primary);
+                letter-spacing: 6px;
+                text-transform: uppercase;
+                margin-top: 8px;
+                margin-left: 6px;
+            }
+
+            /* Opening Animation Classes */
+            .cinematic-loader.opening .cinematic-bar.top {
+                transform: scaleY(0);
+            }
+
+            .cinematic-loader.opening .cinematic-bar.bottom {
+                transform: scaleY(0);
+            }
+
+            .cinematic-loader.opening .cinematic-content {
+                opacity: 0;
+                transform: scale(1.1);
             }
         </style>
 
@@ -431,33 +257,47 @@
                     return;
                 }
 
-                const progressFill = document.getElementById('loader-progress-fill');
                 const percentageNum = document.getElementById('loader-percentage');
                 const loader = document.getElementById('loading-screen');
                 
                 let progress = 0;
-                const interval = setInterval(() => {
-                    progress += Math.floor(Math.random() * 8) + 4;
+                
+                const updateCounter = () => {
+                    // Movie style counting: irregular intervals
+                    let increment = Math.random() > 0.4 ? Math.floor(Math.random() * 4) + 1 : Math.floor(Math.random() * 12) + 4;
+                    progress += increment;
+                    
                     if (progress >= 100) {
                         progress = 100;
-                        clearInterval(interval);
+                        if (percentageNum) percentageNum.innerText = progress + '%';
                         
                         sessionStorage.setItem('welcome_loaded', 'true');
                         
+                        // Hold at 100% for a dramatic second, then open curtains
                         setTimeout(() => {
                             if (loader) {
-                                loader.style.opacity = '0';
-                                loader.style.transform = 'scale(1.05)';
+                                loader.classList.add('opening');
+                                
+                                // Remove from DOM after animation completes
                                 setTimeout(() => {
                                     loader.remove();
-                                }, 800);
+                                }, 1200);
                             }
-                        }, 400);
+                        }, 600);
+                    } else {
+                        if (percentageNum) percentageNum.innerText = progress + '%';
+                        // Slower at the beginning, faster in middle, slow at the end
+                        let nextTick;
+                        if (progress < 30) nextTick = Math.random() * 80 + 40;
+                        else if (progress < 80) nextTick = Math.random() * 40 + 20;
+                        else nextTick = Math.random() * 120 + 80;
+                        
+                        setTimeout(updateCounter, nextTick);
                     }
-                    
-                    if (progressFill) progressFill.style.width = progress + '%';
-                    if (percentageNum) percentageNum.innerText = progress + '%';
-                }, 80);
+                };
+                
+                // Start after a tiny delay
+                setTimeout(updateCounter, 150);
             });
         </script>
     @endif
