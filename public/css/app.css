@@ -395,11 +395,12 @@ body {
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: clamp(28px, 4vw, 36px);
+    font-size: clamp(32px, 5vw, 42px);
     font-weight: 900;
-    margin-bottom: 20px;
-    letter-spacing: 0.5px;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: var(--text-main);
 }
 
 .section-desc {
