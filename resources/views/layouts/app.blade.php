@@ -720,7 +720,7 @@
                 <!-- Welcome Message -->
                 <div class="nova-msg-row bot">
                     <div class="nova-msg-bubble">
-                        Halo! Saya **Nova**, asisten virtual Anda di **Next Young Tech**. Saya hadir untuk membantu mendiskusikan kebutuhan digital dan pengembangan website Anda secara profesional. Ada hal yang bisa saya bantu hari ini?
+                        Halo! Saya <strong>Nova</strong>, asisten virtual Anda di <strong>Next Young Tech</strong>. Saya hadir untuk membantu mendiskusikan kebutuhan digital dan pengembangan website Anda secara profesional. Ada hal yang bisa saya bantu hari ini?
                     </div>
                 </div>
                 <!-- Quick Options -->

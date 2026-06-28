@@ -21,7 +21,7 @@ class ChatbotController extends Controller
 
         // Simple Natural Language Processing heuristics (tidak kaku!)
         if ($this->hasKeywords($lowerMessage, ['halo', 'hai', 'hello', 'siapa', 'nova', 'p ', 'phello', 'assalamualaikum', 'sore', 'pagi', 'siang', 'malam'])) {
-            $reply = "Halo! 🚀 Saya **Nova**, asisten virtual astronot Anda di **Next Young Tech**! Senang sekali bisa menyapa Anda. Saya di sini untuk membantu mendiskusikan ide proyek website luar biasa Anda secara santai tapi profesional. Ada proyek seru apa nih yang ingin kita luncurkan bersama hari ini? 😊";
+            $reply = "Halo! Saya **Nova**, asisten virtual Anda di **Next Young Tech**. Saya hadir untuk membantu mendiskusikan kebutuhan digital dan pengembangan website Anda secara profesional. Ada hal yang bisa saya bantu hari ini?";
             $options = [
                 "Tanya Layanan Web",
                 "Estimasi Biaya Proyek",
@@ -87,7 +87,7 @@ class ChatbotController extends Controller
             }
         } else {
             // Friendly default fallback
-            $reply = "Aduh, maaf ya... Kursor kosmik saya agak meleset memahami itu 🚀. Tapi tenang! Nova bisa bantu jelaskan tentang:\n\n" .
+            $reply = "Mohon maaf, saya belum sepenuhnya memahami maksud Anda. Namun jangan khawatir, saya dapat membantu menjelaskan informasi berikut:\n\n" .
                      "💡 **Layanan Pembuatan Web** premium kami.\n" .
                      "💰 **Estimasi Biaya Proyek** secara instan.\n" .
                      "🛠️ **Teknologi Canggih** yang kami gunakan.\n" .
