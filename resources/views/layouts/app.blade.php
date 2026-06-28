@@ -195,8 +195,8 @@
             
             <div class="cinematic-content">
                 <div class="cinematic-number" id="loader-percentage">0%</div>
-                <div class="cinematic-text">NEXT YOUNG TECH</div>
-                <div class="cinematic-sub">DIGITAL EXCELLENCE</div>
+                <div class="cinematic-text notranslate">NEXT YOUNG TECH</div>
+                <div class="cinematic-sub notranslate">DIGITAL EXCELLENCE</div>
             </div>
         </div>
 
@@ -375,13 +375,13 @@
     @if(!Route::is('admin.dashboard'))
     <!-- Mobile App Bar (Only visible on screens <= 820px) -->
     <div class="mobile-app-bar">
-        <a href="{{ route('home') }}" class="mobile-app-logo">
+        <a href="{{ route('home') }}" class="mobile-app-logo notranslate">
             <img src="{{ asset('images/logo-n-trans.png') }}?v={{ time() }}" alt="Next Young Tech Logo" style="height: 28px; width: auto; object-fit: contain;">
             NEXT YOUNG <span style="color: var(--primary); font-weight: 800;">TECH</span>
         </a>
         <div class="mobile-app-actions">
             <!-- Language Switcher -->
-            <button class="lang-switch-btn mobile" onclick="toggleLanguage()" title="Ganti Bahasa / Switch Language">
+            <button class="lang-switch-btn mobile notranslate" onclick="toggleLanguage()" title="Ganti Bahasa / Switch Language">
                 ID
             </button>
             
@@ -404,7 +404,7 @@
     <!-- Floating Elegant Navbar -->
     <header class="header">
         <div class="container nav-container">
-            <a href="{{ route('home') }}" class="logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+            <a href="{{ route('home') }}" class="logo notranslate" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
                 <img src="{{ asset('images/logo-n-trans.png') }}?v={{ time() }}" alt="Next Young Tech Logo" style="height: 38px; width: auto; filter: drop-shadow(0 2px 8px rgba(0, 242, 254, 0.5)); transition: transform 0.3s ease; object-fit: contain;">
                 NEXT YOUNG <span>TECH</span>
             </a>
@@ -423,7 +423,7 @@
 
             <div class="nav-actions" style="display: flex; align-items: center; gap: 12px;">
                 <!-- Language Switcher -->
-                <button class="lang-switch-btn desktop" onclick="toggleLanguage()" title="Ganti Bahasa / Switch Language">
+                <button class="lang-switch-btn desktop notranslate" onclick="toggleLanguage()" title="Ganti Bahasa / Switch Language">
                     ID
                 </button>
                 
@@ -499,7 +499,7 @@
         <div class="container footer-grid">
             <!-- Column 1: Brand Info -->
             <div class="footer-col brand-col">
-                <a href="{{ route('home') }}" class="footer-logo" style="text-decoration: none;">
+                <a href="{{ route('home') }}" class="footer-logo notranslate" style="text-decoration: none;">
                     <img src="{{ asset('images/logo-n-trans.png') }}" alt="Next Young Tech Logo" style="width: 28px; height: 28px; object-fit: contain; filter: drop-shadow(0 0 4px var(--primary-glow));">
                     NEXT YOUNG <span style="font-weight: 900;">TECH</span>
                 </a>
