@@ -320,6 +320,11 @@
             NEXT YOUNG <span style="color: var(--primary); font-weight: 800;">TECH</span>
         </a>
         <div class="mobile-app-actions">
+            <!-- Language Switcher -->
+            <button class="lang-switch-btn" onclick="toggleLanguage()" title="Ganti Bahasa / Switch Language" style="font-weight: 800; font-size: 11px; font-family: var(--font-heading); color: var(--primary); border: 1px solid var(--border-color); background: var(--bg-card); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-right: 4px;">
+                ID
+            </button>
+            
             <!-- PWA install & Theme toggle -->
             <button id="mobile-pwa-install-btn" class="mobile-action-btn" style="display: none;" title="Unduh Aplikasi Mobile">
                 <i class="fa-solid fa-mobile-screen-button" style="color: var(--accent); animation: pwaPulseBtn 2s infinite alternate;"></i>
@@ -356,7 +361,12 @@
                 @endauth
             </ul>
 
-            <div class="nav-actions">
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 12px;">
+                <!-- Language Switcher -->
+                <button class="lang-switch-btn" onclick="toggleLanguage()" title="Ganti Bahasa / Switch Language" style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main); font-weight: 800; font-family: var(--font-heading); font-size: 13px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                    ID
+                </button>
+                
                 @auth
                     <a href="{{ route('profile') }}" style="display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 13px; color: var(--text-main); font-weight: 500; transition: all 0.3s ease; flex-shrink: 0;" class="profile-nav-link">
                         @if(auth()->user()->foto_profil)
@@ -379,6 +389,21 @@
         </div>
     </header>
     @endif
+    
+    <script>
+        // Simple Language Switcher visual toggle logic
+        function toggleLanguage() {
+            const btns = document.querySelectorAll('.lang-switch-btn');
+            btns.forEach(btn => {
+                if (btn.innerText.trim() === 'ID') {
+                    btn.innerText = 'EN';
+                } else {
+                    btn.innerText = 'ID';
+                }
+            });
+            // You can implement actual localization logic here later (e.g. reload with ?lang=en)
+        }
+    </script>
 
     <!-- Main Content Area -->
     <main>
