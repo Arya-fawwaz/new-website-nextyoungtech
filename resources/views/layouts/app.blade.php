@@ -213,19 +213,24 @@
                 .cinematic-number {
                     font-size: 85px;
                 }
+                .cinematic-text {
+                    font-size: 17px !important;
+                    letter-spacing: 10px !important;
+                    margin-left: 10px !important;
+                }
             }
 
             .cinematic-text {
                 font-family: var(--font-heading);
-                font-size: 16px;
+                font-size: 32px;
                 font-weight: 900;
                 background: linear-gradient(to right, #b0b0b0, #ffffff, #b0b0b0);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-                letter-spacing: 20px;
+                letter-spacing: 16px;
                 text-transform: uppercase;
-                margin-left: 20px; /* Balance letter spacing */
-                filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
+                margin-left: 16px; /* Balance letter spacing */
+                filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
             }
 
             .cinematic-sub {
