@@ -1,31 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --bg-dark: #06060c;
-    --bg-card: rgba(13, 13, 27, 0.65);
-    --bg-card-hover: rgba(22, 22, 45, 0.8);
-    --border-color: rgba(255, 255, 255, 0.07);
+    --bg-dark: #ffffff;
+    --bg-card: rgba(255, 255, 255, 0.65);
+    --bg-card-hover: rgba(240, 245, 255, 0.9);
+    --border-color: rgba(14, 165, 233, 0.15);
     --border-color-hover: rgba(14, 165, 233, 0.4);
 
     --primary: #0ea5e9;
-    --primary-glow: rgba(14, 165, 233, 0.35);
+    --primary-glow: rgba(14, 165, 233, 0.25);
     --secondary: #4f46e5;
-    --secondary-glow: rgba(79, 70, 229, 0.35);
+    --secondary-glow: rgba(79, 70, 229, 0.25);
     --accent: #00f2fe;
-    --accent-glow: rgba(0, 242, 254, 0.35);
+    --accent-glow: rgba(0, 242, 254, 0.25);
 
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --text-dark: #64748b;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --text-dark: #334155;
 
     --gradient-hero: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
-    --gradient-dark: linear-gradient(180deg, #06060c 0%, #0c0c1b 100%);
+    --gradient-dark: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     --font-heading: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
     --font-special: 'Plus Jakarta Sans', sans-serif;
 
-    --star-empty: rgba(255, 255, 255, 0.15);
-    --dashed-border: rgba(255, 255, 255, 0.15);
+    --star-empty: rgba(15, 23, 42, 0.15);
+    --dashed-border: rgba(15, 23, 42, 0.15);
 }
 
 * {
