@@ -184,8 +184,8 @@
                 </div>
                 
                 <!-- Custom Swiper Navigation -->
-                <div class="swiper-button-prev portfolio-prev"><i class="fa-solid fa-chevron-left" style="font-size: 20px;"></i></div>
-                <div class="swiper-button-next portfolio-next"><i class="fa-solid fa-chevron-right" style="font-size: 20px;"></i></div>
+                <div class="swiper-button-prev portfolio-prev desktop-nav-arrow"><i class="fa-solid fa-chevron-left" style="font-size: 20px;"></i></div>
+                <div class="swiper-button-next portfolio-next desktop-nav-arrow"><i class="fa-solid fa-chevron-right" style="font-size: 20px;"></i></div>
             </div>
 
             <!-- Pagination -->

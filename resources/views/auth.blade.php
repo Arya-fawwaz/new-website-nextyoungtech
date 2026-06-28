@@ -135,7 +135,7 @@
                             <input type="password" name="password_confirmation" class="input-glass" style="padding-left: 48px; margin-bottom: 0;" placeholder="Ketik ulang kata sandi" required>
                         </div>
                     </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%); box-shadow: 0 0 20px var(--secondary-glow); cursor: pointer; padding: 14px; border-radius: 8px; font-weight: 700;">
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; background: var(--primary); color: #ffffff; box-shadow: 0 0 20px var(--primary-glow); cursor: pointer; padding: 14px; border-radius: 8px; font-weight: 700;">
                         <i class="fa-solid fa-user-plus"></i> Daftar Akun Baru
                     </button>
 
