@@ -507,13 +507,6 @@
             </ul>
 
             <div class="nav-actions">
-                <!-- PWA Install Button (Hidden by default, pulses/glows when available) -->
-                <button id="pwa-install-btn" class="btn-secondary" style="display: none; padding: 8px 12px; border-radius: 50%; width: 38px; height: 38px; align-items: center; justify-content: center; background: rgba(0, 242, 254, 0.1); border: 1px solid rgba(0, 242, 254, 0.2); color: var(--accent); cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);" title="Unduh Aplikasi Mobile 🚀">
-                    <i class="fa-solid fa-mobile-screen-button" style="animation: pwaPulseBtn 2s infinite alternate;"></i>
-                </button>
-
-
-
                 @auth
                     <a href="{{ route('profile') }}" style="display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 13px; color: var(--text-main); font-weight: 500; transition: all 0.3s ease; flex-shrink: 0;" class="profile-nav-link">
                         @if(auth()->user()->foto_profil)
