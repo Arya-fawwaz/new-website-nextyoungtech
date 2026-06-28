@@ -135,7 +135,7 @@
             
             <div class="cinematic-content">
                 <div class="cinematic-number" id="loader-percentage">0%</div>
-                <div class="cinematic-text">NEXT YOUNG TECH STUDIOS</div>
+                <div class="cinematic-text">NEXT YOUNG TECH</div>
                 <div class="cinematic-sub">DIGITAL EXCELLENCE</div>
             </div>
         </div>
