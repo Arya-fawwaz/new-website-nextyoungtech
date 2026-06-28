@@ -32,13 +32,17 @@
 
     
     <style>
-        /* Hide Google Translate Default UI */
-        .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon { display: none !important; }
-        body { top: 0px !important; }
-        #google_translate_element { display: none; }
+        /* Hide Google Translate Default UI (Aggressive) */
+        .goog-te-banner-frame, iframe.goog-te-banner-frame { display: none !important; }
+        body { top: 0px !important; position: static !important; }
+        .skiptranslate iframe { display: none !important; visibility: hidden !important; }
+        #google_translate_element { display: none !important; }
         .goog-tooltip { display: none !important; }
         .goog-tooltip:hover { display: none !important; }
         .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+        /* Newer Google Translate Popup Classes */
+        .VIpgJd-ZVi9od-ORHb-OEVmcd, .VIpgJd-ZVi9od-aZ2wEe-wOHMyf { display: none !important; }
+        #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
 
         /* Luxury Language Switch Button */
         .lang-switch-btn {
