@@ -811,7 +811,7 @@ body {
 /* Contact Footer Form & Details */
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 380px 1fr;
     gap: 40px;
     align-items: stretch;
     width: 100%;

@@ -282,7 +282,7 @@
                     </div>
 
                     <!-- Form Glass Panel -->
-                    <div class="glass-card">
+                    <div class="glass-card" style="min-width: 0;">
                         <!-- Session Success/Error Alert -->
                         @if(session('success'))
                             <div class="alert-glass">
