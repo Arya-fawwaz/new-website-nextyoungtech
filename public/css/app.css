@@ -811,14 +811,16 @@ body {
 /* Contact Footer Form & Details */
 .contact-container {
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 50px;
-    align-items: start;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    align-items: stretch;
+    width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .contact-container {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
 }
 
@@ -826,6 +828,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    height: 100%;
+    justify-content: space-between;
 }
 
 .contact-item {

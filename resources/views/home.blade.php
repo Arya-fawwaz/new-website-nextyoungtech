@@ -251,26 +251,27 @@
                 <div class="contact-container">
                     <!-- Contact Info Glass Panel -->
                     <div class="glass-card contact-info">
+                        <div>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nextyoungcommunity@gmail.com" target="_blank" class="contact-item" style="text-decoration: none; display: flex; align-items: center; gap: 15px; color: inherit; transition: all 0.3s ease; border-radius: 12px; padding: 5px; margin-bottom: 24px;" title="Kirim Email via Gmail">
+                                <div class="contact-icon" style="background: rgba(14, 165, 233, 0.15); color: var(--primary); border: 1px solid rgba(14, 165, 233, 0.3);">
+                                    <i class="fa-solid fa-envelope-open-text"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Email Penjualan</h4>
+                                    <p style="color: var(--primary); font-weight: 700;">nextyoungcommunity@gmail.com</p>
+                                </div>
+                            </a>
 
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nextyoungcommunity@gmail.com" target="_blank" class="contact-item" style="text-decoration: none; display: flex; align-items: center; gap: 15px; color: inherit; transition: all 0.3s ease; border-radius: 12px; padding: 5px;" title="Kirim Email via Gmail">
-                            <div class="contact-icon" style="background: rgba(14, 165, 233, 0.15); color: var(--primary); border: 1px solid rgba(14, 165, 233, 0.3);">
-                                <i class="fa-solid fa-envelope-open-text"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Email Penjualan</h4>
-                                <p style="color: var(--primary); font-weight: 700;">nextyoungcommunity@gmail.com</p>
-                            </div>
-                        </a>
-
-                        <a href="https://wa.me/628881023038?text=Halo%20Next%20Young%20Tech,%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20pembuatan%20website%20custom%20saya." target="_blank" class="contact-item" style="text-decoration: none; display: flex; align-items: center; gap: 15px; color: inherit; transition: all 0.3s ease; border-radius: 12px; padding: 5px;">
-                            <div class="contact-icon" style="background: rgba(37, 211, 102, 0.15); color: #25D366; border: 1px solid rgba(37, 211, 102, 0.3);">
-                                <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Hubungi WhatsApp</h4>
-                                <p style="color: #25D366; font-weight: 700;">+62 888-1023-038</p>
-                            </div>
-                        </a>
+                            <a href="https://wa.me/628881023038?text=Halo%20Next%20Young%20Tech,%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20pembuatan%20website%20custom%20saya." target="_blank" class="contact-item" style="text-decoration: none; display: flex; align-items: center; gap: 15px; color: inherit; transition: all 0.3s ease; border-radius: 12px; padding: 5px;">
+                                <div class="contact-icon" style="background: rgba(37, 211, 102, 0.15); color: #25D366; border: 1px solid rgba(37, 211, 102, 0.3);">
+                                    <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Hubungi WhatsApp</h4>
+                                    <p style="color: #25D366; font-weight: 700;">+62 888-1023-038</p>
+                                </div>
+                            </a>
+                        </div>
 
                         <div class="social-links">
                             <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
