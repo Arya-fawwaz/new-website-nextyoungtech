@@ -518,7 +518,7 @@
             </a>
             <a href="{{ route('profile') }}" class="mobile-nav-item {{ Route::is('profile') ? 'active' : '' }}">
                 <div class="mobile-icon-wrapper">
-                    <i class="fa-solid fa-robot"></i>
+                    <i class="fa-solid fa-user-tie"></i>
                 </div>
                 <span>Profil</span>
             </a>

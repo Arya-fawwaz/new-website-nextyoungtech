@@ -158,7 +158,7 @@
                             </div>
 
                             <div style="text-align: right;">
-                                <button type="submit" class="btn-primary" style="padding: 10px 24px; font-size: 13.5px; border-radius: 8px; background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);">
+                                <button type="submit" class="btn-primary" style="padding: 10px 24px; font-size: 13.5px; border-radius: 8px; background: var(--primary); color: #ffffff; box-shadow: 0 0 20px var(--primary-glow); border: none;">
                                     Perbarui Kata Sandi
                                 </button>
                             </div>
