@@ -324,7 +324,6 @@
                 </div>
             </div>
         </section>
-    </div>
 
     <!-- Initialize Testimonials Swiper -->
     <script>
