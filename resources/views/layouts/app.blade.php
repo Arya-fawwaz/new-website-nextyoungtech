@@ -32,6 +32,53 @@
 
     
     <style>
+        /* Hide Google Translate Default UI */
+        .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon { display: none !important; }
+        body { top: 0px !important; }
+        #google_translate_element { display: none; }
+        .goog-tooltip { display: none !important; }
+        .goog-tooltip:hover { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+
+        /* Luxury Language Switch Button */
+        .lang-switch-btn {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            /* Luxury Metallic Blue-Silver gradient */
+            background: linear-gradient(135deg, #0ea5e9 0%, #1e3a8a 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.4), inset 0 2px 5px rgba(255,255,255,0.3);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .lang-switch-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 5px 20px rgba(14, 165, 233, 0.6), inset 0 2px 5px rgba(255,255,255,0.5);
+            background: linear-gradient(135deg, #38bdf8 0%, #1e40af 100%);
+        }
+        
+        .lang-switch-btn.mobile {
+            width: 34px;
+            height: 34px;
+            font-size: 11px;
+            margin-right: 6px;
+        }
+        .lang-switch-btn.desktop {
+            width: 40px;
+            height: 40px;
+            font-size: 13px;
+        }
+
+
         /* Fix logo text wrapping and scaling */
         .logo {
             white-space: nowrap !important;
@@ -117,6 +164,15 @@
     @endif
 </head>
 <body>
+    <!-- Google Translate Element -->
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'id', includedLanguages: 'en,id', autoDisplay: false}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
     @if(Route::is('home'))
         <!-- Custom micro-JS check to immediately hide loader if already loaded -->
@@ -321,7 +377,7 @@
         </a>
         <div class="mobile-app-actions">
             <!-- Language Switcher -->
-            <button class="lang-switch-btn" onclick="toggleLanguage()" title="Ganti Bahasa / Switch Language" style="font-weight: 800; font-size: 11px; font-family: var(--font-heading); color: var(--primary); border: 1px solid var(--border-color); background: var(--bg-card); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-right: 4px;">
+            <button class="lang-switch-btn mobile" onclick="toggleLanguage()" title="Ganti Bahasa / Switch Language">
                 ID
             </button>
             
@@ -363,7 +419,7 @@
 
             <div class="nav-actions" style="display: flex; align-items: center; gap: 12px;">
                 <!-- Language Switcher -->
-                <button class="lang-switch-btn" onclick="toggleLanguage()" title="Ganti Bahasa / Switch Language" style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main); font-weight: 800; font-family: var(--font-heading); font-size: 13px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <button class="lang-switch-btn desktop" onclick="toggleLanguage()" title="Ganti Bahasa / Switch Language">
                     ID
                 </button>
                 
@@ -391,18 +447,37 @@
     @endif
     
     <script>
-        // Simple Language Switcher visual toggle logic
+        // Seamless Google Translate Toggle
         function toggleLanguage() {
-            const btns = document.querySelectorAll('.lang-switch-btn');
-            btns.forEach(btn => {
-                if (btn.innerText.trim() === 'ID') {
-                    btn.innerText = 'EN';
-                } else {
-                    btn.innerText = 'ID';
-                }
-            });
-            // You can implement actual localization logic here later (e.g. reload with ?lang=en)
+            var combo = document.querySelector('.goog-te-combo');
+            if (combo) {
+                // Check current button text to determine toggle direction
+                var btns = document.querySelectorAll('.lang-switch-btn');
+                var isCurrentlyId = btns[0].innerText.trim() === 'ID';
+                
+                // Toggle Google Translate combo box
+                combo.value = isCurrentlyId ? 'en' : 'id';
+                combo.dispatchEvent(new Event('change'));
+                
+                // Update visual buttons
+                btns.forEach(btn => {
+                    btn.innerText = isCurrentlyId ? 'EN' : 'ID';
+                });
+            } else {
+                // Fallback if google script hasn't loaded yet
+                setTimeout(toggleLanguage, 500);
+            }
         }
+        
+        // Ensure buttons show correct state on load if language is remembered in cookie
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var combo = document.querySelector('.goog-te-combo');
+                if (combo && combo.value === 'en') {
+                    document.querySelectorAll('.lang-switch-btn').forEach(btn => btn.innerText = 'EN');
+                }
+            }, 1000);
+        });
     </script>
 
     <!-- Main Content Area -->
