@@ -1170,22 +1170,21 @@ body {
 }
 
 [data-theme="light"] .hero-content {
-    background: radial-gradient(ellipse at left center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.3) 60%, transparent 100%);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: none;
-    border-radius: 40px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
     padding: 40px;
-    box-shadow: none;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 1);
     max-width: 820px;
     transition: all 0.5s ease;
-    margin-left: -20px;
 }
 
 [data-theme="light"] .hero-content:hover {
-    background: radial-gradient(ellipse at left center, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.4) 60%, transparent 100%);
-    box-shadow: none;
-    transform: none;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
 }
 
 [data-theme="light"] .hero-title {
@@ -1209,9 +1208,9 @@ body {
 }
 
 [data-theme="light"] .hero-desc {
-    color: #334155;
-    /* Higher contrast text description */
+    color: #1e293b;
     font-weight: 500;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);
 }
 
 [data-theme="light"] .logo span {
