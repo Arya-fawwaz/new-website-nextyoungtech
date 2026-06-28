@@ -78,8 +78,8 @@
                 </div>
                 
                 <!-- Custom Swiper Navigation -->
-                <div class="swiper-button-prev features-prev desktop-nav-arrow"><i class="fa-solid fa-chevron-left" style="font-size: 20px;"></i></div>
-                <div class="swiper-button-next features-next desktop-nav-arrow"><i class="fa-solid fa-chevron-right" style="font-size: 20px;"></i></div>
+                <div class="swiper-button-prev features-prev"><i class="fa-solid fa-chevron-left" style="font-size: 20px;"></i></div>
+                <div class="swiper-button-next features-next"><i class="fa-solid fa-chevron-right" style="font-size: 20px;"></i></div>
             </div>
             
             <!-- Pagination -->
