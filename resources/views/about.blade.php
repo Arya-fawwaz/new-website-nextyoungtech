@@ -75,68 +75,34 @@
         align-items: center;
         margin-bottom: 100px;
     }
-    /* Company Info Card (Replacing Photo) - Ultra Modern Cyber Frame */
+    /* Company Info Card (Replacing Photo) - Ultra Clean White Minimalist */
     .bw-info-card {
-        background: linear-gradient(135deg, #ffffff, #f8fafc);
-        border: 1px solid rgba(14, 165, 233, 0.3);
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
         border-radius: 20px;
-        padding: 38px 34px;
-        box-shadow: 0 25px 50px rgba(14, 165, 233, 0.1), 0 0 0 1px rgba(14, 165, 233, 0.05);
+        padding: 36px 32px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
         position: relative;
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .bw-info-card::before {
-        content: '';
-        position: absolute;
-        top: -60px;
-        right: -60px;
-        width: 200px;
-        height: 200px;
-        background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(14, 165, 233, 0) 70%);
-        border-radius: 50%;
-        pointer-events: none;
-    }
-    .bw-info-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 30px 60px rgba(14, 165, 233, 0.18), 0 0 20px rgba(14, 165, 233, 0.15);
-        border-color: var(--primary);
+        transition: all 0.3s ease;
     }
     .bw-info-header {
         display: flex;
         align-items: center;
-        gap: 18px;
-        margin-bottom: 26px;
-        padding-bottom: 22px;
-        border-bottom: 1px solid rgba(14, 165, 233, 0.15);
+        justify-content: center;
+        margin-bottom: 28px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #f1f5f9;
     }
     .bw-info-logo {
-        width: 72px;
-        height: 72px;
-        border-radius: 16px;
-        background: #ffffff;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 10px 25px rgba(14, 165, 233, 0.12);
-        border: 1px solid rgba(14, 165, 233, 0.25);
-        flex-shrink: 0;
-        padding: 10px;
     }
-    .bw-info-title h3 {
-        font-family: var(--font-heading);
-        font-size: 24px;
-        font-weight: 900;
-        color: #0f172a;
-        margin: 0 0 4px 0;
-        letter-spacing: -0.5px;
-    }
-    .bw-info-title span {
-        font-size: 12.5px;
-        font-weight: 800;
-        color: var(--primary);
-        text-transform: uppercase;
-        letter-spacing: 2px;
+    .bw-info-logo img {
+        width: 140px;
+        height: auto;
+        display: block;
     }
     .bw-info-grid {
         display: grid;
@@ -149,32 +115,30 @@
         gap: 16px;
         padding: 16px 18px;
         background: #f8fafc;
-        border-radius: 14px;
-        border: 1px solid #e2e8f0;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        border-radius: 12px;
+        border: 1px solid #f1f5f9;
+        transition: all 0.3s ease;
     }
     .bw-info-item:hover {
-        background: rgba(14, 165, 233, 0.05);
-        border-color: rgba(14, 165, 233, 0.35);
-        transform: translateX(6px);
-        box-shadow: 0 6px 20px rgba(14, 165, 233, 0.08);
+        background: #f1f5f9;
+        border-color: #e2e8f0;
     }
     .bw-info-icon {
         width: 42px;
         height: 42px;
-        border-radius: 12px;
-        background: rgba(14, 165, 233, 0.1);
-        color: var(--primary);
+        border-radius: 10px;
+        background: #f1f5f9;
+        color: #475569;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 19px;
+        font-size: 18px;
         flex-shrink: 0;
-        border: 1px solid rgba(14, 165, 233, 0.2);
+        border: 1px solid #e2e8f0;
     }
     .bw-info-label {
         font-size: 11px;
-        font-weight: 800;
+        font-weight: 700;
         color: #64748b;
         text-transform: uppercase;
         letter-spacing: 0.8px;
@@ -186,38 +150,24 @@
         color: #0f172a;
         line-height: 1.4;
     }
-    .bw-verified-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 5px 14px;
-        background: rgba(16, 185, 129, 0.1);
-        color: #10b981;
-        font-size: 12px;
-        font-weight: 800;
-        border-radius: 20px;
-        margin-top: 8px;
-        border: 1px solid rgba(16, 185, 129, 0.3);
-    }
 
-    /* Leader Pills inside Info Item - Clean Professional Executive Style */
+    /* Leader Pills inside Info Item - Ultra Clean White Minimalist */
     .leader-pill {
         display: inline-flex;
         align-items: center;
         gap: 8px;
         padding: 6px 14px;
-        background: #f1f5f9;
-        border: 1px solid #cbd5e1;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
         border-radius: 8px;
         font-size: 13.5px;
-        font-weight: 700;
+        font-weight: 600;
         color: #0f172a;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
     }
     .leader-pill:hover {
-        background: #e2e8f0;
-        border-color: var(--primary);
-        color: var(--primary);
+        background: #f8fafc;
+        border-color: #cbd5e1;
     }
 
     /* Dark Mode Support for Corporate Info Card */
@@ -232,7 +182,6 @@
     html[data-theme="dark"] .bw-hero-title,
     html[data-theme="dark"] .bw-text-content h2,
     html[data-theme="dark"] .bw-vm-card h3,
-    html[data-theme="dark"] .bw-info-title h3,
     html[data-theme="dark"] .bw-info-value,
     html[data-theme="dark"] .bw-list li strong {
         color: var(--text-main) !important;
@@ -246,16 +195,16 @@
     }
     html[data-theme="dark"] .bw-vm-card,
     html[data-theme="dark"] .bw-info-card {
-        background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9)) !important;
+        background: var(--bg-card) !important;
         border-color: var(--border-color) !important;
     }
     html[data-theme="dark"] .bw-info-item {
-        background: rgba(255, 255, 255, 0.03) !important;
+        background: rgba(255, 255, 255, 0.02) !important;
         border-color: var(--border-color) !important;
     }
     html[data-theme="dark"] .bw-info-item:hover {
-        background: rgba(14, 165, 233, 0.1) !important;
-        border-color: rgba(14, 165, 233, 0.3) !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-color: rgba(255, 255, 255, 0.15) !important;
     }
     html[data-theme="dark"] .bw-stats {
         border-top-color: var(--border-color) !important;
@@ -263,20 +212,19 @@
     html[data-theme="dark"] .bw-info-header {
         border-bottom-color: var(--border-color) !important;
     }
-    html[data-theme="dark"] .bw-info-logo {
-        background: rgba(255, 255, 255, 0.95) !important;
-        border-color: rgba(255, 255, 255, 0.3) !important;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+    html[data-theme="dark"] .bw-info-icon {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+        color: #94a3b8 !important;
     }
     html[data-theme="dark"] .leader-pill {
-        background: rgba(255, 255, 255, 0.06) !important;
-        border-color: rgba(255, 255, 255, 0.18) !important;
+        background: rgba(255, 255, 255, 0.04) !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
         color: #f8fafc !important;
     }
     html[data-theme="dark"] .leader-pill:hover {
-        background: rgba(14, 165, 233, 0.15) !important;
-        border-color: var(--primary) !important;
-        color: #38bdf8 !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border-color: rgba(255, 255, 255, 0.25) !important;
     }
 
     .bw-text-content h2 {
@@ -461,14 +409,7 @@
                 <div class="bw-info-card">
                     <div class="bw-info-header">
                         <div class="bw-info-logo">
-                            <img src="{{ asset('images/logo-n-trans.png') }}" alt="Logo N Next Young Tech" style="width: 52px; height: 52px; object-fit: contain;">
-                        </div>
-                        <div class="bw-info-title">
-                            <h3>Next Young Tech</h3>
-                            <span>Digital Architects & Engineering</span>
-                            <div>
-                                <span class="bw-verified-badge"><i class="fa-solid fa-circle-check"></i> Active & Verified Ecosystem</span>
-                            </div>
+                            <img src="{{ asset('images/logo-n-trans.png') }}" alt="Logo N Next Young Tech">
                         </div>
                     </div>
 
@@ -479,7 +420,7 @@
                             </div>
                             <div>
                                 <div class="bw-info-label">Nama Ekosistem Resmi</div>
-                                <div class="bw-info-value">Ekosistem Next Young Tech Indonesia</div>
+                                <div class="bw-info-value">Next Young Tech</div>
                             </div>
                         </div>
 
