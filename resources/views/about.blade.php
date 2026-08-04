@@ -75,56 +75,68 @@
         align-items: center;
         margin-bottom: 100px;
     }
-    /* Company Info Card (Replacing Photo) */
+    /* Company Info Card (Replacing Photo) - Ultra Modern Cyber Frame */
     .bw-info-card {
-        background: #ffffff;
-        border: 1px solid rgba(14, 165, 233, 0.2);
-        border-radius: 16px;
-        padding: 36px 32px;
-        box-shadow: 0 20px 40px rgba(14, 165, 233, 0.08);
+        background: linear-gradient(135deg, #ffffff, #f8fafc);
+        border: 1px solid rgba(14, 165, 233, 0.3);
+        border-radius: 20px;
+        padding: 38px 34px;
+        box-shadow: 0 25px 50px rgba(14, 165, 233, 0.1), 0 0 0 1px rgba(14, 165, 233, 0.05);
         position: relative;
         overflow: hidden;
-        transition: all 0.4s ease;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .bw-info-card::before {
+        content: '';
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(14, 165, 233, 0) 70%);
+        border-radius: 50%;
+        pointer-events: none;
     }
     .bw-info-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 30px 60px rgba(14, 165, 233, 0.14);
-        border-color: rgba(14, 165, 233, 0.4);
+        transform: translateY(-6px);
+        box-shadow: 0 30px 60px rgba(14, 165, 233, 0.18), 0 0 20px rgba(14, 165, 233, 0.15);
+        border-color: var(--primary);
     }
     .bw-info-header {
         display: flex;
         align-items: center;
-        gap: 16px;
-        margin-bottom: 24px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #e2e8f0;
+        gap: 18px;
+        margin-bottom: 26px;
+        padding-bottom: 22px;
+        border-bottom: 1px solid rgba(14, 165, 233, 0.15);
     }
     .bw-info-logo {
-        width: 64px;
-        height: 64px;
-        border-radius: 14px;
-        background: linear-gradient(135deg, var(--primary), #0284c7);
+        width: 68px;
+        height: 68px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
         color: #ffffff;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 28px;
-        box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+        box-shadow: 0 12px 25px rgba(14, 165, 233, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(14, 165, 233, 0.5);
         flex-shrink: 0;
     }
     .bw-info-title h3 {
         font-family: var(--font-heading);
-        font-size: 22px;
-        font-weight: 800;
+        font-size: 24px;
+        font-weight: 900;
         color: #0f172a;
         margin: 0 0 4px 0;
+        letter-spacing: -0.5px;
     }
     .bw-info-title span {
-        font-size: 13px;
-        font-weight: 700;
+        font-size: 12.5px;
+        font-weight: 800;
         color: var(--primary);
         text-transform: uppercase;
-        letter-spacing: 1.5px;
+        letter-spacing: 2px;
     }
     .bw-info-grid {
         display: grid;
@@ -135,39 +147,41 @@
         display: flex;
         align-items: flex-start;
         gap: 16px;
-        padding: 14px 16px;
+        padding: 16px 18px;
         background: #f8fafc;
-        border-radius: 10px;
-        border: 1px solid #f1f5f9;
-        transition: all 0.3s ease;
+        border-radius: 14px;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .bw-info-item:hover {
         background: rgba(14, 165, 233, 0.05);
-        border-color: rgba(14, 165, 233, 0.25);
-        transform: translateX(4px);
+        border-color: rgba(14, 165, 233, 0.35);
+        transform: translateX(6px);
+        box-shadow: 0 6px 20px rgba(14, 165, 233, 0.08);
     }
     .bw-info-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
         background: rgba(14, 165, 233, 0.1);
         color: var(--primary);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 18px;
+        font-size: 19px;
         flex-shrink: 0;
+        border: 1px solid rgba(14, 165, 233, 0.2);
     }
     .bw-info-label {
         font-size: 11px;
-        font-weight: 700;
+        font-weight: 800;
         color: #64748b;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 3px;
+        letter-spacing: 0.8px;
+        margin-bottom: 4px;
     }
     .bw-info-value {
-        font-size: 14.5px;
+        font-size: 15px;
         font-weight: 700;
         color: #0f172a;
         line-height: 1.4;
@@ -176,14 +190,35 @@
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        padding: 5px 12px;
+        padding: 5px 14px;
         background: rgba(16, 185, 129, 0.1);
         color: #10b981;
         font-size: 12px;
-        font-weight: 700;
+        font-weight: 800;
         border-radius: 20px;
-        margin-top: 6px;
-        border: 1px solid rgba(16, 185, 129, 0.25);
+        margin-top: 8px;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    /* Leader Pills inside Info Item */
+    .leader-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 13px;
+        background: rgba(14, 165, 233, 0.08);
+        border: 1px solid rgba(14, 165, 233, 0.25);
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--text-main);
+        transition: all 0.3s ease;
+    }
+    .leader-pill:hover {
+        background: rgba(14, 165, 233, 0.15);
+        border-color: var(--primary);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
     }
 
     /* Dark Mode Support for Corporate Info Card */
@@ -212,7 +247,7 @@
     }
     html[data-theme="dark"] .bw-vm-card,
     html[data-theme="dark"] .bw-info-card {
-        background: var(--bg-card) !important;
+        background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9)) !important;
         border-color: var(--border-color) !important;
     }
     html[data-theme="dark"] .bw-info-item {
@@ -228,6 +263,15 @@
     }
     html[data-theme="dark"] .bw-info-header {
         border-bottom-color: var(--border-color) !important;
+    }
+    html[data-theme="dark"] .leader-pill {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-color: rgba(255, 255, 255, 0.15) !important;
+        color: #ffffff !important;
+    }
+    html[data-theme="dark"] .leader-pill:hover {
+        background: rgba(14, 165, 233, 0.2) !important;
+        border-color: var(--primary) !important;
     }
 
     .bw-text-content h2 {
@@ -412,13 +456,13 @@
                 <div class="bw-info-card">
                     <div class="bw-info-header">
                         <div class="bw-info-logo">
-                            <i class="fa-solid fa-building-shield"></i>
+                            <img src="{{ asset('images/logo-n-trans.png') }}" alt="Logo N Next Young Tech" style="width: 44px; height: 44px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));">
                         </div>
                         <div class="bw-info-title">
                             <h3>Next Young Tech</h3>
-                            <span>Corporate Information</span>
+                            <span>Digital Architects & Engineering</span>
                             <div>
-                                <span class="bw-verified-badge"><i class="fa-solid fa-circle-check"></i> Enterprise Verified Partner</span>
+                                <span class="bw-verified-badge"><i class="fa-solid fa-circle-check"></i> Active & Verified Ecosystem</span>
                             </div>
                         </div>
                     </div>
@@ -430,17 +474,21 @@
                             </div>
                             <div>
                                 <div class="bw-info-label">Nama Ekosistem Resmi</div>
-                                <div class="bw-info-value">PT / Ekosistem Next Young Tech Indonesia</div>
+                                <div class="bw-info-value">Ekosistem Next Young Tech Indonesia</div>
                             </div>
                         </div>
 
                         <div class="bw-info-item">
                             <div class="bw-info-icon">
-                                <i class="fa-solid fa-user-tie"></i>
+                                <i class="fa-solid fa-users-gear"></i>
                             </div>
                             <div>
-                                <div class="bw-info-label">Pendiri & Pimpinan Eksekutif</div>
-                                <div class="bw-info-value">Nazmi Dwiputra Effendi</div>
+                                <div class="bw-info-label">Kepala Tim & Pimpinan Eksekutif (3 Orang)</div>
+                                <div class="bw-info-value" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+                                    <span class="leader-pill"><i class="fa-solid fa-crown" style="color: #ffb703;"></i> Arya Fawwaz Septyan</span>
+                                    <span class="leader-pill"><i class="fa-solid fa-crown" style="color: #ffb703;"></i> Nazmi Dwiputra Effendi</span>
+                                    <span class="leader-pill"><i class="fa-solid fa-crown" style="color: #ffb703;"></i> Fadhlan</span>
+                                </div>
                             </div>
                         </div>
 
@@ -480,7 +528,7 @@
                     <span style="font-size: 12px; font-weight: 800; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: block;">Kolaborasi Tingkat Tinggi</span>
                     <h2>Kualitas Industri Profesional</h2>
                     <p>Di balik sistem backend yang andal dan antarmuka pengguna yang premium, terdapat tim ahli yang berdedikasi. Kami menggabungkan keterampilan teknis tingkat lanjut dengan pemahaman estetika yang mendalam.</p>
-                    <p>Dipimpin langsung oleh <strong>Nazmi Dwiputra Effendi</strong>, komitmen kami adalah menghasilkan karya digital yang solid, terukur, dan mampu mengangkat kredibilitas institusi Anda di mata dunia.</p>
+                    <p>Dipimpin langsung oleh tim kepemimpinan inti: <strong>Arya Fawwaz Septyan</strong>, <strong>Nazmi Dwiputra Effendi</strong>, dan <strong>Fadhlan</strong>, komitmen kami adalah menghasilkan karya digital yang solid, terukur, dan mampu mengangkat kredibilitas institusi Anda di mata dunia.</p>
                     
                     <div class="bw-stats">
                         <div class="bw-stat-item">
