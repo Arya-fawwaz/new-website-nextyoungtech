@@ -111,17 +111,17 @@
         border-bottom: 1px solid rgba(14, 165, 233, 0.15);
     }
     .bw-info-logo {
-        width: 68px;
-        height: 68px;
-        border-radius: 18px;
-        background: linear-gradient(135deg, #0f172a, #1e293b);
-        color: #ffffff;
+        width: 72px;
+        height: 72px;
+        border-radius: 16px;
+        background: #ffffff;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 12px 25px rgba(14, 165, 233, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.2);
-        border: 1px solid rgba(14, 165, 233, 0.5);
+        box-shadow: 0 10px 25px rgba(14, 165, 233, 0.12);
+        border: 1px solid rgba(14, 165, 233, 0.25);
         flex-shrink: 0;
+        padding: 10px;
     }
     .bw-info-title h3 {
         font-family: var(--font-heading);
@@ -200,25 +200,24 @@
         border: 1px solid rgba(16, 185, 129, 0.3);
     }
 
-    /* Leader Pills inside Info Item */
+    /* Leader Pills inside Info Item - Clean Professional Executive Style */
     .leader-pill {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        padding: 5px 13px;
-        background: rgba(14, 165, 233, 0.08);
-        border: 1px solid rgba(14, 165, 233, 0.25);
-        border-radius: 20px;
-        font-size: 13px;
+        gap: 8px;
+        padding: 6px 14px;
+        background: #f1f5f9;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 13.5px;
         font-weight: 700;
-        color: var(--text-main);
+        color: #0f172a;
         transition: all 0.3s ease;
     }
     .leader-pill:hover {
-        background: rgba(14, 165, 233, 0.15);
+        background: #e2e8f0;
         border-color: var(--primary);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+        color: var(--primary);
     }
 
     /* Dark Mode Support for Corporate Info Card */
@@ -264,14 +263,20 @@
     html[data-theme="dark"] .bw-info-header {
         border-bottom-color: var(--border-color) !important;
     }
+    html[data-theme="dark"] .bw-info-logo {
+        background: rgba(255, 255, 255, 0.95) !important;
+        border-color: rgba(255, 255, 255, 0.3) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+    }
     html[data-theme="dark"] .leader-pill {
-        background: rgba(255, 255, 255, 0.05) !important;
-        border-color: rgba(255, 255, 255, 0.15) !important;
-        color: #ffffff !important;
+        background: rgba(255, 255, 255, 0.06) !important;
+        border-color: rgba(255, 255, 255, 0.18) !important;
+        color: #f8fafc !important;
     }
     html[data-theme="dark"] .leader-pill:hover {
-        background: rgba(14, 165, 233, 0.2) !important;
+        background: rgba(14, 165, 233, 0.15) !important;
         border-color: var(--primary) !important;
+        color: #38bdf8 !important;
     }
 
     .bw-text-content h2 {
@@ -456,7 +461,7 @@
                 <div class="bw-info-card">
                     <div class="bw-info-header">
                         <div class="bw-info-logo">
-                            <img src="{{ asset('images/logo-n-trans.png') }}" alt="Logo N Next Young Tech" style="width: 44px; height: 44px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));">
+                            <img src="{{ asset('images/logo-n-trans.png') }}" alt="Logo N Next Young Tech" style="width: 52px; height: 52px; object-fit: contain;">
                         </div>
                         <div class="bw-info-title">
                             <h3>Next Young Tech</h3>
@@ -484,10 +489,10 @@
                             </div>
                             <div>
                                 <div class="bw-info-label">Kepala Tim & Pimpinan Eksekutif (3 Orang)</div>
-                                <div class="bw-info-value" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
-                                    <span class="leader-pill"><i class="fa-solid fa-crown" style="color: #ffb703;"></i> Arya Fawwaz Septyan</span>
-                                    <span class="leader-pill"><i class="fa-solid fa-crown" style="color: #ffb703;"></i> Nazmi Dwiputra Effendi</span>
-                                    <span class="leader-pill"><i class="fa-solid fa-crown" style="color: #ffb703;"></i> Fadhlan</span>
+                                <div class="bw-info-value" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                                    <span class="leader-pill"><i class="fa-solid fa-user-tie" style="color: var(--primary);"></i> Arya Fawwaz Septyan</span>
+                                    <span class="leader-pill"><i class="fa-solid fa-user-tie" style="color: var(--primary);"></i> Nazmi Dwiputra Effendi</span>
+                                    <span class="leader-pill"><i class="fa-solid fa-user-tie" style="color: var(--primary);"></i> Fadhlan</span>
                                 </div>
                             </div>
                         </div>
