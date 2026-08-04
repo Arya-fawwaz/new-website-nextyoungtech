@@ -75,68 +75,46 @@
         align-items: center;
         margin-bottom: 100px;
     }
-    /* Company Info Card (Replacing Photo) - Ultra Clean White Minimalist */
-    .bw-info-card {
+    /* Standalone Info Cards Grid (Replacing Single Big Container & Logo) */
+    .bw-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    @media (max-width: 640px) {
+        .bw-cards-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    .bw-single-card {
         background: #ffffff;
         border: 1px solid #e2e8f0;
-        border-radius: 20px;
-        padding: 36px 32px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease;
-    }
-    .bw-info-header {
+        border-radius: 16px;
+        padding: 24px 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 28px;
-        padding-bottom: 24px;
-        border-bottom: 1px solid #f1f5f9;
-    }
-    .bw-info-logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .bw-info-logo img {
-        width: 140px;
-        height: auto;
-        display: block;
-    }
-    .bw-info-grid {
-        display: grid;
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 14px;
-    }
-    .bw-info-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 16px;
-        padding: 16px 18px;
-        background: #f8fafc;
-        border-radius: 12px;
-        border: 1px solid #f1f5f9;
         transition: all 0.3s ease;
     }
-    .bw-info-item:hover {
-        background: #f1f5f9;
-        border-color: #e2e8f0;
+    .bw-single-card:hover {
+        border-color: #cbd5e1;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        transform: translateY(-3px);
     }
-    .bw-info-icon {
-        width: 42px;
-        height: 42px;
-        border-radius: 10px;
-        background: #f1f5f9;
-        color: #475569;
+    .bw-card-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        color: #0f172a;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 18px;
-        flex-shrink: 0;
-        border: 1px solid #e2e8f0;
     }
-    .bw-info-label {
+    .bw-card-label {
         font-size: 11px;
         font-weight: 700;
         color: #64748b;
@@ -144,33 +122,95 @@
         letter-spacing: 0.8px;
         margin-bottom: 4px;
     }
-    .bw-info-value {
+    .bw-card-value {
         font-size: 15px;
-        font-weight: 700;
+        font-weight: 800;
         color: #0f172a;
         line-height: 1.4;
     }
 
-    /* Leader Pills inside Info Item - Ultra Clean White Minimalist */
-    .leader-pill {
-        display: inline-flex;
+    /* Management & Executive Leadership Section (Separate Member Cards) */
+    .bw-mgmt-heading {
+        margin: 50px 0 28px 0;
+        border-bottom: 2px solid #0f172a;
+        padding-bottom: 12px;
+        display: flex;
         align-items: center;
-        gap: 8px;
-        padding: 6px 14px;
+        justify-content: space-between;
+    }
+    .bw-mgmt-heading h3 {
+        font-family: var(--font-heading);
+        font-size: 24px;
+        font-weight: 900;
+        color: #0f172a;
+        margin: 0;
+    }
+    .bw-mgmt-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    @media (max-width: 900px) {
+        .bw-mgmt-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: 640px) {
+        .bw-mgmt-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    .bw-mgmt-card {
         background: #ffffff;
         border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        font-size: 13.5px;
-        font-weight: 600;
-        color: #0f172a;
-        transition: all 0.2s ease;
+        border-radius: 16px;
+        padding: 28px 24px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
     }
-    .leader-pill:hover {
-        background: #f8fafc;
+    .bw-mgmt-card:hover {
         border-color: #cbd5e1;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+        transform: translateY(-4px);
+    }
+    .bw-mgmt-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        color: #0f172a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .bw-mgmt-name {
+        font-family: var(--font-heading);
+        font-size: 18px;
+        font-weight: 900;
+        color: #0f172a;
+        margin-bottom: 4px;
+    }
+    .bw-mgmt-role {
+        font-size: 11px;
+        font-weight: 700;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 14px;
+    }
+    .bw-mgmt-desc {
+        font-size: 13.5px;
+        color: #475569;
+        line-height: 1.6;
+        margin: 0;
     }
 
-    /* Dark Mode Support for Corporate Info Card */
+    /* Dark Mode Support */
     html[data-theme="dark"] .bw-wrapper {
         background-color: var(--bg-body) !important;
         color: var(--text-main) !important;
@@ -182,7 +222,9 @@
     html[data-theme="dark"] .bw-hero-title,
     html[data-theme="dark"] .bw-text-content h2,
     html[data-theme="dark"] .bw-vm-card h3,
-    html[data-theme="dark"] .bw-info-value,
+    html[data-theme="dark"] .bw-card-value,
+    html[data-theme="dark"] .bw-mgmt-name,
+    html[data-theme="dark"] .bw-mgmt-heading h3,
     html[data-theme="dark"] .bw-list li strong {
         color: var(--text-main) !important;
     }
@@ -190,41 +232,32 @@
     html[data-theme="dark"] .bw-text-content p,
     html[data-theme="dark"] .bw-vm-card p,
     html[data-theme="dark"] .bw-list li,
-    html[data-theme="dark"] .bw-info-label {
+    html[data-theme="dark"] .bw-card-label,
+    html[data-theme="dark"] .bw-mgmt-role,
+    html[data-theme="dark"] .bw-mgmt-desc {
         color: var(--text-muted) !important;
     }
     html[data-theme="dark"] .bw-vm-card,
-    html[data-theme="dark"] .bw-info-card {
+    html[data-theme="dark"] .bw-single-card,
+    html[data-theme="dark"] .bw-mgmt-card {
         background: var(--bg-card) !important;
         border-color: var(--border-color) !important;
     }
-    html[data-theme="dark"] .bw-info-item {
-        background: rgba(255, 255, 255, 0.02) !important;
-        border-color: var(--border-color) !important;
+    html[data-theme="dark"] .bw-single-card:hover,
+    html[data-theme="dark"] .bw-mgmt-card:hover {
+        border-color: rgba(255, 255, 255, 0.25) !important;
     }
-    html[data-theme="dark"] .bw-info-item:hover {
+    html[data-theme="dark"] .bw-card-icon,
+    html[data-theme="dark"] .bw-mgmt-icon {
         background: rgba(255, 255, 255, 0.05) !important;
-        border-color: rgba(255, 255, 255, 0.15) !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+        color: #e2e8f0 !important;
     }
     html[data-theme="dark"] .bw-stats {
         border-top-color: var(--border-color) !important;
     }
-    html[data-theme="dark"] .bw-info-header {
+    html[data-theme="dark"] .bw-mgmt-heading {
         border-bottom-color: var(--border-color) !important;
-    }
-    html[data-theme="dark"] .bw-info-icon {
-        background: rgba(255, 255, 255, 0.05) !important;
-        border-color: rgba(255, 255, 255, 0.1) !important;
-        color: #94a3b8 !important;
-    }
-    html[data-theme="dark"] .leader-pill {
-        background: rgba(255, 255, 255, 0.04) !important;
-        border-color: rgba(255, 255, 255, 0.12) !important;
-        color: #f8fafc !important;
-    }
-    html[data-theme="dark"] .leader-pill:hover {
-        background: rgba(255, 255, 255, 0.08) !important;
-        border-color: rgba(255, 255, 255, 0.25) !important;
     }
 
     .bw-text-content h2 {
@@ -405,67 +438,45 @@
             <!-- Main Team Showcase -->
             <div class="bw-team-grid">
                 
-                <!-- Corporate Informative Card (Replacing Group Photo) -->
-                <div class="bw-info-card">
-                    <div class="bw-info-header">
-                        <div class="bw-info-logo">
-                            <img src="{{ asset('images/logo-n-trans.png') }}" alt="Logo N Next Young Tech">
+                <!-- Corporate Informative Cards Grid (Replacing one big frame box) -->
+                <div class="bw-cards-grid">
+                    <div class="bw-single-card">
+                        <div class="bw-card-icon">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <div>
+                            <div class="bw-card-label">Nama Ekosistem Resmi</div>
+                            <div class="bw-card-value">Next Young Tech</div>
                         </div>
                     </div>
 
-                    <div class="bw-info-grid">
-                        <div class="bw-info-item">
-                            <div class="bw-info-icon">
-                                <i class="fa-solid fa-building"></i>
-                            </div>
-                            <div>
-                                <div class="bw-info-label">Nama Ekosistem Resmi</div>
-                                <div class="bw-info-value">Next Young Tech</div>
-                            </div>
+                    <div class="bw-single-card">
+                        <div class="bw-card-icon">
+                            <i class="fa-solid fa-bullseye"></i>
                         </div>
-
-                        <div class="bw-info-item">
-                            <div class="bw-info-icon">
-                                <i class="fa-solid fa-users-gear"></i>
-                            </div>
-                            <div>
-                                <div class="bw-info-label">Kepala Tim & Pimpinan Eksekutif (3 Orang)</div>
-                                <div class="bw-info-value" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
-                                    <span class="leader-pill"><i class="fa-solid fa-user-tie" style="color: var(--primary);"></i> Arya Fawwaz Septyan</span>
-                                    <span class="leader-pill"><i class="fa-solid fa-user-tie" style="color: var(--primary);"></i> Nazmi Dwiputra Effendi</span>
-                                    <span class="leader-pill"><i class="fa-solid fa-user-tie" style="color: var(--primary);"></i> Fadhlan</span>
-                                </div>
-                            </div>
+                        <div>
+                            <div class="bw-card-label">Fokus Layanan & Bisnis</div>
+                            <div class="bw-card-value">Custom Web Application, UI/UX Corporate & Joki Coding</div>
                         </div>
+                    </div>
 
-                        <div class="bw-info-item">
-                            <div class="bw-info-icon">
-                                <i class="fa-solid fa-bullseye"></i>
-                            </div>
-                            <div>
-                                <div class="bw-info-label">Fokus Layanan & Bisnis</div>
-                                <div class="bw-info-value">Custom Web Application, UI/UX Corporate & Joki Coding</div>
-                            </div>
+                    <div class="bw-single-card">
+                        <div class="bw-card-icon">
+                            <i class="fa-solid fa-microchip"></i>
                         </div>
-
-                        <div class="bw-info-item">
-                            <div class="bw-info-icon">
-                                <i class="fa-solid fa-microchip"></i>
-                            </div>
-                            <div>
-                                <div class="bw-info-label">Standar Arsitektur Sistem</div>
-                                <div class="bw-info-value">Laravel 11, Three.js 3D WebGL & High-Performance Cloud</div>
-                            </div>
+                        <div>
+                            <div class="bw-card-label">Standar Arsitektur Sistem</div>
+                            <div class="bw-card-value">Laravel 11, Three.js 3D WebGL & High-Performance Cloud</div>
                         </div>
+                    </div>
 
-                        <div class="bw-info-item">
-                            <div class="bw-info-icon">
-                                <i class="fa-solid fa-shield-halved"></i>
-                            </div>
-                            <div>
-                                <div class="bw-info-label">Standar Keamanan & Kualitas</div>
-                                <div class="bw-info-value">Enterprise-Grade SSL/TLS Encryption & 100% Clean Code</div>
-                            </div>
+                    <div class="bw-single-card">
+                        <div class="bw-card-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <div class="bw-card-label">Standar Keamanan & Kualitas</div>
+                            <div class="bw-card-value">Enterprise-Grade SSL/TLS Encryption & 100% Clean Code</div>
                         </div>
                     </div>
                 </div>
@@ -492,6 +503,41 @@
                     </div>
                 </div>
 
+            </div>
+
+            <!-- Management & Executive Leadership Section (Separate Member Cards) -->
+            <div class="bw-mgmt-section">
+                <div class="bw-mgmt-heading">
+                    <h3>Kepemimpinan & Manajemen</h3>
+                </div>
+                <div class="bw-mgmt-grid">
+                    <div class="bw-mgmt-card">
+                        <div class="bw-mgmt-icon">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div class="bw-mgmt-name">Arya Fawwaz Septyan</div>
+                        <div class="bw-mgmt-role">PRESIDENT DIRECTOR / FOUNDER</div>
+                        <p class="bw-mgmt-desc">Memimpin arah strategis, visi ekosistem, dan kemitraan teknologi global Next Young Tech di seluruh Indonesia.</p>
+                    </div>
+
+                    <div class="bw-mgmt-card">
+                        <div class="bw-mgmt-icon">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div class="bw-mgmt-name">Nazmi Dwiputra Effendi</div>
+                        <div class="bw-mgmt-role">OPERATIONS DIRECTOR</div>
+                        <p class="bw-mgmt-desc">Mengawasi eksekusi operasional, manajemen proyek klien, dan kepatuhan standar kualitas layanan ekosistem.</p>
+                    </div>
+
+                    <div class="bw-mgmt-card">
+                        <div class="bw-mgmt-icon">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div class="bw-mgmt-name">Fadhlan</div>
+                        <div class="bw-mgmt-role">TECHNICAL DIRECTOR</div>
+                        <p class="bw-mgmt-desc">Memimpin inovasi arsitektur sistem, rekayasa perangkat lunak berkinerja tinggi, dan infrastruktur cloud.</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Vision & Mission -->
