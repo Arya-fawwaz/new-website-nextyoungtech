@@ -75,11 +75,40 @@
         align-items: center;
         margin-bottom: 100px;
     }
-    /* Standalone Info Cards Grid (Replacing Single Big Container & Logo) */
+    /* Standalone Info Cards Grid & Section Header */
+    .bw-info-section-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .bw-section-heading {
+        margin-bottom: 24px;
+        border-bottom: 2px solid #0f172a;
+        padding-bottom: 12px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    .bw-section-sub {
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--primary);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 4px;
+    }
+    .bw-section-heading h3 {
+        font-family: var(--font-heading);
+        font-size: 24px;
+        font-weight: 900;
+        color: #0f172a;
+        margin: 0;
+        line-height: 1.2;
+    }
     .bw-cards-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        gap: 24px;
     }
     @media (max-width: 640px) {
         .bw-cards-grid {
@@ -89,30 +118,53 @@
     .bw-single-card {
         background: #ffffff;
         border: 1px solid #e2e8f0;
-        border-radius: 16px;
-        padding: 24px 20px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        border-radius: 20px;
+        padding: 28px 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
         display: flex;
         flex-direction: column;
-        gap: 14px;
-        transition: all 0.3s ease;
+        gap: 16px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .bw-single-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), #60a5fa);
+        opacity: 0;
+        transition: opacity 0.35s ease;
     }
     .bw-single-card:hover {
-        border-color: #cbd5e1;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-        transform: translateY(-3px);
+        border-color: rgba(37, 99, 235, 0.35);
+        box-shadow: 0 16px 35px rgba(37, 99, 235, 0.08);
+        transform: translateY(-5px);
+    }
+    .bw-single-card:hover::before {
+        opacity: 1;
     }
     .bw-card-icon {
-        width: 44px;
-        height: 44px;
-        border-radius: 12px;
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        color: #0f172a;
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        background: rgba(37, 99, 235, 0.08);
+        border: 1px solid rgba(37, 99, 235, 0.2);
+        color: var(--primary);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 18px;
+        font-size: 20px;
+        transition: all 0.3s ease;
+    }
+    .bw-single-card:hover .bw-card-icon {
+        background: var(--primary);
+        color: #ffffff;
+        border-color: var(--primary);
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
     }
     .bw-card-label {
         font-size: 11px;
@@ -130,13 +182,26 @@
     }
 
     /* Management & Executive Leadership Section (Separate Member Cards) */
+    .bw-mgmt-section {
+        margin-top: 70px;
+        margin-bottom: 40px;
+    }
     .bw-mgmt-heading {
-        margin: 50px 0 28px 0;
+        margin-bottom: 32px;
         border-bottom: 2px solid #0f172a;
         padding-bottom: 12px;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: space-between;
+    }
+    .bw-mgmt-sub {
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--primary);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 4px;
     }
     .bw-mgmt-heading h3 {
         font-family: var(--font-heading);
@@ -144,11 +209,12 @@
         font-weight: 900;
         color: #0f172a;
         margin: 0;
+        line-height: 1.2;
     }
     .bw-mgmt-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        gap: 32px;
     }
     @media (max-width: 900px) {
         .bw-mgmt-grid {
@@ -163,50 +229,60 @@
     .bw-mgmt-card {
         background: #ffffff;
         border: 1px solid #e2e8f0;
-        border-radius: 16px;
-        padding: 28px 24px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        border-top: 3px solid var(--primary);
+        border-radius: 20px;
+        padding: 32px 28px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
         display: flex;
         flex-direction: column;
-        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .bw-mgmt-card:hover {
-        border-color: #cbd5e1;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-        transform: translateY(-4px);
+        border-color: rgba(37, 99, 235, 0.4);
+        box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+        transform: translateY(-6px);
     }
     .bw-mgmt-icon {
-        width: 48px;
-        height: 48px;
+        width: 52px;
+        height: 52px;
         border-radius: 14px;
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        color: #0f172a;
+        background: rgba(37, 99, 235, 0.08);
+        border: 1px solid rgba(37, 99, 235, 0.2);
+        color: var(--primary);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 20px;
-        margin-bottom: 20px;
+        font-size: 22px;
+        margin-bottom: 22px;
+        transition: all 0.3s ease;
+    }
+    .bw-mgmt-card:hover .bw-mgmt-icon {
+        background: var(--primary);
+        color: #ffffff;
+        border-color: var(--primary);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
     }
     .bw-mgmt-name {
         font-family: var(--font-heading);
-        font-size: 18px;
+        font-size: 19px;
         font-weight: 900;
         color: #0f172a;
         margin-bottom: 4px;
     }
     .bw-mgmt-role {
-        font-size: 11px;
-        font-weight: 700;
-        color: #64748b;
+        font-size: 11.5px;
+        font-weight: 800;
+        color: var(--primary);
         text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 14px;
+        letter-spacing: 1.2px;
+        margin-bottom: 16px;
     }
     .bw-mgmt-desc {
         font-size: 13.5px;
         color: #475569;
-        line-height: 1.6;
+        line-height: 1.65;
         margin: 0;
     }
 
@@ -224,6 +300,7 @@
     html[data-theme="dark"] .bw-vm-card h3,
     html[data-theme="dark"] .bw-card-value,
     html[data-theme="dark"] .bw-mgmt-name,
+    html[data-theme="dark"] .bw-section-heading h3,
     html[data-theme="dark"] .bw-mgmt-heading h3,
     html[data-theme="dark"] .bw-list li strong {
         color: var(--text-main) !important;
@@ -233,9 +310,11 @@
     html[data-theme="dark"] .bw-vm-card p,
     html[data-theme="dark"] .bw-list li,
     html[data-theme="dark"] .bw-card-label,
-    html[data-theme="dark"] .bw-mgmt-role,
     html[data-theme="dark"] .bw-mgmt-desc {
         color: var(--text-muted) !important;
+    }
+    html[data-theme="dark"] .bw-mgmt-role {
+        color: #60a5fa !important;
     }
     html[data-theme="dark"] .bw-vm-card,
     html[data-theme="dark"] .bw-single-card,
@@ -243,19 +322,30 @@
         background: var(--bg-card) !important;
         border-color: var(--border-color) !important;
     }
+    html[data-theme="dark"] .bw-mgmt-card {
+        border-top-color: var(--primary) !important;
+    }
     html[data-theme="dark"] .bw-single-card:hover,
     html[data-theme="dark"] .bw-mgmt-card:hover {
-        border-color: rgba(255, 255, 255, 0.25) !important;
+        border-color: rgba(59, 130, 246, 0.45) !important;
+        box-shadow: 0 16px 35px rgba(37, 99, 235, 0.15) !important;
     }
     html[data-theme="dark"] .bw-card-icon,
     html[data-theme="dark"] .bw-mgmt-icon {
-        background: rgba(255, 255, 255, 0.05) !important;
-        border-color: rgba(255, 255, 255, 0.1) !important;
-        color: #e2e8f0 !important;
+        background: rgba(59, 130, 246, 0.12) !important;
+        border-color: rgba(59, 130, 246, 0.25) !important;
+        color: #60a5fa !important;
+    }
+    html[data-theme="dark"] .bw-single-card:hover .bw-card-icon,
+    html[data-theme="dark"] .bw-mgmt-card:hover .bw-mgmt-icon {
+        background: var(--primary) !important;
+        color: #ffffff !important;
+        border-color: var(--primary) !important;
     }
     html[data-theme="dark"] .bw-stats {
         border-top-color: var(--border-color) !important;
     }
+    html[data-theme="dark"] .bw-section-heading,
     html[data-theme="dark"] .bw-mgmt-heading {
         border-bottom-color: var(--border-color) !important;
     }
@@ -439,44 +529,52 @@
             <div class="bw-team-grid">
                 
                 <!-- Corporate Informative Cards Grid (Replacing one big frame box) -->
-                <div class="bw-cards-grid">
-                    <div class="bw-single-card">
-                        <div class="bw-card-icon">
-                            <i class="fa-solid fa-building"></i>
-                        </div>
+                <div class="bw-info-section-wrapper">
+                    <div class="bw-section-heading">
                         <div>
-                            <div class="bw-card-label">Nama Ekosistem Resmi</div>
-                            <div class="bw-card-value">Next Young Tech</div>
+                            <span class="bw-section-sub">IDENTITAS & STANDAR INDUSTRI</span>
+                            <h3>Profil & Sertifikasi Ekosistem</h3>
                         </div>
                     </div>
+                    <div class="bw-cards-grid">
+                        <div class="bw-single-card">
+                            <div class="bw-card-icon">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div>
+                                <div class="bw-card-label">Nama Ekosistem Resmi</div>
+                                <div class="bw-card-value">Next Young Tech</div>
+                            </div>
+                        </div>
 
-                    <div class="bw-single-card">
-                        <div class="bw-card-icon">
-                            <i class="fa-solid fa-bullseye"></i>
+                        <div class="bw-single-card">
+                            <div class="bw-card-icon">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <div>
+                                <div class="bw-card-label">Fokus Layanan & Bisnis</div>
+                                <div class="bw-card-value">Custom Web Application, UI/UX Corporate & Joki Coding</div>
+                            </div>
                         </div>
-                        <div>
-                            <div class="bw-card-label">Fokus Layanan & Bisnis</div>
-                            <div class="bw-card-value">Custom Web Application, UI/UX Corporate & Joki Coding</div>
-                        </div>
-                    </div>
 
-                    <div class="bw-single-card">
-                        <div class="bw-card-icon">
-                            <i class="fa-solid fa-microchip"></i>
+                        <div class="bw-single-card">
+                            <div class="bw-card-icon">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div>
+                                <div class="bw-card-label">Standar Arsitektur Sistem</div>
+                                <div class="bw-card-value">Laravel 11, Three.js 3D WebGL & High-Performance Cloud</div>
+                            </div>
                         </div>
-                        <div>
-                            <div class="bw-card-label">Standar Arsitektur Sistem</div>
-                            <div class="bw-card-value">Laravel 11, Three.js 3D WebGL & High-Performance Cloud</div>
-                        </div>
-                    </div>
 
-                    <div class="bw-single-card">
-                        <div class="bw-card-icon">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-                        <div>
-                            <div class="bw-card-label">Standar Keamanan & Kualitas</div>
-                            <div class="bw-card-value">Enterprise-Grade SSL/TLS Encryption & 100% Clean Code</div>
+                        <div class="bw-single-card">
+                            <div class="bw-card-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <div class="bw-card-label">Standar Keamanan & Kualitas</div>
+                                <div class="bw-card-value">Enterprise-Grade SSL/TLS Encryption & 100% Clean Code</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -508,7 +606,10 @@
             <!-- Management & Executive Leadership Section (Separate Member Cards) -->
             <div class="bw-mgmt-section">
                 <div class="bw-mgmt-heading">
-                    <h3>Kepemimpinan & Manajemen</h3>
+                    <div>
+                        <span class="bw-mgmt-sub">STRUKTUR EKSEKUTIF INTI</span>
+                        <h3>Kepemimpinan & Manajemen</h3>
+                    </div>
                 </div>
                 <div class="bw-mgmt-grid">
                     <div class="bw-mgmt-card">
