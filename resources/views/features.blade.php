@@ -30,7 +30,7 @@
                     <!-- Feature 2 -->
                     <div class="swiper-slide" style="height: auto;">
                         <div class="glass-card premium-feature-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; height: 100%; border: 1px solid transparent;">
-                            <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--secondary); box-shadow: 0 10px 25px var(--secondary-glow); background: rgba(79, 70, 229, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                            <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--secondary); box-shadow: 0 10px 25px var(--secondary-glow); background: rgba(56, 189, 248, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
                                 <i class="fa-solid fa-gauge-high" style="font-size: 32px; color: var(--secondary);"></i>
                             </div>
                             <h3 class="feature-title" style="font-size: 20px; font-weight: 800; margin-bottom: 0px; color: var(--text-main);">Kinerja Kecepatan Tinggi (FPS)</h3>
@@ -60,7 +60,7 @@
                     <!-- Feature 5 -->
                     <div class="swiper-slide" style="height: auto;">
                         <div class="glass-card premium-feature-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; height: 100%; border: 1px solid transparent;">
-                            <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--secondary); box-shadow: 0 10px 25px var(--secondary-glow); background: rgba(79, 70, 229, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                            <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--secondary); box-shadow: 0 10px 25px var(--secondary-glow); background: rgba(56, 189, 248, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
                                 <i class="fa-solid fa-mobile-screen-button" style="font-size: 32px; color: var(--secondary);"></i>
                             </div>
                             <h3 class="feature-title" style="font-size: 20px; font-weight: 800; margin-bottom: 0px; color: var(--text-main);">Desain Responsif & Adaptif</h3>

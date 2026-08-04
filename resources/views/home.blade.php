@@ -262,7 +262,7 @@
 
                 <!-- Card 2: Joki Tugas Coding Kuliah -->
                 <div class="glass-card premium-feature-card" style="padding: 40px 30px; text-align: left; display: flex; flex-direction: column; border: 1px solid transparent; height: 100%;">
-                    <div class="feature-icon" style="width: 60px; height: 60px; border-radius: 16px; border: 2px solid var(--secondary); box-shadow: 0 5px 15px var(--secondary-glow); background: rgba(79, 70, 229, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <div class="feature-icon" style="width: 60px; height: 60px; border-radius: 16px; border: 2px solid var(--secondary); box-shadow: 0 5px 15px var(--secondary-glow); background: rgba(56, 189, 248, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
                         <i class="fa-solid fa-graduation-cap" style="font-size: 24px; color: var(--secondary);"></i>
                     </div>
                     <h3 class="feature-title" style="font-size: 18px; font-weight: 800; margin-bottom: 12px; color: var(--text-main);">Joki Tugas Programming</h3>
@@ -454,7 +454,7 @@
 
                     <!-- Feature 2 -->
                     <div class="glass-card premium-feature-card" style="padding: 40px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; border: 1px solid transparent;">
-                        <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--secondary); box-shadow: 0 10px 25px var(--secondary-glow); background: rgba(79, 70, 229, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                        <div class="feature-icon" style="width: 80px; height: 80px; border-radius: 20px; border: 2px solid var(--secondary); box-shadow: 0 10px 25px var(--secondary-glow); background: rgba(56, 189, 248, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
                             <i class="fa-solid fa-gauge-high" style="font-size: 32px; color: var(--secondary);"></i>
                         </div>
                         <h3 class="feature-title" style="font-size: 20px; font-weight: 800; margin-bottom: 15px; color: var(--text-main);">Ultra Performance</h3>

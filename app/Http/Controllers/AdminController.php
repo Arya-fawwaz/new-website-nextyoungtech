@@ -204,7 +204,7 @@ class AdminController extends Controller
                     }
                     .header-table {
                         width: 100%;
-                        border-bottom: 3px double #4f46e5;
+                        border-bottom: 3px double #0ea5e9;
                         margin-bottom: 30px;
                         padding-bottom: 10px;
                     }
@@ -216,12 +216,12 @@ class AdminController extends Controller
                     }
                     .subtitle {
                         font-size: 14px;
-                        color: #4f46e5;
+                        color: #0ea5e9;
                         font-weight: bold;
                         margin: 5px 0 0 0;
                     }
                     h2 {
-                        color: #4f46e5;
+                        color: #0ea5e9;
                         border-bottom: 1px solid #cbd5e1;
                         padding-bottom: 5px;
                         margin-top: 30px;
@@ -244,7 +244,7 @@ class AdminController extends Controller
                     }
                     .content-box {
                         background-color: #f8fafc;
-                        border-left: 4px solid #4f46e5;
+                        border-left: 4px solid #0ea5e9;
                         padding: 15px;
                         margin-bottom: 20px;
                         font-size: 13px;
@@ -316,7 +316,7 @@ class AdminController extends Controller
                     </tr>
                     <tr>
                         <td class="label">Estimasi Nilai Proyek</td>
-                        <td style="font-weight: bold; color: #4f46e5;">Rp ' . number_format($quote->estimasi_harga, 0, ',', '.') . '</td>
+                        <td style="font-weight: bold; color: #0ea5e9;">Rp ' . number_format($quote->estimasi_harga, 0, ',', '.') . '</td>
                     </tr>
                 </table>
 
@@ -547,7 +547,7 @@ class AdminController extends Controller
                     $html .= '<style>';
                     $html .= 'body { font-family: "Segoe UI", Arial, sans-serif; background-color: #ffffff; }';
                     $html .= 'table.main-table { border-collapse: collapse; width: 100%; margin-top: 10px; }';
-                    $html .= 'table.main-table th { background-color: #4f46e5; color: #ffffff; font-weight: bold; text-align: left; padding: 12px 10px; font-size: 13px; border: 1px solid #cbd5e1; text-transform: uppercase; }';
+                    $html .= 'table.main-table th { background-color: #0ea5e9; color: #ffffff; font-weight: bold; text-align: left; padding: 12px 10px; font-size: 13px; border: 1px solid #cbd5e1; text-transform: uppercase; }';
                     $html .= 'table.main-table td { padding: 10px; border: 1px solid #cbd5e1; font-size: 12px; color: #334155; vertical-align: middle; }';
                     $html .= 'table.main-table tr.even-row { background-color: #f8fafc; }';
                     $html .= '.report-title { font-size: 20px; font-weight: 800; color: #1e1b4b; margin: 0; }';
@@ -568,7 +568,7 @@ class AdminController extends Controller
                     $html .= '<br>';
                     
                     $html .= '<table class="summary-table">';
-                    $html .= '<tr><td class="summary-label">Total Potensi Omset:</td><td class="summary-value" style="color: #4f46e5;">Rp ' . number_format($totalVal, 0, ',', '.') . '</td></tr>';
+                    $html .= '<tr><td class="summary-label">Total Potensi Omset:</td><td class="summary-value" style="color: #0ea5e9;">Rp ' . number_format($totalVal, 0, ',', '.') . '</td></tr>';
                     $html .= '<tr><td class="summary-label">Total Proyek:</td><td class="summary-value">' . $count . ' Proyek</td></tr>';
                     $html .= '<tr><td class="summary-label">Status Tertunda:</td><td class="summary-value" style="color: #b91c1c;">' . $pendingCount . ' Proyek</td></tr>';
                     $html .= '<tr><td class="summary-label">Status Diulas:</td><td class="summary-value" style="color: #4338ca;">' . $reviewedCount . ' Proyek</td></tr>';
@@ -617,7 +617,7 @@ class AdminController extends Controller
                     $html .= '<tfoot>';
                     $html .= '<tr style="background-color: #f1f5f9; font-weight: bold;">';
                     $html .= '<td colspan="4" style="text-align: right; font-weight: bold; border: 1px solid #cbd5e1; padding: 10px;">TOTAL KESELURUHAN</td>';
-                    $html .= '<td style="text-align: right; font-weight: bold; color: #4f46e5; border: 1px solid #cbd5e1; padding: 10px;">Rp ' . number_format($totalVal, 0, ',', '.') . '</td>';
+                    $html .= '<td style="text-align: right; font-weight: bold; color: #0ea5e9; border: 1px solid #cbd5e1; padding: 10px;">Rp ' . number_format($totalVal, 0, ',', '.') . '</td>';
                     $html .= '<td style="text-align: center; font-weight: bold; color: #0f172a; border: 1px solid #cbd5e1; padding: 10px;">' . $count . ' Proyek</td>';
                     $html .= '<td colspan="2" style="border: 1px solid #cbd5e1; padding: 10px;"></td>';
                     $html .= '</tr>';

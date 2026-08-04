@@ -58,7 +58,7 @@ function initThreeParticles() {
     const colors = new Float32Array(particleCount * 3);
 
     const colorPrimary = new THREE.Color('#00f2fe');
-    const colorSecondary = new THREE.Color('#9d4edd');
+    const colorSecondary = new THREE.Color('#38bdf8');
     const colorAccent = new THREE.Color('#ff007f');
 
     for (let i = 0; i < particleCount; i++) {

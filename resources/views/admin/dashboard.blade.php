@@ -21,16 +21,16 @@
         /* Shadow Premium */
         --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
         --shadow-md: 0 10px 30px -10px rgba(0,0,0,0.08);
-        --shadow-hover: 0 20px 40px -10px rgba(79, 70, 229, 0.15);
+        --shadow-hover: 0 20px 40px -10px rgba(14, 165, 233, 0.15);
         
         /* Warna Aksen Tech */
-        --primary: #4f46e5;
-        --primary-glow: rgba(79, 70, 229, 0.15);
-        --secondary: #0ea5e9;
+        --primary: #0ea5e9;
+        --primary-glow: rgba(14, 165, 233, 0.15);
+        --secondary: #38bdf8;
         --accent: #f43f5e;
         --success: #10b981;
         --warning: #f59e0b;
-        --grid-color: rgba(79, 70, 229, 0.03);
+        --grid-color: rgba(14, 165, 233, 0.03);
     }
 
     [data-theme="dark"] {
@@ -45,11 +45,11 @@
         
         --shadow-sm: 0 2px 4px rgba(0,0,0,0.5);
         --shadow-md: 0 10px 30px -10px rgba(0,0,0,0.8);
-        --shadow-hover: 0 20px 40px -10px rgba(99, 102, 241, 0.35);
+        --shadow-hover: 0 20px 40px -10px rgba(14, 165, 233, 0.35);
         
-        --primary: #6366f1;
-        --primary-glow: rgba(99, 102, 241, 0.25);
-        --grid-color: rgba(99, 102, 241, 0.05);
+        --primary: #0ea5e9;
+        --primary-glow: rgba(14, 165, 233, 0.25);
+        --grid-color: rgba(14, 165, 233, 0.05);
     }
 
     /* Reset Dasar */
@@ -209,7 +209,7 @@
     .badge-status { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
     .badge-pending { background: rgba(245, 158, 11, 0.1); color: var(--warning); border: 1px solid rgba(245, 158, 11, 0.3); }
     .badge-approved { background: rgba(16, 185, 129, 0.1); color: var(--success); border: 1px solid rgba(16, 185, 129, 0.3); }
-    .badge-primary { background: var(--primary-glow); color: var(--primary); border: 1px solid rgba(79, 70, 229, 0.3); }
+    .badge-primary { background: var(--primary-glow); color: var(--primary); border: 1px solid rgba(14, 165, 233, 0.3); }
 
     /* Tombol Tema (Dark/Light) */
     .theme-toggle-btn {
@@ -996,7 +996,7 @@
                 <div>
                     <label style="font-size:12px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Warna Aksen</label>
                     <select name="warna_aksen" class="form-control-glass" style="cursor: pointer; font-weight:600;">
-                        <option value="primary">Indigo / Primary</option>
+                        <option value="primary">Blue / Primary</option>
                         <option value="secondary">Sky Blue / Secondary</option>
                         <option value="accent">Rose Red / Accent</option>
                         <option value="success">Green / Success</option>
@@ -1070,7 +1070,7 @@
                 <div>
                     <label style="font-size:12px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Warna Aksen</label>
                     <select name="warna_aksen" id="editInputWarna" class="form-control-glass" style="cursor: pointer; font-weight:600;">
-                        <option value="primary">Indigo / Primary</option>
+                        <option value="primary">Blue / Primary</option>
                         <option value="secondary">Sky Blue / Secondary</option>
                         <option value="accent">Rose Red / Accent</option>
                         <option value="success">Green / Success</option>
@@ -1564,7 +1564,7 @@
                 }
             }
             draw() {
-                const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || '#6366f1';
+                const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || '#0ea5e9';
                 ctx.fillStyle = primaryColor;
                 ctx.globalAlpha = this.alpha;
                 ctx.beginPath();
@@ -1584,8 +1584,8 @@
             ctx.clearRect(0, 0, width, height);
             
             // Ambil warna tema aktual secara dinamis (mendukung perubahan dark/light mode instant)
-            const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || '#6366f1';
-            const secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary').trim() || '#0ea5e9';
+            const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || '#0ea5e9';
+            const secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary').trim() || '#38bdf8';
             
             time += 0.0025;
             
