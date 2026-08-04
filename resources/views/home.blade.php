@@ -70,29 +70,32 @@
                     <div class="swiper-wrapper">
                         @foreach($ulasan as $review)
                             <div class="swiper-slide" style="display: flex; justify-content: center; height: auto;">
-                                <div class="glass-card testimonial-card" style="width: 100%; max-width: 380px; padding: 25px; border-radius: 12px; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between; text-align: left; transition: transform 0.3s ease, border-color 0.3s ease; background: var(--bg-card); backdrop-filter: blur(10px); height: 100%;">
+                                <div class="testimonial-card" style="width: 100%; max-width: 440px; display: flex; flex-direction: column; justify-content: space-between; text-align: left; height: 100%;">
                                     
-                                    <!-- Header: Stars and Comment -->
+                                    <!-- Header: Stars and Rating Badge -->
                                     <div>
-                                        <!-- Star Rating -->
-                                        <div style="display: flex; gap: 4px; margin-bottom: 12px; color: #ffb703; filter: drop-shadow(0 0 4px rgba(255, 183, 3, 0.6));">
-                                            @for($i = 1; $i <= 5; $i++)
-                                                @if($i <= $review->bintang)
-                                                    <i class="fa-solid fa-star" style="font-size: 14px;"></i>
-                                                @else
-                                                    <i class="fa-regular fa-star" style="font-size: 14px;"></i>
-                                                @endif
-                                            @endfor
+                                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px;">
+                                            <!-- Star Rating -->
+                                            <div style="display: flex; gap: 6px; color: #ffb703; filter: drop-shadow(0 2px 6px rgba(255, 183, 3, 0.4));">
+                                                @for($i = 1; $i <= 5; $i++)
+                                                    @if($i <= $review->bintang)
+                                                        <i class="fa-solid fa-star" style="font-size: 18px;"></i>
+                                                    @else
+                                                        <i class="fa-regular fa-star" style="font-size: 18px;"></i>
+                                                    @endif
+                                                @endfor
+                                            </div>
+                                            <span style="font-size: 11px; font-weight: 800; color: #ffb703; background: rgba(255, 183, 3, 0.12); padding: 5px 12px; border-radius: 20px; border: 1px solid rgba(255, 183, 3, 0.3); letter-spacing: 0.5px;">{{ number_format($review->bintang, 1) }} / 5.0</span>
                                         </div>
                                         
-                                        <!-- Comment Text -->
-                                        <p style="font-size: 13px; line-height: 1.6; color: var(--text-main); opacity: 0.85; font-style: italic; margin-bottom: 20px;">
+                                        <!-- Comment Text (LARGE, BOLD, MENCOLOK) -->
+                                        <p class="testimonial-text">
                                             "{{ $review->komentar }}"
                                         </p>
                                     </div>
 
                                     <!-- Footer: User Info -->
-                                    <div style="display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: auto;">
+                                    <div style="display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--border-color); padding-top: 20px; margin-top: auto;">
                                         @php
                                             $userAvatarUrl = $review->pengguna ? $review->pengguna->foto_profil_url : $review->foto_profil_url;
                                             $userName = $review->pengguna && $review->pengguna->nama ? $review->pengguna->nama : $review->nama;
@@ -100,16 +103,16 @@
                                         @endphp
                                         
                                         @if($hasAvatar)
-                                            <img src="{{ $userAvatarUrl }}" alt="{{ $userName }}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--primary); box-shadow: 0 0 8px var(--primary-glow);">
+                                            <img src="{{ $userAvatarUrl }}" alt="{{ $userName }}" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary); box-shadow: 0 0 12px var(--primary-glow);">
                                         @else
-                                            <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(128, 128, 128, 0.05); display: flex; align-items: center; justify-content: center; border: 1px solid var(--dashed-border);">
-                                                <i class="fa-solid fa-user-tie" style="font-size: 18px; color: var(--primary); text-shadow: 0 0 6px var(--primary-glow);"></i>
+                                            <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(37, 99, 235, 0.08); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(37, 99, 235, 0.25);">
+                                                <i class="fa-solid fa-user-tie" style="font-size: 20px; color: var(--primary);"></i>
                                             </div>
                                         @endif
 
                                         <div>
-                                            <h4 style="font-size: 13px; font-weight: 700; color: var(--text-main); margin: 0;">{{ $userName }}</h4>
-                                            <span style="font-size: 11px; color: var(--text-dark); opacity: 0.6;"><i class="fa-solid fa-shield-halved"></i> Klien Terverifikasi</span>
+                                            <h4 class="testimonial-author-name">{{ $userName }}</h4>
+                                            <span style="font-size: 12px; font-weight: 600; color: var(--primary); display: inline-flex; align-items: center; gap: 5px;"><i class="fa-solid fa-circle-check"></i> Klien Terverifikasi Next Young Tech</span>
                                         </div>
                                     </div>
                                 </div>
@@ -154,10 +157,53 @@
             display: none;
         }
 
+        .testimonial-card {
+            background: #ffffff !important;
+            border: 1px solid #e2e8f0 !important;
+            border-top: 3px solid var(--primary) !important;
+            border-radius: 24px !important;
+            padding: 36px 32px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        html[data-theme="dark"] .testimonial-card {
+            background: var(--bg-card) !important;
+            border-color: var(--border-color) !important;
+            border-top-color: var(--primary) !important;
+        }
         .testimonial-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary) !important;
-            box-shadow: 0 5px 15px var(--primary-glow);
+            transform: translateY(-6px) !important;
+            border-color: rgba(37, 99, 235, 0.45) !important;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12) !important;
+        }
+        .testimonial-text {
+            font-size: 18px !important;
+            font-weight: 700 !important;
+            color: #0f172a !important;
+            line-height: 1.55 !important;
+            margin-bottom: 28px !important;
+            letter-spacing: -0.2px !important;
+            font-style: normal !important;
+        }
+        html[data-theme="dark"] .testimonial-text {
+            color: var(--text-main) !important;
+        }
+        .testimonial-author-name {
+            font-size: 16px !important;
+            font-weight: 800 !important;
+            color: #0f172a !important;
+            margin: 0 0 4px 0 !important;
+        }
+        html[data-theme="dark"] .testimonial-author-name {
+            color: var(--text-main) !important;
+        }
+        @media (max-width: 640px) {
+            .testimonial-card {
+                padding: 28px 24px !important;
+            }
+            .testimonial-text {
+                font-size: 16px !important;
+            }
         }
 
         @media (max-width: 768px) {
