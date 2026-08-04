@@ -79,6 +79,7 @@
     .bw-info-section-wrapper {
         display: flex;
         flex-direction: column;
+    }
     .bw-section-heading,
     .bw-mgmt-heading {
         margin-bottom: 36px;
