@@ -24,13 +24,13 @@
         --shadow-hover: 0 20px 40px -10px rgba(14, 165, 233, 0.15);
         
         /* Warna Aksen Tech */
-        --primary: #0284c7;
-        --primary-glow: rgba(2, 132, 199, 0.15);
-        --secondary: #0ea5e9;
+        --primary: #0ea5e9;
+        --primary-glow: rgba(14, 165, 233, 0.15);
+        --secondary: #38bdf8;
         --accent: #f43f5e;
         --success: #10b981;
         --warning: #f59e0b;
-        --grid-color: rgba(2, 132, 199, 0.03);
+        --grid-color: rgba(14, 165, 233, 0.03);
     }
 
     [data-theme="dark"] {
