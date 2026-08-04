@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Next Young Tech - Corporate Identity Business Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Orbitron:wght@700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
+
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            background: #cbd5e1;
+            font-family: 'Plus Jakarta Sans', 'Montserrat', sans-serif;
+            width: 210mm;
+            height: 297mm;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+            padding: 30px 0;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .page-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 23px;
+            font-weight: 900;
+            color: #0f172a;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .page-header p {
+            font-size: 13.5px;
+            color: #475569;
+            font-weight: 600;
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Business Card Base Dimensions (900x514px scaled for A4 Display) */
+        .card {
+            width: 900px;
+            height: 514px;
+            background: #0f172a;
+            border-radius: 4px;
+            box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.45), 0 15px 30px -10px rgba(15, 23, 42, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* =========================================================
+           1. TOP CARD: FRONT (TOP-LEFT ASYMMETRICAL V-SHAPE - EXACT TO PHOTO)
+           ========================================================= */
+        .card-front {
+            background: #ffffff;
+        }
+
+        .front-bg-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Centered Content */
+        .front-center-content {
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            left: 40%; /* Centered in the dark chevron */
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 400px;
+        }
+
+        .front-center-logo {
+            width: 140px; 
+            height: auto;
+            margin-bottom: 25px;
+            filter: drop-shadow(0px 8px 15px rgba(0, 153, 255, 0.4));
+        }
+
+        .front-company-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 38px;
+            color: #ffffff;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .front-company-slogan {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: #00b3cc;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* =========================================================
+           2. BOTTOM CARD: BACK (CONTACT SIDE - "UNTUK SLIDE 2 TETEP SAMA")
+           ========================================================= */
+        .card-back {
+            background: #ffffff;
+        }
+
+        .back-bg-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Left Side Dark Navy Chevron Area Content */
+        .back-left-chevron-content {
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            left: 55px;
+            width: 250px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-right: 0px;
+        }
+
+        .back-logo-img {
+            width: 95px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 6px 18px rgba(14, 165, 233, 0.7));
+            margin-bottom: 12px;
+        }
+
+        .back-logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 21px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+        }
+
+        .back-logo-subtext {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        /* Right Side: President Director Name & Corporate Contacts */
+        .back-right-content {
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            left: 485px;
+            width: 385px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        /* PRESIDENT DIRECTOR NAME */
+        .president-section {
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .president-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 29px;
+            font-weight: 900;
+            color: #0f172a;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            line-height: 1.15;
+        }
+
+        .president-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+            color: #475569;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-top: 6px;
+        }
+
+        .president-underline {
+            width: 175px;
+            height: 4px;
+            background: #0ea5e9;
+            margin-top: 10px;
+            border-radius: 2px;
+        }
+
+        /* Contact Details List */
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
+            width: 100%;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-icon-box {
+            width: 38px;
+            height: 38px;
+            background: #0f172a;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
+            border: 1px solid rgba(14, 165, 233, 0.4);
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #1e293b;
+            letter-spacing: 0.3px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================
+         1. TOP CARD: FRONT (TOP-LEFT ASYMMETRICAL V-SHAPE WITH RAISED LINES)
+         ========================================================== -->
+    <div class="card card-front">
+        <svg width="0" height="0" style="position: absolute;">
+            <defs>
+                <linearGradient id="navyBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0b1329" />
+                    <stop offset="100%" stop-color="#0f172a" />
+                </linearGradient>
+                <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0ea5e9" />
+                    <stop offset="100%" stop-color="#0284c7" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <svg class="front-bg-svg" viewBox="0 0 900 514" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <!-- Base White Background -->
+            <rect x="0" y="0" width="900" height="514" fill="#ffffff" />
+            <!-- RIGHT-POINTING CHEVRON ARROW -->
+            <!-- 1. Outer Light Cyan Arrow Layer -->
+            <polygon points="0,0 700,0 900,257 700,514 0,514" fill="#bae6fd" />
+            <!-- 2. Middle Vibrant Sky Blue Arrow Layer -->
+            <polygon points="0,0 660,0 860,257 660,514 0,514" fill="url(#skyGrad)" />
+            <!-- 3. Dark Blue Inner Edge Layer -->
+            <polygon points="0,0 620,0 820,257 620,514 0,514" fill="#0369a1" />
+            <!-- 4. Main Cyberpunk Dark Navy Area (where logo sits) -->
+            <polygon points="0,0 580,0 780,257 580,514 0,514" fill="url(#navyBgGrad)" />
+        </svg>
+        
+        <!-- Centered Logo & Text -->
+        <div class="front-center-content">
+            <img src="public/images/logo-n-trans.png" alt="Next Young Tech Logo" class="front-center-logo">
+            <div class="front-company-name">NEXT YOUNG TECH</div>
+            <div class="front-company-slogan">DIGITAL MASTERPIECE • WEB 3D</div>
+        </div>
+    </div>
+
+
+    <!-- ==========================================================
+         2. BOTTOM CARD: BACK (CONTACT SIDE - "UNTUK SLIDE 2 TETEP SAMA")
+         ========================================================== -->
+    <div class="card card-back">
+        <svg class="back-bg-svg" viewBox="0 0 900 514" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <!-- Base Pure White Background -->
+            <rect x="0" y="0" width="900" height="514" fill="#ffffff" />
+
+            <!-- LAYERED RIGHT-POINTING CHEVRON ARROW ON LEFT -->
+            <!-- 1. Outer Light Cyan Arrow Shadow -->
+            <polygon points="0,0 255,0 455,257 235,514 0,514" fill="#bae6fd" />
+            <!-- 2. Middle Vibrant Sky Blue Arrow Layer -->
+            <polygon points="0,0 235,0 435,257 215,514 0,514" fill="url(#skyGrad)" />
+            <!-- 3. Dark Blue Inner Edge Layer -->
+            <polygon points="0,0 215,0 415,257 195,514 0,514" fill="#0369a1" />
+            <!-- 4. Main Cyberpunk Dark Navy Right-Pointing Arrow -->
+            <polygon points="0,0 195,0 395,257 175,514 0,514" fill="url(#navyBgGrad)" />
+        </svg>
+
+        <!-- Left Side Dark Navy Chevron Content -->
+        <div class="back-left-chevron-content">
+            <img src="public/images/logo-n-trans.png" alt="Next Young Tech Logo" class="back-logo-img">
+            <div class="back-logo-text">NEXT YOUNG TECH</div>
+            <div class="back-logo-subtext">DIGITAL MASTERPIECE • WEB 3D</div>
+        </div>
+
+        <!-- Right Side: NAZHMI DWIPUTRA EFENDI & Corporate Contacts -->
+        <div class="back-right-content">
+            <div class="president-section">
+                <div class="president-name">NAZHMI DWIPUTRA EFENDI</div>
+                <div class="president-title">President Director</div>
+                <div class="president-underline"></div>
+            </div>
+
+            <div class="contact-list">
+                <!-- Row 1: Phone / WhatsApp -->
+                <div class="contact-item">
+                    <div class="contact-icon-box">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <div class="contact-text">+62 888-1023-038</div>
+                </div>
+
+                <!-- Row 2: Email -->
+                <div class="contact-item">
+                    <div class="contact-icon-box">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                    <div class="contact-text">nextyoungtechnology@gmail.com</div>
+                </div>
+
+                <!-- Row 3: Address / Location -->
+                <div class="contact-item">
+                    <div class="contact-icon-box">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="contact-text">Kota Bekasi, Indonesia • Southeast Asia</div>
+                </div>
+
+                <!-- Row 4: Official Portal -->
+                <div class="contact-item">
+                    <div class="contact-icon-box">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <ellipse cx="12" cy="12" rx="4" ry="10"></ellipse>
+                        </svg>
+                    </div>
+                    <div class="contact-text">www.nextyoungtech.com</div>
+                </div>
+
+                <!-- Row 5: Instagram -->
+                <div class="contact-item">
+                    <div class="contact-icon-box">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </div>
+                    <div class="contact-text">@nextyoungtech</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

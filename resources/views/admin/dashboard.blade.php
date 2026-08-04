@@ -178,7 +178,7 @@
     .admin-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 35px; }
     .stat-card-premium {
         border-radius: 12px; padding: 30px;
-        background: #ffffff !important; color: var(--primary) !important; position: relative; overflow: hidden;
+        background: #ffffff !important; color: var(--text-main) !important; position: relative; overflow: hidden;
         border: 1px solid var(--border-color) !important;
         box-shadow: 0 4px 24px rgba(0,0,0,0.04) !important;
         transition: transform 0.2s ease, border-color 0.2s ease;
@@ -467,6 +467,9 @@
             <li class="admin-menu-item" id="menu-btn-services">
                 <button onclick="switchAdminTab('services')"><i class="fa-solid fa-cubes"></i> Kelola Layanan</button>
             </li>
+            <li class="admin-menu-item" id="menu-btn-portofolio">
+                <button onclick="switchAdminTab('portofolio')"><i class="fa-solid fa-briefcase"></i> Kelola Portofolio</button>
+            </li>
             <li class="admin-menu-item" id="menu-btn-quotes">
                 <button onclick="switchAdminTab('quotes')"><i class="fa-solid fa-file-invoice"></i> Pesanan Proyek</button>
             </li>
@@ -681,6 +684,68 @@
                                                     <form action="{{ route('admin.service.delete', $lay->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus layanan ini dari database?')" style="margin: 0;">
                                                         @csrf
                                                         <button type="submit" style="background: rgba(244, 63, 94, 0.1); color: var(--accent); border: 1px solid rgba(244, 63, 94, 0.3); padding: 8px 14px; border-radius: 8px; cursor:pointer; font-weight:700; transition: 0.2s;" onmouseover="this.style.background='var(--accent)'; this.style.color='#fff';" onmouseout="this.style.background='rgba(244, 63, 94, 0.1)'; this.style.color='var(--accent)';"><i class="fa-solid fa-trash"></i></button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    @endif
+                </div>
+            </div>
+
+            <!-- SECTION 2.5: PORTOFOLIO (CRUD) -->
+            <div id="admin-section-portofolio" class="tab-section">
+                <div class="glass-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 15px;">
+                        <h3 style="font-size: 20px; font-weight: 800; color: var(--text-main); margin: 0;"><i class="fa-solid fa-briefcase" style="color: var(--primary); margin-right: 10px;"></i> Kelola Portofolio</h3>
+                        <div style="display: flex; gap: 10px;">
+                            <button onclick="openAddPortofolioModal()" style="background: var(--primary); color: white; padding: 12px 22px; border: none; border-radius: 12px; font-weight: 700; font-size: 14px; cursor: pointer; box-shadow: 0 4px 15px var(--primary-glow); transition: 0.3s; display: flex; align-items: center; gap: 8px;">
+                                <i class="fa-solid fa-plus"></i> Tambah Portofolio
+                            </button>
+                        </div>
+                    </div>
+
+                    @if(empty($portofolios) || count($portofolios) === 0)
+                        <div style="text-align: center; padding: 60px 0; color: var(--text-muted); background: var(--bg-body); border-radius: 16px; border: 2px dashed var(--border-color);">
+                            <i class="fa-solid fa-folder-open" style="font-size: 48px; margin-bottom: 15px; opacity: 0.5;"></i>
+                            <p style="font-size: 15px; font-weight: 600;">Belum ada data portofolio yang tersimpan.</p>
+                        </div>
+                    @else
+                        <div style="overflow-x: auto;">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Judul</th>
+                                        <th>Framework</th>
+                                        <th>Informasi / Caption</th>
+                                        <th>Link Proyek</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($portofolios as $port)
+                                        <tr>
+                                            <td><strong style="font-size: 15px;">{{ $port->judul }}</strong></td>
+                                            <td>{{ $port->framework ?: '-' }}</td>
+                                            <td>
+                                                <span style="font-size: 12px; color: var(--text-muted); display: block; max-width: 250px;">{{ \Illuminate\Support\Str::limit($port->informasi ?? $port->caption, 60) }}</span>
+                                            </td>
+                                            <td>
+                                                @if($port->link)
+                                                    <a href="{{ $port->link }}" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; font-size: 13px;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Kunjungi</a>
+                                                @else
+                                                    <span style="color: var(--text-muted); font-size: 12px;">-</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <div style="display: flex; gap: 8px;">
+                                                    <button onclick="openEditPortofolioModal('{{ $port->id }}', '{{ addslashes($port->judul) }}', '{{ addslashes($port->link) }}', '{{ addslashes($port->caption) }}', '{{ addslashes(str_replace([\"\r\", \"\n\"], ' ', $port->informasi)) }}', '{{ addslashes($port->framework) }}')" style="background: rgba(245, 158, 11, 0.1); color: var(--warning); border: 1px solid rgba(245, 158, 11, 0.3); padding: 8px 14px; border-radius: 8px; cursor:pointer; font-weight:700; transition: 0.2s;"><i class="fa-solid fa-pen"></i></button>
+                                                    <form action="{{ route('admin.portofolio.delete', $port->id) }}" method="POST" onsubmit="return confirm('Yakin hapus portofolio ini?')" style="margin: 0;">
+                                                        @csrf
+                                                        <button type="submit" style="background: rgba(244, 63, 94, 0.1); color: var(--accent); border: 1px solid rgba(244, 63, 94, 0.3); padding: 8px 14px; border-radius: 8px; cursor:pointer; font-weight:700; transition: 0.2s;"><i class="fa-solid fa-trash"></i></button>
                                                     </form>
                                                 </div>
                                             </td>
@@ -1169,9 +1234,47 @@
     </div>
 </div>
 
+<!-- ==========================================================================
+     MODAL PORTOFOLIO: TAMBAH / EDIT DATA
+     ========================================================================== -->
+<div id="portofolioModal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="btn-close-modal" onclick="closeModal('portofolioModal')" style="position: absolute; right: 25px; top: 25px; background: var(--hover-bg); border: none; width: 36px; height: 36px; border-radius: 50%; color: var(--text-main); font-size: 16px; cursor: pointer; transition: 0.2s;"><i class="fa-solid fa-xmark"></i></button>
+        
+        <h3 id="portofolioModalTitle" style="margin: 0 0 30px 0; font-size: 24px; font-weight: 800; color: var(--text-main); border-bottom: 2px solid var(--border-color); padding-bottom: 15px;">Tambah Portofolio</h3>
+        
+        <form id="portofolioForm" action="{{ route('admin.portofolio.store') }}" method="POST">
+            @csrf
+            <div style="margin-bottom: 20px;">
+                <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:8px;">Judul Proyek</label>
+                <input type="text" id="portoInputJudul" name="judul" class="form-control-glass" required>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:8px;">Link URL</label>
+                <input type="text" id="portoInputLink" name="link" class="form-control-glass">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:8px;">Caption Singkat</label>
+                <input type="text" id="portoInputCaption" name="caption" class="form-control-glass">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:8px;">Informasi Detail</label>
+                <textarea id="portoInputInformasi" name="informasi" class="form-control-glass" rows="4"></textarea>
+            </div>
+            <div style="margin-bottom: 30px;">
+                <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:8px;">Jenis Framework</label>
+                <input type="text" id="portoInputFramework" name="framework" class="form-control-glass" placeholder="Contoh: Laravel, ReactJS, PostgreSQL">
+            </div>
+            <button type="submit" style="width:100%; background: var(--primary); color:white; border:none; padding:16px; border-radius:12px; font-size: 15px; font-weight:800; cursor:pointer; box-shadow: 0 10px 20px var(--primary-glow); transition: 0.2s;">
+                <i class="fa-solid fa-check-double" style="margin-right: 8px;"></i> Simpan Data
+            </button>
+        </form>
+    </div>
+</div>
+
 <script>
     function switchAdminTab(tabName) {
-        const sections = ['overview', 'quotes', 'inquiries', 'users', 'services', 'pembukuan'];
+        const sections = ['overview', 'quotes', 'inquiries', 'users', 'services', 'pembukuan', 'portofolio'];
         sections.forEach(sec => {
             const sectionEl = document.getElementById('admin-section-' + sec);
             const btnEl = document.getElementById('menu-btn-' + sec);
@@ -1249,6 +1352,28 @@
     });
 
     // MODAL OPENERS
+    function openAddPortofolioModal() {
+        document.getElementById('portofolioForm').action = `{{ route('admin.portofolio.store') }}`;
+        document.getElementById('portofolioModalTitle').innerText = 'Tambah Portofolio';
+        document.getElementById('portoInputJudul').value = '';
+        document.getElementById('portoInputLink').value = '';
+        document.getElementById('portoInputCaption').value = '';
+        document.getElementById('portoInputInformasi').value = '';
+        document.getElementById('portoInputFramework').value = '';
+        document.getElementById('portofolioModal').classList.add('show');
+    }
+
+    function openEditPortofolioModal(id, judul, link, caption, informasi, framework) {
+        document.getElementById('portofolioForm').action = `/admin/portofolio/${id}/update`;
+        document.getElementById('portofolioModalTitle').innerText = 'Edit Portofolio';
+        document.getElementById('portoInputJudul').value = judul;
+        document.getElementById('portoInputLink').value = link;
+        document.getElementById('portoInputCaption').value = caption;
+        document.getElementById('portoInputInformasi').value = informasi;
+        document.getElementById('portoInputFramework').value = framework;
+        document.getElementById('portofolioModal').classList.add('show');
+    }
+
     function openAddServiceModal() {
         document.getElementById('addServiceModal').classList.add('show');
     }

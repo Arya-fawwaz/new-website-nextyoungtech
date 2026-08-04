@@ -8,6 +8,7 @@ use App\Models\QuotationRequest;
 use App\Models\Layanan;
 use App\Models\User;
 use App\Models\Ulasan;
+use App\Models\Portofolio;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -62,6 +63,7 @@ class AdminController extends Controller
         $layanan = Layanan::orderBy('urutan')->get();
         $users = User::latest()->get();
         $reviews = Ulasan::latest()->get();
+        $portofolios = Portofolio::latest()->get();
 
         $totalEstimatedValue = QuotationRequest::sum('estimasi_harga');
         $totalInquiries = Inquiry::where('status', '!=', 'completed')->count();
@@ -74,6 +76,7 @@ class AdminController extends Controller
             'layanan',
             'users',
             'reviews',
+            'portofolios',
             'totalEstimatedValue',
             'totalInquiries',
             'totalQuotations',
@@ -821,6 +824,61 @@ class AdminController extends Controller
         QuotationRequest::truncate();
 
         return redirect()->route('admin.dashboard')->with('success', 'Pembukuan periode berjalan berhasil ditutup! Semua data inquiry dan penawaran aktif telah di-reset kembali ke nol.');
+    }
+
+    // ==========================================
+    // CRUD PORTOFOLIO ADMIN
+    // ==========================================
+    public function storePortofolio(Request $request)
+    {
+        if (!session('admin_logged_in')) {
+            return redirect()->route('admin.login');
+        }
+
+        $validated = $request->validate([
+            'judul' => 'required|string|max:255',
+            'link' => 'nullable|string|max:255',
+            'caption' => 'nullable|string|max:255',
+            'informasi' => 'nullable|string',
+            'framework' => 'nullable|string|max:255',
+        ]);
+
+        Portofolio::create($validated);
+
+        return redirect()->back()->with('success', 'Portofolio baru berhasil ditambahkan.');
+    }
+
+    public function updatePortofolio(Request $request, $id)
+    {
+        if (!session('admin_logged_in')) {
+            return redirect()->route('admin.login');
+        }
+
+        $portofolio = Portofolio::findOrFail($id);
+
+        $validated = $request->validate([
+            'judul' => 'required|string|max:255',
+            'link' => 'nullable|string|max:255',
+            'caption' => 'nullable|string|max:255',
+            'informasi' => 'nullable|string',
+            'framework' => 'nullable|string|max:255',
+        ]);
+
+        $portofolio->update($validated);
+
+        return redirect()->back()->with('success', 'Data portofolio berhasil diperbarui.');
+    }
+
+    public function deletePortofolio($id)
+    {
+        if (!session('admin_logged_in')) {
+            return redirect()->route('admin.login');
+        }
+
+        $portofolio = Portofolio::findOrFail($id);
+        $portofolio->delete();
+
+        return redirect()->back()->with('success', 'Portofolio berhasil dihapus dari sistem.');
     }
 }
 

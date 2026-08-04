@@ -62,6 +62,11 @@ Route::post('/admin/pengguna', [AdminController::class, 'storeUser'])->name('adm
 Route::post('/admin/pengguna/{id}/update', [AdminController::class, 'updateUser'])->name('admin.user.update');
 Route::post('/admin/pengguna/{id}/delete', [AdminController::class, 'deleteUser'])->name('admin.user.delete');
 
+// CRUD Portofolio Admin
+Route::post('/admin/portofolio', [AdminController::class, 'storePortofolio'])->name('admin.portofolio.store');
+Route::post('/admin/portofolio/{id}/update', [AdminController::class, 'updatePortofolio'])->name('admin.portofolio.update');
+Route::post('/admin/portofolio/{id}/delete', [AdminController::class, 'deletePortofolio'])->name('admin.portofolio.delete');
+
 // Ekspor Data
 Route::get('/admin/ekspor/{type}', [AdminController::class, 'exportCsv'])->name('admin.export');
 
