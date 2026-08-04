@@ -133,7 +133,7 @@
                     <!-- Panel: Ganti Password -->
                     <div class="glass-card" style="padding: 35px 40px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
                         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
-                            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(56, 189, 248, 0.1); color: var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 18px;">
+                            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(14, 165, 233, 0.1); color: var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 18px;">
                                 <i class="fa-solid fa-lock"></i>
                             </div>
                             <h3 style="font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--text-main); margin: 0;">Keamanan & Kata Sandi</h3>

@@ -470,7 +470,7 @@
     <header class="header">
         <div class="container nav-container">
             <a href="{{ route('home') }}" class="logo notranslate" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-                <img src="{{ asset('images/logo-n-trans.png') }}?v={{ time() }}" alt="Next Young Tech Logo" style="height: 38px; width: auto; filter: drop-shadow(0 2px 8px rgba(0, 242, 254, 0.5)); transition: transform 0.3s ease; object-fit: contain;">
+                <img src="{{ asset('images/logo-n-trans.png') }}?v={{ time() }}" alt="Next Young Tech Logo" style="height: 38px; width: auto; filter: drop-shadow(0 2px 8px rgba(14, 165, 233, 0.5)); transition: transform 0.3s ease; object-fit: contain;">
                 NEXT YOUNG <span>TECH</span>
             </a>
             

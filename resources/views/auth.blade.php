@@ -13,7 +13,7 @@
             <div class="glass-card" id="auth-card" style="padding: 40px 30px; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden;">
                 
                 <div class="text-center" style="margin-bottom: 25px;">
-                    <span class="section-badge" style="background: rgba(0, 242, 254, 0.1); border-color: rgba(0, 242, 254, 0.2); color: var(--primary); font-size: 11px;">PORTAL KEAMANAN AKUN</span>
+                    <span class="section-badge" style="background: rgba(14, 165, 233, 0.1); border-color: rgba(14, 165, 233, 0.2); color: var(--primary); font-size: 11px;">PORTAL KEAMANAN AKUN</span>
                     <h2 id="auth-title" style="font-family: var(--font-heading); color: var(--text-main); font-size: 26px; margin-top: 8px; font-weight: 800; letter-spacing: -0.5px; text-shadow: 0 0 10px rgba(255,255,255,0.1);">Selamat Datang</h2>
                     <p id="auth-desc" style="color: var(--text-muted); font-size: 13px; margin-top: 6px; line-height: 1.5;">Silakan masuk ke akun Anda atau daftarkan akun baru untuk menikmati mahakarya digital.</p>
                 </div>

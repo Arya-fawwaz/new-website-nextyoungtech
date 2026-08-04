@@ -9,8 +9,8 @@
     
     <style>
         :root {
-            --primary: #00f2fe;
-            --secondary: #38bdf8;
+            --primary: #0284c7;
+            --secondary: #0ea5e9;
             --accent: #06d6a0;
             --bg-dark: #0a0f1d;
             --text-main: #ffffff;
@@ -72,7 +72,7 @@
             width: 100%;
             max-width: 580px;
             padding: 40px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(56, 189, 248, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(14, 165, 233, 0.1);
             position: relative;
             z-index: 5;
             text-align: center;
@@ -82,8 +82,8 @@
         .icon-header {
             width: 70px;
             height: 70px;
-            background: rgba(56, 189, 248, 0.15);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: rgba(14, 165, 233, 0.15);
+            border: 1px solid rgba(14, 165, 233, 0.3);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -91,7 +91,7 @@
             margin: 0 auto 24px auto;
             color: var(--primary);
             font-size: 28px;
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+            box-shadow: 0 0 20px rgba(2, 132, 199, 0.2);
         }
 
         .title {
@@ -201,7 +201,7 @@
 
         .input-glass:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+            box-shadow: 0 0 15px rgba(2, 132, 199, 0.15);
             background: rgba(255, 255, 255, 0.06);
         }
 
@@ -216,7 +216,7 @@
             font-size: 15px;
             font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+            box-shadow: 0 0 25px rgba(14, 165, 233, 0.25);
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
@@ -227,7 +227,7 @@
 
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
+            box-shadow: 0 0 35px rgba(14, 165, 233, 0.35);
         }
 
         .btn-demo {
