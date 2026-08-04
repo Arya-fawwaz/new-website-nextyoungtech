@@ -9,8 +9,8 @@
     
     <style>
         :root {
-            --primary: #0284c7;
-            --secondary: #0ea5e9;
+            --primary: #0ea5e9;
+            --secondary: #38bdf8;
             --accent: #06d6a0;
             --bg-dark: #0a0f1d;
             --text-main: #ffffff;
