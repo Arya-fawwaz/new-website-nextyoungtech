@@ -10,7 +10,7 @@
        ========================================================== */
     :root {
         /* Light Mode - Elegan & Bersih */
-        --bg-body: #f8fafc;
+        --bg-body: #ffffff;
         --bg-panel: #ffffff;
         --bg-sidebar: #ffffff;
         --text-main: #0f172a;
@@ -58,7 +58,7 @@
         background-image: none !important;
         color: var(--text-main);
         transition: background-color 0.4s ease, color 0.4s ease;
-        font-family: 'Inter', 'Segoe UI', sans-serif;
+        font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     body, .admin-main-panel, .admin-sidebar-overlay {
@@ -83,78 +83,7 @@
 
     /* Mobile header styled directly in mobile media query */
 
-    /* Floating Glow Orbs for Futuristic Sci-Fi Ambient */
-    .glow-orb {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(100px);
-        opacity: 0.12;
-        pointer-events: none;
-        z-index: 1;
-        animation: floatGlow 20s infinite alternate ease-in-out;
-    }
-    [data-theme="dark"] .glow-orb {
-        opacity: 0.22;
-    }
 
-    /* Futuristic Cyber Radar Scanning Bar */
-    .cyber-scanner {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 6px;
-        background: linear-gradient(to right, transparent, var(--primary), var(--secondary), transparent);
-        opacity: 0.06;
-        pointer-events: none;
-        z-index: 2;
-        animation: cyberScan 14s infinite linear;
-    }
-    [data-theme="dark"] .cyber-scanner {
-        opacity: 0.12;
-    }
-    @keyframes cyberScan {
-        0% { transform: translateY(-50px); }
-        100% { transform: translateY(115vh); }
-    }
-    .glow-orb-1 {
-        width: 450px;
-        height: 450px;
-        background: radial-gradient(circle, var(--primary) 0%, transparent 80%);
-        top: -100px;
-        right: -100px;
-        animation-duration: 22s;
-    }
-    .glow-orb-2 {
-        width: 550px;
-        height: 550px;
-        background: radial-gradient(circle, var(--secondary) 0%, transparent 80%);
-        bottom: -150px;
-        left: -100px;
-        animation-duration: 30s;
-        animation-delay: -5s;
-    }
-    .glow-orb-3 {
-        width: 350px;
-        height: 350px;
-        background: radial-gradient(circle, var(--accent) 0%, transparent 80%);
-        top: 35%;
-        left: 45%;
-        animation-duration: 25s;
-        animation-delay: -10s;
-    }
-
-    @keyframes floatGlow {
-        0% {
-            transform: translate(0, 0) scale(1) rotate(0deg);
-        }
-        50% {
-            transform: translate(40px, 60px) scale(1.1) rotate(180deg);
-        }
-        100% {
-            transform: translate(-30px, -40px) scale(0.9) rotate(360deg);
-        }
-    }
 
     /* Sidebar Elegan */
     .admin-sidebar {
@@ -166,6 +95,8 @@
         display: flex; flex-direction: column;
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: var(--shadow-md);
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     /* Tombol Navigasi Sidebar */
@@ -199,16 +130,16 @@
         background: var(--primary) !important;
     }
 
-    /* Kartu Konten Canggih */
+    /* Kartu Konten Flat Mewah */
     .glass-card {
         background: var(--bg-panel) !important;
         border: 1px solid var(--border-color) !important;
-        box-shadow: var(--shadow-md) !important;
-        border-radius: 24px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.04) !important;
+        border-radius: 12px;
         padding: 35px;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
     }
-    .glass-card:hover { box-shadow: var(--shadow-hover) !important; border-color: var(--primary) !important; }
+    .glass-card:hover { border-color: var(--primary) !important; }
 
     /* Header Navigasi Atas */
     .admin-mobile-header {
@@ -243,19 +174,18 @@
         box-shadow: 0 0 0 4px var(--primary-glow);
     }
 
-    /* Kartu Statistik Gradien Keren */
+    /* Kartu Statistik Flat Mewah */
     .admin-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 35px; }
     .stat-card-premium {
-        border-radius: 24px; padding: 30px;
-        color: #ffffff !important; position: relative; overflow: hidden;
-        box-shadow: 0 15px 35px -10px rgba(0,0,0,0.2) !important; border: none !important;
-        transition: transform 0.3s ease;
+        border-radius: 12px; padding: 30px;
+        background: #ffffff !important; color: var(--primary) !important; position: relative; overflow: hidden;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.04) !important;
+        transition: transform 0.2s ease, border-color 0.2s ease;
     }
-    .stat-card-premium:hover { transform: translateY(-5px); }
-    .stat-card-premium .stat-icon { position: absolute; right: -20px; bottom: -20px; font-size: 140px; opacity: 0.15; transform: rotate(-15deg); }
-    .bg-grad-1 { background: linear-gradient(135deg, #4f46e5, #818cf8) !important; }
-    .bg-grad-2 { background: linear-gradient(135deg, #0ea5e9, #38bdf8) !important; }
-    .bg-grad-3 { background: linear-gradient(135deg, #10b981, #34d399) !important; }
+    .stat-card-premium:hover { transform: translateY(-3px); border-color: var(--primary) !important; }
+    .stat-card-premium .stat-icon { position: absolute; right: -20px; bottom: -20px; font-size: 140px; opacity: 0.05; color: var(--primary); transform: rotate(-15deg); }
+    .bg-grad-1, .bg-grad-2, .bg-grad-3 { background: #ffffff !important; }
 
     /* Desain Tabel Super Rapi */
     .admin-table { width: 100%; border-collapse: separate; border-spacing: 0; text-align: left; }
@@ -287,41 +217,29 @@
         color: var(--text-main); font-size: 18px; width: 44px; height: 44px;
         cursor: pointer; border-radius: 50%;
         display: flex; align-items: center; justify-content: center;
-        box-shadow: var(--shadow-sm); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.2s ease;
     }
-    .theme-toggle-btn:hover { transform: rotate(15deg) scale(1.1); border-color: var(--primary); color: var(--primary); }
+    .theme-toggle-btn:hover { border-color: var(--primary); color: var(--primary); }
 
-    /* Animasi Tab */
+    /* Animasi Tab - Flat & Profesional */
     .tab-section { display: none; }
-    .tab-section.active { display: block; animation: fadeUp 0.4s ease-out forwards; }
-    @keyframes fadeUp { 0% { opacity: 0; transform: translateY(15px); } 100% { opacity: 1; transform: translateY(0); } }
+    .tab-section.active { display: block; }
 
-    /* Modal Super Rapi */
+    /* Modal Super Rapi (Flat) */
     .modal-overlay {
         position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
         background: rgba(2, 6, 23, 0.85); display: flex; justify-content: center; align-items: center;
-        z-index: 9999; opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        z-index: 9999; opacity: 0; visibility: hidden; transition: opacity 0.2s ease;
     }
     .modal-overlay.show { opacity: 1; visibility: visible; }
     .modal-content {
         background: var(--bg-panel); width: 100%; max-width: 600px;
-        border-radius: 24px; padding: 40px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-        transform: scale(0.95) translateY(20px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--border-color);
+        border-radius: 12px; padding: 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        border: 1px solid var(--border-color);
         position: relative;
         max-height: 90vh;
         overflow-y: auto;
     }
-    .modal-overlay.show .modal-content { transform: scale(1) translateY(0); }
-
-    /* Ping Server Animation */
-    .ping-container { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; color: var(--text-muted); }
-    .ping-dot { width: 8px; height: 8px; background-color: var(--success); border-radius: 50%; position: relative; }
-    .ping-dot::after {
-        content: ''; width: 100%; height: 100%; border-radius: 50%;
-        background-color: var(--success); position: absolute; top:0; left:0;
-        animation: pulsePing 1.8s infinite ease-in-out;
-    }
-    @keyframes pulsePing { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(3.5); opacity: 0; } }
 
     /* Hide mobile bottom navigation bar on desktop by default */
     .admin-mobile-nav {
@@ -518,12 +436,11 @@
     <div class="admin-sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
     <aside class="admin-sidebar" id="adminSidebar">
-        <div style="padding: 30px 25px; display: flex; align-items: center; gap: 12px;">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 2L2 9.5V22.5L16 30L30 22.5V9.5L16 2Z" stroke="var(--primary)" stroke-width="2.5" stroke-linejoin="round" />
-                <path d="M16 12L12 14.5V17.5L16 20L20 17.5V14.5L16 12Z" fill="var(--primary)" />
-            </svg>
-            <span style="color: var(--text-main); font-weight: 800; font-size: 16px; letter-spacing: 0.5px;">NEXT YOUNG <span style="color: var(--primary);">TECH</span></span>
+        <div style="padding: 30px 25px; display: flex; align-items: center;">
+            <a href="{{ route('home') }}" class="logo notranslate" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-main); font-weight: 800; font-size: 15px; letter-spacing: 0.5px; white-space: nowrap;">
+                <img src="{{ asset('images/logo-n-trans.png') }}?v={{ time() }}" alt="Next Young Tech Logo" style="height: 28px; width: auto; object-fit: contain;">
+                <span>NEXT YOUNG <span style="color: var(--primary);">TECH</span></span>
+            </a>
         </div>
 
         <div style="padding: 0 25px 20px 25px; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid var(--border-color); margin-bottom: 20px;">
@@ -578,30 +495,14 @@
     </aside>
 
     <main class="admin-main-panel" style="margin-left: 280px;">
-        <!-- Canvas Animasi Gelombang Digital Premium -->
-        <canvas id="cyber-bg-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.85;"></canvas>
-        
-        <!-- Glowing background orbs for futuristic visual effect -->
-        <div class="glow-orb glow-orb-1"></div>
-        <div class="glow-orb glow-orb-2"></div>
-        <div class="glow-orb glow-orb-3"></div>
-        <div class="cyber-scanner"></div>
-        
+
         <header class="admin-mobile-header">
             <div style="display: flex; align-items: center; gap: 20px;">
                 <button class="admin-sidebar-toggle" onclick="toggleSidebar()" style="background: var(--bg-body); border: 1px solid var(--border-color); color: var(--text-main); font-size: 18px; cursor: pointer; padding: 8px 12px; border-radius: 8px;">
                     <i class="fa-solid fa-bars-staggered"></i>
                 </button>
-                <div class="ping-container">
-                    <div class="ping-dot"></div>
-                    <span class="system-ping-label">SYSTEM ONLINE (14ms)</span>
-                </div>
             </div>
             <div style="display: flex; align-items: center; gap: 12px; position: relative;">
-                <!-- Theme Toggle Button -->
-                <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
                 
                 <!-- Quick User Profile Dropdown Button -->
                 <button class="theme-toggle-btn" onclick="toggleQuickProfileDropdown(event)" style="cursor: pointer; overflow: hidden; padding: 0;" title="Kelola Akun">
@@ -662,21 +563,21 @@
                 <div class="admin-stats-grid">
                     <div class="stat-card-premium bg-grad-1">
                         <i class="fa-solid fa-chart-line stat-icon"></i>
-                        <span style="font-size: 13px; font-weight: 700; opacity: 0.9; letter-spacing: 1px;">TOTAL POTENSI OMSET</span>
-                        <div style="font-size: 36px; font-weight: 900; margin: 15px 0 5px 0; letter-spacing: -1px;">Rp {{ number_format($totalEstimatedValue ?? 0, 0, ',', '.') }}</div>
-                        <span style="font-size: 13px; opacity: 0.9; font-weight: 500;"><i class="fa-solid fa-bolt" style="color: #fbbf24;"></i> Estimasi nilai proyek masuk</span>
+                        <span style="font-size: 13px; font-weight: 800; opacity: 0.9; letter-spacing: 1px;">TOTAL POTENSI OMSET</span>
+                        <div style="font-size: 36px; font-weight: 900; margin: 15px 0 5px 0; letter-spacing: -1px; color: var(--text-main);">Rp {{ number_format($totalEstimatedValue ?? 0, 0, ',', '.') }}</div>
+                        <span style="font-size: 13px; opacity: 0.9; font-weight: 600; color: var(--text-muted);"><i class="fa-solid fa-bolt" style="color: var(--primary);"></i> Estimasi nilai proyek masuk</span>
                     </div>
                     <div class="stat-card-premium bg-grad-2">
                         <i class="fa-solid fa-briefcase stat-icon"></i>
-                        <span style="font-size: 13px; font-weight: 700; opacity: 0.9; letter-spacing: 1px;">PERMINTAAN PROYEK</span>
-                        <div style="font-size: 36px; font-weight: 900; margin: 15px 0 5px 0;">{{ $totalQuotations ?? 0 }} <span style="font-size: 18px; font-weight: 600;">Proyek</span></div>
-                        <span style="font-size: 13px; opacity: 0.9; font-weight: 500;"><i class="fa-solid fa-clock"></i> Membutuhkan validasi</span>
+                        <span style="font-size: 13px; font-weight: 800; opacity: 0.9; letter-spacing: 1px;">PERMINTAAN PROYEK</span>
+                        <div style="font-size: 36px; font-weight: 900; margin: 15px 0 5px 0; color: var(--text-main);">{{ $totalQuotations ?? 0 }} <span style="font-size: 18px; font-weight: 600;">Proyek</span></div>
+                        <span style="font-size: 13px; opacity: 0.9; font-weight: 600; color: var(--text-muted);"><i class="fa-solid fa-clock" style="color: var(--primary);"></i> Membutuhkan validasi</span>
                     </div>
                     <div class="stat-card-premium bg-grad-3">
                         <i class="fa-solid fa-inbox stat-icon"></i>
-                        <span style="font-size: 13px; font-weight: 700; opacity: 0.9; letter-spacing: 1px;">PESAN KLIEN</span>
-                        <div style="font-size: 36px; font-weight: 900; margin: 15px 0 5px 0;" id="overview-inquiries-count">{{ $totalInquiries ?? 0 }} <span style="font-size: 18px; font-weight: 600;">Pesan</span></div>
-                        <span style="font-size: 13px; opacity: 0.9; font-weight: 500;"><i class="fa-solid fa-circle-exclamation" style="color: #fef08a;"></i> Menunggu balasan</span>
+                        <span style="font-size: 13px; font-weight: 800; opacity: 0.9; letter-spacing: 1px;">PESAN KLIEN</span>
+                        <div style="font-size: 36px; font-weight: 900; margin: 15px 0 5px 0; color: var(--text-main);" id="overview-inquiries-count">{{ $totalInquiries ?? 0 }} <span style="font-size: 18px; font-weight: 600;">Pesan</span></div>
+                        <span style="font-size: 13px; opacity: 0.9; font-weight: 600; color: var(--text-muted);"><i class="fa-solid fa-circle-exclamation" style="color: var(--primary);"></i> Menunggu balasan</span>
                     </div>
                 </div>
 

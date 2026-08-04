@@ -86,7 +86,7 @@
                         <a href="{{ route('home') }}" class="btn-secondary" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; padding: 14px; border-radius: 8px;">
                             <i class="fa-solid fa-house" style="margin-right: 8px;"></i> Kembali ke Beranda
                         </a>
-                        <button type="submit" class="btn-primary" style="flex: 2; justify-content: center; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); box-shadow: 0 0 20px var(--primary-glow); padding: 14px; border-radius: 8px; font-weight: 700; cursor: pointer;">
+                        <button type="submit" class="btn-primary" style="flex: 2; justify-content: center; background: var(--primary); box-shadow: 0 0 20px var(--primary-glow); padding: 14px; border-radius: 8px; font-weight: 700; cursor: pointer;">
                             <i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i> Publikasikan Ulasan
                         </button>
                     </div>

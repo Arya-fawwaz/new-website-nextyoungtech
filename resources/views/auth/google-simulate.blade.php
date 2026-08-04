@@ -72,7 +72,7 @@
             font-family: 'Outfit', sans-serif;
             font-weight: 800;
             font-size: 18px;
-            background: linear-gradient(135deg, #00f2fe 0%, #4f46e5 100%);
+            background: var(--primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: -0.5px;

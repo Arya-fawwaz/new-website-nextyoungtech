@@ -16,6 +16,9 @@ Route::get('/services', [HomeController::class, 'services'])->name('services');
 Route::get('/features', [HomeController::class, 'features'])->name('features');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
+Route::get('/license', function () {
+    return view('license');
+})->name('license');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 

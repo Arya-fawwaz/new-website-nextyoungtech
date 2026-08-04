@@ -99,7 +99,7 @@
             font-weight: 800;
             letter-spacing: -0.5px;
             margin-bottom: 8px;
-            background: linear-gradient(135deg, #00f2fe 0%, #4f46e5 100%);
+            background: var(--primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -208,7 +208,7 @@
         /* Buttons */
         .btn-submit {
             width: 100%;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            background: var(--primary);
             color: #ffffff;
             border: none;
             padding: 14px;

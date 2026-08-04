@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Beranda')
+@section('title', 'Next Young Tech | Joki Website & Joki Tugas Coding Premium')
 
 @section('content')
 
@@ -34,7 +34,7 @@
                             <i class="fa-solid fa-briefcase"></i> Lihat Layanan
                         </a>
                     @else
-                        <a href="{{ route('login') }}" class="btn-primary" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); box-shadow: 0 0 15px var(--primary-glow);">
+                        <a href="{{ route('login') }}" class="btn-primary" style="background: var(--primary); box-shadow: 0 0 15px var(--primary-glow);">
                             <i class="fa-solid fa-right-to-bracket"></i> Masuk Ke Portal
                         </a>
                         <a href="https://wa.me/628881023038?text=Halo%20Next%20Young%20Tech,%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20pembuatan%20website%20custom%20saya." target="_blank" class="btn-secondary">
@@ -55,7 +55,7 @@
                 <p class="section-desc">Kepuasan klien adalah kebanggaan terbesar kami. Berikut ulasan bintang 5 dan komentar nyata dari klien kami.</p>
                 @auth
                     <div style="margin-top: 24px; text-align: center;">
-                        <a href="{{ route('review.create') }}" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; padding: 10px 24px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); box-shadow: 0 0 15px var(--primary-glow);">
+                        <a href="{{ route('review.create') }}" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; padding: 10px 24px; background: var(--primary); box-shadow: 0 0 15px var(--primary-glow);">
                             <i class="fa-solid fa-pen-to-square"></i> Tulis Ulasan Anda
                         </a>
                     </div>
@@ -192,6 +192,198 @@
             opacity: 1 !important;
         }
     </style>
+
+    <!-- Joki Website & Tugas Coding Section -->
+    <section class="section joki-seo-section" style="background: rgba(255, 255, 255, 0.02); border-top: 1px solid var(--border-color); padding: 80px 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">JOKI CODING & WEB DEVELOPMENT</span>
+                <h2 class="section-title">Joki Website & Tugas Programming Profesional</h2>
+                <p class="section-desc">Solusi joki coding terpercaya dengan jaminan pengerjaan rapi, penjelasan lengkap, dan harga transparan oleh tim developer profesional.</p>
+            </div>
+
+            <div class="features-grid" style="margin-top: 40px;">
+                <!-- Card 1: Joki Pembuatan Website -->
+                <div class="glass-card premium-feature-card" style="padding: 40px 30px; text-align: left; display: flex; flex-direction: column; border: 1px solid transparent; height: 100%;">
+                    <div class="feature-icon" style="width: 60px; height: 60px; border-radius: 16px; border: 2px solid var(--primary); box-shadow: 0 5px 15px var(--primary-glow); background: rgba(14, 165, 233, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <i class="fa-solid fa-code" style="font-size: 24px; color: var(--primary);"></i>
+                    </div>
+                    <h3 class="feature-title" style="font-size: 18px; font-weight: 800; margin-bottom: 12px; color: var(--text-main);">Joki Pembuatan Website</h3>
+                    <p class="feature-desc" style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin: 0; flex-grow: 1;">
+                        Butuh joki website custom? Kami mengerjakan website e-commerce, portal berita, landing page premium, sistem informasi, hingga web berbasis Laravel, React, Vue, PHP, dan Node.js dengan kode bersih dan performa maksimal.
+                    </p>
+                </div>
+
+                <!-- Card 2: Joki Tugas Coding Kuliah -->
+                <div class="glass-card premium-feature-card" style="padding: 40px 30px; text-align: left; display: flex; flex-direction: column; border: 1px solid transparent; height: 100%;">
+                    <div class="feature-icon" style="width: 60px; height: 60px; border-radius: 16px; border: 2px solid var(--secondary); box-shadow: 0 5px 15px var(--secondary-glow); background: rgba(79, 70, 229, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <i class="fa-solid fa-graduation-cap" style="font-size: 24px; color: var(--secondary);"></i>
+                    </div>
+                    <h3 class="feature-title" style="font-size: 18px; font-weight: 800; margin-bottom: 12px; color: var(--text-main);">Joki Tugas Programming</h3>
+                    <p class="feature-desc" style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin: 0; flex-grow: 1;">
+                        Menyelesaikan joki tugas kuliah programming Anda dari tingkat dasar hingga lanjut. Kami menguasai berbagai bahasa pemrograman seperti Python, Java, C++, PHP, JavaScript, SQL, Go, dan Dart lengkap dengan dokumentasi/laporan.
+                    </p>
+                </div>
+
+                <!-- Card 3: Joki Perbaikan & Integrasi -->
+                <div class="glass-card premium-feature-card" style="padding: 40px 30px; text-align: left; display: flex; flex-direction: column; border: 1px solid transparent; height: 100%;">
+                    <div class="feature-icon" style="width: 60px; height: 60px; border-radius: 16px; border: 2px solid var(--accent); box-shadow: 0 5px 15px var(--accent-glow); background: rgba(0, 242, 254, 0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <i class="fa-solid fa-bug-slash" style="font-size: 24px; color: var(--accent);"></i>
+                    </div>
+                    <h3 class="feature-title" style="font-size: 18px; font-weight: 800; margin-bottom: 12px; color: var(--text-main);">Joki Debugging & Laravel</h3>
+                    <p class="feature-desc" style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin: 0; flex-grow: 1;">
+                        Mengalami error memusingkan pada proyek web Anda? Joki coding kami siap membantu melakukan debugging, perbaikan sistem keamanan, optimasi performa database MySQL/Postgres, hingga penyempurnaan UI/UX website.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section" style="border-top: 1px solid var(--border-color); padding: 80px 0;">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-header" style="margin-bottom: 50px;">
+                <span class="section-badge">FAQ</span>
+                <h2 class="section-title">Pertanyaan Umum (FAQ) Joki Website</h2>
+                <p class="section-desc">Punya pertanyaan seputar layanan joki coding dan pembuatan website? Temukan jawabannya di bawah ini.</p>
+            </div>
+
+            <div class="faq-accordion-wrapper">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item glass-card" style="margin-bottom: 16px; padding: 20px 24px; border-radius: 12px; transition: all 0.3s ease; border: 1px solid var(--border-color); cursor: pointer;" onclick="toggleFaq(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="font-size: 15px; font-weight: 800; margin: 0; color: var(--text-main);">Apakah Next Young Tech melayani joki website dan joki tugas coding?</h3>
+                        <i class="fa-solid fa-chevron-down faq-arrow" style="font-size: 14px; transition: transform 0.3s ease; color: var(--text-main);"></i>
+                    </div>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: all 0.3s cubic-bezier(0, 1, 0, 1); opacity: 0; margin-top: 0;">
+                        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin: 15px 0 0 0;">
+                            Ya, benar sekali. Next Young Tech menyediakan jasa joki website premium dan joki tugas coding profesional. Kami membantu mahasiswa dan bisnis menyelesaikan pembuatan website custom, CRUD Laravel, landing page, sistem informasi, hingga tugas kuliah programming dengan kode yang bersih dan dokumentasi lengkap.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item glass-card" style="margin-bottom: 16px; padding: 20px 24px; border-radius: 12px; transition: all 0.3s ease; border: 1px solid var(--border-color); cursor: pointer;" onclick="toggleFaq(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="font-size: 15px; font-weight: 800; margin: 0; color: var(--text-main);">Bahasa pemrograman apa saja yang didukung oleh joki coding Next Young Tech?</h3>
+                        <i class="fa-solid fa-chevron-down faq-arrow" style="font-size: 14px; transition: transform 0.3s ease; color: var(--text-main);"></i>
+                    </div>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: all 0.3s cubic-bezier(0, 1, 0, 1); opacity: 0; margin-top: 0;">
+                        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin: 15px 0 0 0;">
+                            Tim developer joki coding kami menguasai berbagai bahasa pemrograman populer meliputi PHP (termasuk Framework Laravel), Python (Django/Flask), JavaScript (Node.js, React, Vue, Next.js), Java, C++, HTML/CSS, SQL (MySQL, PostgreSQL), Go, dan Dart (Flutter).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item glass-card" style="margin-bottom: 16px; padding: 20px 24px; border-radius: 12px; transition: all 0.3s ease; border: 1px solid var(--border-color); cursor: pointer;" onclick="toggleFaq(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="font-size: 15px; font-weight: 800; margin: 0; color: var(--text-main);">Berapa tarif pengerjaan joki website / joki tugas coding?</h3>
+                        <i class="fa-solid fa-chevron-down faq-arrow" style="font-size: 14px; transition: transform 0.3s ease; color: var(--text-main);"></i>
+                    </div>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: all 0.3s cubic-bezier(0, 1, 0, 1); opacity: 0; margin-top: 0;">
+                        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin: 15px 0 0 0;">
+                            Tarif joki website dan joki tugas coding dihitung berdasarkan tingkat kerumitan logika sistem, tenggat waktu pengerjaan, dan jumlah fitur. Untuk perkiraan instan, Anda bisa masuk ke portal kami dan menggunakan fitur **Kalkulator Estimasi Biaya** secara gratis.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item glass-card" style="margin-bottom: 16px; padding: 20px 24px; border-radius: 12px; transition: all 0.3s ease; border: 1px solid var(--border-color); cursor: pointer;" onclick="toggleFaq(this)">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="font-size: 15px; font-weight: 800; margin: 0; color: var(--text-main);">Bagaimana jaminan keamanan data dan pengerjaan joki tugas coding?</h3>
+                        <i class="fa-solid fa-chevron-down faq-arrow" style="font-size: 14px; transition: transform 0.3s ease; color: var(--text-main);"></i>
+                    </div>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: all 0.3s cubic-bezier(0, 1, 0, 1); opacity: 0; margin-top: 0;">
+                        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin: 15px 0 0 0;">
+                            Kami menjamin kerahasiaan data pribadi klien 100%. Pengerjaan joki tugas coding dikerjakan secara original tanpa plagiarisme, lolos pengecekan fungsionalitas, serta kami menyediakan sesi penjelasan kode/revisi gratis jika dibutuhkan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion JS Script & CSS -->
+    <style>
+        .faq-item:hover {
+            border-color: var(--primary) !important;
+            box-shadow: 0 5px 15px var(--primary-glow);
+            transform: translateY(-2px);
+        }
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+            color: var(--primary) !important;
+        }
+        .faq-item.active {
+            border-color: var(--primary) !important;
+        }
+    </style>
+
+    <script>
+        function toggleFaq(element) {
+            const answer = element.querySelector('.faq-answer');
+            const arrow = element.querySelector('.faq-arrow');
+            const isActive = element.classList.contains('active');
+            
+            // Close all other FAQs first
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('active');
+                    const otherAnswer = item.querySelector('.faq-answer');
+                    otherAnswer.style.maxHeight = '0';
+                    otherAnswer.style.opacity = '0';
+                }
+            });
+
+            if (isActive) {
+                element.classList.remove('active');
+                answer.style.maxHeight = '0';
+                answer.style.opacity = '0';
+            } else {
+                element.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                answer.style.opacity = '1';
+            }
+        }
+    </script>
+
+    <!-- FAQ Page Structured Data JSON-LD for Search Engine -->
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@type": "FAQPage",
+      "mainEntity": [{
+        "@@type": "Question",
+        "name": "Apakah Next Young Tech melayani joki website dan joki tugas coding?",
+        "acceptedAnswer": {
+          "@@type": "Answer",
+          "text": "Ya, benar sekali. Next Young Tech menyediakan jasa joki website premium dan joki tugas coding profesional. Kami membantu mahasiswa dan bisnis menyelesaikan pembuatan website custom, CRUD Laravel, landing page, sistem informasi, hingga tugas kuliah programming dengan kode yang bersih dan dokumentasi lengkap."
+        }
+      }, {
+        "@@type": "Question",
+        "name": "Bahasa pemrograman apa saja yang didukung oleh joki coding Next Young Tech?",
+        "acceptedAnswer": {
+          "@@type": "Answer",
+          "text": "Tim developer joki coding kami menguasai berbagai bahasa pemrograman populer meliputi PHP (termasuk Framework Laravel), Python (Django/Flask), JavaScript (Node.js, React, Vue, Next.js), Java, C++, HTML/CSS, SQL (MySQL, PostgreSQL), Go, dan Dart (Flutter)."
+        }
+      }, {
+        "@@type": "Question",
+        "name": "Berapa tarif pengerjaan joki website / joki tugas coding?",
+        "acceptedAnswer": {
+          "@@type": "Answer",
+          "text": "Tarif joki website dan joki tugas coding dihitung berdasarkan tingkat kerumitan logika sistem, tenggat waktu pengerjaan, dan jumlah fitur. Untuk perkiraan instan, Anda bisa masuk ke portal kami dan menggunakan fitur Kalkulator Estimasi Biaya secara gratis."
+        }
+      }, {
+        "@@type": "Question",
+        "name": "Bagaimana jaminan keamanan data dan pengerjaan joki tugas coding?",
+        "acceptedAnswer": {
+          "@@type": "Answer",
+          "text": "Kami menjamin kerahasiaan data pribadi klien 100%. Pengerjaan joki tugas coding dikerjakan secara original tanpa plagiarisme, lolos pengecekan fungsionalitas, serta kami menyediakan sesi penjelasan kode/revisi gratis jika dibutuhkan."
+        }
+      }]
+    }
+    </script>
 
     <!-- Core Features Section -->
     <section class="section">

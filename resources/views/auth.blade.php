@@ -79,7 +79,7 @@
                             <input type="password" name="password" class="input-glass" style="padding-left: 48px; margin-bottom: 0;" placeholder="••••••••" required>
                         </div>
                     </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; cursor: pointer; padding: 14px; border-radius: 8px; font-weight: 700; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); box-shadow: 0 0 20px var(--primary-glow);">
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; cursor: pointer; padding: 14px; border-radius: 8px; font-weight: 700; background: var(--primary); box-shadow: 0 0 20px var(--primary-glow);">
                         <i class="fa-solid fa-right-to-bracket"></i> Masuk Sekarang
                     </button>
 

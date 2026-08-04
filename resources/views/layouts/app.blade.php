@@ -4,11 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title', 'Next Young Tech') | Premium Web Design & 3D Development Agency</title>
+    <title>@yield('title', 'Next Young Tech | Joki Website & Joki Tugas Coding Premium')</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('images/logo-n-trans.png') }}" type="image/png">
     
     <!-- Meta SEO -->
-    <meta name="description" content="Next Young Tech Technology adalah agen pengembangan website premium yang menghadirkan web aplikasi ultra-cepat dengan animasi 3D interaktif dan desain elegan kelas dunia.">
-    <meta name="keywords" content="pembuatan website, website 3d, laravel, agency website, next young tech, web design mewah, agency development jakarta">
+    <meta name="description" content="@yield('meta_description', 'Next Young Tech adalah joki website terpercaya dan agen pembuatan website premium. Melayani joki tugas coding, tugas kuliah programming, website custom, CRUD Laravel & Web 3D interaktif.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'joki website, joki tugas coding, joki coding, joki pembuatan website, joki tugas kuliah programming, jasa pembuatan website, website 3d, laravel, next young tech')">
+    <meta name="author" content="Next Young Tech">
+    <link rel="canonical" href="{{ request()->url() }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request()->url() }}">
+    <meta property="og:title" content="@yield('title', 'Next Young Tech | Joki Website & Joki Tugas Coding Premium')">
+    <meta property="og:description" content="@yield('meta_description', 'Next Young Tech adalah joki website terpercaya dan agen pembuatan website premium. Melayani joki tugas coding, tugas kuliah programming, website custom, CRUD Laravel & Web 3D interaktif.')">
+    <meta property="og:image" content="{{ asset('images/logo-n-trans.png') }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ request()->url() }}">
+    <meta property="twitter:title" content="@yield('title', 'Next Young Tech | Joki Website & Joki Tugas Coding Premium')">
+    <meta property="twitter:description" content="@yield('meta_description', 'Next Young Tech adalah joki website terpercaya dan agen pembuatan website premium. Melayani joki tugas coding, tugas kuliah programming, website custom, CRUD Laravel & Web 3D interaktif.')">
+    <meta property="twitter:image" content="{{ asset('images/logo-n-trans.png') }}">
+
+    <!-- Structured Data (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@type": "ProfessionalService",
+      "name": "Next Young Tech",
+      "image": "{{ asset('images/logo-n-trans.png') }}",
+      "@@id": "https://www.nextyoungtech.com/#organization",
+      "url": "https://www.nextyoungtech.com",
+      "telephone": "+628881023038",
+      "priceRange": "Rp",
+      "address": {
+        "@@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Jakarta",
+        "addressRegion": "DKI Jakarta",
+        "postalCode": "",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@@type": "GeoCoordinates",
+        "latitude": -6.2088,
+        "longitude": 106.8456
+      },
+      "openingHoursSpecification": {
+        "@@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://wa.me/628881023038"
+      ],
+      "description": "Next Young Tech adalah penyedia jasa joki website premium, joki tugas coding, joki tugas kuliah programming, dan pembuatan aplikasi web kustom berbasis Laravel & WebGL 3D."
+    }
+    </script>
     
     <!-- Ikon & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -57,8 +121,8 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            /* Luxury Metallic Blue-Silver gradient */
-            background: linear-gradient(135deg, #0ea5e9 0%, #1e3a8a 100%);
+            /* Solid Elegant Blue */
+            background: var(--primary);
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 0 15px rgba(14, 165, 233, 0.4), inset 0 2px 5px rgba(255,255,255,0.3);
@@ -67,7 +131,8 @@
         .lang-switch-btn:hover {
             transform: translateY(-2px) scale(1.05);
             box-shadow: 0 5px 20px rgba(14, 165, 233, 0.6), inset 0 2px 5px rgba(255,255,255,0.5);
-            background: linear-gradient(135deg, #38bdf8 0%, #1e40af 100%);
+            background: #ffffff;
+            color: var(--primary);
         }
         
         .lang-switch-btn.mobile {
@@ -260,7 +325,7 @@
                 font-family: var(--font-heading);
                 font-size: 8vw;
                 font-weight: 900;
-                background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, var(--primary) 100%);
+                background: var(--primary);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 letter-spacing: -2px;
@@ -284,7 +349,7 @@
                 font-family: var(--font-heading);
                 font-size: 32px;
                 font-weight: 900;
-                background: linear-gradient(to right, #b0b0b0, #ffffff, #b0b0b0);
+                background: #ffffff;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 letter-spacing: 16px;
@@ -574,6 +639,8 @@
             <div class="sub-footer-links">
                 <a href="{{ route('admin.login') }}" class="admin-portal-link"><i class="fa-solid fa-shield-halved"></i> Akses Portal Admin</a>
                 <span class="sep">•</span>
+                <a href="{{ route('license') }}">Lisensi Penggunaan</a>
+                <span class="sep">•</span>
                 <a href="#">Kebijakan Privasi</a>
                 <span class="sep">•</span>
                 <a href="#">Syarat & Ketentuan</a>
@@ -641,236 +708,7 @@
         @endauth
     </nav>
 
-    <!-- Nova AI Chatbot Floating Widget -->
-    <div id="nova-chatbot-widget" class="nova-chatbot-container">
-        <!-- Chat Bubble Trigger -->
-        <button id="nova-chat-trigger" class="nova-chat-bubble" title="Tanya Nova AI">
-            <span class="nova-avatar-pulse"></span>
-            <i class="fa-solid fa-user-tie"></i>
-            <span class="nova-chat-tooltip">Tanya Nova AI</span>
-        </button>
-
-        <!-- Chat Window -->
-        <div id="nova-chat-window" class="nova-chat-box">
-            <!-- Header -->
-            <div class="nova-chat-header">
-                <div class="nova-chat-header-info">
-                    <div class="nova-chat-avatar">
-                        <i class="fa-solid fa-user-tie"></i>
-                        <span class="nova-status-dot"></span>
-                    </div>
-                    <div>
-                        <h4 class="nova-bot-name">Nova AI</h4>
-                        <span class="nova-bot-status">Online • Virtual Assistant</span>
-                    </div>
-                </div>
-                <button id="nova-chat-close" class="nova-chat-close-btn" title="Tutup">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <!-- Messages Area -->
-            <div id="nova-chat-messages" class="nova-chat-body">
-                <!-- Welcome Message -->
-                <div class="nova-msg-row bot">
-                    <div class="nova-msg-bubble">
-                        Halo! Saya <strong>Nova</strong>, asisten virtual Anda di <strong>Next Young Tech</strong>. Saya hadir untuk membantu mendiskusikan kebutuhan digital dan pengembangan website Anda secara profesional. Ada hal yang bisa saya bantu hari ini?
-                    </div>
-                </div>
-                <!-- Quick Options -->
-                <div class="nova-quick-replies" id="nova-quick-container">
-                    <button class="nova-quick-btn" onclick="sendQuickReply('Tanya Layanan Web')">Tanya Layanan Web</button>
-                    <button class="nova-quick-btn" onclick="sendQuickReply('Estimasi Biaya Proyek')">Estimasi Biaya Proyek</button>
-                    <button class="nova-quick-btn" onclick="sendQuickReply('Teknologi yang Dipakai')">Teknologi yang Dipakai</button>
-                    <button class="nova-quick-btn" onclick="sendQuickReply('Hubungi Sales WA')">Hubungi Sales WA</button>
-                </div>
-            </div>
-
-            <!-- Typing Indicator -->
-            <div id="nova-typing-indicator" class="nova-msg-row bot" style="display: none;">
-                <div class="nova-msg-bubble typing">
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
-
-            <!-- Input Area -->
-            <form id="nova-chat-form" class="nova-chat-input-area" onsubmit="handleChatSubmit(event)">
-                <input type="text" id="nova-user-input" class="nova-input-field" placeholder="Ketik pesan Anda disini..." required autocomplete="off">
-                <button type="submit" class="nova-send-btn" title="Kirim">
-                    <i class="fa-solid fa-paper-plane"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Script Chatbot Logic -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const userIsLoggedIn = {{ auth()->check() ? 'true' : 'false' }};
-            const trigger = document.getElementById('nova-chat-trigger');
-            const windowBox = document.getElementById('nova-chat-window');
-            const closeBtn = document.getElementById('nova-chat-close');
-            const chatMessages = document.getElementById('nova-chat-messages');
-            const userInput = document.getElementById('nova-user-input');
-            const typingIndicator = document.getElementById('nova-typing-indicator');
-
-            // Open/Close chat box
-            trigger.addEventListener('click', () => {
-                windowBox.classList.toggle('active');
-                if (windowBox.classList.contains('active')) {
-                    userInput.focus();
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                }
-            });
-
-            closeBtn.addEventListener('click', () => {
-                windowBox.classList.remove('active');
-            });
-
-            // Handle Quick Reply selections
-            window.sendQuickReply = function(text) {
-                appendUserMessage(text);
-                processChatResponse(text);
-            };
-
-            // Handle manual form submissions
-            window.handleChatSubmit = function(event) {
-                event.preventDefault();
-                const text = userInput.value.trim();
-                if (!text) return;
-                
-                userInput.value = '';
-                appendUserMessage(text);
-                processChatResponse(text);
-            };
-
-            function appendUserMessage(text) {
-                // Remove previous quick replies to clean stream
-                const quickReplies = document.getElementById('nova-quick-container');
-                if (quickReplies) quickReplies.remove();
-
-                const row = document.createElement('div');
-                row.className = 'nova-msg-row user';
-                row.innerHTML = `<div class="nova-msg-bubble">${escapeHtml(text)}</div>`;
-                chatMessages.appendChild(row);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-
-            function processChatResponse(text) {
-                // Show typing indicator
-                typingIndicator.style.display = 'flex';
-                chatMessages.appendChild(typingIndicator);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-
-                // Handle Masuk / Daftar Akun redirect instantly
-                if (text === 'Masuk / Daftar Akun') {
-                    setTimeout(() => {
-                        typingIndicator.style.display = 'none';
-                        appendBotMessage("Baik, saya sedang mengarahkan Anda ke portal login...");
-                        window.location.href = "{{ route('login') }}";
-                    }, 800);
-                    return;
-                }
-
-                // If user is guest and tries to order or click WhatsApp sales or calculation
-                if (text === 'Hubungkan ke WA Sekarang' || text === 'Hubungi Sales WA' || text === 'Estimasi Biaya Proyek' || text === 'Buka Kalkulator Biaya' || text === 'Pesan') {
-                    if (!userIsLoggedIn) {
-                        setTimeout(() => {
-                            typingIndicator.style.display = 'none';
-                            appendBotMessage("Mohon maaf, untuk melakukan pemesanan proyek digital atau kalkulasi biaya, Anda perlu masuk (login) atau mendaftar akun terlebih dahulu.\n\nSilakan klik tautan di bawah ini untuk masuk ke portal akun Anda. Setelah masuk, Anda dapat menggunakan fitur estimasi biaya dan berkonsultasi secara resmi.\n\n👉 **[Masuk ke Portal / Daftar Akun]({{ route('login') }})**", [
-                                "Masuk / Daftar Akun",
-                                "Tanya Layanan Web",
-                                "Teknologi yang Dipakai"
-                            ]);
-                        }, 1000);
-                        return;
-                    }
-                }
-
-                // Handle instant specific actions on client-side to be super responsive for logged in users
-                if (text === 'Hubungkan ke WA Sekarang' || text === 'Hubungi Sales WA') {
-                    setTimeout(() => {
-                        typingIndicator.style.display = 'none';
-                        appendBotMessage("Baik, saya sedang mengarahkan Anda ke WhatsApp tim sales kami. Jika tab baru tidak terbuka otomatis, silakan klik tautan berikut:\n\n👉 **[WhatsApp Sales Tim Ahli](https://wa.me/628881023038?text=Halo%20Next%20Young%20Tech,%20saya%20tertarik%20konsultasi%20pembuatan%20website%20premium.)**");
-                        window.open("https://wa.me/628881023038?text=Halo%20Next%20Young%20Tech,%20saya%20tertarik%20konsultasi%20pembuatan%20website%20premium.", '_blank');
-                    }, 1000);
-                    return;
-                } else if (text === 'Buka Kalkulator Biaya' || text === 'Estimasi Biaya Proyek') {
-                    setTimeout(() => {
-                        typingIndicator.style.display = 'none';
-                        appendBotMessage("Tentu. Silakan akses Halaman Kalkulator Estimasi Biaya kami melalui tautan di bawah ini:\n\n👉 **[Kalkulator Estimasi Biaya]({{ route('quotation.index') }})**");
-                    }, 1000);
-                    return;
-                }
-
-                // Send AJAX request to our Laravel ChatbotController
-                fetch("{{ route('chatbot.message') }}", {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                    },
-                    body: JSON.stringify({ message: text })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // Hide typing indicator after a simulated short delay to feel human (tidak kaku!)
-                    setTimeout(() => {
-                        typingIndicator.style.display = 'none';
-                        appendBotMessage(data.reply, data.options);
-                    }, 800 + Math.random() * 600);
-                })
-                .catch(error => {
-                    setTimeout(() => {
-                        typingIndicator.style.display = 'none';
-                        appendBotMessage("Aduh maaf ya, jaringan satelit komunikasi saya terganggu sejenak. 🛰️ Tapi Anda tetap bisa langsung menghubungi tim ahli kami lewat WhatsApp di **[+62 888-1023-038](https://wa.me/628881023038)**!");
-                    }, 1000);
-                });
-            }
-
-            function appendBotMessage(text, options = []) {
-                const row = document.createElement('div');
-                row.className = 'nova-msg-row bot';
-                
-                // Convert Markdown-like text from controller (like **bold** or [links]) to HTML dynamically for rich premium text!
-                let formattedText = escapeHtml(text)
-                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                    .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color:var(--primary);text-decoration:underline;">$1</a>')
-                    .replace(/\n/g, '<br>');
-
-                row.innerHTML = `<div class="nova-msg-bubble">${formattedText}</div>`;
-                chatMessages.appendChild(row);
-
-                // If options are returned, append them as new quick reply bubble pills
-                if (options && options.length > 0) {
-                    const quickDiv = document.createElement('div');
-                    quickDiv.className = 'nova-quick-replies';
-                    quickDiv.id = 'nova-quick-container';
-                    options.forEach(opt => {
-                        const btn = document.createElement('button');
-                        btn.className = 'nova-quick-btn';
-                        btn.innerText = opt;
-                        btn.addEventListener('click', () => sendQuickReply(opt));
-                        quickDiv.appendChild(btn);
-                    });
-                    chatMessages.appendChild(quickDiv);
-                }
-
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-
-            function escapeHtml(string) {
-                return String(string).replace(/[&<>"']/g, function (s) {
-                    return {
-                        '&': '&amp;',
-                        '<': '&lt;',
-                        '>': '&gt;',
-                        '"': '&quot;',
-                        "'": '&#39;'
-                    }[s];
-                });
-            }
-
             // ==========================================================================
             // PWA Installation & Service Worker Logic (Unduh Aplikasi Mobile)
             // ==========================================================================

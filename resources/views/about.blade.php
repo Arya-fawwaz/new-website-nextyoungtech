@@ -22,17 +22,6 @@
         position: relative;
     }
     
-    /* Subtle blue grid background for elegance */
-    .bw-hero::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-image: linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
-                          linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
-        background-size: 40px 40px;
-        pointer-events: none;
-    }
-
     .bw-badge {
         display: inline-block;
         padding: 6px 16px;
@@ -86,33 +75,159 @@
         align-items: center;
         margin-bottom: 100px;
     }
-    .bw-image-wrapper {
+    /* Company Info Card (Replacing Photo) */
+    .bw-info-card {
+        background: #ffffff;
+        border: 1px solid rgba(14, 165, 233, 0.2);
+        border-radius: 16px;
+        padding: 36px 32px;
+        box-shadow: 0 20px 40px rgba(14, 165, 233, 0.08);
         position: relative;
-        border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 25px 50px rgba(14, 165, 233, 0.1); /* Subtle blue shadow */
-        border: 1px solid rgba(14, 165, 233, 0.1);
+        transition: all 0.4s ease;
     }
-    .bw-image-wrapper img {
-        width: 100%;
-        display: block;
-        transition: transform 0.5s ease;
+    .bw-info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 30px 60px rgba(14, 165, 233, 0.14);
+        border-color: rgba(14, 165, 233, 0.4);
     }
-    .bw-image-wrapper:hover img {
-        transform: scale(1.03);
+    .bw-info-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e2e8f0;
     }
-    
-    /* Clean Blue Accent Behind Image */
-    .bw-image-accent {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 25px;
-        left: -25px;
-        background-color: var(--primary);
-        border-radius: 12px;
-        z-index: -1;
-        opacity: 0.05; /* Very subtle */
+    .bw-info-logo {
+        width: 64px;
+        height: 64px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--primary), #0284c7);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+        flex-shrink: 0;
+    }
+    .bw-info-title h3 {
+        font-family: var(--font-heading);
+        font-size: 22px;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 4px 0;
+    }
+    .bw-info-title span {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+    .bw-info-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .bw-info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 14px 16px;
+        background: #f8fafc;
+        border-radius: 10px;
+        border: 1px solid #f1f5f9;
+        transition: all 0.3s ease;
+    }
+    .bw-info-item:hover {
+        background: rgba(14, 165, 233, 0.05);
+        border-color: rgba(14, 165, 233, 0.25);
+        transform: translateX(4px);
+    }
+    .bw-info-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: rgba(14, 165, 233, 0.1);
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+    .bw-info-label {
+        font-size: 11px;
+        font-weight: 700;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 3px;
+    }
+    .bw-info-value {
+        font-size: 14.5px;
+        font-weight: 700;
+        color: #0f172a;
+        line-height: 1.4;
+    }
+    .bw-verified-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 12px;
+        background: rgba(16, 185, 129, 0.1);
+        color: #10b981;
+        font-size: 12px;
+        font-weight: 700;
+        border-radius: 20px;
+        margin-top: 6px;
+        border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    /* Dark Mode Support for Corporate Info Card */
+    html[data-theme="dark"] .bw-wrapper {
+        background-color: var(--bg-body) !important;
+        color: var(--text-main) !important;
+    }
+    html[data-theme="dark"] .bw-hero,
+    html[data-theme="dark"] .bw-content-area {
+        background-color: var(--bg-body) !important;
+    }
+    html[data-theme="dark"] .bw-hero-title,
+    html[data-theme="dark"] .bw-text-content h2,
+    html[data-theme="dark"] .bw-vm-card h3,
+    html[data-theme="dark"] .bw-info-title h3,
+    html[data-theme="dark"] .bw-info-value,
+    html[data-theme="dark"] .bw-list li strong {
+        color: var(--text-main) !important;
+    }
+    html[data-theme="dark"] .bw-hero-desc,
+    html[data-theme="dark"] .bw-text-content p,
+    html[data-theme="dark"] .bw-vm-card p,
+    html[data-theme="dark"] .bw-list li,
+    html[data-theme="dark"] .bw-info-label {
+        color: var(--text-muted) !important;
+    }
+    html[data-theme="dark"] .bw-vm-card,
+    html[data-theme="dark"] .bw-info-card {
+        background: var(--bg-card) !important;
+        border-color: var(--border-color) !important;
+    }
+    html[data-theme="dark"] .bw-info-item {
+        background: rgba(255, 255, 255, 0.03) !important;
+        border-color: var(--border-color) !important;
+    }
+    html[data-theme="dark"] .bw-info-item:hover {
+        background: rgba(14, 165, 233, 0.1) !important;
+        border-color: rgba(14, 165, 233, 0.3) !important;
+    }
+    html[data-theme="dark"] .bw-stats {
+        border-top-color: var(--border-color) !important;
+    }
+    html[data-theme="dark"] .bw-info-header {
+        border-bottom-color: var(--border-color) !important;
     }
 
     .bw-text-content h2 {
@@ -234,7 +349,6 @@
             grid-template-columns: 1fr;
             gap: 30px;
         }
-        .bw-image-accent { display: none; }
     }
     @media (max-width: 768px) {
         .bw-hero {
@@ -261,6 +375,18 @@
         .bw-vm-card {
             padding: 24px;
         }
+        .bw-info-card {
+            padding: 24px 20px;
+        }
+        .bw-info-item {
+            padding: 12px;
+            gap: 12px;
+        }
+        .bw-info-logo {
+            width: 52px;
+            height: 52px;
+            font-size: 22px;
+        }
     }
 </style>
 
@@ -282,10 +408,71 @@
             <!-- Main Team Showcase -->
             <div class="bw-team-grid">
                 
-                <div style="position: relative;">
-                    <div class="bw-image-accent"></div>
-                    <div class="bw-image-wrapper">
-                        <img src="{{ asset('images/team.jpg') }}" alt="Tim Profesional Next Young Tech">
+                <!-- Corporate Informative Card (Replacing Group Photo) -->
+                <div class="bw-info-card">
+                    <div class="bw-info-header">
+                        <div class="bw-info-logo">
+                            <i class="fa-solid fa-building-shield"></i>
+                        </div>
+                        <div class="bw-info-title">
+                            <h3>Next Young Tech</h3>
+                            <span>Corporate Information</span>
+                            <div>
+                                <span class="bw-verified-badge"><i class="fa-solid fa-circle-check"></i> Enterprise Verified Partner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bw-info-grid">
+                        <div class="bw-info-item">
+                            <div class="bw-info-icon">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div>
+                                <div class="bw-info-label">Nama Ekosistem Resmi</div>
+                                <div class="bw-info-value">PT / Ekosistem Next Young Tech Indonesia</div>
+                            </div>
+                        </div>
+
+                        <div class="bw-info-item">
+                            <div class="bw-info-icon">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <div class="bw-info-label">Pendiri & Pimpinan Eksekutif</div>
+                                <div class="bw-info-value">Nazmi Dwiputra Effendi</div>
+                            </div>
+                        </div>
+
+                        <div class="bw-info-item">
+                            <div class="bw-info-icon">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <div>
+                                <div class="bw-info-label">Fokus Layanan & Bisnis</div>
+                                <div class="bw-info-value">Custom Web Application, UI/UX Corporate & Joki Coding</div>
+                            </div>
+                        </div>
+
+                        <div class="bw-info-item">
+                            <div class="bw-info-icon">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div>
+                                <div class="bw-info-label">Standar Arsitektur Sistem</div>
+                                <div class="bw-info-value">Laravel 11, Three.js 3D WebGL & High-Performance Cloud</div>
+                            </div>
+                        </div>
+
+                        <div class="bw-info-item">
+                            <div class="bw-info-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <div class="bw-info-label">Standar Keamanan & Kualitas</div>
+                                <div class="bw-info-value">Enterprise-Grade SSL/TLS Encryption & 100% Clean Code</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

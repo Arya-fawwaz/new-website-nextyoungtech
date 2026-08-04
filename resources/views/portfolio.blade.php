@@ -3,60 +3,20 @@
 @section('title', 'Portofolio')
 
 @section('content')
+    <style>
+        /* Hide Nova AI Chatbot on Portfolio Page */
+        .nova-chatbot-container {
+            display: none !important;
+        }
+    </style>
     <section class="portfolio-showcase">
         <div class="container">
-            <div class="portfolio-hero">
-                <div class="portfolio-hero-copy">
-                    <h1>Portofolio digital yang dirancang matang, cepat, dan siap dipakai.</h1>
-                    <p>
-                        Beberapa produk web yang kami bangun dengan perhatian pada pengalaman pengguna,
-                        performa, keamanan, dan tampilan yang tetap tajam di mode cerah maupun gelap.
-                    </p>
-                    <div class="portfolio-hero-actions">
-                        <a href="{{ route('quotation.index') }}" class="portfolio-primary-link">
-                            <span>Mulai Diskusi Proyek</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a href="#portfolio-projects" class="portfolio-secondary-link">
-                            <span>Lihat Studi Kasus</span>
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-hero-panel" aria-label="Ringkasan kualitas portofolio">
-                    <div class="portfolio-score">
-                        <span>2</span>
-                        <small>Produk aktif</small>
-                    </div>
-                    <div class="portfolio-proof-grid">
-                        <div>
-                            <i class="fa-solid fa-gauge-high"></i>
-                            <strong>Fast-first</strong>
-                            <span>Arsitektur ringan dan responsif.</span>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-shield-halved"></i>
-                            <strong>Secure</strong>
-                            <span>Alur data disusun rapi dan terkontrol.</span>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-mobile-screen-button"></i>
-                            <strong>Adaptive</strong>
-                            <span>Nyaman di desktop dan mobile.</span>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-layer-group"></i>
-                            <strong>Scalable</strong>
-                            <span>Siap dikembangkan bertahap.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio-section-heading" id="portfolio-projects">
+            <div class="portfolio-section-heading" id="portfolio-projects" style="text-align: center; margin-bottom: 40px;">
                 <span>Case Studies</span>
                 <h2>Karya pilihan Next Young Tech</h2>
+                <p class="section-desc" style="max-width: 600px; margin: 15px auto 0; font-size: 15px; color: var(--text-muted); line-height: 1.6;">
+                    Jelajahi berbagai produk digital inovatif yang telah kami bangun dengan perhatian pada pengalaman pengguna, performa superior, keamanan tinggi, dan tampilan desain yang modern.
+                </p>
             </div>
 
             <!-- Swiper Container -->
@@ -66,22 +26,7 @@
                         <!-- Portfolio Case 1 -->
                         <div class="swiper-slide">
                             <article class="portfolio-case-card is-ugforce">
-                                <!-- Advanced Desktop Window Header -->
-                                <div class="portfolio-window-header">
-                                    <div class="window-controls">
-                                        <span class="control-dot dot-close" title="Close"></span>
-                                        <span class="control-dot dot-minimize" title="Minimize"></span>
-                                        <span class="control-dot dot-maximize" title="Maximize"></span>
-                                    </div>
-                                    <div class="window-address">
-                                        <i class="fa-solid fa-shield-halved text-success"></i>
-                                        <span class="address-text">showcase://ugforce.vercel.app</span>
-                                    </div>
-                                    <div class="window-meta">
-                                        <span class="status-dot-pulse"></span>
-                                        <span class="meta-label">LIVE_PREVIEW</span>
-                                    </div>
-                                </div>
+
 
                                 <div class="portfolio-case-body">
                                     <a href="https://ugforce.vercel.app/" target="_blank" class="portfolio-media-link" aria-label="Buka UG Force Room Booking">
@@ -125,22 +70,7 @@
                         <!-- Portfolio Case 2 -->
                         <div class="swiper-slide">
                             <article class="portfolio-case-card is-parksmart">
-                                <!-- Advanced Desktop Window Header -->
-                                <div class="portfolio-window-header">
-                                    <div class="window-controls">
-                                        <span class="control-dot dot-close" title="Close"></span>
-                                        <span class="control-dot dot-minimize" title="Minimize"></span>
-                                        <span class="control-dot dot-maximize" title="Maximize"></span>
-                                    </div>
-                                    <div class="window-address">
-                                        <i class="fa-solid fa-shield-halved text-success"></i>
-                                        <span class="address-text">showcase://parksmart.vercel.app</span>
-                                    </div>
-                                    <div class="window-meta">
-                                        <span class="status-dot-pulse"></span>
-                                        <span class="meta-label">LIVE_PREVIEW</span>
-                                    </div>
-                                </div>
+
 
                                 <div class="portfolio-case-body">
                                     <a href="https://parksmart-gps.vercel.app/" target="_blank" class="portfolio-media-link" aria-label="Buka ParkSmart GPS AI">
@@ -184,8 +114,8 @@
                 </div>
                 
                 <!-- Custom Swiper Navigation -->
-                <div class="swiper-button-prev portfolio-prev desktop-nav-arrow"><i class="fa-solid fa-chevron-left" style="font-size: 20px;"></i></div>
-                <div class="swiper-button-next portfolio-next desktop-nav-arrow"><i class="fa-solid fa-chevron-right" style="font-size: 20px;"></i></div>
+                <div class="swiper-button-prev portfolio-prev desktop-nav-arrow"><i class="fa-solid fa-chevron-left" style="font-size: 14px;"></i></div>
+                <div class="swiper-button-next portfolio-next desktop-nav-arrow"><i class="fa-solid fa-chevron-right" style="font-size: 14px;"></i></div>
             </div>
 
             <!-- Pagination -->
