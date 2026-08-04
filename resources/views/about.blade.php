@@ -607,8 +607,8 @@
                             <i class="fa-solid fa-user-tie"></i>
                         </div>
                         <div class="bw-mgmt-name">Nazmi Dwiputra Effendi</div>
-                        <div class="bw-mgmt-role">OPERATIONS DIRECTOR</div>
-                        <p class="bw-mgmt-desc">Mengawasi eksekusi operasional, manajemen proyek klien, dan kepatuhan standar kualitas layanan ekosistem.</p>
+                        <div class="bw-mgmt-role">PRESIDENT DIRECTOR</div>
+                        <p class="bw-mgmt-desc">Memimpin arah strategis, visi ekosistem, dan kemitraan teknologi global Next Young Tech di seluruh Indonesia.</p>
                     </div>
 
                     <div class="bw-mgmt-card">
@@ -616,8 +616,8 @@
                             <i class="fa-solid fa-user-tie"></i>
                         </div>
                         <div class="bw-mgmt-name">Arya Fawwaz Septyan</div>
-                        <div class="bw-mgmt-role">PRESIDENT DIRECTOR / FOUNDER</div>
-                        <p class="bw-mgmt-desc">Memimpin arah strategis, visi ekosistem, dan kemitraan teknologi global Next Young Tech di seluruh Indonesia.</p>
+                        <div class="bw-mgmt-role">OPERATIONS DIRECTOR</div>
+                        <p class="bw-mgmt-desc">Mengawasi eksekusi operasional, manajemen proyek klien, dan kepatuhan standar kualitas layanan ekosistem.</p>
                     </div>
 
                     <div class="bw-mgmt-card">
