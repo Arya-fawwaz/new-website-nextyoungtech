@@ -79,31 +79,47 @@
     .bw-info-section-wrapper {
         display: flex;
         flex-direction: column;
-    }
-    .bw-section-heading {
-        margin-bottom: 24px;
-        border-bottom: 2px solid #0f172a;
-        padding-bottom: 12px;
+    .bw-section-heading,
+    .bw-mgmt-heading {
+        margin-bottom: 36px;
+        text-align: center;
         display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: none !important;
+        padding-bottom: 0 !important;
     }
-    .bw-section-sub {
-        font-size: 11px;
+    .bw-section-badge,
+    .bw-mgmt-badge {
+        background: #0f172a;
+        border: 1px solid #0f172a;
+        color: #ffffff;
         font-weight: 800;
-        color: var(--primary);
-        letter-spacing: 2px;
+        font-size: 11px;
+        padding: 6px 16px;
+        border-radius: 6px;
+        letter-spacing: 1.5px;
         text-transform: uppercase;
-        display: block;
-        margin-bottom: 4px;
+        display: inline-block;
+        margin-bottom: 14px;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
     }
-    .bw-section-heading h3 {
+    .bw-section-heading h3,
+    .bw-mgmt-heading h3 {
         font-family: var(--font-heading);
-        font-size: 24px;
+        font-size: 36px;
         font-weight: 900;
         color: #0f172a;
         margin: 0;
-        line-height: 1.2;
+        line-height: 1.25;
+        text-align: center;
+    }
+    @media (max-width: 640px) {
+        .bw-section-heading h3,
+        .bw-mgmt-heading h3 {
+            font-size: 26px;
+        }
     }
     .bw-cards-grid {
         display: grid;
@@ -185,31 +201,6 @@
     .bw-mgmt-section {
         margin-top: 70px;
         margin-bottom: 40px;
-    }
-    .bw-mgmt-heading {
-        margin-bottom: 32px;
-        border-bottom: 2px solid #0f172a;
-        padding-bottom: 12px;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-    }
-    .bw-mgmt-sub {
-        font-size: 11px;
-        font-weight: 800;
-        color: var(--primary);
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        display: block;
-        margin-bottom: 4px;
-    }
-    .bw-mgmt-heading h3 {
-        font-family: var(--font-heading);
-        font-size: 24px;
-        font-weight: 900;
-        color: #0f172a;
-        margin: 0;
-        line-height: 1.2;
     }
     .bw-mgmt-grid {
         display: grid;
@@ -345,9 +336,11 @@
     html[data-theme="dark"] .bw-stats {
         border-top-color: var(--border-color) !important;
     }
-    html[data-theme="dark"] .bw-section-heading,
-    html[data-theme="dark"] .bw-mgmt-heading {
-        border-bottom-color: var(--border-color) !important;
+    html[data-theme="dark"] .bw-section-badge,
+    html[data-theme="dark"] .bw-mgmt-badge {
+        background: rgba(59, 130, 246, 0.18) !important;
+        border-color: rgba(59, 130, 246, 0.35) !important;
+        color: #60a5fa !important;
     }
 
     .bw-text-content h2 {
@@ -531,10 +524,8 @@
                 <!-- Corporate Informative Cards Grid (Replacing one big frame box) -->
                 <div class="bw-info-section-wrapper">
                     <div class="bw-section-heading">
-                        <div>
-                            <span class="bw-section-sub">IDENTITAS & STANDAR INDUSTRI</span>
-                            <h3>Profil & Sertifikasi Ekosistem</h3>
-                        </div>
+                        <span class="bw-section-badge">IDENTITAS & STANDAR INDUSTRI</span>
+                        <h3>Profil & Sertifikasi Ekosistem</h3>
                     </div>
                     <div class="bw-cards-grid">
                         <div class="bw-single-card">
@@ -606,21 +597,10 @@
             <!-- Management & Executive Leadership Section (Separate Member Cards) -->
             <div class="bw-mgmt-section">
                 <div class="bw-mgmt-heading">
-                    <div>
-                        <span class="bw-mgmt-sub">STRUKTUR EKSEKUTIF INTI</span>
-                        <h3>Kepemimpinan & Manajemen</h3>
-                    </div>
+                    <span class="bw-mgmt-badge">STRUKTUR EKSEKUTIF INTI</span>
+                    <h3>Kepemimpinan & Manajemen</h3>
                 </div>
                 <div class="bw-mgmt-grid">
-                    <div class="bw-mgmt-card">
-                        <div class="bw-mgmt-icon">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
-                        <div class="bw-mgmt-name">Arya Fawwaz Septyan</div>
-                        <div class="bw-mgmt-role">PRESIDENT DIRECTOR / FOUNDER</div>
-                        <p class="bw-mgmt-desc">Memimpin arah strategis, visi ekosistem, dan kemitraan teknologi global Next Young Tech di seluruh Indonesia.</p>
-                    </div>
-
                     <div class="bw-mgmt-card">
                         <div class="bw-mgmt-icon">
                             <i class="fa-solid fa-user-tie"></i>
@@ -628,6 +608,15 @@
                         <div class="bw-mgmt-name">Nazmi Dwiputra Effendi</div>
                         <div class="bw-mgmt-role">OPERATIONS DIRECTOR</div>
                         <p class="bw-mgmt-desc">Mengawasi eksekusi operasional, manajemen proyek klien, dan kepatuhan standar kualitas layanan ekosistem.</p>
+                    </div>
+
+                    <div class="bw-mgmt-card">
+                        <div class="bw-mgmt-icon">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div class="bw-mgmt-name">Arya Fawwaz Septyan</div>
+                        <div class="bw-mgmt-role">PRESIDENT DIRECTOR / FOUNDER</div>
+                        <p class="bw-mgmt-desc">Memimpin arah strategis, visi ekosistem, dan kemitraan teknologi global Next Young Tech di seluruh Indonesia.</p>
                     </div>
 
                     <div class="bw-mgmt-card">
