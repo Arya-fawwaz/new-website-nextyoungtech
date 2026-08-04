@@ -25,10 +25,10 @@
                                 ? 'var(--' . $service->warna_aksen . ')' 
                                 : $service->warna_aksen;
                         @endphp
-                        <div class="glass-card" style="border-color: rgba(14, 165, 233, 0.15); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform-style: preserve-3d; perspective: 1000px;" onmouseover="this.style.transform='translateY(-10px) rotateX(2deg) rotateY(2deg) scale(1.02)'; this.style.boxShadow='0 30px 60px rgba(0,0,0,0.15), 0 0 20px {{ $color }}40'; this.style.borderColor='{{ $color }}';" onmouseout="this.style.transform='none'; this.style.boxShadow='none'; this.style.borderColor='rgba(14, 165, 233, 0.15)';">
+                        <div class="glass-card" style="border-color: var(--border-color); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform-style: preserve-3d; perspective: 1000px;" onmouseover="this.style.transform='translateY(-10px) rotateX(2deg) rotateY(2deg) scale(1.02)'; this.style.boxShadow='0 30px 60px rgba(0,0,0,0.15), 0 0 20px {{ $color }}40'; this.style.borderColor='{{ $color }}';" onmouseout="this.style.transform='none'; this.style.boxShadow='none'; this.style.borderColor='var(--border-color)';">
                             <div>
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                                    <span class="section-badge" style="color: {{ $color }}; margin: 0; background: rgba(14, 165, 233, 0.05); padding: 4px 12px; border-radius: 8px; font-size: 11px;">
+                                    <span class="section-badge" style="color: {{ $color }}; margin: 0; background: rgba(128, 128, 128, 0.08); padding: 4px 12px; border-radius: 8px; font-size: 11px;">
                                         {{ $service->badge ?: strtoupper($service->nama_layanan) }}
                                     </span>
                                     @if($service->ikon)
