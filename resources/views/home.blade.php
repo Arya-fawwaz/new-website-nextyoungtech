@@ -52,15 +52,15 @@
          ========================================================== -->
     <section class="section partners-section" id="partners" style="padding: 75px 0 65px 0; position: relative; background: #ffffff; border-top: 1px solid var(--border-color); overflow: hidden;">
         <div class="container" style="position: relative; z-index: 1;">
-            <!-- Section Header (Judul Bab OUR PARTNERS Hitam dan Putih) -->
+            <!-- Section Header (Judul Bab PARTNER KAMI Hitam dan Putih) -->
             <div class="section-header" style="text-align: center; margin-bottom: 35px;">
                 <span class="section-badge" style="background: #0f172a; border: 1px solid #0f172a; color: #ffffff; font-weight: 800; padding: 6px 16px; border-radius: 6px; letter-spacing: 1.5px; font-size: 11.5px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;">
                     <i class="fa-solid fa-handshake" style="color: #ffffff; font-size: 12px;"></i>
-                    <span>STRATEGIC PARTNERSHIP</span>
+                    <span>KEMITRAAN STRATEGIS</span>
                 </span>
                 
                 <h2 class="section-title" style="font-size: clamp(38px, 6.5vw, 58px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 16px; color: #0f172a; text-transform: uppercase;">
-                    OUR PARTNERS
+                    PARTNER KAMI
                 </h2>
                 
                 <p class="section-desc" style="max-width: 680px; margin: 0 auto; font-size: 16px; color: #64748b; line-height: 1.65;">
@@ -73,6 +73,107 @@
                 <a href="{{ route('news') }}" title="Lihat liputan berita kemitraan PT TRSJ International Indonesia" class="partner-logo-front" style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
                     <img src="{{ asset('images/trsj_logo_dark.png') }}" alt="Logo PT TRSJ International Indonesia - TR Digital Construction" style="max-width: 680px; width: 98%; height: auto; object-fit: contain; filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.08));">
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         BERITA & ARTIKEL TERBARU (Monochrome Black & White Grid)
+         ========================================================== -->
+    <section class="section home-news-section" id="berita" style="padding: 75px 0 85px 0; background: #ffffff; border-top: 1px solid var(--border-color); overflow: hidden;">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header" style="text-align: center; margin-bottom: 45px;">
+                <span class="section-badge" style="background: #0f172a; border: 1px solid #0f172a; color: #ffffff; font-weight: 800; padding: 6px 16px; border-radius: 6px; letter-spacing: 1.5px; font-size: 11.5px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                    <i class="fa-solid fa-newspaper" style="color: #ffffff; font-size: 12px;"></i>
+                    <span>KABAR & RILIS TERBARU</span>
+                </span>
+                
+                <h2 class="section-title" style="font-size: clamp(34px, 5.5vw, 48px); font-weight: 900; letter-spacing: -1.2px; line-height: 1.2; margin-bottom: 14px; color: #0f172a; text-transform: uppercase;">
+                    BERITA TERKINI
+                </h2>
+                
+                <p class="section-desc" style="max-width: 680px; margin: 0 auto; font-size: 16px; color: #64748b; line-height: 1.65;">
+                    Dapatkan liputan resmi seputar kolaborasi korporat, perkembangan arsitektur web enterprise, dan inovasi teknologi terbaru dari Next Young Tech Studio.
+                </p>
+            </div>
+
+            <!-- News Grid (3 Responsive Cards in Black & White) -->
+            <div class="home-news-grid">
+                <!-- Card 1: Kemitraan PT TRSJ (NEW NEWS) -->
+                <article class="home-news-card">
+                    <div class="news-card-img-wrap">
+                        <img src="{{ asset('images/trsj_partner_moment.jpeg') }}" alt="Momen Serah Terima Platform Web PT TRSJ International Indonesia" loading="lazy">
+                        <span class="news-card-tag">KEMITRAAN ENTERPRISE</span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="news-card-meta">
+                            <span><i class="fa-regular fa-calendar-check"></i> 8 November 2026</span>
+                            <span>•</span>
+                            <span>3 Menit Baca</span>
+                        </div>
+                        <h3 class="news-card-title">
+                            Next Young Tech Sukses Menghadirkan Solusi Arsitektur Web Enterprise untuk PT TRSJ International Indonesia
+                        </h3>
+                        <p class="news-card-excerpt">
+                            Kolaborasi strategis pengembangan infrastruktur web korporat telekomunikasi modern berstandar internasional dengan performa tinggi dan keamanan enterprise.
+                        </p>
+                        <a href="{{ route('news') }}" class="news-card-btn" title="Baca selengkapnya berita kemitraan PT TRSJ">
+                            <span>Baca Selengkapnya</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 2: Rilis THE ROAD Roblox Game -->
+                <article class="home-news-card">
+                    <div class="news-card-img-wrap">
+                        <img src="https://the-road-game.vercel.app/hero_corridor.png" alt="Rilis Game Roblox THE ROAD" loading="lazy">
+                        <span class="news-card-tag">RILIS GAME 3D</span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="news-card-meta">
+                            <span><i class="fa-regular fa-calendar-check"></i> November 2026</span>
+                            <span>•</span>
+                            <span>Roblox Co-Op</span>
+                        </div>
+                        <h3 class="news-card-title">
+                            Next Young Tech Studio Resmi Merilis Mahakarya Game Horor 3D "THE ROAD"
+                        </h3>
+                        <p class="news-card-excerpt">
+                            Sensasi teror shift malam minimarket interaktif dengan sistem multiplayer kooperatif, pemantauan CCTV canggih, dan mekanisme aturan survival mendebarkan.
+                        </p>
+                        <a href="https://the-road-game.vercel.app" target="_blank" class="news-card-btn" title="Kunjungi Website 3D THE ROAD">
+                            <span>Baca Selengkapnya</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 3: Arsitektur Laravel 11 & WebGL 3D -->
+                <article class="home-news-card">
+                    <div class="news-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Arsitektur Modern Laravel dan WebGL 3D" loading="lazy">
+                        <span class="news-card-tag">TEKNOLOGI & INOVASI</span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="news-card-meta">
+                            <span><i class="fa-regular fa-calendar-check"></i> Oktober 2026</span>
+                            <span>•</span>
+                            <span>Tech Insight</span>
+                        </div>
+                        <h3 class="news-card-title">
+                            Inovasi Platform Web: Sinergi Framework Laravel 11 dan Interaktivitas WebGL 3D
+                        </h3>
+                        <p class="news-card-excerpt">
+                            Standar baru Next Young Tech dalam menghadirkan pengalaman website modern 60 FPS yang memukau dengan ketahanan arsitektur backend tingkat tinggi.
+                        </p>
+                        <a href="{{ route('news') }}" class="news-card-btn" title="Baca selengkapnya artikel inovasi teknologi">
+                            <span>Baca Selengkapnya</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -254,6 +355,170 @@
             transform: scale(1.06) translateY(-2px) !important;
         }
 
+        /* Home News Grid Styles (Monochrome Black & White) */
+        .home-news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .home-news-card {
+            background: #ffffff;
+            border: 1.5px solid #0f172a;
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+            box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+        }
+
+        .home-news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+        }
+
+        .news-card-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: #0f172a;
+        }
+
+        .news-card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            display: block;
+        }
+
+        .home-news-card:hover .news-card-img-wrap img {
+            transform: scale(1.06);
+        }
+
+        .news-card-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 5px 12px;
+            border-radius: 6px;
+            letter-spacing: 0.8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        }
+
+        .news-card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .news-card-meta {
+            font-size: 12.5px;
+            color: #64748b;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .news-card-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-card-excerpt {
+            font-size: 13.5px;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-card-btn {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #0f172a;
+            color: #ffffff !important;
+            padding: 11px 20px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border: 1px solid #0f172a;
+        }
+
+        .news-card-btn:hover {
+            background: #000000;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .news-card-btn i {
+            transition: transform 0.25s ease;
+        }
+
+        .news-card-btn:hover i {
+            transform: translateX(4px);
+        }
+
+        html[data-theme="dark"] .home-news-section {
+            background: var(--bg-main) !important;
+        }
+
+        html[data-theme="dark"] .home-news-card {
+            background: var(--bg-card) !important;
+            border-color: var(--border-color) !important;
+        }
+
+        html[data-theme="dark"] .news-card-title {
+            color: var(--text-main) !important;
+        }
+
+        @media (max-width: 992px) {
+            .home-news-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .home-news-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .news-card-img-wrap {
+                height: 200px;
+            }
+            .news-card-body {
+                padding: 20px;
+            }
+        }
+
         /* Style for Interactive Star Rating */
         .star-rating input:checked ~ .star-label,
         .star-rating .star-label:hover,
@@ -313,44 +578,6 @@
                     <p class="feature-desc" style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin: 0; flex-grow: 1;">
                         Mengalami error memusingkan pada proyek web Anda? Joki coding kami siap membantu melakukan debugging, perbaikan sistem keamanan, optimasi performa database MySQL/Postgres, hingga penyempurnaan UI/UX website.
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- News & Event / Latest Project Section -->
-    <section class="section latest-project-section" style="background: rgba(255, 255, 255, 0.02); border-top: 1px solid var(--border-color); padding: 80px 0;">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 50px;">
-                <span class="section-badge">NEWS & EVENT</span>
-                <h2 class="section-title">Project Rilis Terbaru Kami</h2>
-                <p class="section-desc">Ikuti perkembangan project inovatif dan rilis terbaru dari tim developer Next Young Tech Studio.</p>
-            </div>
-
-            <div class="glass-card project-showcase-card" style="padding: 0; overflow: hidden; border: 1px solid transparent; display: flex; flex-wrap: wrap;">
-                <!-- Image Side -->
-                <div style="flex: 1 1 400px; position: relative; min-height: 350px;">
-                    <img src="https://the-road-game.vercel.app/hero_corridor.png" alt="THE ROAD Game" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-                    <div style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.8); color: #fff; padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: bold; border: 1px solid #ff0000; box-shadow: 0 0 15px rgba(255,0,0,0.5);">
-                        <i class="fa-solid fa-gamepad"></i> ROBLOX HORROR GAME
-                    </div>
-                </div>
-                <!-- Content Side -->
-                <div style="flex: 1 1 400px; padding: 40px; display: flex; flex-direction: column; justify-content: center; background: rgba(255, 255, 255, 0.02);">
-                    <h3 style="font-size: 26px; font-weight: 800; margin-bottom: 16px; color: var(--text-main);">THE ROAD - Co-Op Multiplayer Terror</h3>
-                    <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
-                        Next Young Tech Studio secara resmi merilis mahakarya game horor 3D di platform Roblox: <strong>THE ROAD</strong>. 
-                        Rasakan kengerian berjaga shift malam di minimarket terpencil. Tepat pukul 02:00 AM, entitas gelap yang disebut <em>The Midnight Shoppers</em> mulai berdatangan.
-                        Selesaikan tugas kasir, pantau CCTV, hemat baterai senter, dan patuhi buku aturan jika Anda ingin selamat hingga fajar!
-                    </p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: auto;">
-                        <a href="https://the-road-game.vercel.app" target="_blank" class="btn-primary" style="background: var(--primary); box-shadow: 0 0 15px var(--primary-glow); border: none;">
-                            <i class="fa-solid fa-globe"></i> Kunjungi Website 3D
-                        </a>
-                        <a href="https://www.roblox.com/id/games/106161713513894/THE-ROAD" target="_blank" class="btn-secondary" style="border: 1px solid var(--border-color);">
-                            <i class="fa-solid fa-play"></i> Mainkan Sekarang
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
