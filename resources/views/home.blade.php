@@ -448,6 +448,7 @@
         .overlay-headline a {
             color: #0f172a;
             text-decoration: none;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 14px rgba(255, 255, 255, 0.95);
             transition: color 0.25s ease;
         }
 
@@ -457,11 +458,11 @@
 
         .overlay-excerpt {
             font-size: 13.5px;
-            color: #1e293b;
-            font-weight: 500;
+            color: #0f172a;
+            font-weight: 600;
             line-height: 1.55;
             margin: 0;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.8);
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 255, 255, 0.9);
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
