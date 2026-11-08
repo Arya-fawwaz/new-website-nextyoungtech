@@ -78,6 +78,23 @@
     </section>
 
     <!-- ==========================================================
+         OFFICIAL NEXT YOUNG TECH BRAND BANNER (Full Panoramic ala Foto 2)
+         ========================================================== -->
+    <section class="section brand-panoramic-section">
+        <div class="container" style="max-width: 1240px; padding: 0 20px;">
+            <div class="brand-panoramic-frame">
+                <picture>
+                    <source srcset="{{ asset('images/nextyoungtech_banner.webp') }}" type="image/webp">
+                    <img src="{{ asset('images/nextyoungtech_banner.png') }}" 
+                         alt="Next Young Tech Official Technology Studio Banner" 
+                         loading="lazy"
+                         class="brand-panoramic-img">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
          BERITA UTAMA (1 Berita Utama - Modern Biru Putih)
          ========================================================== -->
     <section class="section home-news-section" id="berita" style="padding: 70px 0 80px 0; background: #ffffff; border-top: 1px solid var(--border-color); overflow: hidden;">
@@ -331,6 +348,60 @@
         }
         .partner-logo-front:hover img {
             transform: scale(1.06) translateY(-2px) !important;
+        }
+
+        /* ==========================================================
+           BRAND PANORAMIC BANNER (Memanjang, Bersih & Profesional ala Foto 2)
+           ========================================================== */
+        .brand-panoramic-section {
+            padding: 15px 0 55px 0;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-panoramic-frame {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1.5px solid rgba(14, 165, 233, 0.28);
+            box-shadow: 0 12px 35px rgba(14, 165, 233, 0.1);
+            background: #ffffff;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+            line-height: 0;
+        }
+
+        .brand-panoramic-frame:hover {
+            transform: translateY(-3px) scale(1.006);
+            border-color: #0ea5e9;
+            box-shadow: 0 18px 45px rgba(14, 165, 233, 0.18);
+        }
+
+        .brand-panoramic-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        html[data-theme="dark"] .brand-panoramic-section {
+            background: var(--bg-main) !important;
+        }
+
+        html[data-theme="dark"] .brand-panoramic-frame {
+            border-color: rgba(14, 165, 233, 0.35) !important;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5) !important;
+            background: var(--bg-card) !important;
+        }
+
+        @media (max-width: 768px) {
+            .brand-panoramic-section {
+                padding: 10px 0 35px 0 !important;
+            }
+            .brand-panoramic-frame {
+                border-radius: 14px !important;
+                border-width: 1px !important;
+            }
         }
 
         /* ==========================================================
