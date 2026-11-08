@@ -13,9 +13,30 @@
         min-height: 100vh;
         background-color: #ffffff;
         color: #0f172a;
-        padding-top: 130px;
+        padding-top: 95px;
         padding-bottom: 90px;
         position: relative;
+    }
+
+    @media (max-width: 768px) {
+        .news-page-wrapper {
+            padding-top: 65px !important;
+            padding-bottom: 60px !important;
+        }
+        .article-header {
+            margin-bottom: 20px !important;
+        }
+        .article-main-title {
+            margin-top: 8px !important;
+            margin-bottom: 14px !important;
+            font-size: clamp(23px, 5.5vw, 32px) !important;
+            line-height: 1.3 !important;
+        }
+        .article-meta-bar {
+            padding: 10px 0 !important;
+            gap: 14px !important;
+            font-size: 12.5px !important;
+        }
     }
 
     /* Ambient background glows - subtle blue */

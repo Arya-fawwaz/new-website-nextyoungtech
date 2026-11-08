@@ -98,57 +98,64 @@
                 </p>
             </div>
 
-            <!-- Single Featured News Showcase (Frame Biru Putih Modern, Foto Terlihat Utuh Semua) -->
+            <!-- Single Featured News Showcase (Format Artikel Berita Profesional - Frame Biru Putih) -->
             <div class="single-news-frame">
                 <div class="single-news-grid">
-                    <!-- Sisi Foto: Kelihatan Utuh Semua Tanpa Terpotong -->
-                    <div class="single-news-media">
-                        <div class="single-news-img-box">
+                    <!-- Sisi Kiri: Foto Liputan Dokumentasi Resmi (Kelihatan Utuh Semua) -->
+                    <div class="editorial-media-column">
+                        <div class="editorial-photo-container">
                             <img src="{{ asset('images/trsj_partner_moment.jpeg') }}" alt="Momen Serah Terima Platform Web PT TRSJ International Indonesia oleh Next Young Tech" loading="lazy">
-                            <span class="single-news-media-badge">
-                                <i class="fa-solid fa-circle-check"></i> PROYEK RESMI SELESAI
-                            </span>
+                            <div class="editorial-photo-tag">
+                                <i class="fa-solid fa-camera"></i> Dokumentasi Serah Terima Resmi
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Sisi Konten: Teks Berita & Tombol Baca Selengkapnya -->
-                    <div class="single-news-content">
-                        <div class="single-news-tag-row">
-                            <span class="single-news-tag">KEMITRAAN ENTERPRISE</span>
-                            <span class="single-news-date"><i class="fa-regular fa-calendar-check"></i> 8 November 2026</span>
-                            <span class="single-news-readtime"><i class="fa-regular fa-clock"></i> 3 Menit Baca</span>
+                    <!-- Sisi Kanan: Teks Format Berita Artikel Profesional -->
+                    <div class="editorial-text-column">
+                        <!-- Meta Kategori & Tanggal -->
+                        <div class="editorial-meta-header">
+                            <span class="editorial-category-badge">SIARAN PERS RESMI</span>
+                            <span class="editorial-meta-item"><i class="fa-regular fa-calendar-check"></i> 8 November 2026</span>
+                            <span class="editorial-meta-dot">•</span>
+                            <span class="editorial-meta-item"><i class="fa-regular fa-clock"></i> 3 Menit Baca</span>
                         </div>
 
-                        <h3 class="single-news-title">
-                            Next Young Tech Sukses Menghadirkan Solusi Arsitektur Web Enterprise untuk PT TRSJ International Indonesia
+                        <!-- Judul Berita Artikel -->
+                        <h3 class="editorial-article-title">
+                            <a href="{{ route('news') }}" title="Baca liputan berita selengkapnya">Next Young Tech Sukses Menghadirkan Solusi Arsitektur Web Enterprise untuk PT TRSJ International Indonesia</a>
                         </h3>
 
-                        <p class="single-news-desc">
-                            Next Young Tech secara resmi telah menyelesaikan dan melakukan serah terima platform website korporat enterprise untuk <strong>PT TRSJ International Indonesia</strong> (<em>TR Digital Construction</em>). Platform dibangun dengan performa berkecepatan tinggi, sistem keamanan tingkat lanjut, dan arsitektur modern berstandar internasional.
-                        </p>
-
-                        <!-- Highlights Cakupan Solusi -->
-                        <div class="single-news-highlights">
-                            <div class="news-highlight-item">
-                                <i class="fa-solid fa-bolt-lightning"></i>
-                                <span>Performa Ultra Cepat</span>
-                            </div>
-                            <div class="news-highlight-item">
-                                <i class="fa-solid fa-shield-halved"></i>
-                                <span>Keamanan Enterprise</span>
-                            </div>
-                            <div class="news-highlight-item">
-                                <i class="fa-solid fa-layer-group"></i>
-                                <span>Arsitektur Laravel</span>
+                        <!-- Byline Tim Redaksi (Memberi Kesan Artikel Profesional) -->
+                        <div class="editorial-byline-bar">
+                            <img src="{{ asset('images/logo-n-trans.png') }}" alt="Next Young Tech" class="byline-logo">
+                            <div class="byline-text">
+                                <span class="byline-author">Tim Redaksi & Media Next Young Tech</span>
+                                <span class="byline-role">Liputan Kerjasama Strategis Korporasi</span>
                             </div>
                         </div>
 
-                        <!-- Tombol Baca Selengkapnya -->
-                        <div class="single-news-action">
-                            <a href="{{ route('news') }}" class="btn-single-news" title="Baca Liputan Lengkap Berita Kemitraan PT TRSJ">
-                                <span>Baca Selengkapnya</span>
+                        <!-- Paragraf Pengantar Artikel Berita -->
+                        <p class="editorial-lead-text">
+                            <strong>JAKARTA</strong> — Next Young Tech secara resmi telah menyelesaikan dan melakukan serah terima platform website korporat enterprise untuk <strong>PT TRSJ International Indonesia</strong> (<em>TR Digital Construction / 唐人数建</em>). Solusi ini menghadirkan arsitektur web modern berkecepatan tinggi, sistem keamanan berstandar enterprise, dan kemudahan manajemen data proyek infrastruktur telekomunikasi skala nasional.
+                        </p>
+
+                        <!-- Poin Fitur Utama Arsitektur -->
+                        <div class="editorial-features-pills">
+                            <span class="editorial-pill"><i class="fa-solid fa-bolt-lightning"></i> Performa 60 FPS</span>
+                            <span class="editorial-pill"><i class="fa-solid fa-shield-halved"></i> Keamanan Enterprise</span>
+                            <span class="editorial-pill"><i class="fa-solid fa-code"></i> Framework Laravel 11</span>
+                        </div>
+
+                        <!-- Tombol Aksi Baca Artikel Lengkap -->
+                        <div class="editorial-bottom-action">
+                            <a href="{{ route('news') }}" class="btn-read-full-article" title="Baca artikel berita lengkap">
+                                <span>Baca Artikel Lengkap</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
+                            <span class="editorial-verified-note">
+                                <i class="fa-solid fa-circle-check"></i> Rilis Resmi Terverifikasi
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -334,12 +341,12 @@
         }
 
         /* ==========================================================
-           SINGLE MODERN NEWS CARD (Frame Biru Putih)
+           PROFESSIONAL EDITORIAL ARTICLE SHOWCASE (Frame Biru Putih)
            ========================================================== */
         .single-news-frame {
             background: #ffffff;
             border: 2px solid #0ea5e9;
-            border-radius: 24px;
+            border-radius: 22px;
             box-shadow: 0 12px 35px rgba(14, 165, 233, 0.12);
             overflow: hidden;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -354,91 +361,89 @@
         .single-news-grid {
             display: grid;
             grid-template-columns: 460px 1fr;
-            align-items: center;
+            align-items: stretch;
         }
 
-        .single-news-media {
+        .editorial-media-column {
+            background: #f8fafc;
             padding: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            height: 100%;
+            border-right: 1px solid #e2e8f0;
+            position: relative;
         }
 
-        .single-news-img-box {
+        .editorial-photo-container {
             position: relative;
             width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 16px;
-            overflow: hidden;
-            background: #ffffff;
-            border: 1.5px solid rgba(14, 165, 233, 0.25);
-            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.12);
         }
 
-        .single-news-img-box img {
+        .editorial-photo-container img {
             width: 100%;
             height: auto;
             max-height: 440px;
             object-fit: contain;
             display: block;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.4s ease;
         }
 
-        .single-news-frame:hover .single-news-img-box img {
-            transform: scale(1.03);
+        .single-news-frame:hover .editorial-photo-container img {
+            transform: scale(1.02);
         }
 
-        .single-news-media-badge {
+        .editorial-photo-tag {
             position: absolute;
             bottom: 12px;
             left: 12px;
-            background: rgba(14, 165, 233, 0.95);
+            background: rgba(15, 23, 42, 0.9);
             color: #ffffff;
             font-size: 11px;
-            font-weight: 800;
-            padding: 5px 12px;
+            font-weight: 700;
+            padding: 5px 14px;
             border-radius: 999px;
-            letter-spacing: 0.5px;
             backdrop-filter: blur(4px);
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
         }
 
-        .single-news-content {
-            padding: 38px 42px;
+        .editorial-text-column {
+            padding: 36px 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             background: #ffffff;
         }
 
-        .single-news-tag-row {
+        .editorial-meta-header {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
-        .single-news-tag {
-            background: #0ea5e9;
-            color: #ffffff;
-            font-size: 11.5px;
+        .editorial-category-badge {
+            background: rgba(14, 165, 233, 0.1);
+            color: #0284c7;
+            border: 1px solid rgba(14, 165, 233, 0.35);
+            font-size: 11px;
             font-weight: 800;
-            padding: 5px 12px;
-            border-radius: 6px;
-            letter-spacing: 0.5px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
         }
 
-        .single-news-date,
-        .single-news-readtime {
+        .editorial-meta-item {
             font-size: 13px;
             color: #64748b;
             font-weight: 600;
@@ -447,54 +452,109 @@
             gap: 6px;
         }
 
-        .single-news-date i,
-        .single-news-readtime i {
+        .editorial-meta-item i {
             color: #0ea5e9;
         }
 
-        .single-news-title {
+        .editorial-meta-dot {
+            color: #cbd5e1;
+            font-size: 11px;
+        }
+
+        .editorial-article-title {
             font-family: var(--font-heading);
-            font-size: clamp(20px, 2.3vw, 26px);
+            font-size: clamp(21px, 2.4vw, 27px);
             font-weight: 900;
             color: #0f172a;
             line-height: 1.35;
             letter-spacing: -0.5px;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
-        .single-news-desc {
-            font-size: 15px;
+        .editorial-article-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+
+        .editorial-article-title a:hover {
+            color: #0ea5e9;
+        }
+
+        .editorial-byline-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .byline-logo {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .byline-text {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-size: 12.5px;
+        }
+
+        .byline-author {
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .byline-role {
+            color: #64748b;
+        }
+
+        .editorial-lead-text {
+            font-size: 14.5px;
             color: #475569;
             line-height: 1.7;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
-        .single-news-highlights {
+        .editorial-features-pills {
             display: flex;
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 26px;
+            margin-bottom: 24px;
         }
 
-        .news-highlight-item {
+        .editorial-pill {
             background: #f0f9ff;
             border: 1px solid #bae6fd;
             color: #0369a1;
-            padding: 6px 14px;
+            padding: 5px 13px;
             border-radius: 8px;
-            font-size: 12.5px;
+            font-size: 12px;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 7px;
         }
 
-        .news-highlight-item i {
+        .editorial-pill i {
             color: #0ea5e9;
         }
 
-        .btn-single-news {
+        .editorial-bottom-action {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: auto;
+        }
+
+        .btn-read-full-article {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -508,21 +568,29 @@
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 6px 20px rgba(14, 165, 233, 0.35);
-            align-self: flex-start;
         }
 
-        .btn-single-news:hover {
+        .btn-read-full-article:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(14, 165, 233, 0.45);
             background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
         }
 
-        .btn-single-news i {
+        .btn-read-full-article i {
             transition: transform 0.25s ease;
         }
 
-        .btn-single-news:hover i {
+        .btn-read-full-article:hover i {
             transform: translateX(5px);
+        }
+
+        .editorial-verified-note {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #059669;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         html[data-theme="dark"] .single-news-frame {
@@ -530,11 +598,20 @@
             border-color: #0ea5e9 !important;
         }
 
-        html[data-theme="dark"] .single-news-content {
+        html[data-theme="dark"] .editorial-media-column {
+            background: rgba(14, 165, 233, 0.05) !important;
+            border-right-color: var(--border-color) !important;
+        }
+
+        html[data-theme="dark"] .editorial-text-column {
             background: var(--bg-card) !important;
         }
 
-        html[data-theme="dark"] .single-news-title {
+        html[data-theme="dark"] .editorial-article-title {
+            color: var(--text-main) !important;
+        }
+
+        html[data-theme="dark"] .byline-author {
             color: var(--text-main) !important;
         }
 
@@ -542,11 +619,13 @@
             .single-news-grid {
                 grid-template-columns: 1fr;
             }
-            .single-news-media {
-                padding: 20px 20px 0 20px;
+            .editorial-media-column {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                padding: 20px;
             }
-            .single-news-content {
-                padding: 24px 20px 28px 20px;
+            .editorial-text-column {
+                padding: 24px 20px;
             }
         }
 
