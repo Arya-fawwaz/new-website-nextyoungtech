@@ -517,36 +517,86 @@
     @endif
     
     <script>
-        // Seamless Google Translate Toggle
-        function toggleLanguage() {
+        // Set Google Translate Cookie across root path and domain
+        function setGoogleTranslateCookie(lang) {
+            var host = window.location.hostname;
+            document.cookie = "googtrans=/id/" + lang + "; path=/;";
+            if (host.indexOf('.') !== -1) {
+                document.cookie = "googtrans=/id/" + lang + "; path=/; domain=." + host + ";";
+                var parts = host.split('.');
+                if (parts.length >= 2) {
+                    var rootDomain = parts.slice(-2).join('.');
+                    document.cookie = "googtrans=/id/" + lang + "; path=/; domain=." + rootDomain + ";";
+                }
+            }
+        }
+
+        // Seamless Google Translate Language Switcher
+        function setTranslateLanguage(lang) {
+            lang = lang.toLowerCase();
+            setGoogleTranslateCookie(lang);
+            
             var combo = document.querySelector('.goog-te-combo');
             if (combo) {
-                // Check current button text to determine toggle direction
-                var btns = document.querySelectorAll('.lang-switch-btn');
-                var isCurrentlyId = btns[0].innerText.trim() === 'ID';
-                
-                // Toggle Google Translate combo box
-                combo.value = isCurrentlyId ? 'en' : 'id';
+                combo.value = lang;
                 combo.dispatchEvent(new Event('change'));
-                
-                // Update visual buttons
-                btns.forEach(btn => {
-                    btn.innerText = isCurrentlyId ? 'EN' : 'ID';
-                });
             } else {
-                // Fallback if google script hasn't loaded yet
-                setTimeout(toggleLanguage, 500);
+                // If Google Translate combo hasn't loaded yet, reload with the new cookie
+                window.location.reload();
             }
+            
+            // Update visual buttons across header and mobile
+            var displayLang = lang.toUpperCase();
+            document.querySelectorAll('.lang-switch-btn').forEach(btn => {
+                btn.innerText = displayLang;
+            });
+
+            // Update in-page pills (e.g. on news page)
+            document.querySelectorAll('.lang-pill-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                    btn.style.background = 'var(--primary)';
+                    btn.style.color = '#ffffff';
+                } else {
+                    btn.classList.remove('active');
+                    btn.style.background = 'transparent';
+                    btn.style.color = 'var(--text-main)';
+                }
+            });
+        }
+
+        function toggleLanguage() {
+            var isCurrentlyEn = document.cookie.indexOf('googtrans=/id/en') !== -1;
+            var firstBtn = document.querySelector('.lang-switch-btn');
+            if (firstBtn && firstBtn.innerText.trim().toUpperCase() === 'EN') {
+                isCurrentlyEn = true;
+            }
+            var targetLang = isCurrentlyEn ? 'id' : 'en';
+            setTranslateLanguage(targetLang);
         }
         
         // Ensure buttons show correct state on load if language is remembered in cookie
         window.addEventListener('load', function() {
             setTimeout(function() {
+                var isEn = document.cookie.indexOf('googtrans=/id/en') !== -1;
                 var combo = document.querySelector('.goog-te-combo');
-                if (combo && combo.value === 'en') {
+                if (combo && combo.value === 'en') isEn = true;
+                
+                if (isEn) {
                     document.querySelectorAll('.lang-switch-btn').forEach(btn => btn.innerText = 'EN');
+                    document.querySelectorAll('.lang-pill-btn').forEach(btn => {
+                        if (btn.getAttribute('data-lang') === 'en') {
+                            btn.classList.add('active');
+                            btn.style.background = 'var(--primary)';
+                            btn.style.color = '#ffffff';
+                        } else {
+                            btn.classList.remove('active');
+                            btn.style.background = 'transparent';
+                            btn.style.color = 'var(--text-main)';
+                        }
+                    });
                 }
-            }, 1000);
+            }, 800);
         });
     </script>
 

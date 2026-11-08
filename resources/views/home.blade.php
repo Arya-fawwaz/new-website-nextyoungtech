@@ -48,95 +48,72 @@
     </section>
 
     <!-- ==========================================================
-         OUR PARTNERS SECTION (Mencolok & High-Impact)
+         OUR PARTNERS SECTION (Clean & Borderless)
          ========================================================== -->
-    <section class="section partners-section" id="partners" style="padding: 70px 0; position: relative; background: radial-gradient(circle at 50% 20%, rgba(255, 107, 0, 0.05) 0%, rgba(14, 165, 233, 0.04) 50%, transparent 80%); border-top: 1px solid var(--border-color); overflow: hidden;">
-        <!-- Ambient decorative glow -->
-        <div style="position: absolute; top: -120px; left: 50%; transform: translateX(-50%); width: 700px; height: 260px; background: radial-gradient(ellipse, rgba(255, 107, 0, 0.2), rgba(14, 165, 233, 0.15), transparent 70%); filter: blur(60px); pointer-events: none; z-index: 0;"></div>
-
+    <section class="section partners-section" id="partners" style="padding: 70px 0; position: relative; background: #ffffff; border-top: 1px solid var(--border-color); overflow: hidden;">
         <div class="container" style="position: relative; z-index: 1;">
-            <!-- Section Header (Mencolok) -->
-            <div class="section-header" style="text-align: center; margin-bottom: 45px;">
-                <div class="partner-top-badge" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(255, 107, 0, 0.2), rgba(255, 140, 0, 0.1)); border: 1.5px solid #ff7700; color: #ff6b00; font-weight: 800; padding: 7px 20px; border-radius: 999px; letter-spacing: 2px; font-size: 12px; text-transform: uppercase; box-shadow: 0 0 25px rgba(255, 107, 0, 0.35); margin-bottom: 16px;">
-                    <i class="fa-solid fa-handshake" style="color: #ff7700; font-size: 14px;"></i>
-                    <span>STRATEGIC PARTNERSHIP</span>
+            <!-- Section Header -->
+            <div class="section-header" style="text-align: center; margin-bottom: 35px;">
+                <div class="partner-top-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(14, 165, 233, 0.08); border: 1.5px solid rgba(14, 165, 233, 0.3); color: var(--primary); font-weight: 800; padding: 6px 18px; border-radius: 999px; letter-spacing: 2px; font-size: 12px; text-transform: uppercase; margin-bottom: 14px;">
+                    <i class="fa-solid fa-handshake" style="color: var(--primary); font-size: 13px;"></i>
+                    <span>OUR PARTNERS</span>
                 </div>
                 
-                <h2 class="section-title" style="font-size: clamp(34px, 5.5vw, 52px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 16px;">
-                    <span style="background: linear-gradient(135deg, #ff4500 0%, #ff8c00 40%, #0ea5e9 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 20px rgba(255, 107, 0, 0.35));">
-                        OUR PARTNERS
-                    </span>
+                <h2 class="section-title" style="font-size: clamp(32px, 5vw, 44px); font-weight: 900; letter-spacing: -1.2px; line-height: 1.2; margin-bottom: 14px; color: #0f172a;">
+                    Mitra & Kolaborasi Strategis
                 </h2>
                 
-                <p class="section-desc" style="max-width: 680px; margin: 0 auto; font-size: 16px; color: var(--text-muted); line-height: 1.65;">
-                    Next Young Tech bangga dipercaya oleh korporasi industri nasional dan internasional. Kami berkolaborasi menghadirkan arsitektur website enterprise yang andal, berkecepatan tinggi, dan berkelas dunia.
+                <p class="section-desc" style="max-width: 660px; margin: 0 auto; font-size: 16px; color: #64748b; line-height: 1.65;">
+                    Next Young Tech bangga dipercaya oleh korporasi industri terkemuka dalam mewujudkan transformasi digital, arsitektur website enterprise, dan keunggulan teknologi mutakhir.
                 </p>
             </div>
 
-            <!-- Featured Partner Card: PT TRSJ INTERNATIONAL INDONESIA -->
-            <div class="partner-showcase-container" style="max-width: 1020px; margin: 0 auto;">
-                <div class="partner-card-featured" style="background: linear-gradient(145deg, #070c18 0%, #0c1529 60%, #111d38 100%); border: 2px solid rgba(255, 107, 0, 0.4); border-radius: 26px; padding: 38px 42px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 107, 0, 0.2); position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 1.3fr; gap: 36px; align-items: center;">
-                    
-                    <!-- Glow effect corner -->
-                    <div style="position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255, 107, 0, 0.35), transparent 70%); filter: blur(35px); pointer-events: none;"></div>
-                    <div style="position: absolute; bottom: -60px; left: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(14, 165, 233, 0.3), transparent 70%); filter: blur(35px); pointer-events: none;"></div>
+            <!-- Clean Logo Display in Front (Tanpa Frame Kotak Gelap) -->
+            <div class="partner-clean-showcase" style="max-width: 820px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                
+                <!-- Logo Muncul Bersih di Depan -->
+                <div class="partner-logo-front" style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; transition: transform 0.3s ease;">
+                    <img src="{{ asset('images/trsj_logo_dark.png') }}" alt="Logo PT TRSJ International Indonesia - TR Digital Construction" style="max-width: 320px; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.06));">
+                </div>
 
-                    <!-- Left: Prominent Logo Display with Dark Background Shield -->
-                    <div class="partner-logo-shield" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.03); border: 1.5px solid rgba(255, 255, 255, 0.1); border-radius: 22px; padding: 34px 26px; text-align: center; position: relative; backdrop-filter: blur(12px); box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.02);">
-                        
-                        <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.18); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 11px; font-weight: 800; padding: 5px 14px; border-radius: 20px; margin-bottom: 22px; letter-spacing: 0.5px;">
-                            <i class="fa-solid fa-circle-check"></i> VERIFIED ENTERPRISE PARTNER
-                        </div>
-
-                        <!-- TRSJ Logo -->
-                        <div class="trsj-logo-wrapper" style="width: 100%; display: flex; align-items: center; justify-content: center; min-height: 95px; padding: 10px 0;">
-                            <img src="{{ asset('images/logo_transparent_4k.webp') }}" alt="Logo PT TRSJ International Indonesia - TR Digital Construction" style="max-width: 260px; width: 92%; height: auto; object-fit: contain; filter: drop-shadow(0 4px 18px rgba(255, 107, 0, 0.4)); transition: transform 0.3s ease;">
-                        </div>
-
-                        <div style="margin-top: 20px; border-top: 1px dashed rgba(255, 255, 255, 0.15); padding-top: 14px; width: 100%;">
-                            <span style="font-size: 13.5px; font-weight: 800; color: #cbd5e1; letter-spacing: 0.8px;">TR DIGITAL CONSTRUCTION</span>
-                            <div style="font-size: 12px; color: #94a3b8; margin-top: 3px;">Tangren Shujian (唐人数建)</div>
-                        </div>
+                <!-- Partner Info & Highlights (Clean Hitam Putih Biru) -->
+                <div style="margin-top: 18px; width: 100%;">
+                    <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); color: #059669; font-size: 11.5px; font-weight: 700; padding: 4px 14px; border-radius: 999px; margin-bottom: 12px; letter-spacing: 0.5px;">
+                        <i class="fa-solid fa-circle-check"></i> VERIFIED ENTERPRISE PARTNER
                     </div>
 
-                    <!-- Right: Partner Details & Collaboration Highlights -->
-                    <div style="color: #ffffff; display: flex; flex-direction: column; gap: 18px;">
-                        <div>
-                            <span style="font-size: 12.5px; font-weight: 800; color: #ff8c00; letter-spacing: 1.5px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 6px;">
-                                <i class="fa-solid fa-building-columns"></i> Mitra Strategis Berskala Internasional
-                            </span>
-                            <h3 style="font-size: 28px; font-weight: 900; color: #ffffff; margin: 8px 0 10px 0; line-height: 1.25; font-family: var(--font-heading);">
-                                PT TRSJ International Indonesia
-                            </h3>
-                            <p style="font-size: 15px; color: #cbd5e1; line-height: 1.7; margin: 0;">
-                                Korporasi terkemuka di bidang konstruksi infrastruktur telekomunikasi dan rekayasa digital berskala global. Next Young Tech dipercaya membangun arsitektur website korporat interaktif dan solusi sistem terintegrasi untuk mendukung pertumbuhan ekspansi PT TRSJ.
-                            </p>
-                        </div>
+                    <h3 style="font-size: 26px; font-weight: 900; color: #0f172a; margin-bottom: 4px; font-family: var(--font-heading);">
+                        PT TRSJ International Indonesia
+                    </h3>
+                    
+                    <div style="font-size: 14px; font-weight: 600; color: #64748b; margin-bottom: 14px;">
+                        TR Digital Construction &bull; 唐人数建
+                    </div>
 
-                        <!-- Highlights tags -->
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                            <span style="background: rgba(14, 165, 233, 0.18); border: 1px solid rgba(14, 165, 233, 0.35); color: #38bdf8; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px;">
-                                <i class="fa-solid fa-code"></i> Arsitektur Web Enterprise
-                            </span>
-                            <span style="background: rgba(255, 107, 0, 0.18); border: 1px solid rgba(255, 107, 0, 0.35); color: #fb923c; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px;">
-                                <i class="fa-solid fa-tower-broadcast"></i> Telekomunikasi & Sipil
-                            </span>
-                            <span style="background: rgba(16, 185, 129, 0.18); border: 1px solid rgba(16, 185, 129, 0.35); color: #34d399; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px;">
-                                <i class="fa-solid fa-bolt"></i> Ultra Fast & Secure
-                            </span>
-                        </div>
+                    <p style="max-width: 640px; margin: 0 auto 22px auto; font-size: 15px; color: #475569; line-height: 1.7;">
+                        Korporasi internasional di bidang konstruksi infrastruktur telekomunikasi dan rekayasa digital. Mempercayakan pengembangan platform web enterprise berkecepatan tinggi kepada Next Young Tech.
+                    </p>
 
-                        <!-- CTA to News -->
-                        <div style="margin-top: 6px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px;">
-                            <a href="{{ route('news') }}" class="btn-primary" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #ff5500 0%, #ff8c00 100%); color: #ffffff; padding: 13px 26px; border-radius: 12px; font-size: 14px; font-weight: 800; text-decoration: none; box-shadow: 0 6px 20px rgba(255, 107, 0, 0.45); transition: transform 0.25s ease;">
-                                <i class="fa-solid fa-newspaper"></i>
-                                <span>Baca Liputan Berita Kerjasama</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                            <span style="font-size: 12.5px; color: #94a3b8; display: inline-flex; align-items: center; gap: 6px;">
-                                <i class="fa-solid fa-calendar-day" style="color: #ff8c00;"></i> Rilis: 8 November 2026
-                            </span>
-                        </div>
+                    <!-- Clean Badges (Hitam, Putih, Biru) -->
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 24px;">
+                        <span style="background: rgba(14, 165, 233, 0.08); border: 1px solid rgba(14, 165, 233, 0.2); color: var(--primary); font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 8px;">
+                            <i class="fa-solid fa-code"></i> Arsitektur Web Enterprise
+                        </span>
+                        <span style="background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 8px;">
+                            <i class="fa-solid fa-tower-broadcast" style="color: var(--primary);"></i> Telekomunikasi & Sipil
+                        </span>
+                        <span style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); color: #059669; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 8px;">
+                            <i class="fa-solid fa-bolt"></i> Ultra Fast & Secure
+                        </span>
+                    </div>
+
+                    <!-- CTA ke Halaman News -->
+                    <div>
+                        <a href="{{ route('news') }}" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; padding: 11px 26px; border-radius: 10px; background: var(--primary); color: #ffffff; text-decoration: none; font-weight: 700; box-shadow: 0 4px 15px var(--primary-glow); transition: transform 0.2s ease;">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <span>Baca Liputan Berita Kerjasama</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -312,27 +289,12 @@
             }
         }
 
-        /* Partners Section Styles */
-        .partner-card-featured {
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        /* Partners Section Styles (Clean & Borderless) */
+        .partner-logo-front img {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }
-        .partner-card-featured:hover {
-            transform: translateY(-5px) !important;
-            border-color: rgba(255, 107, 0, 0.75) !important;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35), 0 0 50px rgba(255, 107, 0, 0.35) !important;
-        }
-        .partner-card-featured:hover .trsj-logo-wrapper img {
-            transform: scale(1.05);
-        }
-        @media (max-width: 850px) {
-            .partner-card-featured {
-                grid-template-columns: 1fr !important;
-                padding: 28px 22px !important;
-                gap: 26px !important;
-            }
-            .partner-logo-shield {
-                padding: 24px 18px !important;
-            }
+        .partner-logo-front:hover img {
+            transform: scale(1.06) translateY(-2px) !important;
         }
 
         /* Style for Interactive Star Rating */
