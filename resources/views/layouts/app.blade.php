@@ -203,6 +203,46 @@
                 /* Let it be visible on mobile */
             }
         }
+
+        /* ==========================================================
+           BRAND PANORAMIC BANNER (Full-Bleed 100% Ujung ke Ujung di Semua Halaman)
+           ========================================================== */
+        .brand-panoramic-fullwidth {
+            width: 100%;
+            display: block;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+            overflow: hidden;
+            background: #ffffff;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .brand-panoramic-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            margin: 0;
+            padding: 0;
+            border: none !important;
+            border-radius: 0 !important;
+        }
+
+        html[data-theme="dark"] .brand-panoramic-fullwidth {
+            background: var(--bg-main) !important;
+            border-color: var(--border-color) !important;
+        }
+
+        @media (max-width: 768px) {
+            .brand-panoramic-fullwidth {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .brand-panoramic-img {
+                border-radius: 0 !important;
+            }
+        }
     </style>
     
     @if(request()->is('admin*'))
@@ -603,6 +643,21 @@
     <!-- Main Content Area -->
     <main>
         @yield('content')
+
+        @if(!Route::is('admin*'))
+        <!-- ==========================================================
+             OFFICIAL NEXT YOUNG TECH BRAND BANNER (Full-Bleed 100% Ujung ke Ujung Mentok di Semua Halaman)
+             ========================================================== -->
+        <div class="brand-panoramic-fullwidth">
+            <picture>
+                <source srcset="{{ asset('images/nextyoungtech_banner.webp') }}" type="image/webp">
+                <img src="{{ asset('images/nextyoungtech_banner.png') }}" 
+                     alt="Next Young Tech Official Technology Studio Banner" 
+                     loading="lazy"
+                     class="brand-panoramic-img">
+            </picture>
+        </div>
+        @endif
     </main>
 
     @if(!Route::is('admin.dashboard'))

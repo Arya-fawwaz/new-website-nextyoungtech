@@ -517,14 +517,6 @@
             </div>
         </div>
 
-        <!-- Official Next Young Tech Brand Banner (Memanjang, Bersih & Profesional) -->
-        <div style="margin: 40px 0 50px 0; border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(14, 165, 233, 0.28); box-shadow: 0 12px 35px rgba(14, 165, 233, 0.1); line-height: 0;">
-            <picture>
-                <source srcset="{{ asset('images/nextyoungtech_banner.webp') }}" type="image/webp">
-                <img src="{{ asset('images/nextyoungtech_banner.png') }}" alt="Next Young Tech Official Technology Studio Banner" style="width: 100%; height: auto; display: block; object-fit: cover;" loading="lazy">
-            </picture>
-        </div>
-
         <!-- Related News / Project Card (Clean Theme) -->
         <div style="margin-bottom: 45px;">
             <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 20px; color: #0f172a; display: flex; align-items: center; gap: 8px;">

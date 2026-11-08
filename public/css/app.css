@@ -4511,3 +4511,43 @@ body {
     box-shadow: 0 10px 30px rgba(14, 165, 233, 0.08) !important;
     border-color: rgba(14, 165, 233, 0.3) !important;
 }
+
+/* ==========================================================
+   BRAND PANORAMIC BANNER (Universal Full-Bleed Ujung ke Ujung Mentok)
+   ========================================================== */
+.brand-panoramic-fullwidth {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    overflow: hidden;
+    background: #ffffff;
+    border-top: 1px solid var(--border-color);
+}
+
+.brand-panoramic-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+html[data-theme="dark"] .brand-panoramic-fullwidth {
+    background: var(--bg-main) !important;
+    border-color: var(--border-color) !important;
+}
+
+@media (max-width: 768px) {
+    .brand-panoramic-fullwidth {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .brand-panoramic-img {
+        border-radius: 0 !important;
+    }
+}
