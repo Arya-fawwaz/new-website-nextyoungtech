@@ -381,9 +381,10 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(to bottom, 
-                rgba(255, 255, 255, 0) 0%, 
-                rgba(255, 255, 255, 0.3) 35%, 
-                rgba(240, 249, 255, 0.88) 68%, 
+                transparent 0%, 
+                transparent 56%, 
+                rgba(255, 255, 255, 0.45) 74%, 
+                rgba(255, 255, 255, 0.92) 90%, 
                 #ffffff 100%);
             pointer-events: none;
             z-index: 1;
@@ -394,7 +395,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 16px 20px;
+            padding: 14px 20px 10px 20px;
             z-index: 2;
         }
 
@@ -403,8 +404,9 @@
             font-size: 18px;
             font-weight: 800;
             line-height: 1.35;
-            margin-bottom: 7px;
+            margin-bottom: 6px;
             color: #0f172a;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
         }
 
         .overlay-headline a {
@@ -419,9 +421,10 @@
 
         .overlay-excerpt {
             font-size: 12.5px;
-            color: #475569;
+            color: #334155;
             line-height: 1.5;
             margin: 0;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
