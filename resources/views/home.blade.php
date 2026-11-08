@@ -52,14 +52,14 @@
          ========================================================== -->
     <section class="section partners-section" id="partners" style="padding: 75px 0 65px 0; position: relative; background: #ffffff; border-top: 1px solid var(--border-color); overflow: hidden;">
         <div class="container" style="position: relative; z-index: 1;">
-            <!-- Section Header (Judul Bab OUR PARTNERS Mencolok) -->
+            <!-- Section Header (Judul Bab OUR PARTNERS Hitam dan Putih) -->
             <div class="section-header" style="text-align: center; margin-bottom: 35px;">
-                <div class="partner-top-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(249, 115, 22, 0.1); border: 1.5px solid rgba(249, 115, 22, 0.35); color: #ea580c; font-weight: 800; padding: 6px 20px; border-radius: 999px; letter-spacing: 2px; font-size: 12px; text-transform: uppercase; margin-bottom: 14px;">
-                    <i class="fa-solid fa-handshake" style="color: #ea580c; font-size: 13px;"></i>
+                <span class="section-badge" style="background: #0f172a; border: 1px solid #0f172a; color: #ffffff; font-weight: 800; padding: 6px 16px; border-radius: 6px; letter-spacing: 1.5px; font-size: 11.5px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                    <i class="fa-solid fa-handshake" style="color: #ffffff; font-size: 12px;"></i>
                     <span>STRATEGIC PARTNERSHIP</span>
-                </div>
+                </span>
                 
-                <h2 class="section-title" style="font-size: clamp(38px, 6.5vw, 58px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 16px; background: linear-gradient(135deg, #f97316 0%, #0284c7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase;">
+                <h2 class="section-title" style="font-size: clamp(38px, 6.5vw, 58px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 16px; color: #0f172a; text-transform: uppercase;">
                     OUR PARTNERS
                 </h2>
                 

@@ -356,30 +356,9 @@
     <div class="news-glow-2"></div>
 
     <div class="container" style="position: relative; z-index: 2;">
-        
-        <!-- Breadcrumb Navigation -->
-        <nav class="news-breadcrumb" aria-label="Breadcrumb">
-            <a href="{{ route('home') }}"><i class="fa-solid fa-house"></i> Beranda</a>
-            <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
-            <span class="current">News & Liputan Media</span>
-            <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
-            <span class="current">Kemitraan PT TRSJ</span>
-        </nav>
 
         <!-- Article Header -->
         <header class="article-header">
-            <div class="article-badge-row">
-                <span class="article-badge-primary">
-                    <i class="fa-solid fa-bullhorn"></i> SIARAN PERS RESMI
-                </span>
-                <span class="article-badge-secondary">
-                    <i class="fa-solid fa-handshake"></i> KEMITRAAN ENTERPRISE
-                </span>
-                <span class="article-badge-secondary" style="color: #0284c7; border-color: rgba(2, 132, 199, 0.25); background: rgba(2, 132, 199, 0.08);">
-                    <i class="fa-solid fa-circle-check"></i> PROYEK SELESAI & DEPLOYED
-                </span>
-            </div>
-
             <h1 class="article-main-title">
                 Next Young Tech Sukses Menghadirkan Solusi Arsitektur Web Enterprise untuk PT TRSJ International Indonesia
             </h1>
@@ -533,29 +512,6 @@
                         <span>Kunjungi Web</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
-            </div>
-        </div>
-
-        <!-- CTA Banner (Clean Soft Blue & White Gradient) -->
-        <div class="news-cta-banner">
-            <div>
-                <span style="font-size: 12px; font-weight: 800; color: var(--primary); letter-spacing: 1.5px; text-transform: uppercase;">
-                    <i class="fa-solid fa-lightbulb"></i> Butuh Solusi Serupa?
-                </span>
-                <h3 style="font-size: 26px; font-weight: 800; margin: 8px 0 10px 0; color: #0f172a;">
-                    Siap Mengembangkan Platform Web Korporat Anda?
-                </h3>
-                <p style="font-size: 14.5px; color: #475569; margin: 0; max-width: 600px; line-height: 1.6;">
-                    Konsultasikan kebutuhan pembuatan website, sistem enterprise, atau transformasi digital bisnis Anda bersama tim engineer ahli Next Young Tech.
-                </p>
-            </div>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                <a href="https://wa.me/628881023038?text=Halo%20Next%20Young%20Tech,%20saya%20tertarik%20untuk%20konsultasi%20pembuatan%20website%20korporat%20seperti%20kemitraan%20PT%20TRSJ." target="_blank" class="btn-primary" style="background: linear-gradient(135deg, #25d366, #128c7e); border: none; padding: 14px 26px; border-radius: 12px; font-weight: 700; font-size: 14px; text-decoration: none; color: #ffffff; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i> Hubungi via WhatsApp
-                </a>
-                <a href="{{ route('quotation.index') }}" class="btn-secondary" style="border: 1px solid #cbd5e1; background: #ffffff; padding: 14px 24px; border-radius: 12px; font-weight: 700; font-size: 14px; text-decoration: none; color: #0f172a; display: inline-flex; align-items: center; gap: 8px;">
-                    <i class="fa-solid fa-calculator" style="color: var(--primary);"></i> Estimasi Biaya
-                </a>
             </div>
         </div>
 
