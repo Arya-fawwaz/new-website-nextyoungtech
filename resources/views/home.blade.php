@@ -382,8 +382,8 @@
             inset: 0;
             background: linear-gradient(to bottom, 
                 transparent 0%, 
-                transparent 56%, 
-                rgba(255, 255, 255, 0.45) 74%, 
+                transparent 64%, 
+                rgba(255, 255, 255, 0.45) 76%, 
                 rgba(255, 255, 255, 0.92) 90%, 
                 #ffffff 100%);
             pointer-events: none;
@@ -536,9 +536,10 @@
 
         html[data-theme="dark"] .overlay-card-scrim {
             background: linear-gradient(to bottom, 
-                rgba(15, 23, 42, 0) 0%, 
-                rgba(15, 23, 42, 0.35) 30%, 
-                rgba(15, 23, 42, 0.92) 75%, 
+                transparent 0%, 
+                transparent 64%, 
+                rgba(15, 23, 42, 0.5) 76%, 
+                rgba(15, 23, 42, 0.95) 90%, 
                 var(--bg-card) 100%) !important;
         }
 
