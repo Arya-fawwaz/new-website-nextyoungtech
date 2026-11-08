@@ -101,18 +101,15 @@
             <!-- Modern Overlay News Card (Biru & Putih - Teks Timpa Foto) -->
             <div class="modern-overlay-card-wrapper">
                 <article class="modern-overlay-news-card">
-                    <!-- Bagian Foto Atas dengan Scrim Gradient Bersih & Teks Menimpa Foto -->
+                    <!-- Bagian Foto Atas dengan Floating Content Card Bersih -->
                     <div class="overlay-card-media-wrap">
                         <img src="{{ asset('images/trsj_partner_moment.jpeg') }}" alt="Momen Serah Terima Web Enterprise PT TRSJ International Indonesia" loading="lazy">
                         
-                        <!-- Ambient Scrim Gradient Biru Putih -->
-                        <div class="overlay-card-scrim"></div>
-
-                        <!-- Teks yang Menimpa Foto (Overlay) -->
+                        <!-- Floating Content Card (Tidak Ketimpa Foto, Mencolok & Modern) -->
                         <div class="overlay-card-caption">
-                            <div class="overlay-kicker">
+                            <div class="overlay-kicker-pill">
                                 <span class="editorial-kicker-dot"></span>
-                                <span class="editorial-kicker-text">Liputan Kemitraan Strategis</span>
+                                <span class="editorial-kicker-text">LIPUTAN KEMITRAAN STRATEGIS</span>
                             </div>
                             <h3 class="overlay-headline">
                                 <a href="{{ route('news') }}" title="Baca liputan berita selengkapnya">
@@ -125,7 +122,7 @@
                         </div>
                     </div>
 
-                    <!-- Bagian Bawah Kartu: Divider, Author Redaksi, Headline & Tombol Baca (Warna Biru Putih) -->
+                    <!-- Bagian Bawah Kartu: Meta Redaksi & Tombol Baca (Warna Biru Putih) -->
                     <div class="overlay-card-footer">
                         <div class="overlay-footer-meta">
                             <span class="overlay-author">
@@ -135,13 +132,11 @@
                             <span class="overlay-date">
                                 <i class="fa-regular fa-calendar-check"></i> 8 November 2026
                             </span>
+                            <span class="overlay-dot">•</span>
+                            <span class="overlay-read-time">
+                                <i class="fa-regular fa-clock"></i> 3 Menit Baca
+                            </span>
                         </div>
-
-                        <h4 class="overlay-footer-title">
-                            <a href="{{ route('news') }}">
-                                Solusi Arsitektur Web Enterprise Berstandar Internasional & Infrastruktur Telekomunikasi
-                            </a>
-                        </h4>
 
                         <div class="overlay-footer-action">
                             <a href="{{ route('news') }}" class="btn-overlay-read-news" title="Baca artikel selengkapnya">
@@ -364,7 +359,7 @@
         .overlay-card-media-wrap {
             position: relative;
             width: 100%;
-            height: 430px;
+            height: 460px;
             overflow: hidden;
             background: #f8fafc;
         }
@@ -373,70 +368,75 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 10%;
+            object-position: center 6%;
             display: block;
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .modern-overlay-news-card:hover .overlay-card-media-wrap img {
-            transform: scale(1.03);
+            transform: scale(1.025);
         }
 
         .overlay-card-scrim {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, 
-                transparent 0%, 
-                transparent 56%, 
-                rgba(255, 255, 255, 0.45) 72%, 
-                rgba(255, 255, 255, 0.94) 88%, 
-                #ffffff 100%);
-            pointer-events: none;
-            z-index: 1;
+            display: none;
         }
 
+        /* Floating Modern Content Box (Anti Ketimpa & Mencolok) */
         .overlay-card-caption {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 18px 26px 14px 26px;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #ffffff;
+            border: 2px solid #0ea5e9;
+            border-radius: 18px;
+            padding: 18px 24px;
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
             z-index: 2;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .overlay-kicker {
+        .modern-overlay-news-card:hover .overlay-card-caption {
+            border-color: #0284c7;
+            box-shadow: 0 16px 36px rgba(14, 165, 233, 0.18);
+        }
+
+        .overlay-kicker-pill {
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            margin-bottom: 7px;
+            background: #0ea5e9;
+            color: #ffffff !important;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 9px;
+            box-shadow: 0 3px 10px rgba(14, 165, 233, 0.35);
         }
 
         .editorial-kicker-dot {
-            width: 7px;
-            height: 7px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
-            background: #0ea5e9;
+            background: #ffffff;
             display: inline-block;
-            box-shadow: 0 0 8px rgba(14, 165, 233, 0.8);
         }
 
-        .editorial-kicker-text {
-            font-size: 11.5px;
-            font-weight: 800;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            color: #0284c7;
+        .overlay-kicker-pill .editorial-kicker-text {
+            color: #ffffff !important;
         }
 
         .overlay-headline {
             font-family: var(--font-heading);
-            font-size: clamp(21px, 2.7vw, 27px);
+            font-size: clamp(20px, 2.5vw, 25px);
             font-weight: 800;
             line-height: 1.25;
             letter-spacing: -0.025em;
             margin-bottom: 8px;
             color: #0f172a;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
 
         .overlay-headline a {
@@ -454,7 +454,6 @@
             color: #334155;
             line-height: 1.55;
             margin: 0;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -462,11 +461,14 @@
         }
 
         .overlay-card-footer {
-            padding: 18px 26px 22px 26px;
+            padding: 16px 24px;
             background: #ffffff;
             border-top: 1px solid #e0f2fe;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
         }
 
         .overlay-footer-meta {
@@ -476,11 +478,11 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 8px;
             flex-wrap: wrap;
         }
 
-        .overlay-date {
+        .overlay-date,
+        .overlay-read-time {
             color: #64748b;
             font-weight: 600;
         }
@@ -490,28 +492,9 @@
             font-size: 11px;
         }
 
-        .overlay-footer-title {
-            font-size: 14.5px;
-            font-weight: 700;
-            line-height: 1.45;
-            margin-bottom: 15px;
-            color: #0f172a;
-        }
-
-        .overlay-footer-title a {
-            color: #0f172a;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .overlay-footer-title a:hover {
-            color: #0ea5e9;
-        }
-
         .overlay-footer-action {
             display: flex;
             align-items: center;
-            justify-content: space-between;
             gap: 12px;
             flex-wrap: wrap;
         }
@@ -523,7 +506,7 @@
             gap: 8px;
             background: #0ea5e9;
             color: #ffffff !important;
-            padding: 9px 20px;
+            padding: 9px 22px;
             border-radius: 9px;
             font-size: 13px;
             font-weight: 800;
@@ -564,22 +547,18 @@
             border-top-color: var(--border-color) !important;
         }
 
-        html[data-theme="dark"] .overlay-card-scrim {
-            background: linear-gradient(to bottom, 
-                transparent 0%, 
-                transparent 56%, 
-                rgba(15, 23, 42, 0.5) 72%, 
-                rgba(15, 23, 42, 0.95) 88%, 
-                var(--bg-card) 100%) !important;
+        html[data-theme="dark"] .overlay-card-caption {
+            background: #0f172a !important;
+            border-color: #0ea5e9 !important;
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5) !important;
         }
 
-        html[data-theme="dark"] .overlay-headline a,
-        html[data-theme="dark"] .overlay-footer-title a {
-            color: var(--text-main) !important;
+        html[data-theme="dark"] .overlay-headline a {
+            color: #f8fafc !important;
         }
 
         html[data-theme="dark"] .overlay-excerpt {
-            color: #94a3b8 !important;
+            color: #cbd5e1 !important;
         }
 
         @media (max-width: 600px) {
@@ -587,16 +566,27 @@
                 max-width: 100%;
             }
             .overlay-card-media-wrap {
-                height: 350px;
-            }
-            .overlay-headline {
-                font-size: 19px;
+                height: 380px;
             }
             .overlay-card-caption {
+                bottom: 12px;
+                left: 12px;
+                right: 12px;
                 padding: 14px 16px;
+                border-radius: 14px;
+            }
+            .overlay-headline {
+                font-size: 17px;
             }
             .overlay-card-footer {
-                padding: 14px 16px 18px 16px;
+                padding: 14px 16px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .overlay-footer-action {
+                width: 100%;
+                justify-content: space-between;
             }
         }
 
