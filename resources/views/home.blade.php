@@ -78,23 +78,6 @@
     </section>
 
     <!-- ==========================================================
-         OFFICIAL NEXT YOUNG TECH BRAND BANNER (Full Panoramic ala Foto 2)
-         ========================================================== -->
-    <section class="section brand-panoramic-section">
-        <div class="container" style="max-width: 1240px; padding: 0 20px;">
-            <div class="brand-panoramic-frame">
-                <picture>
-                    <source srcset="{{ asset('images/nextyoungtech_banner.webp') }}" type="image/webp">
-                    <img src="{{ asset('images/nextyoungtech_banner.png') }}" 
-                         alt="Next Young Tech Official Technology Studio Banner" 
-                         loading="lazy"
-                         class="brand-panoramic-img">
-                </picture>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================================
          BERITA UTAMA (1 Berita Utama - Modern Biru Putih)
          ========================================================== -->
     <section class="section home-news-section" id="berita" style="padding: 70px 0 80px 0; background: #ffffff; border-top: 1px solid var(--border-color); overflow: hidden;">
@@ -1022,6 +1005,23 @@
                             </button>
                         </form>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+             OFFICIAL NEXT YOUNG TECH BRAND BANNER (Diatas Footer Pas)
+             ========================================================== -->
+        <section class="section brand-panoramic-section" style="padding: 35px 0 65px 0; background: #ffffff; border-top: 1px solid var(--border-color); overflow: hidden;">
+            <div class="container">
+                <div class="brand-panoramic-frame">
+                    <picture>
+                        <source srcset="{{ asset('images/nextyoungtech_banner.webp') }}" type="image/webp">
+                        <img src="{{ asset('images/nextyoungtech_banner.png') }}" 
+                             alt="Next Young Tech Official Technology Studio Banner" 
+                             loading="lazy"
+                             class="brand-panoramic-img">
+                    </picture>
                 </div>
             </div>
         </section>
