@@ -78,102 +78,80 @@
     </section>
 
     <!-- ==========================================================
-         BERITA & ARTIKEL TERBARU (Monochrome Black & White Grid)
+         BERITA UTAMA (1 Berita Utama - Modern Biru Putih)
          ========================================================== -->
-    <section class="section home-news-section" id="berita" style="padding: 75px 0 85px 0; background: #ffffff; border-top: 1px solid var(--border-color); overflow: hidden;">
+    <section class="section home-news-section" id="berita" style="padding: 70px 0 80px 0; background: #ffffff; border-top: 1px solid var(--border-color); overflow: hidden;">
         <div class="container">
             <!-- Section Header -->
-            <div class="section-header" style="text-align: center; margin-bottom: 45px;">
-                <span class="section-badge" style="background: #0f172a; border: 1px solid #0f172a; color: #ffffff; font-weight: 800; padding: 6px 16px; border-radius: 6px; letter-spacing: 1.5px; font-size: 11.5px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;">
-                    <i class="fa-solid fa-newspaper" style="color: #ffffff; font-size: 12px;"></i>
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <span class="section-badge" style="background: rgba(14, 165, 233, 0.1); border: 1.5px solid rgba(14, 165, 233, 0.35); color: #0284c7; font-weight: 800; padding: 6px 18px; border-radius: 999px; letter-spacing: 1.5px; font-size: 11.5px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+                    <i class="fa-solid fa-newspaper" style="color: #0ea5e9; font-size: 12px;"></i>
                     <span>KABAR & RILIS TERBARU</span>
                 </span>
                 
-                <h2 class="section-title" style="font-size: clamp(34px, 5.5vw, 48px); font-weight: 900; letter-spacing: -1.2px; line-height: 1.2; margin-bottom: 14px; color: #0f172a; text-transform: uppercase;">
+                <h2 class="section-title" style="font-size: clamp(32px, 5vw, 46px); font-weight: 900; letter-spacing: -1.2px; line-height: 1.2; margin-bottom: 14px; color: #0f172a; text-transform: uppercase;">
                     BERITA TERKINI
                 </h2>
                 
                 <p class="section-desc" style="max-width: 680px; margin: 0 auto; font-size: 16px; color: #64748b; line-height: 1.65;">
-                    Dapatkan liputan resmi seputar kolaborasi korporat, perkembangan arsitektur web enterprise, dan inovasi teknologi terbaru dari Next Young Tech Studio.
+                    Liputan resmi mengenai kemitraan strategis, arsitektur web enterprise, dan transformasi teknologi Next Young Tech Studio.
                 </p>
             </div>
 
-            <!-- News Grid (3 Responsive Cards in Black & White) -->
-            <div class="home-news-grid">
-                <!-- Card 1: Kemitraan PT TRSJ (NEW NEWS) -->
-                <article class="home-news-card">
-                    <div class="news-card-img-wrap">
-                        <img src="{{ asset('images/trsj_partner_moment.jpeg') }}" alt="Momen Serah Terima Platform Web PT TRSJ International Indonesia" loading="lazy">
-                        <span class="news-card-tag">KEMITRAAN ENTERPRISE</span>
-                    </div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span><i class="fa-regular fa-calendar-check"></i> 8 November 2026</span>
-                            <span>•</span>
-                            <span>3 Menit Baca</span>
+            <!-- Single Featured News Showcase (Frame Biru Putih Modern, Foto Terlihat Utuh Semua) -->
+            <div class="single-news-frame">
+                <div class="single-news-grid">
+                    <!-- Sisi Foto: Kelihatan Utuh Semua Tanpa Terpotong -->
+                    <div class="single-news-media">
+                        <div class="single-news-img-box">
+                            <img src="{{ asset('images/trsj_partner_moment.jpeg') }}" alt="Momen Serah Terima Platform Web PT TRSJ International Indonesia oleh Next Young Tech" loading="lazy">
+                            <span class="single-news-media-badge">
+                                <i class="fa-solid fa-circle-check"></i> PROYEK RESMI SELESAI
+                            </span>
                         </div>
-                        <h3 class="news-card-title">
+                    </div>
+
+                    <!-- Sisi Konten: Teks Berita & Tombol Baca Selengkapnya -->
+                    <div class="single-news-content">
+                        <div class="single-news-tag-row">
+                            <span class="single-news-tag">KEMITRAAN ENTERPRISE</span>
+                            <span class="single-news-date"><i class="fa-regular fa-calendar-check"></i> 8 November 2026</span>
+                            <span class="single-news-readtime"><i class="fa-regular fa-clock"></i> 3 Menit Baca</span>
+                        </div>
+
+                        <h3 class="single-news-title">
                             Next Young Tech Sukses Menghadirkan Solusi Arsitektur Web Enterprise untuk PT TRSJ International Indonesia
                         </h3>
-                        <p class="news-card-excerpt">
-                            Kolaborasi strategis pengembangan infrastruktur web korporat telekomunikasi modern berstandar internasional dengan performa tinggi dan keamanan enterprise.
-                        </p>
-                        <a href="{{ route('news') }}" class="news-card-btn" title="Baca selengkapnya berita kemitraan PT TRSJ">
-                            <span>Baca Selengkapnya</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
 
-                <!-- Card 2: Rilis THE ROAD Roblox Game -->
-                <article class="home-news-card">
-                    <div class="news-card-img-wrap">
-                        <img src="https://the-road-game.vercel.app/hero_corridor.png" alt="Rilis Game Roblox THE ROAD" loading="lazy">
-                        <span class="news-card-tag">RILIS GAME 3D</span>
-                    </div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span><i class="fa-regular fa-calendar-check"></i> November 2026</span>
-                            <span>•</span>
-                            <span>Roblox Co-Op</span>
-                        </div>
-                        <h3 class="news-card-title">
-                            Next Young Tech Studio Resmi Merilis Mahakarya Game Horor 3D "THE ROAD"
-                        </h3>
-                        <p class="news-card-excerpt">
-                            Sensasi teror shift malam minimarket interaktif dengan sistem multiplayer kooperatif, pemantauan CCTV canggih, dan mekanisme aturan survival mendebarkan.
+                        <p class="single-news-desc">
+                            Next Young Tech secara resmi telah menyelesaikan dan melakukan serah terima platform website korporat enterprise untuk <strong>PT TRSJ International Indonesia</strong> (<em>TR Digital Construction</em>). Platform dibangun dengan performa berkecepatan tinggi, sistem keamanan tingkat lanjut, dan arsitektur modern berstandar internasional.
                         </p>
-                        <a href="https://the-road-game.vercel.app" target="_blank" class="news-card-btn" title="Kunjungi Website 3D THE ROAD">
-                            <span>Baca Selengkapnya</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </article>
 
-                <!-- Card 3: Arsitektur Laravel 11 & WebGL 3D -->
-                <article class="home-news-card">
-                    <div class="news-card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Arsitektur Modern Laravel dan WebGL 3D" loading="lazy">
-                        <span class="news-card-tag">TEKNOLOGI & INOVASI</span>
-                    </div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span><i class="fa-regular fa-calendar-check"></i> Oktober 2026</span>
-                            <span>•</span>
-                            <span>Tech Insight</span>
+                        <!-- Highlights Cakupan Solusi -->
+                        <div class="single-news-highlights">
+                            <div class="news-highlight-item">
+                                <i class="fa-solid fa-bolt-lightning"></i>
+                                <span>Performa Ultra Cepat</span>
+                            </div>
+                            <div class="news-highlight-item">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <span>Keamanan Enterprise</span>
+                            </div>
+                            <div class="news-highlight-item">
+                                <i class="fa-solid fa-layer-group"></i>
+                                <span>Arsitektur Laravel</span>
+                            </div>
                         </div>
-                        <h3 class="news-card-title">
-                            Inovasi Platform Web: Sinergi Framework Laravel 11 dan Interaktivitas WebGL 3D
-                        </h3>
-                        <p class="news-card-excerpt">
-                            Standar baru Next Young Tech dalam menghadirkan pengalaman website modern 60 FPS yang memukau dengan ketahanan arsitektur backend tingkat tinggi.
-                        </p>
-                        <a href="{{ route('news') }}" class="news-card-btn" title="Baca selengkapnya artikel inovasi teknologi">
-                            <span>Baca Selengkapnya</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
+
+                        <!-- Tombol Baca Selengkapnya -->
+                        <div class="single-news-action">
+                            <a href="{{ route('news') }}" class="btn-single-news" title="Baca Liputan Lengkap Berita Kemitraan PT TRSJ">
+                                <span>Baca Selengkapnya</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
-                </article>
+                </div>
             </div>
         </div>
     </section>
@@ -355,167 +333,220 @@
             transform: scale(1.06) translateY(-2px) !important;
         }
 
-        /* Home News Grid Styles (Monochrome Black & White) */
-        .home-news-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            align-items: stretch;
-        }
-
-        .home-news-card {
+        /* ==========================================================
+           SINGLE MODERN NEWS CARD (Frame Biru Putih)
+           ========================================================== */
+        .single-news-frame {
             background: #ffffff;
-            border: 1.5px solid #0f172a;
-            border-radius: 18px;
+            border: 2px solid #0ea5e9;
+            border-radius: 24px;
+            box-shadow: 0 12px 35px rgba(14, 165, 233, 0.12);
             overflow: hidden;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .single-news-frame:hover {
+            transform: translateY(-6px);
+            border-color: #0284c7;
+            box-shadow: 0 20px 45px rgba(14, 165, 233, 0.22);
+        }
+
+        .single-news-grid {
+            display: grid;
+            grid-template-columns: 460px 1fr;
+            align-items: center;
+        }
+
+        .single-news-media {
+            padding: 24px;
             display: flex;
-            flex-direction: column;
-            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
-            box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            height: 100%;
         }
 
-        .home-news-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
-        }
-
-        .news-card-img-wrap {
+        .single-news-img-box {
             position: relative;
             width: 100%;
-            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
             overflow: hidden;
-            background: #0f172a;
+            background: #ffffff;
+            border: 1.5px solid rgba(14, 165, 233, 0.25);
+            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.12);
         }
 
-        .news-card-img-wrap img {
+        .single-news-img-box img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            height: auto;
+            max-height: 440px;
+            object-fit: contain;
             display: block;
+            transition: transform 0.4s ease;
         }
 
-        .home-news-card:hover .news-card-img-wrap img {
-            transform: scale(1.06);
+        .single-news-frame:hover .single-news-img-box img {
+            transform: scale(1.03);
         }
 
-        .news-card-tag {
+        .single-news-media-badge {
             position: absolute;
-            top: 14px;
-            left: 14px;
-            background: #0f172a;
+            bottom: 12px;
+            left: 12px;
+            background: rgba(14, 165, 233, 0.95);
             color: #ffffff;
             font-size: 11px;
             font-weight: 800;
             padding: 5px 12px;
-            border-radius: 6px;
-            letter-spacing: 0.8px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+            border-radius: 999px;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(4px);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
         }
 
-        .news-card-body {
-            padding: 24px;
+        .single-news-content {
+            padding: 38px 42px;
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
+            justify-content: center;
+            background: #ffffff;
         }
 
-        .news-card-meta {
-            font-size: 12.5px;
-            color: #64748b;
-            font-weight: 600;
+        .single-news-tag-row {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 10px;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
         }
 
-        .news-card-title {
-            font-family: var(--font-heading);
-            font-size: 18px;
+        .single-news-tag {
+            background: #0ea5e9;
+            color: #ffffff;
+            font-size: 11.5px;
             font-weight: 800;
-            color: #0f172a;
-            line-height: 1.4;
-            margin-bottom: 12px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            padding: 5px 12px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
-        .news-card-excerpt {
-            font-size: 13.5px;
+        .single-news-date,
+        .single-news-readtime {
+            font-size: 13px;
             color: #64748b;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .news-card-btn {
-            margin-top: auto;
+        .single-news-date i,
+        .single-news-readtime i {
+            color: #0ea5e9;
+        }
+
+        .single-news-title {
+            font-family: var(--font-heading);
+            font-size: clamp(20px, 2.3vw, 26px);
+            font-weight: 900;
+            color: #0f172a;
+            line-height: 1.35;
+            letter-spacing: -0.5px;
+            margin-bottom: 14px;
+        }
+
+        .single-news-desc {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        .single-news-highlights {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 26px;
+        }
+
+        .news-highlight-item {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            color: #0369a1;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .news-highlight-item i {
+            color: #0ea5e9;
+        }
+
+        .btn-single-news {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            background: #0f172a;
+            gap: 10px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
             color: #ffffff !important;
-            padding: 11px 20px;
-            border-radius: 10px;
-            font-size: 13px;
-            font-weight: 700;
+            padding: 13px 28px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 800;
             text-decoration: none;
-            transition: all 0.25s ease;
-            border: 1px solid #0f172a;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.35);
+            align-self: flex-start;
         }
 
-        .news-card-btn:hover {
-            background: #000000;
-            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.25);
+        .btn-single-news:hover {
             transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.45);
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
         }
 
-        .news-card-btn i {
+        .btn-single-news i {
             transition: transform 0.25s ease;
         }
 
-        .news-card-btn:hover i {
-            transform: translateX(4px);
+        .btn-single-news:hover i {
+            transform: translateX(5px);
         }
 
-        html[data-theme="dark"] .home-news-section {
-            background: var(--bg-main) !important;
-        }
-
-        html[data-theme="dark"] .home-news-card {
+        html[data-theme="dark"] .single-news-frame {
             background: var(--bg-card) !important;
-            border-color: var(--border-color) !important;
+            border-color: #0ea5e9 !important;
         }
 
-        html[data-theme="dark"] .news-card-title {
+        html[data-theme="dark"] .single-news-content {
+            background: var(--bg-card) !important;
+        }
+
+        html[data-theme="dark"] .single-news-title {
             color: var(--text-main) !important;
         }
 
-        @media (max-width: 992px) {
-            .home-news-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 680px) {
-            .home-news-grid {
+        @media (max-width: 960px) {
+            .single-news-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
-            .news-card-img-wrap {
-                height: 200px;
+            .single-news-media {
+                padding: 20px 20px 0 20px;
             }
-            .news-card-body {
-                padding: 20px;
+            .single-news-content {
+                padding: 24px 20px 28px 20px;
             }
         }
 
