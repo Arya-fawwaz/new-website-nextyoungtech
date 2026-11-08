@@ -20,14 +20,14 @@
     <meta property="og:url" content="{{ request()->url() }}">
     <meta property="og:title" content="@yield('title', 'Next Young Tech | Joki Website & Joki Tugas Coding Premium')">
     <meta property="og:description" content="@yield('meta_description', 'Next Young Tech adalah joki website terpercaya dan agen pembuatan website premium. Melayani joki tugas coding, tugas kuliah programming, website custom, CRUD Laravel & Web 3D interaktif.')">
-    <meta property="og:image" content="{{ asset('images/logo-n-trans.png') }}">
+    <meta property="og:image" content="@yield('meta_image', asset('images/logo-n-trans.png'))">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ request()->url() }}">
     <meta property="twitter:title" content="@yield('title', 'Next Young Tech | Joki Website & Joki Tugas Coding Premium')">
     <meta property="twitter:description" content="@yield('meta_description', 'Next Young Tech adalah joki website terpercaya dan agen pembuatan website premium. Melayani joki tugas coding, tugas kuliah programming, website custom, CRUD Laravel & Web 3D interaktif.')">
-    <meta property="twitter:image" content="{{ asset('images/logo-n-trans.png') }}">
+    <meta property="twitter:image" content="@yield('meta_image', asset('images/logo-n-trans.png'))">
 
     <!-- Structured Data (Schema.org JSON-LD) -->
     <script type="application/ld+json">

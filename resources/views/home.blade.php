@@ -68,54 +68,11 @@
                 </p>
             </div>
 
-            <!-- Clean Logo Display in Front (Tanpa Frame Kotak Gelap) -->
-            <div class="partner-clean-showcase" style="max-width: 820px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                
-                <!-- Logo Muncul Bersih di Depan -->
-                <div class="partner-logo-front" style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; transition: transform 0.3s ease;">
-                    <img src="{{ asset('images/trsj_logo_dark.png') }}" alt="Logo PT TRSJ International Indonesia - TR Digital Construction" style="max-width: 320px; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.06));">
-                </div>
-
-                <!-- Partner Info & Highlights (Clean Hitam Putih Biru) -->
-                <div style="margin-top: 18px; width: 100%;">
-                    <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); color: #059669; font-size: 11.5px; font-weight: 700; padding: 4px 14px; border-radius: 999px; margin-bottom: 12px; letter-spacing: 0.5px;">
-                        <i class="fa-solid fa-circle-check"></i> VERIFIED ENTERPRISE PARTNER
-                    </div>
-
-                    <h3 style="font-size: 26px; font-weight: 900; color: #0f172a; margin-bottom: 4px; font-family: var(--font-heading);">
-                        PT TRSJ International Indonesia
-                    </h3>
-                    
-                    <div style="font-size: 14px; font-weight: 600; color: #64748b; margin-bottom: 14px;">
-                        TR Digital Construction &bull; 唐人数建
-                    </div>
-
-                    <p style="max-width: 640px; margin: 0 auto 22px auto; font-size: 15px; color: #475569; line-height: 1.7;">
-                        Korporasi internasional di bidang konstruksi infrastruktur telekomunikasi dan rekayasa digital. Mempercayakan pengembangan platform web enterprise berkecepatan tinggi kepada Next Young Tech.
-                    </p>
-
-                    <!-- Clean Badges (Hitam, Putih, Biru) -->
-                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 24px;">
-                        <span style="background: rgba(14, 165, 233, 0.08); border: 1px solid rgba(14, 165, 233, 0.2); color: var(--primary); font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 8px;">
-                            <i class="fa-solid fa-code"></i> Arsitektur Web Enterprise
-                        </span>
-                        <span style="background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 8px;">
-                            <i class="fa-solid fa-tower-broadcast" style="color: var(--primary);"></i> Telekomunikasi & Sipil
-                        </span>
-                        <span style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); color: #059669; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 8px;">
-                            <i class="fa-solid fa-bolt"></i> Ultra Fast & Secure
-                        </span>
-                    </div>
-
-                    <!-- CTA ke Halaman News -->
-                    <div>
-                        <a href="{{ route('news') }}" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; padding: 11px 26px; border-radius: 10px; background: var(--primary); color: #ffffff; text-decoration: none; font-weight: 700; box-shadow: 0 4px 15px var(--primary-glow); transition: transform 0.2s ease;">
-                            <i class="fa-solid fa-newspaper"></i>
-                            <span>Baca Liputan Berita Kerjasama</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
+            <!-- Clean Logo Display in Front (Besar, Bersih & Tanpa Tulisan Bawah) -->
+            <div class="partner-clean-showcase" style="max-width: 820px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 0 20px 0;">
+                <a href="{{ route('news') }}" title="Lihat liputan berita kemitraan PT TRSJ International Indonesia" class="partner-logo-front" style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; transition: transform 0.3s ease;">
+                    <img src="{{ asset('images/trsj_logo_dark.png') }}" alt="Logo PT TRSJ International Indonesia - TR Digital Construction" style="max-width: 520px; width: 95%; height: auto; object-fit: contain; filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.08));">
+                </a>
             </div>
         </div>
     </section>

@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Berita & Liputan Media | Next Young Tech')
+@section('title', 'Kolaborasi Strategis PT TRSJ International Indonesia | Next Young Tech')
+@section('meta_description', 'Next Young Tech resmi menyelesaikan dan menyerahkan platform website korporat enterprise berkecepatan tinggi untuk PT TRSJ International Indonesia (TR Digital Construction).')
+@section('meta_image', asset('images/trsj_partner_moment.jpeg'))
 
 @section('content')
 <style>
     /* ==========================================================
-       CLEAN WHITE & BLUE THEME (Consistent with Next Young Tech)
+       CLEAN BORDERLESS EDITORIAL THEME (Next Young Tech News)
        ========================================================== */
     .news-page-wrapper {
         min-height: 100vh;
@@ -74,7 +76,7 @@
 
     /* Header */
     .article-header {
-        margin-bottom: 30px;
+        margin-bottom: 35px;
     }
 
     .article-badge-row {
@@ -128,9 +130,8 @@
         align-items: center;
         gap: 20px;
         flex-wrap: wrap;
-        padding: 14px 20px;
+        padding: 12px 18px;
         background: #f8fafc;
-        border: 1px solid #e2e8f0;
         border-radius: 12px;
         font-size: 13px;
         color: #64748b;
@@ -146,200 +147,91 @@
         color: var(--primary);
     }
 
-    /* Translate Language Selector Pill */
-    .article-lang-bar {
-        margin-top: 16px;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: #f1f5f9;
-        padding: 6px 14px;
-        border-radius: 999px;
-        border: 1px solid #cbd5e1;
-        font-size: 12.5px;
-        font-weight: 700;
-        color: #334155;
-    }
-
-    .lang-pill-btn {
-        border: none;
-        background: transparent;
-        padding: 5px 14px;
-        border-radius: 999px;
-        font-size: 12px;
-        font-weight: 700;
-        cursor: pointer;
-        color: #475569;
-        transition: all 0.2s ease;
-    }
-
-    .lang-pill-btn.active {
-        background: var(--primary);
-        color: #ffffff;
-        box-shadow: 0 2px 6px rgba(14, 165, 233, 0.4);
-    }
-
-    .lang-pill-btn:hover:not(.active) {
-        background: #e2e8f0;
-        color: #0f172a;
-    }
-
-    /* Clean Media Showcase (Hitam Putih Biru, Tanpa Frame Gelap) */
-    .news-media-showcase {
+    /* Editorial Layout (Side by side photo & article text, NO BOX FRAME) */
+    .news-editorial-grid {
         display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 30px;
-        margin: 35px 0 45px 0;
+        grid-template-columns: 440px 1fr;
+        gap: 40px;
+        margin: 35px 0 30px 0;
         align-items: start;
     }
 
-    /* Left: Photo of Bapak - FULL UNCROPPED */
-    .moment-photo-card {
-        background: #ffffff;
-        border-radius: 20px;
-        overflow: hidden;
-        border: 1px solid #e2e8f0;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .moment-photo-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 16px 35px rgba(14, 165, 233, 0.12);
-        border-color: rgba(14, 165, 233, 0.4);
-    }
-
-    .moment-photo-img-wrapper {
-        position: relative;
+    .editorial-media-col {
         width: 100%;
-        background: #f8fafc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
     }
 
-    /* CRITICAL FIX: object-fit contain and no hard height cut off so Bapak's head is 100% visible */
-    .moment-photo-img-wrapper img {
+    .editorial-media-col img {
         width: 100%;
         height: auto;
-        max-height: none;
         object-fit: contain;
         display: block;
-        border-radius: 14px;
-        transition: transform 0.3s ease;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
     }
 
-    .moment-photo-caption {
-        padding: 16px 20px;
-        background: #ffffff;
-        border-top: 1px solid #f1f5f9;
-        color: #475569;
+    .editorial-media-caption {
+        padding: 14px 4px 0 4px;
         font-size: 13.5px;
+        color: #64748b;
         line-height: 1.6;
     }
 
-    .moment-photo-caption strong {
+    .editorial-media-caption strong {
         color: #0f172a;
     }
 
-    /* Right: Partner Info Box (Clean White & Blue, No Dark Frame) */
-    .partner-info-box-clean {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-top: 4px solid var(--primary);
-        border-radius: 20px;
-        padding: 32px 28px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        color: #0f172a;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-        position: relative;
-    }
-
-    .partner-logo-container-clean {
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-radius: 16px;
-        padding: 24px 20px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .partner-logo-container-clean img {
-        max-width: 240px;
-        width: 90%;
-        height: auto;
-        object-fit: contain;
-        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.05));
-    }
-
-    /* Article Content Prose */
-    .article-body {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 24px;
-        padding: 45px 50px;
-        margin-bottom: 50px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-    }
-
-    .article-prose {
+    /* Article Content Prose (Clean Typography, No Background Box) */
+    .editorial-prose {
         font-size: 16.5px;
         line-height: 1.85;
         color: #334155;
     }
 
-    .article-prose p {
-        margin-bottom: 22px;
+    .editorial-prose p {
+        margin-bottom: 20px;
     }
 
-    .article-prose h3 {
+    .editorial-prose h3 {
         font-family: var(--font-heading);
-        font-size: 24px;
+        font-size: 23px;
         font-weight: 800;
         color: #0f172a;
-        margin: 36px 0 16px 0;
+        margin: 32px 0 14px 0;
         display: flex;
         align-items: center;
         gap: 10px;
     }
 
-    .article-prose h3 i {
+    .editorial-prose h3 i {
         color: var(--primary);
-        font-size: 20px;
+        font-size: 19px;
     }
 
-    .article-quote-box {
-        margin: 30px 0;
-        padding: 24px 30px;
+    .editorial-quote-box {
+        margin: 28px 0;
+        padding: 22px 26px;
         background: #f0f9ff;
         border-left: 4px solid var(--primary);
-        border-radius: 0 16px 16px 0;
+        border-radius: 0 14px 14px 0;
         font-style: italic;
-        font-size: 17px;
+        font-size: 16.5px;
         line-height: 1.7;
         color: #0369a1;
     }
 
-    .article-quote-author {
-        margin-top: 12px;
+    .editorial-quote-author {
+        margin-top: 10px;
         font-style: normal;
         font-weight: 700;
-        font-size: 14px;
+        font-size: 13.5px;
         color: var(--primary);
     }
 
     .feature-list-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 18px;
-        margin: 25px 0 35px 0;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+        margin: 22px 0 32px 0;
     }
 
     .feature-list-item {
@@ -350,11 +242,10 @@
         display: flex;
         align-items: flex-start;
         gap: 14px;
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        transition: transform 0.2s ease;
     }
 
     .feature-list-item:hover {
-        border-color: rgba(14, 165, 233, 0.4);
         transform: translateY(-2px);
     }
 
@@ -375,7 +266,7 @@
         font-size: 13.5px;
         color: #64748b;
         margin: 0;
-        line-height: 1.55;
+        line-height: 1.5;
     }
 
     /* Bottom Share and Back Bar */
@@ -387,6 +278,7 @@
         border-top: 1px solid #e2e8f0;
         flex-wrap: wrap;
         gap: 20px;
+        margin: 40px 0 50px 0;
     }
 
     .share-group {
@@ -426,7 +318,7 @@
         grid-template-columns: 200px 1fr auto;
         gap: 24px;
         align-items: center;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
     }
 
     /* CTA Banner Clean White & Blue */
@@ -445,11 +337,9 @@
     }
 
     @media (max-width: 900px) {
-        .news-media-showcase {
+        .news-editorial-grid {
             grid-template-columns: 1fr;
-        }
-        .article-body {
-            padding: 30px 22px;
+            gap: 30px;
         }
         .news-cta-banner {
             padding: 30px 22px;
@@ -512,79 +402,24 @@
                     <span>Digital Construction & Telecom</span>
                 </div>
             </div>
-
-            <!-- Translate Language Bar (Indo <-> Inggris) -->
-            <div class="article-lang-bar notranslate">
-                <i class="fa-solid fa-globe" style="color: var(--primary);"></i>
-                <span style="font-size: 12px; color: #475569;">Pilihan Bahasa / Select Language:</span>
-                <button type="button" onclick="setTranslateLanguage('id')" class="lang-pill-btn active" data-lang="id" title="Bahasa Indonesia">
-                    🇮🇩 Indonesia
-                </button>
-                <button type="button" onclick="setTranslateLanguage('en')" class="lang-pill-btn" data-lang="en" title="English">
-                    🇬🇧 English
-                </button>
-            </div>
         </header>
 
-        <!-- Clean Media Showcase (Hitam Putih Biru, Tanpa Frame Gelap) -->
-        <div class="news-media-showcase">
-            <!-- Left: Handover Moment Photo - FULL UNCROPPED -->
-            <div class="moment-photo-card">
-                <div class="moment-photo-img-wrapper">
-                    <img src="{{ asset('images/trsj_partner_moment.jpeg') }}" alt="Momen Serah Terima Website PT TRSJ International Indonesia oleh Next Young Tech" style="max-height: none; width: 100%; height: auto; object-fit: contain;">
-                </div>
-                <div class="moment-photo-caption">
+        <!-- Editorial Layout: Foto Bapak di Kiri & Isi Teks Berita di Kanan (Tanpa Frame Background Kotak) -->
+        <div class="news-editorial-grid">
+            
+            <!-- Kolom Kiri: Foto Bapak Utuh (Tanpa Frame Background Kotak) -->
+            <div class="editorial-media-col">
+                <img src="{{ asset('images/trsj_partner_moment.jpeg') }}" alt="Momen Serah Terima Website PT TRSJ International Indonesia oleh Next Young Tech">
+                <div class="editorial-media-caption">
                     <i class="fa-solid fa-camera-retro" style="color: var(--primary); margin-right: 6px;"></i>
-                    <strong>Dokumentasi Handover Resmi:</strong> Pimpinan operasional PT TRSJ International Indonesia memberikan apresiasi penuh atas penyelesaian platform website korporat berarsitektur mutakhir yang dikembangkan oleh <strong>Next Young Tech</strong>.
+                    <strong>Dokumentasi Handover Resmi:</strong> Pimpinan operasional PT TRSJ International Indonesia memberikan apresiasi penuh atas penyelesaian platform website korporat enterprise mutakhir yang dikembangkan oleh tim <strong>Next Young Tech</strong>.
                 </div>
             </div>
 
-            <!-- Right: Partner Information Box (Clean White & Blue Theme) -->
-            <div class="partner-info-box-clean">
-                <div>
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
-                        <span style="font-size: 11px; font-weight: 800; color: var(--primary); letter-spacing: 1.5px; text-transform: uppercase;">
-                            <i class="fa-solid fa-award"></i> Strategic Corporate Partner
-                        </span>
-                        <span style="background: rgba(16, 185, 129, 0.1); color: #059669; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(16, 185, 129, 0.25);">
-                            Terverifikasi Aktif
-                        </span>
-                    </div>
-
-                    <!-- Clean Logo Display with Dark Text -->
-                    <div class="partner-logo-container-clean">
-                        <img src="{{ asset('images/trsj_logo_dark.png') }}" alt="Logo PT TRSJ International Indonesia (TR Digital Construction)">
-                    </div>
-
-                    <div style="margin-top: 22px;">
-                        <h3 style="font-size: 22px; font-weight: 900; color: #0f172a; margin-bottom: 4px; font-family: var(--font-heading);">
-                            PT TRSJ International Indonesia
-                        </h3>
-                        <div style="font-size: 13.5px; font-weight: 600; color: #64748b; margin-bottom: 14px;">
-                            TR Digital Construction &bull; 唐人数建
-                        </div>
-                        <p style="font-size: 14px; color: #475569; line-height: 1.65; margin: 0;">
-                            Perusahaan berstandar internasional yang bergerak di bidang pembangunan konstruksi digital, telekomunikasi makro-mikro, dan rekayasa sipil modern.
-                        </p>
-                    </div>
-                </div>
-
-                <div style="margin-top: 24px; padding-top: 18px; border-top: 1px dashed #e2e8f0;">
-                    <div style="font-size: 12px; font-weight: 800; color: #64748b; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;">Cakupan Kerjasama:</div>
-                    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #1e293b;">
-                        <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Desain UI/UX Korporat Enterprise</div>
-                        <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Arsitektur Platform Web Laravel</div>
-                        <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Optimasi Performa & Cloud Hosting</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Article Body (Clean White & Slate) -->
-        <article class="article-body">
-            <div class="article-prose">
-                <p>
-                    <strong>Jakarta, 8 November 2026</strong> — Era transformasi digital menuntut seluruh sektor industri untuk memiliki representasi dan efisiensi sistem berbasis teknologi modern. Menjawab tantangan tersebut, <strong>Next Young Tech</strong> dengan bangga mengumumkan keberhasilan deployment dan serah terima platform website korporat enterprise untuk <strong>PT TRSJ International Indonesia</strong> (juga dikenal sebagai <em>TR Digital Construction / 唐人数建</em>).
+            <!-- Kolom Kanan: Isi Teks Berita Langsung di Samping Foto -->
+            <div class="editorial-prose">
+                <p style="font-size: 18px; line-height: 1.8; color: #0f172a; font-weight: 500;">
+                    <strong style="color: #0f172a; font-weight: 800;">Jakarta, 8 November 2026</strong> — Era transformasi digital menuntut seluruh sektor industri untuk memiliki representasi dan efisiensi sistem berbasis teknologi modern. Menjawab tantangan tersebut, <strong>Next Young Tech</strong> dengan bangga mengumumkan keberhasilan deployment dan serah terima platform website korporat enterprise untuk <strong>PT TRSJ International Indonesia</strong> (dikenal sebagai <em>TR Digital Construction / 唐人数建</em>).
                 </p>
 
                 <p>
@@ -598,59 +433,62 @@
                 <p>
                     Dengan volume operasi yang dinamis dan berhadapan langsung dengan operator telekomunikasi multinasional ternama, PT TRSJ membutuhkan portal digital yang mampu merefleksikan kredibilitas, ketangguhan, dan profesionalisme kelas dunia.
                 </p>
-
-                <!-- Quote Box (Clean Light Blue) -->
-                <div class="article-quote-box">
-                    "Kepercayaan yang diberikan oleh PT TRSJ International Indonesia adalah pengakuan atas standar kualitas pengerjaan Next Young Tech. Kami bangga dapat menyediakan infrastruktur web yang cepat, responsif, dan siap mendukung ekspansi bisnis mereka ke tingkat global."
-                    <div class="article-quote-author">
-                        — Arya Fawwaz & Tim Manajemen Next Young Tech
-                    </div>
-                </div>
-
-                <h3><i class="fa-solid fa-microchip"></i> Solusi Rekayasa yang Dibangun oleh Next Young Tech</h3>
-                <p>
-                    Tim engineer Next Young Tech merancang sistem web PT TRSJ dengan pendekatan arsitektur teknologi yang kokoh dan berorientasi masa depan:
-                </p>
-
-                <div class="feature-list-grid">
-                    <div class="feature-list-item">
-                        <i class="fa-solid fa-bolt-lightning"></i>
-                        <div>
-                            <h4>Performa Kecepatan Tinggi</h4>
-                            <p>Arsitektur caching cerdas dan kompresi asset modern yang memastikan halaman dimuat dalam hitungan milidetik.</p>
-                        </div>
-                    </div>
-                    <div class="feature-list-item">
-                        <i class="fa-solid fa-palette"></i>
-                        <div>
-                            <h4>Desain UI/UX Eksklusif</h4>
-                            <p>Tampilan visual modern berwibawa dengan identitas warna korporat yang harmonis dan tipografi yang elegan.</p>
-                        </div>
-                    </div>
-                    <div class="feature-list-item">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <div>
-                            <h4>Keamanan Berstandar Enterprise</h4>
-                            <p>Proteksi terhadap ancaman siber, enkripsi data SSL penuh, dan struktur kode yang telah melalui uji keamanan ketat.</p>
-                        </div>
-                    </div>
-                    <div class="feature-list-item">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                        <div>
-                            <h4>Responsivitas Multi-Device</h4>
-                            <p>Tampilan tetap sempurna di semua ukuran layar, mulai dari monitor kantor, tablet lapangan, hingga ponsel pintar.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <h3><i class="fa-solid fa-thumbs-up"></i> Kepuasan Klien dan Masa Depan Kolaborasi</h3>
-                <p>
-                    Momen serah terima ditandai dengan antusiasme penuh dari pimpinan operasional PT TRSJ International Indonesia. Simbol dua jempol yang terekam pada dokumentasi resmi mencerminkan kepuasan terhadap hasil kerja, ketepatan waktu pengerjaan, dan kemudahan navigasi sistem yang dihadirkan.
-                </p>
-                <p>
-                    Ke depan, Next Young Tech dan PT TRSJ International Indonesia berkomitmen untuk terus menjalin sinergi strategis dalam pengembangan digitalisasi operasional dan integrasi sistem korporat yang lebih luas lagi.
-                </p>
             </div>
+        </div>
+
+        <!-- Bagian Lanjutan Isi Berita (Mengalir Bersih ke Bawah Tanpa Kotak Frame) -->
+        <div class="editorial-prose" style="margin-top: 10px;">
+            <!-- Kutipan Manajemen -->
+            <div class="editorial-quote-box">
+                "Kepercayaan yang diberikan oleh PT TRSJ International Indonesia adalah pengakuan atas standar kualitas pengerjaan Next Young Tech. Kami bangga dapat menyediakan infrastruktur web yang cepat, responsif, dan siap mendukung ekspansi bisnis mereka ke tingkat global."
+                <div class="editorial-quote-author">
+                    — Arya Fawwaz & Tim Manajemen Next Young Tech
+                </div>
+            </div>
+
+            <h3><i class="fa-solid fa-microchip"></i> Solusi Rekayasa yang Dibangun oleh Next Young Tech</h3>
+            <p>
+                Tim engineer Next Young Tech merancang sistem web PT TRSJ dengan pendekatan arsitektur teknologi yang kokoh dan berorientasi masa depan:
+            </p>
+
+            <div class="feature-list-grid">
+                <div class="feature-list-item">
+                    <i class="fa-solid fa-bolt-lightning"></i>
+                    <div>
+                        <h4>Performa Kecepatan Tinggi</h4>
+                        <p>Arsitektur caching cerdas dan kompresi asset modern yang memastikan halaman dimuat dalam hitungan milidetik.</p>
+                    </div>
+                </div>
+                <div class="feature-list-item">
+                    <i class="fa-solid fa-palette"></i>
+                    <div>
+                        <h4>Desain UI/UX Eksklusif</h4>
+                        <p>Tampilan visual modern berwibawa dengan identitas warna korporat yang harmonis dan tipografi yang elegan.</p>
+                    </div>
+                </div>
+                <div class="feature-list-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                        <h4>Keamanan Berstandar Enterprise</h4>
+                        <p>Proteksi terhadap ancaman siber, enkripsi data SSL penuh, dan struktur kode yang telah melalui uji keamanan ketat.</p>
+                    </div>
+                </div>
+                <div class="feature-list-item">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <div>
+                        <h4>Responsivitas Multi-Device</h4>
+                        <p>Tampilan tetap sempurna di semua ukuran layar, mulai dari monitor kantor, tablet lapangan, hingga ponsel pintar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3><i class="fa-solid fa-thumbs-up"></i> Kepuasan Klien dan Masa Depan Kolaborasi</h3>
+            <p>
+                Momen serah terima ditandai dengan antusiasme penuh dari pimpinan operasional PT TRSJ International Indonesia. Simbol dua jempol yang terekam pada dokumentasi resmi mencerminkan kepuasan terhadap hasil kerja, ketepatan waktu pengerjaan, dan kemudahan navigasi sistem yang dihadirkan.
+            </p>
+            <p>
+                Ke depan, Next Young Tech dan PT TRSJ International Indonesia berkomitmen untuk terus menjalin sinergi strategis dalam pengembangan digitalisasi operasional dan integrasi sistem korporat yang lebih luas lagi.
+            </p>
 
             <!-- Footer Bar with Sharing & Navigation -->
             <div class="article-footer-bar">
@@ -676,9 +514,9 @@
                     </a>
                 </div>
             </div>
-        </article>
+        </div>
 
-        <!-- Related News / Project Card (Clean White Theme) -->
+        <!-- Related News / Project Card (Clean Theme) -->
         <div style="margin-bottom: 45px;">
             <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 20px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-newspaper" style="color: var(--primary);"></i> Berita & Rilis Terkait Lainnya
