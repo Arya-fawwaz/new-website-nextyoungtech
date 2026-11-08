@@ -137,7 +137,7 @@
 
                         <!-- Paragraf Pengantar Artikel Berita -->
                         <p class="editorial-lead-text">
-                            <strong>JAKARTA</strong> — Next Young Tech secara resmi telah menyelesaikan dan melakukan serah terima platform website korporat enterprise untuk <strong>PT TRSJ International Indonesia</strong> (<em>TR Digital Construction / 唐人数建</em>). Solusi ini menghadirkan arsitektur web modern berkecepatan tinggi, sistem keamanan berstandar enterprise, dan kemudahan manajemen data proyek infrastruktur telekomunikasi skala nasional.
+                            <strong>JAKARTA</strong> — Next Young Tech resmi melakukan serah terima platform website korporat enterprise untuk <strong>PT TRSJ International Indonesia</strong> (<em>TR Digital Construction / 唐人数建</em>) dengan performa tinggi 60 FPS dan arsitektur enterprise.
                         </p>
 
                         <!-- Poin Fitur Utama Arsitektur -->
@@ -341,32 +341,34 @@
         }
 
         /* ==========================================================
-           PROFESSIONAL EDITORIAL ARTICLE SHOWCASE (Frame Biru Putih)
+           PROFESSIONAL EDITORIAL ARTICLE SHOWCASE (Frame Biru Putih Ringkas & Bersih)
            ========================================================== */
         .single-news-frame {
             background: #ffffff;
-            border: 2px solid #0ea5e9;
-            border-radius: 22px;
-            box-shadow: 0 12px 35px rgba(14, 165, 233, 0.12);
+            border: 1.5px solid #0ea5e9;
+            border-radius: 18px;
+            box-shadow: none !important;
             overflow: hidden;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
+            max-width: 980px;
+            margin: 0 auto;
         }
 
         .single-news-frame:hover {
-            transform: translateY(-6px);
+            transform: translateY(-3px);
             border-color: #0284c7;
-            box-shadow: 0 20px 45px rgba(14, 165, 233, 0.22);
+            box-shadow: none !important;
         }
 
         .single-news-grid {
             display: grid;
-            grid-template-columns: 460px 1fr;
+            grid-template-columns: 330px 1fr;
             align-items: stretch;
         }
 
         .editorial-media-column {
             background: #f8fafc;
-            padding: 24px;
+            padding: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -386,12 +388,12 @@
         .editorial-photo-container img {
             width: 100%;
             height: auto;
-            max-height: 440px;
+            max-height: 275px;
             object-fit: contain;
             display: block;
-            border-radius: 14px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.4s ease;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
         }
 
         .single-news-frame:hover .editorial-photo-container img {
@@ -400,23 +402,23 @@
 
         .editorial-photo-tag {
             position: absolute;
-            bottom: 12px;
-            left: 12px;
+            bottom: 10px;
+            left: 10px;
             background: rgba(15, 23, 42, 0.9);
             color: #ffffff;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
-            padding: 5px 14px;
+            padding: 4px 11px;
             border-radius: 999px;
             backdrop-filter: blur(4px);
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+            gap: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
         .editorial-text-column {
-            padding: 36px 40px;
+            padding: 20px 24px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -426,30 +428,30 @@
         .editorial-meta-header {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
-            margin-bottom: 14px;
+            margin-bottom: 8px;
         }
 
         .editorial-category-badge {
             background: rgba(14, 165, 233, 0.1);
             color: #0284c7;
             border: 1px solid rgba(14, 165, 233, 0.35);
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 800;
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 999px;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.6px;
             text-transform: uppercase;
         }
 
         .editorial-meta-item {
-            font-size: 13px;
+            font-size: 12px;
             color: #64748b;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
         .editorial-meta-item i {
@@ -458,17 +460,17 @@
 
         .editorial-meta-dot {
             color: #cbd5e1;
-            font-size: 11px;
+            font-size: 10px;
         }
 
         .editorial-article-title {
             font-family: var(--font-heading);
-            font-size: clamp(21px, 2.4vw, 27px);
-            font-weight: 900;
+            font-size: clamp(16px, 1.6vw, 19px);
+            font-weight: 800;
             color: #0f172a;
             line-height: 1.35;
-            letter-spacing: -0.5px;
-            margin-bottom: 12px;
+            letter-spacing: -0.4px;
+            margin-bottom: 8px;
         }
 
         .editorial-article-title a {
@@ -484,15 +486,15 @@
         .editorial-byline-bar {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 14px;
-            padding-bottom: 12px;
+            gap: 8px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
             border-bottom: 1px solid #f1f5f9;
         }
 
         .byline-logo {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             object-fit: contain;
             border-radius: 50%;
         }
@@ -500,9 +502,9 @@
         .byline-text {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
-            font-size: 12.5px;
+            font-size: 11.5px;
         }
 
         .byline-author {
@@ -515,31 +517,31 @@
         }
 
         .editorial-lead-text {
-            font-size: 14.5px;
+            font-size: 13.5px;
             color: #475569;
-            line-height: 1.7;
-            margin-bottom: 20px;
+            line-height: 1.55;
+            margin-bottom: 12px;
         }
 
         .editorial-features-pills {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
-            margin-bottom: 24px;
+            margin-bottom: 14px;
         }
 
         .editorial-pill {
             background: #f0f9ff;
             border: 1px solid #bae6fd;
             color: #0369a1;
-            padding: 5px 13px;
-            border-radius: 8px;
-            font-size: 12px;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 11px;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 7px;
+            gap: 6px;
         }
 
         .editorial-pill i {
@@ -549,31 +551,31 @@
         .editorial-bottom-action {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 14px;
             flex-wrap: wrap;
-            margin-top: auto;
+            margin-top: 4px;
         }
 
         .btn-read-full-article {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
             color: #ffffff !important;
-            padding: 13px 28px;
-            border-radius: 12px;
-            font-size: 14px;
+            padding: 9px 20px;
+            border-radius: 9px;
+            font-size: 13px;
             font-weight: 800;
             text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.35);
+            transition: all 0.25s ease;
+            box-shadow: none !important;
         }
 
         .btn-read-full-article:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.45);
+            transform: translateY(-1px);
             background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            box-shadow: none !important;
         }
 
         .btn-read-full-article i {
@@ -581,21 +583,22 @@
         }
 
         .btn-read-full-article:hover i {
-            transform: translateX(5px);
+            transform: translateX(4px);
         }
 
         .editorial-verified-note {
-            font-size: 12.5px;
+            font-size: 12px;
             font-weight: 700;
             color: #059669;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
         html[data-theme="dark"] .single-news-frame {
             background: var(--bg-card) !important;
             border-color: #0ea5e9 !important;
+            box-shadow: none !important;
         }
 
         html[data-theme="dark"] .editorial-media-column {
@@ -622,10 +625,13 @@
             .editorial-media-column {
                 border-right: none;
                 border-bottom: 1px solid #e2e8f0;
-                padding: 20px;
+                padding: 16px;
             }
             .editorial-text-column {
-                padding: 24px 20px;
+                padding: 18px 16px;
+            }
+            .editorial-photo-container img {
+                max-height: 250px;
             }
         }
 
