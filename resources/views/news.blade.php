@@ -128,12 +128,12 @@
     .article-meta-bar {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 24px;
         flex-wrap: wrap;
-        padding: 12px 18px;
-        background: #f8fafc;
-        border-radius: 12px;
-        font-size: 13px;
+        padding: 14px 0;
+        background: transparent;
+        border-bottom: 1px solid #e2e8f0;
+        font-size: 13.5px;
         color: #64748b;
     }
 
@@ -209,13 +209,13 @@
 
     .editorial-quote-box {
         margin: 28px 0;
-        padding: 22px 26px;
-        background: #f0f9ff;
+        padding: 18px 24px;
+        background: rgba(14, 165, 233, 0.03);
         border-left: 4px solid var(--primary);
-        border-radius: 0 14px 14px 0;
+        border-radius: 0 12px 12px 0;
         font-style: italic;
         font-size: 16.5px;
-        line-height: 1.7;
+        line-height: 1.75;
         color: #0369a1;
     }
 

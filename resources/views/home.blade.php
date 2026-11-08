@@ -50,28 +50,28 @@
     <!-- ==========================================================
          OUR PARTNERS SECTION (Clean & Borderless)
          ========================================================== -->
-    <section class="section partners-section" id="partners" style="padding: 70px 0; position: relative; background: #ffffff; border-top: 1px solid var(--border-color); overflow: hidden;">
+    <section class="section partners-section" id="partners" style="padding: 75px 0 65px 0; position: relative; background: #ffffff; border-top: 1px solid var(--border-color); overflow: hidden;">
         <div class="container" style="position: relative; z-index: 1;">
-            <!-- Section Header -->
+            <!-- Section Header (Judul Bab OUR PARTNERS Mencolok) -->
             <div class="section-header" style="text-align: center; margin-bottom: 35px;">
-                <div class="partner-top-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(14, 165, 233, 0.08); border: 1.5px solid rgba(14, 165, 233, 0.3); color: var(--primary); font-weight: 800; padding: 6px 18px; border-radius: 999px; letter-spacing: 2px; font-size: 12px; text-transform: uppercase; margin-bottom: 14px;">
-                    <i class="fa-solid fa-handshake" style="color: var(--primary); font-size: 13px;"></i>
-                    <span>OUR PARTNERS</span>
+                <div class="partner-top-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(249, 115, 22, 0.1); border: 1.5px solid rgba(249, 115, 22, 0.35); color: #ea580c; font-weight: 800; padding: 6px 20px; border-radius: 999px; letter-spacing: 2px; font-size: 12px; text-transform: uppercase; margin-bottom: 14px;">
+                    <i class="fa-solid fa-handshake" style="color: #ea580c; font-size: 13px;"></i>
+                    <span>STRATEGIC PARTNERSHIP</span>
                 </div>
                 
-                <h2 class="section-title" style="font-size: clamp(32px, 5vw, 44px); font-weight: 900; letter-spacing: -1.2px; line-height: 1.2; margin-bottom: 14px; color: #0f172a;">
-                    Mitra & Kolaborasi Strategis
+                <h2 class="section-title" style="font-size: clamp(38px, 6.5vw, 58px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 16px; background: linear-gradient(135deg, #f97316 0%, #0284c7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase;">
+                    OUR PARTNERS
                 </h2>
                 
-                <p class="section-desc" style="max-width: 660px; margin: 0 auto; font-size: 16px; color: #64748b; line-height: 1.65;">
-                    Next Young Tech bangga dipercaya oleh korporasi industri terkemuka dalam mewujudkan transformasi digital, arsitektur website enterprise, dan keunggulan teknologi mutakhir.
+                <p class="section-desc" style="max-width: 680px; margin: 0 auto; font-size: 16px; color: #64748b; line-height: 1.65;">
+                    Next Young Tech bangga dipercaya oleh korporasi industri nasional dan internasional. Kami berkolaborasi menghadirkan arsitektur website enterprise yang andal, berkecepatan tinggi, dan berkelas dunia.
                 </p>
             </div>
 
-            <!-- Clean Logo Display in Front (Besar, Bersih & Tanpa Tulisan Bawah) -->
-            <div class="partner-clean-showcase" style="max-width: 820px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 0 20px 0;">
-                <a href="{{ route('news') }}" title="Lihat liputan berita kemitraan PT TRSJ International Indonesia" class="partner-logo-front" style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; transition: transform 0.3s ease;">
-                    <img src="{{ asset('images/trsj_logo_dark.png') }}" alt="Logo PT TRSJ International Indonesia - TR Digital Construction" style="max-width: 520px; width: 95%; height: auto; object-fit: contain; filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.08));">
+            <!-- Clean Logo Display in Front (Sangat Besar, Bersih & Tanpa Kotak / Tulisan Bawah) -->
+            <div class="partner-clean-showcase" style="max-width: 900px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 0 20px 0;">
+                <a href="{{ route('news') }}" title="Lihat liputan berita kemitraan PT TRSJ International Indonesia" class="partner-logo-front" style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
+                    <img src="{{ asset('images/trsj_logo_dark.png') }}" alt="Logo PT TRSJ International Indonesia - TR Digital Construction" style="max-width: 680px; width: 98%; height: auto; object-fit: contain; filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.08));">
                 </a>
             </div>
         </div>
