@@ -110,6 +110,10 @@
 
                         <!-- Teks yang Menimpa Foto (Overlay) -->
                         <div class="overlay-card-caption">
+                            <div class="overlay-kicker">
+                                <span class="editorial-kicker-dot"></span>
+                                <span class="editorial-kicker-text">Liputan Kemitraan Strategis</span>
+                            </div>
                             <h3 class="overlay-headline">
                                 <a href="{{ route('news') }}" title="Baca liputan berita selengkapnya">
                                     Next Young Tech Sukses Hadirkan Solusi Web Enterprise PT TRSJ
@@ -335,14 +339,15 @@
            MODERN OVERLAY NEWS CARD (Biru & Putih - Teks Timpa Foto)
            ========================================================== */
         .modern-overlay-card-wrapper {
-            max-width: 480px;
+            max-width: 780px;
+            width: 100%;
             margin: 0 auto;
         }
 
         .modern-overlay-news-card {
             background: #ffffff;
             border: 2px solid #0ea5e9;
-            border-radius: 20px;
+            border-radius: 22px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -359,7 +364,7 @@
         .overlay-card-media-wrap {
             position: relative;
             width: 100%;
-            height: 380px;
+            height: 430px;
             overflow: hidden;
             background: #f8fafc;
         }
@@ -382,9 +387,9 @@
             inset: 0;
             background: linear-gradient(to bottom, 
                 transparent 0%, 
-                transparent 64%, 
-                rgba(255, 255, 255, 0.45) 76%, 
-                rgba(255, 255, 255, 0.92) 90%, 
+                transparent 56%, 
+                rgba(255, 255, 255, 0.45) 72%, 
+                rgba(255, 255, 255, 0.94) 88%, 
                 #ffffff 100%);
             pointer-events: none;
             z-index: 1;
@@ -395,18 +400,43 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 14px 20px 10px 20px;
+            padding: 18px 26px 14px 26px;
             z-index: 2;
+        }
+
+        .overlay-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            margin-bottom: 7px;
+        }
+
+        .editorial-kicker-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #0ea5e9;
+            display: inline-block;
+            box-shadow: 0 0 8px rgba(14, 165, 233, 0.8);
+        }
+
+        .editorial-kicker-text {
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #0284c7;
         }
 
         .overlay-headline {
             font-family: var(--font-heading);
-            font-size: 18px;
+            font-size: clamp(21px, 2.7vw, 27px);
             font-weight: 800;
-            line-height: 1.35;
-            margin-bottom: 6px;
+            line-height: 1.25;
+            letter-spacing: -0.025em;
+            margin-bottom: 8px;
             color: #0f172a;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
 
         .overlay-headline a {
@@ -420,11 +450,11 @@
         }
 
         .overlay-excerpt {
-            font-size: 12.5px;
+            font-size: 13.5px;
             color: #334155;
-            line-height: 1.5;
+            line-height: 1.55;
             margin: 0;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -432,7 +462,7 @@
         }
 
         .overlay-card-footer {
-            padding: 16px 20px 20px 20px;
+            padding: 18px 26px 22px 26px;
             background: #ffffff;
             border-top: 1px solid #e0f2fe;
             display: flex;
@@ -440,7 +470,7 @@
         }
 
         .overlay-footer-meta {
-            font-size: 12px;
+            font-size: 12.5px;
             font-weight: 700;
             color: #0284c7;
             display: flex;
@@ -461,10 +491,10 @@
         }
 
         .overlay-footer-title {
-            font-size: 13.5px;
+            font-size: 14.5px;
             font-weight: 700;
             line-height: 1.45;
-            margin-bottom: 14px;
+            margin-bottom: 15px;
             color: #0f172a;
         }
 
@@ -537,9 +567,9 @@
         html[data-theme="dark"] .overlay-card-scrim {
             background: linear-gradient(to bottom, 
                 transparent 0%, 
-                transparent 64%, 
-                rgba(15, 23, 42, 0.5) 76%, 
-                rgba(15, 23, 42, 0.95) 90%, 
+                transparent 56%, 
+                rgba(15, 23, 42, 0.5) 72%, 
+                rgba(15, 23, 42, 0.95) 88%, 
                 var(--bg-card) 100%) !important;
         }
 
@@ -557,10 +587,10 @@
                 max-width: 100%;
             }
             .overlay-card-media-wrap {
-                height: 330px;
+                height: 350px;
             }
             .overlay-headline {
-                font-size: 17px;
+                font-size: 19px;
             }
             .overlay-card-caption {
                 padding: 14px 16px;
