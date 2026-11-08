@@ -98,67 +98,68 @@
                 </p>
             </div>
 
-            <!-- Single Featured News Showcase (Format Artikel Berita Profesional - Frame Biru Putih) -->
-            <div class="single-news-frame">
-                <div class="single-news-grid">
-                    <!-- Sisi Kiri: Foto Liputan Dokumentasi Resmi (Kelihatan Utuh Semua) -->
-                    <div class="editorial-media-column">
-                        <div class="editorial-photo-container">
-                            <img src="{{ asset('images/trsj_partner_moment.jpeg') }}" alt="Momen Serah Terima Platform Web PT TRSJ International Indonesia oleh Next Young Tech" loading="lazy">
-                            <div class="editorial-photo-tag">
-                                <i class="fa-solid fa-camera"></i> Dokumentasi Serah Terima Resmi
-                            </div>
+            <!-- Modern Overlay News Card (UI/UX Eksklusif: Teks Timpa Foto - Ala Ourastore Gaming/Tech) -->
+            <div class="modern-overlay-card-wrapper">
+                <article class="modern-overlay-news-card">
+                    <!-- Bagian Foto Atas dengan Scrim Gradient & Teks Menimpa Foto -->
+                    <div class="overlay-card-media-wrap">
+                        <img src="{{ asset('images/trsj_partner_moment.jpeg') }}" alt="Momen Serah Terima Web Enterprise PT TRSJ International Indonesia" loading="lazy">
+                        
+                        <!-- Ambient Scrim Gradient Dark -->
+                        <div class="overlay-card-scrim"></div>
+
+                        <!-- Top Badges Row -->
+                        <div class="overlay-top-tags">
+                            <span class="overlay-tag-pill">
+                                <i class="fa-solid fa-bolt-lightning"></i> KEMITRAAN ENTERPRISE
+                            </span>
+                            <span class="overlay-photo-proof">
+                                <i class="fa-solid fa-camera"></i> Dokumentasi Resmi
+                            </span>
+                        </div>
+
+                        <!-- Teks yang Menimpa Foto (Overlay) -->
+                        <div class="overlay-card-caption">
+                            <h3 class="overlay-headline">
+                                <a href="{{ route('news') }}" title="Baca liputan berita selengkapnya">
+                                    Next Young Tech Sukses Hadirkan Solusi Web Enterprise PT TRSJ
+                                </a>
+                            </h3>
+                            <p class="overlay-excerpt">
+                                Serah terima resmi platform website enterprise berkecepatan 60 FPS dan arsitektur keamanan tingkat lanjut untuk PT TRSJ International Indonesia.
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Sisi Kanan: Teks Format Berita Artikel Profesional -->
-                    <div class="editorial-text-column">
-                        <!-- Meta Kategori & Tanggal -->
-                        <div class="editorial-meta-header">
-                            <span class="editorial-category-badge">SIARAN PERS RESMI</span>
-                            <span class="editorial-meta-item"><i class="fa-regular fa-calendar-check"></i> 8 November 2026</span>
-                            <span class="editorial-meta-dot">•</span>
-                            <span class="editorial-meta-item"><i class="fa-regular fa-clock"></i> 3 Menit Baca</span>
+                    <!-- Bagian Bawah Kartu: Divider, Author Redaksi, Headline & Tombol Baca -->
+                    <div class="overlay-card-footer">
+                        <div class="overlay-footer-meta">
+                            <span class="overlay-author">
+                                <i class="fa-solid fa-pen-nib" style="color: #0ea5e9;"></i> Tim Redaksi Next Young Tech
+                            </span>
+                            <span class="overlay-dot">•</span>
+                            <span class="overlay-date">
+                                <i class="fa-regular fa-calendar-check"></i> 8 November 2026
+                            </span>
                         </div>
 
-                        <!-- Judul Berita Artikel -->
-                        <h3 class="editorial-article-title">
-                            <a href="{{ route('news') }}" title="Baca liputan berita selengkapnya">Next Young Tech Sukses Menghadirkan Solusi Arsitektur Web Enterprise untuk PT TRSJ International Indonesia</a>
-                        </h3>
+                        <h4 class="overlay-footer-title">
+                            <a href="{{ route('news') }}">
+                                Solusi Arsitektur Web Enterprise Berstandar Internasional & Infrastruktur Telekomunikasi
+                            </a>
+                        </h4>
 
-                        <!-- Byline Tim Redaksi (Memberi Kesan Artikel Profesional) -->
-                        <div class="editorial-byline-bar">
-                            <img src="{{ asset('images/logo-n-trans.png') }}" alt="Next Young Tech" class="byline-logo">
-                            <div class="byline-text">
-                                <span class="byline-author">Tim Redaksi & Media Next Young Tech</span>
-                                <span class="byline-role">Liputan Kerjasama Strategis Korporasi</span>
-                            </div>
-                        </div>
-
-                        <!-- Paragraf Pengantar Artikel Berita -->
-                        <p class="editorial-lead-text">
-                            <strong>JAKARTA</strong> — Next Young Tech resmi melakukan serah terima platform website korporat enterprise untuk <strong>PT TRSJ International Indonesia</strong> (<em>TR Digital Construction / 唐人数建</em>) dengan performa tinggi 60 FPS dan arsitektur enterprise.
-                        </p>
-
-                        <!-- Poin Fitur Utama Arsitektur -->
-                        <div class="editorial-features-pills">
-                            <span class="editorial-pill"><i class="fa-solid fa-bolt-lightning"></i> Performa 60 FPS</span>
-                            <span class="editorial-pill"><i class="fa-solid fa-shield-halved"></i> Keamanan Enterprise</span>
-                            <span class="editorial-pill"><i class="fa-solid fa-code"></i> Framework Laravel 11</span>
-                        </div>
-
-                        <!-- Tombol Aksi Baca Artikel Lengkap -->
-                        <div class="editorial-bottom-action">
-                            <a href="{{ route('news') }}" class="btn-read-full-article" title="Baca artikel berita lengkap">
-                                <span>Baca Artikel Lengkap</span>
+                        <div class="overlay-footer-action">
+                            <a href="{{ route('news') }}" class="btn-overlay-read-news" title="Baca artikel selengkapnya">
+                                <span>Baca Selengkapnya</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
-                            <span class="editorial-verified-note">
-                                <i class="fa-solid fa-circle-check"></i> Rilis Resmi Terverifikasi
+                            <span class="overlay-verified-seal">
+                                <i class="fa-solid fa-circle-check"></i> Rilis Terverifikasi
                             </span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -341,227 +342,200 @@
         }
 
         /* ==========================================================
-           PROFESSIONAL EDITORIAL ARTICLE SHOWCASE (Frame Biru Putih Ringkas & Bersih)
+           MODERN OVERLAY NEWS CARD (UI/UX Tulisannya Timpa Foto)
            ========================================================== */
-        .single-news-frame {
-            background: #ffffff;
-            border: 1.5px solid #0ea5e9;
-            border-radius: 18px;
-            box-shadow: none !important;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            max-width: 980px;
+        .modern-overlay-card-wrapper {
+            max-width: 480px;
             margin: 0 auto;
         }
 
-        .single-news-frame:hover {
-            transform: translateY(-3px);
-            border-color: #0284c7;
-            box-shadow: none !important;
-        }
-
-        .single-news-grid {
-            display: grid;
-            grid-template-columns: 330px 1fr;
-            align-items: stretch;
-        }
-
-        .editorial-media-column {
-            background: #f8fafc;
-            padding: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-right: 1px solid #e2e8f0;
-            position: relative;
-        }
-
-        .editorial-photo-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .editorial-photo-container img {
-            width: 100%;
-            height: auto;
-            max-height: 275px;
-            object-fit: contain;
-            display: block;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .single-news-frame:hover .editorial-photo-container img {
-            transform: scale(1.02);
-        }
-
-        .editorial-photo-tag {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            background: rgba(15, 23, 42, 0.9);
-            color: #ffffff;
-            font-size: 10px;
-            font-weight: 700;
-            padding: 4px 11px;
-            border-radius: 999px;
-            backdrop-filter: blur(4px);
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .editorial-text-column {
-            padding: 20px 24px;
+        .modern-overlay-news-card {
+            background: #0f172a;
+            border: 1.5px solid #1e293b;
+            border-radius: 20px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            background: #ffffff;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
         }
 
-        .editorial-meta-header {
+        .modern-overlay-news-card:hover {
+            transform: translateY(-5px);
+            border-color: #0ea5e9;
+        }
+
+        .overlay-card-media-wrap {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            background: #0f172a;
+        }
+
+        .overlay-card-media-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 12%;
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modern-overlay-news-card:hover .overlay-card-media-wrap img {
+            transform: scale(1.04);
+        }
+
+        .overlay-card-scrim {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, 
+                rgba(15, 23, 42, 0.05) 0%, 
+                rgba(15, 23, 42, 0.25) 35%, 
+                rgba(15, 23, 42, 0.8) 65%, 
+                #0f172a 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .overlay-top-tags {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            right: 14px;
             display: flex;
             align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 8px;
+            justify-content: space-between;
+            gap: 10px;
+            z-index: 2;
         }
 
-        .editorial-category-badge {
-            background: rgba(14, 165, 233, 0.1);
-            color: #0284c7;
-            border: 1px solid rgba(14, 165, 233, 0.35);
-            font-size: 10px;
+        .overlay-tag-pill {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(14, 165, 233, 0.5);
+            color: #38bdf8;
+            font-size: 10.5px;
             font-weight: 800;
-            padding: 3px 10px;
+            padding: 4px 12px;
             border-radius: 999px;
-            letter-spacing: 0.6px;
-            text-transform: uppercase;
-        }
-
-        .editorial-meta-item {
-            font-size: 12px;
-            color: #64748b;
-            font-weight: 600;
+            backdrop-filter: blur(6px);
+            letter-spacing: 0.5px;
             display: inline-flex;
             align-items: center;
             gap: 5px;
         }
 
-        .editorial-meta-item i {
-            color: #0ea5e9;
-        }
-
-        .editorial-meta-dot {
-            color: #cbd5e1;
+        .overlay-photo-proof {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #94a3b8;
             font-size: 10px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 999px;
+            backdrop-filter: blur(6px);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        .editorial-article-title {
+        .overlay-card-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px 20px;
+            z-index: 2;
+        }
+
+        .overlay-headline {
             font-family: var(--font-heading);
-            font-size: clamp(16px, 1.6vw, 19px);
+            font-size: 18px;
             font-weight: 800;
-            color: #0f172a;
             line-height: 1.35;
-            letter-spacing: -0.4px;
-            margin-bottom: 8px;
+            margin-bottom: 7px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
         }
 
-        .editorial-article-title a {
-            color: inherit;
+        .overlay-headline a {
+            color: #ffffff;
             text-decoration: none;
             transition: color 0.25s ease;
         }
 
-        .editorial-article-title a:hover {
-            color: #0ea5e9;
+        .overlay-headline a:hover {
+            color: #38bdf8;
         }
 
-        .editorial-byline-bar {
+        .overlay-excerpt {
+            font-size: 12.5px;
+            color: #cbd5e1;
+            line-height: 1.5;
+            margin: 0;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .overlay-card-footer {
+            padding: 16px 20px 20px 20px;
+            background: #0f172a;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .overlay-footer-meta {
+            font-size: 12px;
+            font-weight: 700;
+            color: #94a3b8;
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 10px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .byline-logo {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-            border-radius: 50%;
-        }
-
-        .byline-text {
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            margin-bottom: 8px;
             flex-wrap: wrap;
-            font-size: 11.5px;
         }
 
-        .byline-author {
-            font-weight: 700;
-            color: #0f172a;
-        }
-
-        .byline-role {
-            color: #64748b;
-        }
-
-        .editorial-lead-text {
-            font-size: 13.5px;
+        .overlay-dot {
             color: #475569;
-            line-height: 1.55;
-            margin-bottom: 12px;
-        }
-
-        .editorial-features-pills {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 14px;
-        }
-
-        .editorial-pill {
-            background: #f0f9ff;
-            border: 1px solid #bae6fd;
-            color: #0369a1;
-            padding: 3px 10px;
-            border-radius: 6px;
             font-size: 11px;
+        }
+
+        .overlay-footer-title {
+            font-size: 13.5px;
             font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            line-height: 1.45;
+            margin-bottom: 14px;
+            color: #f1f5f9;
         }
 
-        .editorial-pill i {
-            color: #0ea5e9;
+        .overlay-footer-title a {
+            color: #f1f5f9;
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
 
-        .editorial-bottom-action {
+        .overlay-footer-title a:hover {
+            color: #38bdf8;
+        }
+
+        .overlay-footer-action {
             display: flex;
             align-items: center;
-            gap: 14px;
+            justify-content: space-between;
+            gap: 12px;
             flex-wrap: wrap;
-            margin-top: 4px;
         }
 
-        .btn-read-full-article {
+        .btn-overlay-read-news {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            background: #0ea5e9;
             color: #ffffff !important;
             padding: 9px 20px;
             border-radius: 9px;
@@ -572,66 +546,43 @@
             box-shadow: none !important;
         }
 
-        .btn-read-full-article:hover {
+        .btn-overlay-read-news:hover {
+            background: #0284c7;
             transform: translateY(-1px);
-            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-            box-shadow: none !important;
         }
 
-        .btn-read-full-article i {
+        .btn-overlay-read-news i {
             transition: transform 0.25s ease;
         }
 
-        .btn-read-full-article:hover i {
+        .btn-overlay-read-news:hover i {
             transform: translateX(4px);
         }
 
-        .editorial-verified-note {
-            font-size: 12px;
+        .overlay-verified-seal {
+            font-size: 11.5px;
             font-weight: 700;
-            color: #059669;
+            color: #10b981;
             display: inline-flex;
             align-items: center;
             gap: 5px;
         }
 
-        html[data-theme="dark"] .single-news-frame {
-            background: var(--bg-card) !important;
-            border-color: #0ea5e9 !important;
-            box-shadow: none !important;
-        }
-
-        html[data-theme="dark"] .editorial-media-column {
-            background: rgba(14, 165, 233, 0.05) !important;
-            border-right-color: var(--border-color) !important;
-        }
-
-        html[data-theme="dark"] .editorial-text-column {
-            background: var(--bg-card) !important;
-        }
-
-        html[data-theme="dark"] .editorial-article-title {
-            color: var(--text-main) !important;
-        }
-
-        html[data-theme="dark"] .byline-author {
-            color: var(--text-main) !important;
-        }
-
-        @media (max-width: 960px) {
-            .single-news-grid {
-                grid-template-columns: 1fr;
+        @media (max-width: 600px) {
+            .modern-overlay-card-wrapper {
+                max-width: 100%;
             }
-            .editorial-media-column {
-                border-right: none;
-                border-bottom: 1px solid #e2e8f0;
-                padding: 16px;
+            .overlay-card-media-wrap {
+                height: 330px;
             }
-            .editorial-text-column {
-                padding: 18px 16px;
+            .overlay-headline {
+                font-size: 17px;
             }
-            .editorial-photo-container img {
-                max-height: 250px;
+            .overlay-card-caption {
+                padding: 14px 16px;
+            }
+            .overlay-card-footer {
+                padding: 14px 16px 18px 16px;
             }
         }
 
