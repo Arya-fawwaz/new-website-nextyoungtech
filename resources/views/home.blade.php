@@ -101,11 +101,14 @@
             <!-- Modern Overlay News Card (Biru & Putih - Teks Timpa Foto) -->
             <div class="modern-overlay-card-wrapper">
                 <article class="modern-overlay-news-card">
-                    <!-- Bagian Foto Atas dengan Floating Content Card Bersih -->
+                    <!-- Bagian Foto Atas dengan Teks Menimpa Foto Langsung Tanpa Kotak -->
                     <div class="overlay-card-media-wrap">
                         <img src="{{ asset('images/trsj_partner_moment.jpeg') }}" alt="Momen Serah Terima Web Enterprise PT TRSJ International Indonesia" loading="lazy">
                         
-                        <!-- Floating Content Card (Tidak Ketimpa Foto, Mencolok & Modern) -->
+                        <!-- Ambient Scrim Gradient di Bawah Teks -->
+                        <div class="overlay-card-scrim"></div>
+
+                        <!-- Teks yang Menimpa Foto Langsung (Tanpa Frame Kotak, Mencolok & Modern) -->
                         <div class="overlay-card-caption">
                             <div class="overlay-kicker-pill">
                                 <span class="editorial-kicker-dot"></span>
@@ -378,27 +381,29 @@
         }
 
         .overlay-card-scrim {
-            display: none;
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                transparent 46%, 
+                rgba(255, 255, 255, 0.45) 68%, 
+                rgba(255, 255, 255, 0.94) 86%, 
+                #ffffff 100%);
+            pointer-events: none;
+            z-index: 1;
         }
 
-        /* Floating Modern Content Box (Anti Ketimpa & Mencolok) */
+        /* Teks Overlay Langsung Tanpa Frame Kotak (Mencolok & Modern) */
         .overlay-card-caption {
             position: absolute;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            background: #ffffff;
-            border: 2px solid #0ea5e9;
-            border-radius: 18px;
-            padding: 18px 24px;
-            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 28px 14px 28px;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
             z-index: 2;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .modern-overlay-news-card:hover .overlay-card-caption {
-            border-color: #0284c7;
-            box-shadow: 0 16px 36px rgba(14, 165, 233, 0.18);
         }
 
         .overlay-kicker-pill {
@@ -407,14 +412,14 @@
             gap: 7px;
             background: #0ea5e9;
             color: #ffffff !important;
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 20px;
             font-size: 11px;
             font-weight: 800;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
             margin-bottom: 9px;
-            box-shadow: 0 3px 10px rgba(14, 165, 233, 0.35);
+            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
         }
 
         .editorial-kicker-dot {
@@ -431,12 +436,13 @@
 
         .overlay-headline {
             font-family: var(--font-heading);
-            font-size: clamp(20px, 2.5vw, 25px);
-            font-weight: 800;
+            font-size: clamp(21px, 2.7vw, 27px);
+            font-weight: 900;
             line-height: 1.25;
-            letter-spacing: -0.025em;
+            letter-spacing: -0.03em;
             margin-bottom: 8px;
             color: #0f172a;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 0 14px rgba(255, 255, 255, 0.9);
         }
 
         .overlay-headline a {
@@ -451,9 +457,11 @@
 
         .overlay-excerpt {
             font-size: 13.5px;
-            color: #334155;
+            color: #1e293b;
+            font-weight: 500;
             line-height: 1.55;
             margin: 0;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.8);
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -548,17 +556,29 @@
         }
 
         html[data-theme="dark"] .overlay-card-caption {
-            background: #0f172a !important;
-            border-color: #0ea5e9 !important;
-            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5) !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        html[data-theme="dark"] .overlay-card-scrim {
+            display: block !important;
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                transparent 46%, 
+                rgba(15, 23, 42, 0.5) 68%, 
+                rgba(15, 23, 42, 0.95) 86%, 
+                var(--bg-card) 100%) !important;
         }
 
         html[data-theme="dark"] .overlay-headline a {
             color: #f8fafc !important;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 14px rgba(0, 0, 0, 0.9) !important;
         }
 
         html[data-theme="dark"] .overlay-excerpt {
             color: #cbd5e1 !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9) !important;
         }
 
         @media (max-width: 600px) {
@@ -569,14 +589,16 @@
                 height: 380px;
             }
             .overlay-card-caption {
-                bottom: 12px;
-                left: 12px;
-                right: 12px;
-                padding: 14px 16px;
-                border-radius: 14px;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 14px 16px 10px 16px;
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
             }
             .overlay-headline {
-                font-size: 17px;
+                font-size: 18px;
             }
             .overlay-card-footer {
                 padding: 14px 16px;
