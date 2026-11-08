@@ -5,14 +5,15 @@
 @section('content')
 
     <!-- 3D Interactive Hero Section -->
-    <section class="hero-section" style="position: relative; overflow: hidden; z-index: 1;">
-        <!-- Dynamic Hero Backgrounds -->
-        <div id="hero-light-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center; opacity: 0; transition: opacity 0.8s ease; pointer-events: none;">
-            <div class="hero-light-overlay"></div>
+    <section class="hero-section" style="position: relative; overflow: hidden; z-index: 1; background: #000;">
+        <!-- Dynamic Hero Video Background -->
+        <div id="hero-video-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; display: flex; align-items: center; justify-content: center;">
+            <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+                <source src="{{ asset('uhd_25fps.mp4') }}" type="video/mp4">
+            </video>
+            <div class="hero-video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6);"></div>
         </div>
-        <!-- Three.js Canvas Element -->
-        <div id="three-canvas-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: 1; transition: opacity 0.8s ease;"></div>
-        
+        <!-- Dynamic Hero Video Background -->
         <div class="container" style="position: relative; z-index: 2;">
             <div class="hero-content">
                 <div class="hero-badge">
@@ -41,6 +42,102 @@
                             <i class="fa-brands fa-whatsapp"></i> Konsultasi Gratis
                         </a>
                     @endauth
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         OUR PARTNERS SECTION (Mencolok & High-Impact)
+         ========================================================== -->
+    <section class="section partners-section" id="partners" style="padding: 70px 0; position: relative; background: radial-gradient(circle at 50% 20%, rgba(255, 107, 0, 0.05) 0%, rgba(14, 165, 233, 0.04) 50%, transparent 80%); border-top: 1px solid var(--border-color); overflow: hidden;">
+        <!-- Ambient decorative glow -->
+        <div style="position: absolute; top: -120px; left: 50%; transform: translateX(-50%); width: 700px; height: 260px; background: radial-gradient(ellipse, rgba(255, 107, 0, 0.2), rgba(14, 165, 233, 0.15), transparent 70%); filter: blur(60px); pointer-events: none; z-index: 0;"></div>
+
+        <div class="container" style="position: relative; z-index: 1;">
+            <!-- Section Header (Mencolok) -->
+            <div class="section-header" style="text-align: center; margin-bottom: 45px;">
+                <div class="partner-top-badge" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(255, 107, 0, 0.2), rgba(255, 140, 0, 0.1)); border: 1.5px solid #ff7700; color: #ff6b00; font-weight: 800; padding: 7px 20px; border-radius: 999px; letter-spacing: 2px; font-size: 12px; text-transform: uppercase; box-shadow: 0 0 25px rgba(255, 107, 0, 0.35); margin-bottom: 16px;">
+                    <i class="fa-solid fa-handshake" style="color: #ff7700; font-size: 14px;"></i>
+                    <span>STRATEGIC PARTNERSHIP</span>
+                </div>
+                
+                <h2 class="section-title" style="font-size: clamp(34px, 5.5vw, 52px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 16px;">
+                    <span style="background: linear-gradient(135deg, #ff4500 0%, #ff8c00 40%, #0ea5e9 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 20px rgba(255, 107, 0, 0.35));">
+                        OUR PARTNERS
+                    </span>
+                </h2>
+                
+                <p class="section-desc" style="max-width: 680px; margin: 0 auto; font-size: 16px; color: var(--text-muted); line-height: 1.65;">
+                    Next Young Tech bangga dipercaya oleh korporasi industri nasional dan internasional. Kami berkolaborasi menghadirkan arsitektur website enterprise yang andal, berkecepatan tinggi, dan berkelas dunia.
+                </p>
+            </div>
+
+            <!-- Featured Partner Card: PT TRSJ INTERNATIONAL INDONESIA -->
+            <div class="partner-showcase-container" style="max-width: 1020px; margin: 0 auto;">
+                <div class="partner-card-featured" style="background: linear-gradient(145deg, #070c18 0%, #0c1529 60%, #111d38 100%); border: 2px solid rgba(255, 107, 0, 0.4); border-radius: 26px; padding: 38px 42px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 107, 0, 0.2); position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 1.3fr; gap: 36px; align-items: center;">
+                    
+                    <!-- Glow effect corner -->
+                    <div style="position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255, 107, 0, 0.35), transparent 70%); filter: blur(35px); pointer-events: none;"></div>
+                    <div style="position: absolute; bottom: -60px; left: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(14, 165, 233, 0.3), transparent 70%); filter: blur(35px); pointer-events: none;"></div>
+
+                    <!-- Left: Prominent Logo Display with Dark Background Shield -->
+                    <div class="partner-logo-shield" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.03); border: 1.5px solid rgba(255, 255, 255, 0.1); border-radius: 22px; padding: 34px 26px; text-align: center; position: relative; backdrop-filter: blur(12px); box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.02);">
+                        
+                        <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.18); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 11px; font-weight: 800; padding: 5px 14px; border-radius: 20px; margin-bottom: 22px; letter-spacing: 0.5px;">
+                            <i class="fa-solid fa-circle-check"></i> VERIFIED ENTERPRISE PARTNER
+                        </div>
+
+                        <!-- TRSJ Logo -->
+                        <div class="trsj-logo-wrapper" style="width: 100%; display: flex; align-items: center; justify-content: center; min-height: 95px; padding: 10px 0;">
+                            <img src="{{ asset('images/logo_transparent_4k.webp') }}" alt="Logo PT TRSJ International Indonesia - TR Digital Construction" style="max-width: 260px; width: 92%; height: auto; object-fit: contain; filter: drop-shadow(0 4px 18px rgba(255, 107, 0, 0.4)); transition: transform 0.3s ease;">
+                        </div>
+
+                        <div style="margin-top: 20px; border-top: 1px dashed rgba(255, 255, 255, 0.15); padding-top: 14px; width: 100%;">
+                            <span style="font-size: 13.5px; font-weight: 800; color: #cbd5e1; letter-spacing: 0.8px;">TR DIGITAL CONSTRUCTION</span>
+                            <div style="font-size: 12px; color: #94a3b8; margin-top: 3px;">Tangren Shujian (唐人数建)</div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Partner Details & Collaboration Highlights -->
+                    <div style="color: #ffffff; display: flex; flex-direction: column; gap: 18px;">
+                        <div>
+                            <span style="font-size: 12.5px; font-weight: 800; color: #ff8c00; letter-spacing: 1.5px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 6px;">
+                                <i class="fa-solid fa-building-columns"></i> Mitra Strategis Berskala Internasional
+                            </span>
+                            <h3 style="font-size: 28px; font-weight: 900; color: #ffffff; margin: 8px 0 10px 0; line-height: 1.25; font-family: var(--font-heading);">
+                                PT TRSJ International Indonesia
+                            </h3>
+                            <p style="font-size: 15px; color: #cbd5e1; line-height: 1.7; margin: 0;">
+                                Korporasi terkemuka di bidang konstruksi infrastruktur telekomunikasi dan rekayasa digital berskala global. Next Young Tech dipercaya membangun arsitektur website korporat interaktif dan solusi sistem terintegrasi untuk mendukung pertumbuhan ekspansi PT TRSJ.
+                            </p>
+                        </div>
+
+                        <!-- Highlights tags -->
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span style="background: rgba(14, 165, 233, 0.18); border: 1px solid rgba(14, 165, 233, 0.35); color: #38bdf8; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px;">
+                                <i class="fa-solid fa-code"></i> Arsitektur Web Enterprise
+                            </span>
+                            <span style="background: rgba(255, 107, 0, 0.18); border: 1px solid rgba(255, 107, 0, 0.35); color: #fb923c; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px;">
+                                <i class="fa-solid fa-tower-broadcast"></i> Telekomunikasi & Sipil
+                            </span>
+                            <span style="background: rgba(16, 185, 129, 0.18); border: 1px solid rgba(16, 185, 129, 0.35); color: #34d399; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px;">
+                                <i class="fa-solid fa-bolt"></i> Ultra Fast & Secure
+                            </span>
+                        </div>
+
+                        <!-- CTA to News -->
+                        <div style="margin-top: 6px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px;">
+                            <a href="{{ route('news') }}" class="btn-primary" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #ff5500 0%, #ff8c00 100%); color: #ffffff; padding: 13px 26px; border-radius: 12px; font-size: 14px; font-weight: 800; text-decoration: none; box-shadow: 0 6px 20px rgba(255, 107, 0, 0.45); transition: transform 0.25s ease;">
+                                <i class="fa-solid fa-newspaper"></i>
+                                <span>Baca Liputan Berita Kerjasama</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <span style="font-size: 12.5px; color: #94a3b8; display: inline-flex; align-items: center; gap: 6px;">
+                                <i class="fa-solid fa-calendar-day" style="color: #ff8c00;"></i> Rilis: 8 November 2026
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -215,6 +312,29 @@
             }
         }
 
+        /* Partners Section Styles */
+        .partner-card-featured {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        .partner-card-featured:hover {
+            transform: translateY(-5px) !important;
+            border-color: rgba(255, 107, 0, 0.75) !important;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35), 0 0 50px rgba(255, 107, 0, 0.35) !important;
+        }
+        .partner-card-featured:hover .trsj-logo-wrapper img {
+            transform: scale(1.05);
+        }
+        @media (max-width: 850px) {
+            .partner-card-featured {
+                grid-template-columns: 1fr !important;
+                padding: 28px 22px !important;
+                gap: 26px !important;
+            }
+            .partner-logo-shield {
+                padding: 24px 18px !important;
+            }
+        }
+
         /* Style for Interactive Star Rating */
         .star-rating input:checked ~ .star-label,
         .star-rating .star-label:hover,
@@ -224,17 +344,11 @@
         }
 
         /* Theme specific hero backgrounds */
-        html[data-theme="dark"] #three-canvas-container {
+        html[data-theme="dark"] #hero-video-bg {
             opacity: 1 !important;
         }
-        html[data-theme="dark"] #hero-light-bg {
-            opacity: 0 !important;
-        }
 
-        html[data-theme="light"] #three-canvas-container {
-            opacity: 0 !important;
-        }
-        html[data-theme="light"] #hero-light-bg {
+        html[data-theme="light"] #hero-video-bg {
             opacity: 1 !important;
         }
     </style>
@@ -280,6 +394,44 @@
                     <p class="feature-desc" style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin: 0; flex-grow: 1;">
                         Mengalami error memusingkan pada proyek web Anda? Joki coding kami siap membantu melakukan debugging, perbaikan sistem keamanan, optimasi performa database MySQL/Postgres, hingga penyempurnaan UI/UX website.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Event / Latest Project Section -->
+    <section class="section latest-project-section" style="background: rgba(255, 255, 255, 0.02); border-top: 1px solid var(--border-color); padding: 80px 0;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 50px;">
+                <span class="section-badge">NEWS & EVENT</span>
+                <h2 class="section-title">Project Rilis Terbaru Kami</h2>
+                <p class="section-desc">Ikuti perkembangan project inovatif dan rilis terbaru dari tim developer Next Young Tech Studio.</p>
+            </div>
+
+            <div class="glass-card project-showcase-card" style="padding: 0; overflow: hidden; border: 1px solid transparent; display: flex; flex-wrap: wrap;">
+                <!-- Image Side -->
+                <div style="flex: 1 1 400px; position: relative; min-height: 350px;">
+                    <img src="https://the-road-game.vercel.app/hero_corridor.png" alt="THE ROAD Game" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                    <div style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.8); color: #fff; padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: bold; border: 1px solid #ff0000; box-shadow: 0 0 15px rgba(255,0,0,0.5);">
+                        <i class="fa-solid fa-gamepad"></i> ROBLOX HORROR GAME
+                    </div>
+                </div>
+                <!-- Content Side -->
+                <div style="flex: 1 1 400px; padding: 40px; display: flex; flex-direction: column; justify-content: center; background: rgba(255, 255, 255, 0.02);">
+                    <h3 style="font-size: 26px; font-weight: 800; margin-bottom: 16px; color: var(--text-main);">THE ROAD - Co-Op Multiplayer Terror</h3>
+                    <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
+                        Next Young Tech Studio secara resmi merilis mahakarya game horor 3D di platform Roblox: <strong>THE ROAD</strong>. 
+                        Rasakan kengerian berjaga shift malam di minimarket terpencil. Tepat pukul 02:00 AM, entitas gelap yang disebut <em>The Midnight Shoppers</em> mulai berdatangan.
+                        Selesaikan tugas kasir, pantau CCTV, hemat baterai senter, dan patuhi buku aturan jika Anda ingin selamat hingga fajar!
+                    </p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: auto;">
+                        <a href="https://the-road-game.vercel.app" target="_blank" class="btn-primary" style="background: var(--primary); box-shadow: 0 0 15px var(--primary-glow); border: none;">
+                            <i class="fa-solid fa-globe"></i> Kunjungi Website 3D
+                        </a>
+                        <a href="https://www.roblox.com/id/games/106161713513894/THE-ROAD" target="_blank" class="btn-secondary" style="border: 1px solid var(--border-color);">
+                            <i class="fa-solid fa-play"></i> Mainkan Sekarang
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

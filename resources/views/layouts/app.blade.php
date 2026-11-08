@@ -480,6 +480,7 @@
                 <li><a href="{{ route('services') }}" class="nav-link {{ Route::is('services') ? 'active' : '' }}">Layanan</a></li>
                 <li><a href="{{ route('features') }}" class="nav-link {{ Route::is('features') ? 'active' : '' }}">Fitur</a></li>
                 <li><a href="{{ route('portfolio') }}" class="nav-link {{ Route::is('portfolio') ? 'active' : '' }}">Portofolio</a></li>
+                <li><a href="{{ route('news') }}" class="nav-link {{ Route::is('news') ? 'active' : '' }}">News</a></li>
                 @auth
                     <li><a href="{{ route('quotation.index') }}" class="nav-link {{ Route::is('quotation.index') ? 'active' : '' }}">Estimasi</a></li>
                     <li><a href="{{ route('review.create') }}" class="nav-link {{ Route::is('review.create') ? 'active' : '' }}">Ulasan</a></li>
@@ -600,6 +601,7 @@
                     <li><a href="{{ route('services') }}"><i class="fa-solid fa-chevron-right"></i> Portal Layanan</a></li>
                     <li><a href="{{ route('features') }}"><i class="fa-solid fa-chevron-right"></i> Fitur Andalan</a></li>
                     <li><a href="{{ route('portfolio') }}"><i class="fa-solid fa-chevron-right"></i> Portofolio Kami</a></li>
+                    <li><a href="{{ route('news') }}"><i class="fa-solid fa-chevron-right"></i> News & Berita</a></li>
                     @auth
                         <li><a href="{{ route('quotation.index') }}"><i class="fa-solid fa-chevron-right"></i> Kalkulator Estimasi</a></li>
                     @else
@@ -684,6 +686,12 @@
                 <i class="fa-solid fa-folder-open"></i>
             </div>
             <span>Karya</span>
+        </a>
+        <a href="{{ route('news') }}" class="mobile-nav-item {{ Route::is('news') ? 'active' : '' }}">
+            <div class="mobile-icon-wrapper">
+                <i class="fa-solid fa-newspaper"></i>
+            </div>
+            <span>News</span>
         </a>
         @auth
             <a href="{{ route('quotation.index') }}" class="mobile-nav-item {{ Route::is('quotation.index') ? 'active' : '' }} special">

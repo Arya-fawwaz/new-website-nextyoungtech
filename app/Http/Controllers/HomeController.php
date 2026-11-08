@@ -32,4 +32,9 @@ class HomeController extends Controller
     {
         return view('portfolio');
     }
+
+    public function news()
+    {
+        return view('news');
+    }
 }

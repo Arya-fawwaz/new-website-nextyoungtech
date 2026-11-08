@@ -43,6 +43,10 @@
       "dest": "/public/uploads/$1"
     },
     {
+      "src": "/(.*\\.mp4)",
+      "dest": "/public/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/index.php"
     }

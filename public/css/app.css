@@ -107,17 +107,17 @@ body {
     font-weight: 800;
     letter-spacing: 1.5px;
     text-decoration: none;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-main);
+    -webkit-text-fill-color: var(--text-main);
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 .logo span {
-    color: var(--text-main);
-    -webkit-text-fill-color: var(--text-main);
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-menu {
@@ -1258,9 +1258,14 @@ body {
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
 }
 
-[data-theme="light"] .logo span {
+[data-theme="light"] .logo {
     color: var(--text-main);
     -webkit-text-fill-color: var(--text-main);
+}
+[data-theme="light"] .logo span {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 [data-theme="light"] .btn-primary {
@@ -3130,16 +3135,16 @@ body {
     font-size: 20px;
     font-weight: 900;
     letter-spacing: 1px;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-main);
+    -webkit-text-fill-color: var(--text-main);
     text-decoration: none;
     margin-bottom: 20px;
 }
 
 .footer-logo span {
-    color: var(--text-main);
-    -webkit-text-fill-color: var(--text-main);
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .footer-brand-desc {
@@ -3434,8 +3439,14 @@ body {
     opacity: 0.05;
 }
 
-[data-theme="light"] .footer-logo span {
+[data-theme="light"] .footer-logo {
     color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+[data-theme="light"] .footer-logo span {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent !important;
 }
 
 [data-theme="light"] .footer-col {

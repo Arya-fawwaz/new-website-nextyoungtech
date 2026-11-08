@@ -4,7 +4,7 @@ import shutil
 
 cwd = r"c:\Users\Administrator\.gemini\antigravity-ide\scratch\next-young-tech"
 public_dir = os.path.join(cwd, "public", "business-card")
-artifacts_dir = r"C:\Users\Administrator\.gemini\antigravity-ide\brain\0542cc36-0c36-46cc-96ce-beea5fc01d21"
+artifacts_dir = r"C:\Users\Administrator\.gemini\antigravity-ide\brain\450fc534-e20c-458b-a285-1498e27d7e5e"
 
 os.makedirs(public_dir, exist_ok=True)
 os.makedirs(artifacts_dir, exist_ok=True)
