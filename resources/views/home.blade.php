@@ -98,25 +98,15 @@
                 </p>
             </div>
 
-            <!-- Modern Overlay News Card (UI/UX Eksklusif: Teks Timpa Foto - Ala Ourastore Gaming/Tech) -->
+            <!-- Modern Overlay News Card (Biru & Putih - Teks Timpa Foto) -->
             <div class="modern-overlay-card-wrapper">
                 <article class="modern-overlay-news-card">
-                    <!-- Bagian Foto Atas dengan Scrim Gradient & Teks Menimpa Foto -->
+                    <!-- Bagian Foto Atas dengan Scrim Gradient Bersih & Teks Menimpa Foto -->
                     <div class="overlay-card-media-wrap">
                         <img src="{{ asset('images/trsj_partner_moment.jpeg') }}" alt="Momen Serah Terima Web Enterprise PT TRSJ International Indonesia" loading="lazy">
                         
-                        <!-- Ambient Scrim Gradient Dark -->
+                        <!-- Ambient Scrim Gradient Biru Putih -->
                         <div class="overlay-card-scrim"></div>
-
-                        <!-- Top Badges Row -->
-                        <div class="overlay-top-tags">
-                            <span class="overlay-tag-pill">
-                                <i class="fa-solid fa-bolt-lightning"></i> KEMITRAAN ENTERPRISE
-                            </span>
-                            <span class="overlay-photo-proof">
-                                <i class="fa-solid fa-camera"></i> Dokumentasi Resmi
-                            </span>
-                        </div>
 
                         <!-- Teks yang Menimpa Foto (Overlay) -->
                         <div class="overlay-card-caption">
@@ -131,7 +121,7 @@
                         </div>
                     </div>
 
-                    <!-- Bagian Bawah Kartu: Divider, Author Redaksi, Headline & Tombol Baca -->
+                    <!-- Bagian Bawah Kartu: Divider, Author Redaksi, Headline & Tombol Baca (Warna Biru Putih) -->
                     <div class="overlay-card-footer">
                         <div class="overlay-footer-meta">
                             <span class="overlay-author">
@@ -342,7 +332,7 @@
         }
 
         /* ==========================================================
-           MODERN OVERLAY NEWS CARD (UI/UX Tulisannya Timpa Foto)
+           MODERN OVERLAY NEWS CARD (Biru & Putih - Teks Timpa Foto)
            ========================================================== */
         .modern-overlay-card-wrapper {
             max-width: 480px;
@@ -350,19 +340,20 @@
         }
 
         .modern-overlay-news-card {
-            background: #0f172a;
-            border: 1.5px solid #1e293b;
+            background: #ffffff;
+            border: 2px solid #0ea5e9;
             border-radius: 20px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: none !important;
         }
 
         .modern-overlay-news-card:hover {
-            transform: translateY(-5px);
-            border-color: #0ea5e9;
+            transform: translateY(-4px);
+            border-color: #0284c7;
+            box-shadow: none !important;
         }
 
         .overlay-card-media-wrap {
@@ -370,73 +361,32 @@
             width: 100%;
             height: 380px;
             overflow: hidden;
-            background: #0f172a;
+            background: #f8fafc;
         }
 
         .overlay-card-media-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 12%;
+            object-position: center 10%;
             display: block;
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .modern-overlay-news-card:hover .overlay-card-media-wrap img {
-            transform: scale(1.04);
+            transform: scale(1.03);
         }
 
         .overlay-card-scrim {
             position: absolute;
             inset: 0;
             background: linear-gradient(to bottom, 
-                rgba(15, 23, 42, 0.05) 0%, 
-                rgba(15, 23, 42, 0.25) 35%, 
-                rgba(15, 23, 42, 0.8) 65%, 
-                #0f172a 100%);
+                rgba(255, 255, 255, 0) 0%, 
+                rgba(255, 255, 255, 0.3) 35%, 
+                rgba(240, 249, 255, 0.88) 68%, 
+                #ffffff 100%);
             pointer-events: none;
             z-index: 1;
-        }
-
-        .overlay-top-tags {
-            position: absolute;
-            top: 14px;
-            left: 14px;
-            right: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            z-index: 2;
-        }
-
-        .overlay-tag-pill {
-            background: rgba(15, 23, 42, 0.85);
-            border: 1px solid rgba(14, 165, 233, 0.5);
-            color: #38bdf8;
-            font-size: 10.5px;
-            font-weight: 800;
-            padding: 4px 12px;
-            border-radius: 999px;
-            backdrop-filter: blur(6px);
-            letter-spacing: 0.5px;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .overlay-photo-proof {
-            background: rgba(15, 23, 42, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #94a3b8;
-            font-size: 10px;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 999px;
-            backdrop-filter: blur(6px);
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
         }
 
         .overlay-card-caption {
@@ -454,26 +404,24 @@
             font-weight: 800;
             line-height: 1.35;
             margin-bottom: 7px;
-            color: #ffffff;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+            color: #0f172a;
         }
 
         .overlay-headline a {
-            color: #ffffff;
+            color: #0f172a;
             text-decoration: none;
             transition: color 0.25s ease;
         }
 
         .overlay-headline a:hover {
-            color: #38bdf8;
+            color: #0ea5e9;
         }
 
         .overlay-excerpt {
             font-size: 12.5px;
-            color: #cbd5e1;
+            color: #475569;
             line-height: 1.5;
             margin: 0;
-            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -482,8 +430,8 @@
 
         .overlay-card-footer {
             padding: 16px 20px 20px 20px;
-            background: #0f172a;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: #ffffff;
+            border-top: 1px solid #e0f2fe;
             display: flex;
             flex-direction: column;
         }
@@ -491,7 +439,7 @@
         .overlay-footer-meta {
             font-size: 12px;
             font-weight: 700;
-            color: #94a3b8;
+            color: #0284c7;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -499,8 +447,13 @@
             flex-wrap: wrap;
         }
 
+        .overlay-date {
+            color: #64748b;
+            font-weight: 600;
+        }
+
         .overlay-dot {
-            color: #475569;
+            color: #cbd5e1;
             font-size: 11px;
         }
 
@@ -509,17 +462,17 @@
             font-weight: 700;
             line-height: 1.45;
             margin-bottom: 14px;
-            color: #f1f5f9;
+            color: #0f172a;
         }
 
         .overlay-footer-title a {
-            color: #f1f5f9;
+            color: #0f172a;
             text-decoration: none;
             transition: color 0.2s ease;
         }
 
         .overlay-footer-title a:hover {
-            color: #38bdf8;
+            color: #0ea5e9;
         }
 
         .overlay-footer-action {
@@ -566,6 +519,33 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
+        }
+
+        html[data-theme="dark"] .modern-overlay-news-card {
+            background: var(--bg-card) !important;
+            border-color: #0ea5e9 !important;
+        }
+
+        html[data-theme="dark"] .overlay-card-footer {
+            background: var(--bg-card) !important;
+            border-top-color: var(--border-color) !important;
+        }
+
+        html[data-theme="dark"] .overlay-card-scrim {
+            background: linear-gradient(to bottom, 
+                rgba(15, 23, 42, 0) 0%, 
+                rgba(15, 23, 42, 0.35) 30%, 
+                rgba(15, 23, 42, 0.92) 75%, 
+                var(--bg-card) 100%) !important;
+        }
+
+        html[data-theme="dark"] .overlay-headline a,
+        html[data-theme="dark"] .overlay-footer-title a {
+            color: var(--text-main) !important;
+        }
+
+        html[data-theme="dark"] .overlay-excerpt {
+            color: #94a3b8 !important;
         }
 
         @media (max-width: 600px) {
