@@ -334,30 +334,18 @@
         }
 
         /* ==========================================================
-           BRAND PANORAMIC BANNER (Memanjang, Bersih & Profesional ala Foto 2)
+           BRAND PANORAMIC BANNER (Full-Bleed 100% Ujung ke Ujung Kepentok)
            ========================================================== */
-        .brand-panoramic-section {
-            padding: 15px 0 55px 0;
-            background: #ffffff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .brand-panoramic-frame {
+        .brand-panoramic-fullwidth {
             width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1.5px solid rgba(14, 165, 233, 0.28);
-            box-shadow: 0 12px 35px rgba(14, 165, 233, 0.1);
-            background: #ffffff;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+            display: block;
+            margin: 0;
+            padding: 0;
             line-height: 0;
-        }
-
-        .brand-panoramic-frame:hover {
-            transform: translateY(-3px) scale(1.006);
-            border-color: #0ea5e9;
-            box-shadow: 0 18px 45px rgba(14, 165, 233, 0.18);
+            overflow: hidden;
+            background: #ffffff;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .brand-panoramic-img {
@@ -365,25 +353,24 @@
             height: auto;
             display: block;
             object-fit: cover;
+            margin: 0;
+            padding: 0;
+            border: none !important;
+            border-radius: 0 !important;
         }
 
-        html[data-theme="dark"] .brand-panoramic-section {
+        html[data-theme="dark"] .brand-panoramic-fullwidth {
             background: var(--bg-main) !important;
-        }
-
-        html[data-theme="dark"] .brand-panoramic-frame {
-            border-color: rgba(14, 165, 233, 0.35) !important;
-            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5) !important;
-            background: var(--bg-card) !important;
+            border-color: var(--border-color) !important;
         }
 
         @media (max-width: 768px) {
-            .brand-panoramic-section {
-                padding: 10px 0 35px 0 !important;
+            .brand-panoramic-fullwidth {
+                margin: 0 !important;
+                padding: 0 !important;
             }
-            .brand-panoramic-frame {
-                border-radius: 14px !important;
-                border-width: 1px !important;
+            .brand-panoramic-img {
+                border-radius: 0 !important;
             }
         }
 
@@ -1010,21 +997,17 @@
         </section>
 
         <!-- ==========================================================
-             OFFICIAL NEXT YOUNG TECH BRAND BANNER (Diatas Footer Pas)
+             OFFICIAL NEXT YOUNG TECH BRAND BANNER (Full-Bleed Ujung ke Ujung Kepentok)
              ========================================================== -->
-        <section class="section brand-panoramic-section" style="padding: 35px 0 65px 0; background: #ffffff; border-top: 1px solid var(--border-color); overflow: hidden;">
-            <div class="container">
-                <div class="brand-panoramic-frame">
-                    <picture>
-                        <source srcset="{{ asset('images/nextyoungtech_banner.webp') }}" type="image/webp">
-                        <img src="{{ asset('images/nextyoungtech_banner.png') }}" 
-                             alt="Next Young Tech Official Technology Studio Banner" 
-                             loading="lazy"
-                             class="brand-panoramic-img">
-                    </picture>
-                </div>
-            </div>
-        </section>
+        <div class="brand-panoramic-fullwidth">
+            <picture>
+                <source srcset="{{ asset('images/nextyoungtech_banner.webp') }}" type="image/webp">
+                <img src="{{ asset('images/nextyoungtech_banner.png') }}" 
+                     alt="Next Young Tech Official Technology Studio Banner" 
+                     loading="lazy"
+                     class="brand-panoramic-img">
+            </picture>
+        </div>
 
     <!-- Initialize Testimonials Swiper -->
     <script>
