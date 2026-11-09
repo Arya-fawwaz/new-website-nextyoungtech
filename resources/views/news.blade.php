@@ -249,46 +249,227 @@
         color: var(--primary);
     }
 
+    /* ==========================================================
+       MODERN & STRIKING FEATURE HIGHLIGHT CARDS (Lebih Mencolok & Responsif)
+       ========================================================== */
     .feature-list-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 16px;
-        margin: 22px 0 32px 0;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        margin: 26px 0 36px 0;
     }
 
     .feature-list-item {
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-radius: 14px;
-        padding: 18px 20px;
+        position: relative;
+        background: #ffffff;
+        border: 1px solid rgba(14, 165, 233, 0.2);
+        border-radius: 18px;
+        padding: 24px 20px 20px 20px;
         display: flex;
+        flex-direction: column;
         align-items: flex-start;
-        gap: 14px;
-        transition: transform 0.2s ease;
+        gap: 16px;
+        box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow: hidden;
+    }
+
+    /* Ambient glowing top accent border */
+    .feature-list-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3.5px;
+        opacity: 0.9;
+        transition: opacity 0.3s ease, height 0.3s ease;
+    }
+
+    .feature-card-speed::before {
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+    }
+    .feature-card-design::before {
+        background: linear-gradient(90deg, #6366f1, #a855f7);
+    }
+    .feature-card-security::before {
+        background: linear-gradient(90deg, #10b981, #06b6d4);
+    }
+    .feature-card-responsive::before {
+        background: linear-gradient(90deg, #f59e0b, #ef4444);
     }
 
     .feature-list-item:hover {
-        transform: translateY(-2px);
+        transform: translateY(-5px);
+        box-shadow: 0 16px 36px -6px rgba(14, 165, 233, 0.18), 0 4px 12px rgba(0, 0, 0, 0.04);
+        border-color: rgba(14, 165, 233, 0.45);
     }
 
-    .feature-list-item i {
+    .feature-list-item:hover::before {
+        height: 5px;
+        opacity: 1;
+    }
+
+    /* Modern Icon Container */
+    .feature-icon-wrapper {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 20px;
-        color: var(--primary);
-        margin-top: 3px;
+        flex-shrink: 0;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+    }
+
+    .feature-list-item:hover .feature-icon-wrapper {
+        transform: scale(1.1) rotate(3deg);
+    }
+
+    .icon-speed {
+        background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(56, 189, 248, 0.24));
+        color: #0284c7;
+        border: 1px solid rgba(14, 165, 233, 0.3);
+        box-shadow: 0 4px 14px rgba(14, 165, 233, 0.15);
+    }
+    .icon-design {
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(168, 85, 247, 0.24));
+        color: #6366f1;
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        box-shadow: 0 4px 14px rgba(99, 102, 241, 0.15);
+    }
+    .icon-security {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(6, 182, 212, 0.24));
+        color: #059669;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.15);
+    }
+    .icon-responsive {
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(239, 68, 68, 0.2));
+        color: #d97706;
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        box-shadow: 0 4px 14px rgba(245, 158, 11, 0.15);
+    }
+
+    /* Content Area */
+    .feature-item-body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .feature-header-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
     }
 
     .feature-list-item h4 {
-        font-size: 15px;
-        font-weight: 700;
+        font-size: 15.5px;
+        font-weight: 800;
         color: #0f172a;
-        margin-bottom: 4px;
+        margin: 0;
+        letter-spacing: -0.2px;
+        line-height: 1.35;
+        transition: color 0.2s ease;
+    }
+
+    .feature-list-item:hover h4 {
+        color: var(--primary);
+    }
+
+    /* Modern Mini Tech Badge */
+    .feature-badge {
+        font-size: 11px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 6px;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .badge-speed {
+        background: rgba(14, 165, 233, 0.1);
+        color: #0284c7;
+        border: 1px solid rgba(14, 165, 233, 0.25);
+    }
+    .badge-design {
+        background: rgba(99, 102, 241, 0.1);
+        color: #6366f1;
+        border: 1px solid rgba(99, 102, 241, 0.25);
+    }
+    .badge-security {
+        background: rgba(16, 185, 129, 0.1);
+        color: #059669;
+        border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+    .badge-responsive {
+        background: rgba(245, 158, 11, 0.1);
+        color: #d97706;
+        border: 1px solid rgba(245, 158, 11, 0.25);
     }
 
     .feature-list-item p {
         font-size: 13.5px;
-        color: #64748b;
+        color: #475569;
         margin: 0;
-        line-height: 1.5;
+        line-height: 1.6;
+        font-weight: 400;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1100px) {
+        .feature-list-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .feature-list-grid {
+            grid-template-columns: 1fr;
+            gap: 14px;
+            margin: 20px 0 28px 0;
+        }
+        .feature-list-item {
+            padding: 18px 16px;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .feature-icon-wrapper {
+            width: 44px;
+            height: 44px;
+            font-size: 18px;
+            border-radius: 12px;
+        }
+        .feature-list-item h4 {
+            font-size: 15px;
+        }
+        .feature-list-item p {
+            font-size: 13px;
+        }
+    }
+
+    /* Dark Mode Polish */
+    html[data-theme="dark"] .feature-list-item {
+        background: rgba(15, 23, 42, 0.85) !important;
+        border-color: rgba(14, 165, 233, 0.25) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
+    }
+    html[data-theme="dark"] .feature-list-item h4 {
+        color: #f8fafc !important;
+    }
+    html[data-theme="dark"] .feature-list-item p {
+        color: #94a3b8 !important;
     }
 
     /* Bottom Share and Back Bar */
@@ -453,31 +634,58 @@
             </p>
 
             <div class="feature-list-grid">
-                <div class="feature-list-item">
-                    <i class="fa-solid fa-bolt-lightning"></i>
-                    <div>
-                        <h4>Performa Kecepatan Tinggi</h4>
+                <!-- Card 1: Performa -->
+                <div class="feature-list-item feature-card-speed">
+                    <div class="feature-icon-wrapper icon-speed">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                    </div>
+                    <div class="feature-item-body">
+                        <div class="feature-header-row">
+                            <h4>Performa Kecepatan Tinggi</h4>
+                            <span class="feature-badge badge-speed">⚡ Ultra Cepat</span>
+                        </div>
                         <p>Arsitektur caching cerdas dan kompresi asset modern yang memastikan halaman dimuat dalam hitungan milidetik.</p>
                     </div>
                 </div>
-                <div class="feature-list-item">
-                    <i class="fa-solid fa-palette"></i>
-                    <div>
-                        <h4>Desain UI/UX Eksklusif</h4>
+
+                <!-- Card 2: UI/UX -->
+                <div class="feature-list-item feature-card-design">
+                    <div class="feature-icon-wrapper icon-design">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <div class="feature-item-body">
+                        <div class="feature-header-row">
+                            <h4>Desain UI/UX Eksklusif</h4>
+                            <span class="feature-badge badge-design">🎨 Estetika 3D</span>
+                        </div>
                         <p>Tampilan visual modern berwibawa dengan identitas warna korporat yang harmonis dan tipografi yang elegan.</p>
                     </div>
                 </div>
-                <div class="feature-list-item">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <div>
-                        <h4>Keamanan Berstandar Enterprise</h4>
+
+                <!-- Card 3: Keamanan -->
+                <div class="feature-list-item feature-card-security">
+                    <div class="feature-icon-wrapper icon-security">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="feature-item-body">
+                        <div class="feature-header-row">
+                            <h4>Keamanan Berstandar Enterprise</h4>
+                            <span class="feature-badge badge-security">🔒 Grade A+</span>
+                        </div>
                         <p>Proteksi terhadap ancaman siber, enkripsi data SSL penuh, dan struktur kode yang telah melalui uji keamanan ketat.</p>
                     </div>
                 </div>
-                <div class="feature-list-item">
-                    <i class="fa-solid fa-mobile-screen"></i>
-                    <div>
-                        <h4>Responsivitas Multi-Device</h4>
+
+                <!-- Card 4: Multi-Device -->
+                <div class="feature-list-item feature-card-responsive">
+                    <div class="feature-icon-wrapper icon-responsive">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <div class="feature-item-body">
+                        <div class="feature-header-row">
+                            <h4>Responsivitas Multi-Device</h4>
+                            <span class="feature-badge badge-responsive">📱 100% Flex</span>
+                        </div>
                         <p>Tampilan tetap sempurna di semua ukuran layar, mulai dari monitor kantor, tablet lapangan, hingga ponsel pintar.</p>
                     </div>
                 </div>
